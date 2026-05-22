@@ -42,4 +42,9 @@
     width: 120px;
     height: 120px;
   }
+
+  /* Parallax is JS-disabled on mobile — remove GPU compositing hint */
+  .hero-layer {
+    will-change: auto;
+  }
 }

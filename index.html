@@ -41,6 +41,36 @@
            HERO SECTION
       ===================== -->
       <section id="hero">
+
+        <!-- ===== PARALLAX LAYERS ===== -->
+        <!-- Layer 1: Far — sun glow (slowest) -->
+        <div class="hero-layer" data-speed="0.15" aria-hidden="true">
+          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <circle cx="600" cy="160" r="300" fill="rgba(245,195,60,0.05)" />
+            <circle cx="600" cy="160" r="190" fill="rgba(242,182,52,0.10)" />
+            <circle cx="600" cy="160" r="110" fill="rgba(248,200,65,0.16)" />
+            <circle cx="600" cy="160" r="55"  fill="rgba(252,215,78,0.22)" />
+          </svg>
+        </div>
+
+        <!-- Layer 2: Mid — mountain ranges -->
+        <div class="hero-layer" data-speed="0.30" aria-hidden="true">
+          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,480 L0,320 L80,210 L180,280 L300,170 L440,250 L560,140 L680,230 L800,160 L920,230 L1040,175 L1140,215 L1200,200 L1200,480 Z"
+                  fill="rgba(80,120,42,0.38)" />
+            <path d="M0,480 L0,380 L110,295 L240,355 L380,265 L510,325 L640,240 L770,310 L900,255 L1020,305 L1120,270 L1200,290 L1200,480 Z"
+                  fill="rgba(52,90,24,0.52)" />
+          </svg>
+        </div>
+
+        <!-- Layer 3: Near — forest silhouette (fastest) -->
+        <div class="hero-layer" data-speed="0.50" aria-hidden="true">
+          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,480 L0,430 L35,350 L65,415 L100,325 L130,400 L165,310 L200,385 L240,295 L275,370 L315,280 L350,355 L390,265 L425,340 L465,255 L500,335 L540,260 L575,340 L615,260 L650,342 L690,268 L725,348 L765,270 L800,352 L840,275 L875,358 L910,278 L948,358 L985,284 L1020,364 L1060,284 L1095,365 L1132,288 L1168,362 L1200,320 L1200,480 Z"
+                  fill="rgba(18,50,6,0.85)" />
+          </svg>
+        </div>
+
         <div class="hero-inner">
           <p class="hero-eyebrow">America&rsquo;s Wild Places</p>
           <h1 class="hero-title">Explore America&rsquo;s<br />National Parks</h1>
