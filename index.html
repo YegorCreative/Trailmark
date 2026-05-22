@@ -43,6 +43,9 @@
       <section id="hero">
 
         <!-- ===== PARALLAX LAYERS ===== -->
+        <!-- Stars: far background — barely shifts with scroll -->
+        <div class="hero-stars" data-speed="0.05" aria-hidden="true"></div>
+
         <!-- Layer 1: Far — sun glow (slowest) -->
         <div class="hero-layer" data-speed="0.15" aria-hidden="true">
           <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -53,15 +56,23 @@
           </svg>
         </div>
 
-        <!-- Layer 2: Mid — mountain ranges -->
+        <!-- Layer 2: Mid — mountain ranges (3 depths for atmospheric perspective) -->
         <div class="hero-layer" data-speed="0.30" aria-hidden="true">
           <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <!-- Furthest range: atmospheric haze tint -->
+            <path d="M0,480 L0,295 L160,252 L340,262 L520,238 L700,254 L880,240 L1060,257 L1200,248 L1200,480 Z"
+                  fill="rgba(115,150,135,0.20)" />
+            <!-- Mid-far range -->
             <path d="M0,480 L0,320 L80,210 L180,280 L300,170 L440,250 L560,140 L680,230 L800,160 L920,230 L1040,175 L1140,215 L1200,200 L1200,480 Z"
                   fill="rgba(80,120,42,0.38)" />
+            <!-- Mid-near range -->
             <path d="M0,480 L0,380 L110,295 L240,355 L380,265 L510,325 L640,240 L770,310 L900,255 L1020,305 L1120,270 L1200,290 L1200,480 Z"
                   fill="rgba(52,90,24,0.52)" />
           </svg>
         </div>
+
+        <!-- Fog/mist layer — sits between mountains and forest -->
+        <div class="hero-fog" data-speed="0.38" aria-hidden="true"></div>
 
         <!-- Layer 3: Near — forest silhouette (fastest) -->
         <div class="hero-layer" data-speed="0.50" aria-hidden="true">
@@ -70,6 +81,9 @@
                   fill="rgba(18,50,6,0.85)" />
           </svg>
         </div>
+
+        <!-- Film grain texture overlay -->
+        <div class="hero-grain" aria-hidden="true"></div>
 
         <div class="hero-inner">
           <p class="hero-eyebrow">America&rsquo;s Wild Places</p>

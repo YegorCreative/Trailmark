@@ -44,7 +44,9 @@
   }
 
   /* Parallax is JS-disabled on mobile — remove GPU compositing hint */
-  .hero-layer {
+  .hero-layer,
+  .hero-stars,
+  .hero-fog {
     will-change: auto;
   }
 }

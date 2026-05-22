@@ -103,7 +103,9 @@ button {
    HERO SECTION
 ===================== */
 #hero {
-  background-color: var(--color-green-dark);
+  background:
+    radial-gradient(ellipse 70% 55% at 52% 22%, rgba(180, 110, 20, 0.22) 0%, transparent 60%),
+    linear-gradient(to bottom, #0c1a05 0%, #162a08 35%, #2d5016 65%, #1d3a09 100%);
   padding: var(--space-xl) 2rem;
   text-align: center;
   border-bottom: 4px solid var(--color-orange);
@@ -134,6 +136,97 @@ button {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+/* Stars layer */
+.hero-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-stars::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+     82px  28px 0 1px rgba(255, 255, 255, 0.55),
+    198px  44px 0 0px rgba(252, 215, 78,  0.60),
+    318px  18px 0 1px rgba(255, 255, 255, 0.45),
+    476px  38px 0 0px rgba(255, 255, 255, 0.50),
+    598px  12px 0 1px rgba(252, 215, 78,  0.55),
+    714px  32px 0 0px rgba(255, 255, 255, 0.40),
+    848px  22px 0 1px rgba(255, 255, 255, 0.60),
+    948px  52px 0 0px rgba(255, 255, 255, 0.35),
+   1062px  28px 0 1px rgba(252, 215, 78,  0.50),
+   1148px  16px 0 0px rgba(255, 255, 255, 0.45),
+    142px  72px 0 0px rgba(255, 255, 255, 0.30),
+    388px  78px 0 1px rgba(255, 255, 255, 0.38),
+    638px  66px 0 0px rgba(252, 215, 78,  0.40),
+    878px  70px 0 1px rgba(255, 255, 255, 0.32),
+   1098px  68px 0 0px rgba(255, 255, 255, 0.38),
+    258px  88px 0 1px rgba(255, 255, 255, 0.25),
+    748px  82px 0 0px rgba(252, 215, 78,  0.35),
+    998px  90px 0 1px rgba(255, 255, 255, 0.28);
+  animation: hero-twinkle 5s ease-in-out infinite;
+}
+
+/* Mist/fog layer */
+.hero-fog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: transform;
+  background: linear-gradient(
+    to bottom,
+    transparent 38%,
+    rgba(195, 225, 180, 0.08) 52%,
+    rgba(210, 235, 195, 0.14) 60%,
+    rgba(195, 225, 180, 0.07) 68%,
+    transparent 78%
+  );
+  animation: hero-fog-drift 10s ease-in-out infinite;
+}
+
+/* Film grain overlay */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+  background-size: 200px 200px;
+}
+
+/* Atmospheric animations */
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.90; }
+  50%       { opacity: 0.45; }
+}
+
+@keyframes hero-fog-drift {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stars::before,
+  .hero-fog {
+    animation: none;
+  }
 }
 
 .hero-eyebrow {
