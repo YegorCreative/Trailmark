@@ -1,8 +1,8 @@
 /*
   script.js
   Main JavaScript for Trailmark.
-  Currently handles: hero parallax.
-  Planned: search, filtering, and dynamic card rendering in Phase 2.
+  Currently handles: hero parallax, dynamic card rendering.
+  Planned: search and filtering.
 */
 
 // =====================
@@ -41,5 +41,43 @@
   }, { passive: true });
 
   update(); // sync layer positions on page load (handles restored scroll position)
+
+}());
+
+// =====================
+// CARD RENDERING
+// Builds park cards from the PARKS array in parks-data.js.
+// =====================
+(function renderCards() {
+
+  const grid = document.querySelector('.cards-grid');
+  if (!grid || typeof PARKS === 'undefined') return;
+
+  function renderBadge(park) {
+    return '<svg class="park-badge" viewBox="0 0 200 200"'
+      + ' xmlns="http://www.w3.org/2000/svg" role="img"'
+      + ' aria-label="' + park.name + ' National Park badge">'
+      + park.svgInner
+      + '</svg>';
+  }
+
+  const html = PARKS.map(function (park) {
+    return '<article class="park-card">'
+      + '<div class="card-badge-area card-badge-area--' + park.badgeTheme + '">'
+      + renderBadge(park)
+      + '</div>'
+      + '<div class="card-body">'
+      + '<div class="card-meta">'
+      + '<span class="card-region">' + park.region + '</span>'
+      + '<span class="card-state">' + park.state + '</span>'
+      + '</div>'
+      + '<h3 class="card-title">' + park.name + '</h3>'
+      + '<p class="card-description">' + park.shortDescription + '</p>'
+      + '<button class="card-btn" disabled>Explore Park</button>'
+      + '</div>'
+      + '</article>';
+  }).join('');
+
+  grid.innerHTML = html;
 
 }());
