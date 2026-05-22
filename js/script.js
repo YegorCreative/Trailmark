@@ -40,4 +40,6 @@
     }
   }, { passive: true });
 
+  update(); // sync layer positions on page load (handles restored scroll position)
+
 }());
