@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trailmark — Explore America's National Parks</title>
+    <title>Trailmark &mdash; Explore America's National Parks</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <!-- Main styles -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -14,34 +19,206 @@
 
     <!-- =====================
          HEADER
-         Site navigation and logo
     ===================== -->
     <header id="site-header">
+      <div class="header-inner">
+        <div class="logo">
+          <!-- Hexagon logo mark -->
+          <svg class="logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#F7F3EC" />
+            <polygon points="20,7 31,13.5 31,26.5 20,33 9,26.5 9,13.5" fill="none" stroke="#2D5016" stroke-width="2" />
+          </svg>
+          <span class="logo-text">Trailmark</span>
+        </div>
+      </div>
     </header>
 
     <main id="main-content">
 
       <!-- =====================
            HERO SECTION
-           Main headline and intro text
       ===================== -->
       <section id="hero">
+        <div class="hero-inner">
+          <p class="hero-eyebrow">America&rsquo;s Wild Places</p>
+          <h1 class="hero-title">Explore America&rsquo;s<br />National Parks</h1>
+          <p class="hero-subtitle">
+            Every park tells a story. Discover the wild places that make America remarkable &mdash; one badge at a time.
+          </p>
+        </div>
       </section>
 
       <!-- =====================
            PARK GRID SECTION
-           Badge cards for each national park
       ===================== -->
       <section id="park-grid">
+        <div class="section-inner">
+          <h2 class="section-title">Featured Parks</h2>
+          <p class="section-subtitle">A few places to start your journey.</p>
+
+          <div class="cards-grid">
+
+            <!-- ===== CARD: Yosemite ===== -->
+            <article class="park-card" data-park="yosemite">
+              <div class="card-badge-area card-badge-area--green">
+                <svg class="park-badge" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yosemite National Park badge">
+                  <defs>
+                    <clipPath id="clip-yosemite">
+                      <circle cx="100" cy="100" r="82" />
+                    </clipPath>
+                  </defs>
+                  <!-- Outer ring -->
+                  <circle cx="100" cy="100" r="97" fill="#2D5016" />
+                  <!-- Scene -->
+                  <g clip-path="url(#clip-yosemite)">
+                    <!-- Sky -->
+                    <rect x="0" y="0" width="200" height="200" fill="#7ABDE8" />
+                    <!-- Ground -->
+                    <rect x="0" y="128" width="200" height="72" fill="#3D6B1F" />
+                    <!-- Back mountain (center, tallest) -->
+                    <polygon points="100,36 156,128 44,128" fill="#8FAF72" />
+                    <!-- Left mountain -->
+                    <polygon points="55,66 104,128 6,128" fill="#5C7A3E" />
+                    <!-- Right mountain -->
+                    <polygon points="145,70 194,128 96,128" fill="#6B8E4E" />
+                    <!-- Snow cap on center peak -->
+                    <polygon points="100,36 114,64 86,64" fill="#EDE9E0" />
+                    <!-- Pine tree — left -->
+                    <polygon points="36,128 43,108 50,128" fill="#2D5016" />
+                    <rect x="39" y="128" width="7" height="9" fill="#2D5016" />
+                    <!-- Pine tree — right -->
+                    <polygon points="150,128 157,110 164,128" fill="#2D5016" />
+                    <rect x="153" y="128" width="7" height="9" fill="#2D5016" />
+                  </g>
+                  <!-- Decorative dashed ring -->
+                  <circle cx="100" cy="100" r="82" fill="none" stroke="#F7F3EC" stroke-width="2" stroke-dasharray="5,4" />
+                  <!-- Thin inner accent ring -->
+                  <circle cx="100" cy="100" r="89" fill="none" stroke="#4A7A28" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="card-region">West</span>
+                  <span class="card-state">California</span>
+                </div>
+                <h3 class="card-title">Yosemite</h3>
+                <p class="card-description">
+                  Towering granite cliffs, ancient sequoias, and cascading waterfalls in the heart of the Sierra Nevada.
+                </p>
+                <button class="card-btn" disabled>Explore Park</button>
+              </div>
+            </article>
+
+            <!-- ===== CARD: Yellowstone ===== -->
+            <article class="park-card" data-park="yellowstone">
+              <div class="card-badge-area card-badge-area--blue">
+                <svg class="park-badge" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yellowstone National Park badge">
+                  <defs>
+                    <clipPath id="clip-yellowstone">
+                      <circle cx="100" cy="100" r="82" />
+                    </clipPath>
+                  </defs>
+                  <!-- Outer ring -->
+                  <circle cx="100" cy="100" r="97" fill="#1A4A6B" />
+                  <!-- Scene -->
+                  <g clip-path="url(#clip-yellowstone)">
+                    <!-- Sky -->
+                    <rect x="0" y="0" width="200" height="200" fill="#B8DEED" />
+                    <!-- Rolling hills -->
+                    <ellipse cx="30" cy="155" rx="60" ry="24" fill="#4A7A2C" />
+                    <ellipse cx="170" cy="155" rx="60" ry="24" fill="#4A7A2C" />
+                    <!-- Ground base -->
+                    <rect x="0" y="158" width="200" height="42" fill="#3D6B1F" />
+                    <!-- Hot spring pool (concentric rings) -->
+                    <ellipse cx="100" cy="148" rx="46" ry="18" fill="#096B6B" />
+                    <ellipse cx="100" cy="148" rx="34" ry="13" fill="#0F9090" />
+                    <ellipse cx="100" cy="148" rx="22" ry="8" fill="#20C0C0" />
+                    <ellipse cx="100" cy="148" rx="10" ry="4" fill="#60E0E0" />
+                    <!-- Geyser steam (rising plume) -->
+                    <ellipse cx="100" cy="118" rx="9" ry="20" fill="rgba(255,255,255,0.72)" />
+                    <ellipse cx="97" cy="97" rx="11" ry="20" fill="rgba(255,255,255,0.55)" />
+                    <ellipse cx="103" cy="77" rx="13" ry="22" fill="rgba(255,255,255,0.38)" />
+                    <ellipse cx="100" cy="57" rx="16" ry="22" fill="rgba(255,255,255,0.22)" />
+                  </g>
+                  <!-- Decorative dashed ring -->
+                  <circle cx="100" cy="100" r="82" fill="none" stroke="#F7F3EC" stroke-width="2" stroke-dasharray="5,4" />
+                  <circle cx="100" cy="100" r="89" fill="none" stroke="#2A6A9B" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="card-region">Mountain West</span>
+                  <span class="card-state">Wyoming</span>
+                </div>
+                <h3 class="card-title">Yellowstone</h3>
+                <p class="card-description">
+                  The world&rsquo;s first national park &mdash; home to half the planet&rsquo;s geysers, boiling springs, and vast wildlife.
+                </p>
+                <button class="card-btn" disabled>Explore Park</button>
+              </div>
+            </article>
+
+            <!-- ===== CARD: Grand Canyon ===== -->
+            <article class="park-card" data-park="grand-canyon">
+              <div class="card-badge-area card-badge-area--red">
+                <svg class="park-badge" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grand Canyon National Park badge">
+                  <defs>
+                    <clipPath id="clip-grand-canyon">
+                      <circle cx="100" cy="100" r="82" />
+                    </clipPath>
+                  </defs>
+                  <!-- Outer ring -->
+                  <circle cx="100" cy="100" r="97" fill="#8B2210" />
+                  <!-- Scene -->
+                  <g clip-path="url(#clip-grand-canyon)">
+                    <!-- Sky -->
+                    <rect x="0" y="0" width="200" height="200" fill="#C9E8F5" />
+                    <!-- Sun -->
+                    <circle cx="100" cy="44" r="18" fill="#F5C518" />
+                    <!-- Canyon strata layers (top to bottom) -->
+                    <rect x="0" y="82"  width="200" height="14" fill="#D9A882" />
+                    <rect x="0" y="96"  width="200" height="13" fill="#C9896A" />
+                    <rect x="0" y="109" width="200" height="13" fill="#B8633A" />
+                    <rect x="0" y="122" width="200" height="13" fill="#A0432A" />
+                    <rect x="0" y="135" width="200" height="13" fill="#8B2E1A" />
+                    <rect x="0" y="148" width="200" height="52" fill="#5A1508" />
+                    <!-- Mesa rim shapes (irregular canyon top) -->
+                    <polygon points="0,82 42,62 74,82" fill="#D9A882" />
+                    <polygon points="126,82 158,60 200,82" fill="#D9A882" />
+                    <!-- Colorado River at base -->
+                    <rect x="68" y="152" width="64" height="8" rx="4" fill="#4A90B8" />
+                  </g>
+                  <!-- Decorative dashed ring -->
+                  <circle cx="100" cy="100" r="82" fill="none" stroke="#F7F3EC" stroke-width="2" stroke-dasharray="5,4" />
+                  <circle cx="100" cy="100" r="89" fill="none" stroke="#B03015" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="card-region">Southwest</span>
+                  <span class="card-state">Arizona</span>
+                </div>
+                <h3 class="card-title">Grand Canyon</h3>
+                <p class="card-description">
+                  A mile-deep chasm carved by the Colorado River, exposing two billion years of Earth&rsquo;s geological history.
+                </p>
+                <button class="card-btn" disabled>Explore Park</button>
+              </div>
+            </article>
+
+          </div><!-- /.cards-grid -->
+        </div><!-- /.section-inner -->
       </section>
 
     </main>
 
     <!-- =====================
          FOOTER
-         Credits, links, copyright
     ===================== -->
     <footer id="site-footer">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 Trailmark &mdash; Celebrating America&rsquo;s National Parks</p>
+      </div>
     </footer>
 
     <!-- Main script -->

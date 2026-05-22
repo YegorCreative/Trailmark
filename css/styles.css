@@ -1,6 +1,305 @@
 /*
   styles.css
   Main stylesheet for Trailmark.
-  Covers base resets, typography, layout, and component styles.
+  Covers design tokens, base resets, layout, and component styles.
   Responsive overrides live in styles-responsive.css.
 */
+
+/* =====================
+   DESIGN TOKENS
+===================== */
+:root {
+  /* Colors */
+  --color-cream:       #F7F3EC;
+  --color-cream-dark:  #EDE7D9;
+  --color-green-dark:  #2D5016;
+  --color-green-mid:   #4A7A28;
+  --color-orange:      #E8652A;
+  --color-sky:         #4A8DB8;
+  --color-text:        #1C1C1C;
+  --color-text-muted:  #6B6B6B;
+  --color-white:       #FFFFFF;
+  --color-border:      #D8D0C0;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  4rem;
+
+  /* Layout */
+  --max-width:   1100px;
+  --radius-card: 16px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.09);
+}
+
+/* =====================
+   BASE RESET
+===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+svg { display: block; }
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+/* =====================
+   HEADER
+===================== */
+#site-header {
+  background-color: var(--color-green-dark);
+  padding: 1rem 2rem;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-cream);
+  letter-spacing: 0.01em;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+#hero {
+  background-color: var(--color-green-dark);
+  padding: var(--space-xl) 2rem;
+  text-align: center;
+  border-bottom: 4px solid var(--color-orange);
+}
+
+.hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+  font-size: 1.0625rem;
+  color: rgba(247, 243, 236, 0.80);
+  line-height: 1.72;
+}
+
+/* =====================
+   PARK GRID SECTION
+===================== */
+#park-grid {
+  padding: var(--space-xl) 2rem;
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-green-dark);
+  text-align: center;
+  margin-bottom: 0.375rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  margin-bottom: var(--space-lg);
+}
+
+/* =====================
+   CARDS GRID
+===================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* =====================
+   PARK CARD
+===================== */
+.park-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.park-card:hover {
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.14);
+}
+
+/* Badge area (colored top of card) */
+.card-badge-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+.card-badge-area--green { background-color: #E3EDDA; }
+.card-badge-area--blue  { background-color: #D8EAF5; }
+.card-badge-area--red   { background-color: #F5E0DA; }
+
+.park-badge {
+  width: 140px;
+  height: 140px;
+}
+
+/* Card text body */
+.card-body {
+  padding: 1.25rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.625rem;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card-region,
+.card-state {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+}
+
+.card-region {
+  background-color: var(--color-green-dark);
+  color: var(--color-cream);
+}
+
+.card-state {
+  background-color: var(--color-cream-dark);
+  color: var(--color-text-muted);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  color: var(--color-green-dark);
+  line-height: 1.2;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* Explore button */
+.card-btn {
+  margin-top: 0.375rem;
+  padding: 0.65rem 1.25rem;
+  background-color: var(--color-green-dark);
+  color: var(--color-cream);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  width: 100%;
+}
+
+.card-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =====================
+   FOOTER
+===================== */
+#site-footer {
+  background-color: var(--color-green-dark);
+  padding: var(--space-md) 2rem;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: rgba(247, 243, 236, 0.60);
+}

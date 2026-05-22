@@ -1,6 +1,49 @@
 /*
   styles-responsive.css
   Responsive overrides for Trailmark.
-  Uses media queries to adjust layout for tablet and mobile screens.
+  Uses media queries to adjust layout for tablet and mobile.
   Loaded after styles.css so these rules take priority.
 */
+
+/* =====================
+   TABLET — up to 900px
+   2-column card grid
+===================== */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* =====================
+   MOBILE — up to 600px
+   Single-column layout
+===================== */
+@media (max-width: 600px) {
+  #site-header {
+    padding: 0.875rem 1.25rem;
+  }
+
+  #hero {
+    padding: 3rem 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  #park-grid {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .park-badge {
+    width: 120px;
+    height: 120px;
+  }
+}
