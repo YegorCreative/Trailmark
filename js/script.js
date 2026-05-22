@@ -47,11 +47,14 @@
 // =====================
 // CARD RENDERING
 // Builds park cards from the PARKS array in parks-data.js.
+// Supports live search by name, state, or region.
 // =====================
 (function renderCards() {
 
   const grid = document.querySelector('.cards-grid');
   if (!grid || typeof PARKS === 'undefined') return;
+
+  const searchInput = document.getElementById('park-search');
 
   function renderBadge(park) {
     return '<svg class="park-badge" viewBox="0 0 200 200"'
@@ -61,23 +64,45 @@
       + '</svg>';
   }
 
-  const html = PARKS.map(function (park) {
-    return '<article class="park-card">'
-      + '<div class="card-badge-area card-badge-area--' + park.badgeTheme + '">'
-      + renderBadge(park)
-      + '</div>'
-      + '<div class="card-body">'
-      + '<div class="card-meta">'
-      + '<span class="card-region">' + park.region + '</span>'
-      + '<span class="card-state">' + park.state + '</span>'
-      + '</div>'
-      + '<h3 class="card-title">' + park.name + '</h3>'
-      + '<p class="card-description">' + park.shortDescription + '</p>'
-      + '<button class="card-btn" disabled>Explore Park</button>'
-      + '</div>'
-      + '</article>';
-  }).join('');
+  function renderGrid(parks) {
+    if (!parks.length) {
+      grid.innerHTML = '<p class="search-empty">No parks match your search.</p>';
+      return;
+    }
+    grid.innerHTML = parks.map(function (park) {
+      return '<article class="park-card">'
+        + '<div class="card-badge-area card-badge-area--' + park.badgeTheme + '">'
+        + renderBadge(park)
+        + '</div>'
+        + '<div class="card-body">'
+        + '<div class="card-meta">'
+        + '<span class="card-region">' + park.region + '</span>'
+        + '<span class="card-state">' + park.state + '</span>'
+        + '</div>'
+        + '<h3 class="card-title">' + park.name + '</h3>'
+        + '<p class="card-description">' + park.shortDescription + '</p>'
+        + '<button class="card-btn" disabled>Explore Park</button>'
+        + '</div>'
+        + '</article>';
+    }).join('');
+  }
 
-  grid.innerHTML = html;
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      const query = this.value.trim().toLowerCase();
+      if (!query) {
+        renderGrid(PARKS);
+        return;
+      }
+      const filtered = PARKS.filter(function (park) {
+        return park.name.toLowerCase().includes(query)
+          || park.state.toLowerCase().includes(query)
+          || park.region.toLowerCase().includes(query);
+      });
+      renderGrid(filtered);
+    });
+  }
+
+  renderGrid(PARKS);
 
 }());
