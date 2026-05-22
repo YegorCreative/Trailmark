@@ -13,9 +13,7 @@
   --color-cream:       #F7F3EC;
   --color-cream-dark:  #EDE7D9;
   --color-green-dark:  #2D5016;
-  --color-green-mid:   #4A7A28;
   --color-orange:      #E8652A;
-  --color-sky:         #4A8DB8;
   --color-text:        #1C1C1C;
   --color-text-muted:  #6B6B6B;
   --color-white:       #FFFFFF;
@@ -56,13 +54,6 @@ body {
   background-color: var(--color-cream);
   color: var(--color-text);
   line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
 }
 
 svg { display: block; }

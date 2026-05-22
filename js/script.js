@@ -8,5 +8,4 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Phase 1: cards are hardcoded in index.html.
   // This file is a placeholder for Phase 2 functionality.
-  console.log('Trailmark — Phase 1 loaded.');
 });
