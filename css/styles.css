@@ -17,6 +17,7 @@
   --color-text:        #1C1C1C;
   --color-text-muted:  #6B6B6B;
   --color-white:       #FFFFFF;
+  --color-card:        #FDFAF5;
   --color-border:      #D8D0C0;
 
   /* Typography */
@@ -177,13 +178,14 @@ button {
    PARK CARD
 ===================== */
 .park-card {
-  background-color: var(--color-white);
+  background-color: var(--color-card);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
   border: 1px solid var(--color-border);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.2s ease;
 }
 
 .park-card:hover {
@@ -195,7 +197,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 1.75rem 1.5rem;
 }
 
 .card-badge-area--green { background-color: #E3EDDA; }
@@ -269,6 +271,11 @@ button {
   font-weight: 600;
   letter-spacing: 0.02em;
   width: 100%;
+  transition: background-color 0.18s ease;
+}
+
+.card-btn:hover:not(:disabled) {
+  background-color: var(--color-orange);
 }
 
 .card-btn:disabled {
@@ -288,9 +295,33 @@ button {
   max-width: var(--max-width);
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer-logo-mark {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-logo-text {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(247, 243, 236, 0.55);
+  letter-spacing: 0.01em;
 }
 
 .footer-copy {
   font-size: 0.85rem;
-  color: rgba(247, 243, 236, 0.60);
+  color: rgba(247, 243, 236, 0.50);
 }
