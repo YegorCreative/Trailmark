@@ -36,6 +36,7 @@
 
   #hero {
     padding: 3rem 1.25rem;
+    min-height: 420px;
   }
 
   #park-grid {

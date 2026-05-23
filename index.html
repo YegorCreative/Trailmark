@@ -54,28 +54,26 @@
         <!-- Stars: far background — barely shifts with scroll -->
         <div class="hero-stars" data-speed="0.05" aria-hidden="true"></div>
 
-        <!-- Layer 1: Far — sun glow (slowest) -->
+        <!-- Layer 1: Far — atmospheric morning warmth (slowest) -->
         <div class="hero-layer" data-speed="0.15" aria-hidden="true">
           <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <circle cx="600" cy="160" r="300" fill="rgba(245,195,60,0.05)" />
-            <circle cx="600" cy="160" r="190" fill="rgba(242,182,52,0.10)" />
-            <circle cx="600" cy="160" r="110" fill="rgba(248,200,65,0.16)" />
-            <circle cx="600" cy="160" r="55"  fill="rgba(252,215,78,0.22)" />
+            <circle cx="600" cy="140" r="260" fill="rgba(215,145,25,0.07)" />
+            <circle cx="600" cy="140" r="140" fill="rgba(232,170,40,0.12)" />
           </svg>
         </div>
 
-        <!-- Layer 2: Mid — mountain ranges (3 depths for atmospheric perspective) -->
+        <!-- Layer 2: Mid — mountain ranges (3 depths, smooth curves) -->
         <div class="hero-layer" data-speed="0.30" aria-hidden="true">
           <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <!-- Furthest range: atmospheric haze tint -->
-            <path d="M0,480 L0,295 L160,252 L340,262 L520,238 L700,254 L880,240 L1060,257 L1200,248 L1200,480 Z"
-                  fill="rgba(115,150,135,0.20)" />
-            <!-- Mid-far range -->
-            <path d="M0,480 L0,320 L80,210 L180,280 L300,170 L440,250 L560,140 L680,230 L800,160 L920,230 L1040,175 L1140,215 L1200,200 L1200,480 Z"
-                  fill="rgba(80,120,42,0.38)" />
-            <!-- Mid-near range -->
-            <path d="M0,480 L0,380 L110,295 L240,355 L380,265 L510,325 L640,240 L770,310 L900,255 L1020,305 L1120,270 L1200,290 L1200,480 Z"
-                  fill="rgba(52,90,24,0.52)" />
+            <!-- Furthest range: atmospheric haze, gentle rolling ridge -->
+            <path d="M0,480 L0,320 C150,308 300,300 450,294 C600,288 750,280 900,285 C1050,290 1150,287 1200,285 L1200,480 Z"
+                  fill="rgba(100,120,148,0.22)" />
+            <!-- Mid range: two broad dignified peaks -->
+            <path d="M0,480 L0,370 C70,355 150,325 240,290 C310,264 380,238 460,225 C530,215 590,222 650,215 C710,208 760,188 830,198 C900,208 970,238 1040,258 C1100,272 1160,268 1200,264 L1200,480 Z"
+                  fill="rgba(72,112,40,0.50)" />
+            <!-- Near range: foreground ridgeline -->
+            <path d="M0,480 L0,405 C70,390 150,365 240,335 C310,312 390,285 470,272 C545,261 610,265 680,255 C750,245 820,250 910,264 C990,276 1100,275 1200,272 L1200,480 Z"
+                  fill="rgba(42,82,18,0.72)" />
           </svg>
         </div>
 

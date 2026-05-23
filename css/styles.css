@@ -136,14 +136,22 @@ button {
 ===================== */
 #hero {
   background:
-    radial-gradient(ellipse 70% 55% at 52% 22%, rgba(180, 110, 20, 0.22) 0%, transparent 60%),
-    linear-gradient(to bottom, #0c1a05 0%, #162a08 35%, #2d5016 65%, #1d3a09 100%);
+    radial-gradient(ellipse 50% 38% at 50% 30%, rgba(210, 150, 40, 0.18) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #141208 0%,
+      #231a0a 18%,
+      #4d2e0a 33%,
+      #7a4510 43%,
+      #3a5418 58%,
+      #2d5016 75%,
+      #1a3508 100%
+    );
   padding: var(--space-xl) 2rem;
   text-align: center;
   border-bottom: 4px solid var(--color-orange);
   position: relative;
   overflow: hidden;
-  min-height: 380px;
+  min-height: 480px;
 }
 
 .hero-inner {
@@ -191,24 +199,24 @@ button {
   border-radius: 50%;
   background: transparent;
   box-shadow:
-     82px  28px 0 1px rgba(255, 255, 255, 0.55),
-    198px  44px 0 0px rgba(252, 215, 78,  0.42),
-    318px  18px 0 1px rgba(255, 255, 255, 0.45),
-    476px  38px 0 0px rgba(255, 255, 255, 0.50),
-    598px  12px 0 1px rgba(252, 215, 78,  0.55),
-    714px  32px 0 0px rgba(255, 255, 255, 0.40),
-    848px  22px 0 1px rgba(255, 255, 255, 0.60),
-    948px  52px 0 0px rgba(255, 255, 255, 0.35),
-   1062px  28px 0 1px rgba(252, 215, 78,  0.50),
-   1148px  16px 0 0px rgba(255, 255, 255, 0.45),
-    142px  72px 0 0px rgba(255, 255, 255, 0.30),
-    388px  78px 0 1px rgba(255, 255, 255, 0.38),
-    638px  66px 0 0px rgba(252, 215, 78,  0.40),
-    878px  70px 0 1px rgba(255, 255, 255, 0.32),
-   1098px  68px 0 0px rgba(255, 255, 255, 0.38),
-    258px  88px 0 1px rgba(255, 255, 255, 0.25),
-    748px  82px 0 0px rgba(252, 215, 78,  0.35),
-    998px  90px 0 1px rgba(255, 255, 255, 0.28);
+     82px  28px 0 1px rgba(255, 255, 255, 0.18),
+    198px  44px 0 0px rgba(252, 215, 78,  0.14),
+    318px  18px 0 1px rgba(255, 255, 255, 0.15),
+    476px  38px 0 0px rgba(255, 255, 255, 0.16),
+    598px  12px 0 1px rgba(252, 215, 78,  0.18),
+    714px  32px 0 0px rgba(255, 255, 255, 0.13),
+    848px  22px 0 1px rgba(255, 255, 255, 0.20),
+    948px  52px 0 0px rgba(255, 255, 255, 0.11),
+   1062px  28px 0 1px rgba(252, 215, 78,  0.16),
+   1148px  16px 0 0px rgba(255, 255, 255, 0.15),
+    142px  72px 0 0px rgba(255, 255, 255, 0.09),
+    388px  78px 0 1px rgba(255, 255, 255, 0.12),
+    638px  66px 0 0px rgba(252, 215, 78,  0.13),
+    878px  70px 0 1px rgba(255, 255, 255, 0.10),
+   1098px  68px 0 0px rgba(255, 255, 255, 0.12),
+    258px  88px 0 1px rgba(255, 255, 255, 0.08),
+    748px  82px 0 0px rgba(252, 215, 78,  0.11),
+    998px  90px 0 1px rgba(255, 255, 255, 0.09);
   animation: hero-twinkle 5s ease-in-out infinite;
 }
 
@@ -223,11 +231,11 @@ button {
   will-change: transform;
   background: linear-gradient(
     to bottom,
-    transparent 38%,
-    rgba(195, 225, 180, 0.08) 52%,
-    rgba(210, 235, 195, 0.14) 60%,
-    rgba(195, 225, 180, 0.07) 68%,
-    transparent 78%
+    transparent 34%,
+    rgba(255, 205, 120, 0.07) 47%,
+    rgba(255, 222, 150, 0.13) 56%,
+    rgba(255, 205, 120, 0.06) 65%,
+    transparent 76%
   );
   animation: hero-fog-drift 10s ease-in-out infinite;
 }
