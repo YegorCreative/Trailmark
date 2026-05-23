@@ -14,6 +14,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* =====================
@@ -48,5 +52,28 @@
   .hero-stars,
   .hero-fog {
     will-change: auto;
+  }
+
+  /* Park detail — stack intro on mobile */
+  .park-intro-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .park-badge--hero {
+    width: 160px;
+    height: 160px;
+  }
+
+  .park-meta-tags {
+    justify-content: center;
+  }
+
+  .park-intro-desc {
+    margin: 0 auto;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yosemite National Park &mdash; Trailmark</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Main styles -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Responsive overrides -->
+    <link rel="stylesheet" href="../css/styles-responsive.css" />
+  </head>
+  <body>
+
+    <!-- =====================
+         HEADER
+    ===================== -->
+    <header id="site-header">
+      <div class="header-inner">
+        <div class="logo">
+          <svg class="logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#F7F3EC" />
+            <polygon points="20,7 31,13.5 31,26.5 20,33 9,26.5 9,13.5" fill="none" stroke="#2D5016" stroke-width="1.5" />
+            <polygon points="20,16 27,28 13,28" fill="#2D5016" />
+          </svg>
+          <a href="../index.html" class="logo-text logo-link">Trailmark</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Back navigation -->
+    <nav class="park-back" aria-label="Breadcrumb">
+      <div class="park-back-inner">
+        <a href="../index.html" class="park-back-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          All Parks
+        </a>
+      </div>
+    </nav>
+
+    <main id="main-content">
+
+      <!-- =====================
+           HERO SECTION
+      ===================== -->
+      <section id="hero">
+
+        <!-- ===== PARALLAX LAYERS ===== -->
+        <!-- Stars: far background — barely shifts with scroll -->
+        <div class="hero-stars" data-speed="0.05" aria-hidden="true"></div>
+
+        <!-- Layer 1: Far — sun glow (slowest) -->
+        <div class="hero-layer" data-speed="0.15" aria-hidden="true">
+          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <circle cx="600" cy="160" r="300" fill="rgba(245,195,60,0.05)" />
+            <circle cx="600" cy="160" r="190" fill="rgba(242,182,52,0.10)" />
+            <circle cx="600" cy="160" r="110" fill="rgba(248,200,65,0.16)" />
+            <circle cx="600" cy="160" r="55"  fill="rgba(252,215,78,0.22)" />
+          </svg>
+        </div>
+
+        <!-- Layer 2: Mid — mountain ranges (3 depths for atmospheric perspective) -->
+        <div class="hero-layer" data-speed="0.30" aria-hidden="true">
+          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <!-- Furthest range: atmospheric haze tint -->
+            <path d="M0,480 L0,295 L160,252 L340,262 L520,238 L700,254 L880,240 L1060,257 L1200,248 L1200,480 Z"
+                  fill="rgba(115,150,135,0.20)" />
+            <!-- Mid-far range -->
+            <path d="M0,480 L0,320 L80,210 L180,280 L300,170 L440,250 L560,140 L680,230 L800,160 L920,230 L1040,175 L1140,215 L1200,200 L1200,480 Z"
+                  fill="rgba(80,120,42,0.38)" />
+            <!-- Mid-near range -->
+            <path d="M0,480 L0,380 L110,295 L240,355 L380,265 L510,325 L640,240 L770,310 L900,255 L1020,305 L1120,270 L1200,290 L1200,480 Z"
+                  fill="rgba(52,90,24,0.52)" />
+          </svg>
+        </div>
+
+        <!-- Fog/mist layer — sits between mountains and forest -->
+        <div class="hero-fog" data-speed="0.38" aria-hidden="true"></div>
+
+        <!-- Layer 3: Near — forest silhouette (fastest) -->
+        <div class="hero-layer" data-speed="0.50" aria-hidden="true">
+          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,480 L0,430 L35,350 L65,415 L100,325 L130,400 L165,310 L200,385 L240,295 L275,370 L315,280 L350,355 L390,265 L425,340 L465,255 L500,335 L540,260 L575,340 L615,260 L650,342 L690,268 L725,348 L765,270 L800,352 L840,275 L875,358 L910,278 L948,358 L985,284 L1020,364 L1060,284 L1095,365 L1132,288 L1168,362 L1200,320 L1200,480 Z"
+                  fill="rgba(18,50,6,0.85)" />
+          </svg>
+        </div>
+
+        <!-- Film grain texture overlay -->
+        <div class="hero-grain" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+          <p class="hero-eyebrow">California &middot; Sierra Nevada</p>
+          <h1 class="hero-title">Yosemite</h1>
+          <p class="hero-subtitle">
+            Towering granite cliffs, ancient sequoias, and cascading waterfalls in the heart of the Sierra Nevada.
+          </p>
+        </div>
+      </section>
+
+      <!-- =====================
+           PARK INTRO
+      ===================== -->
+      <section id="park-intro">
+        <div class="section-inner park-intro-inner">
+
+          <!-- Badge showcase -->
+          <div class="park-badge-display">
+            <svg class="park-badge park-badge--hero" viewBox="0 0 200 200"
+                 xmlns="http://www.w3.org/2000/svg" role="img"
+                 aria-label="Yosemite National Park badge">
+              <defs>
+                <clipPath id="clip-yosemite-detail">
+                  <circle cx="100" cy="100" r="82" />
+                </clipPath>
+              </defs>
+              <circle cx="100" cy="100" r="97" fill="#2D5016" />
+              <g clip-path="url(#clip-yosemite-detail)">
+                <rect x="0" y="0" width="200" height="200" fill="#7ABDE8" />
+                <rect x="0" y="128" width="200" height="72" fill="#3D6B1F" />
+                <polygon points="100,36 156,128 44,128" fill="#8FAF72" />
+                <polygon points="55,66 104,128 6,128" fill="#5C7A3E" />
+                <polygon points="145,70 194,128 96,128" fill="#6B8E4E" />
+                <polygon points="100,36 114,64 86,64" fill="#EDE9E0" />
+                <polygon points="36,128 43,108 50,128" fill="#2D5016" />
+                <rect x="39" y="128" width="7" height="9" fill="#2D5016" />
+                <polygon points="150,128 157,110 164,128" fill="#2D5016" />
+                <rect x="153" y="128" width="7" height="9" fill="#2D5016" />
+              </g>
+              <circle cx="100" cy="100" r="82" fill="none" stroke="#F7F3EC" stroke-width="2" stroke-dasharray="5,4" />
+              <circle cx="100" cy="100" r="89" fill="none" stroke="#4A7A28" stroke-width="1.5" />
+            </svg>
+          </div>
+
+          <!-- Park intro body -->
+          <div class="park-intro-body">
+            <div class="park-meta-tags">
+              <span class="card-region">West</span>
+              <span class="card-state">California</span>
+            </div>
+            <p class="park-tagline">National Park</p>
+            <p class="park-intro-desc">
+              Towering granite cliffs, ancient sequoias, and cascading waterfalls define one of America&rsquo;s most iconic wild places. Yosemite spans nearly 748,000 acres of the Sierra Nevada &mdash; from the famous valley floor to high alpine meadows above 13,000 feet.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================
+           PARK FACTS
+      ===================== -->
+      <section id="park-facts">
+        <div class="section-inner">
+          <h2 class="section-title">At a Glance</h2>
+          <div class="facts-grid">
+
+            <div class="fact-card">
+              <p class="fact-label">Established</p>
+              <p class="fact-value">1890</p>
+              <p class="fact-unit">Oct 1 &mdash; 136 years ago</p>
+            </div>
+
+            <div class="fact-card">
+              <p class="fact-label">Park Size</p>
+              <p class="fact-value">748K</p>
+              <p class="fact-unit">acres &mdash; ~1,170 sq miles</p>
+            </div>
+
+            <div class="fact-card">
+              <p class="fact-label">Highest Point</p>
+              <p class="fact-value">13,114</p>
+              <p class="fact-unit">ft &mdash; Mount Lyell</p>
+            </div>
+
+            <div class="fact-card">
+              <p class="fact-label">Trails</p>
+              <p class="fact-value">800+</p>
+              <p class="fact-unit">miles of maintained trail</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================
+           ABOUT THE PARK
+      ===================== -->
+      <section id="park-about">
+        <div class="section-inner">
+          <h2 class="section-title">About Yosemite</h2>
+          <div class="park-about-body">
+
+            <p>
+              Yosemite National Park sits in the western Sierra Nevada of California, carved over millions of years by glaciers that sculpted its sheer granite walls and broad valley floor. President Lincoln first set aside Yosemite Valley and the Mariposa Grove in 1864 &mdash; a remarkably farsighted act that predated the National Park Service by over half a century. Full national park protection followed in 1890, driven in large part by John Muir&rsquo;s passionate advocacy.
+            </p>
+
+            <p>
+              The park is defined by its concentration of granite landmarks. El Capitan rises more than 3,000 feet from the valley floor in a single sheer face, drawing climbers from every continent. Half Dome&rsquo;s distinctive silhouette has become one of the enduring icons of American wilderness. Yosemite Falls drops 2,425 feet &mdash; among the tallest waterfalls in North America &mdash; roaring each spring as snowmelt pours off the high country.
+            </p>
+
+            <p>
+              Beyond the famous valley, Yosemite holds ancient groves of giant sequoia, the vast open expanse of Tuolumne Meadows, and over 800 miles of trails reaching well above 13,000 feet. Black bears, mule deer, peregrine falcons, and more than 400 other species share the landscape with roughly 3.5 million visitors each year.
+            </p>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =====================
+         FOOTER
+    ===================== -->
+    <footer id="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <svg class="footer-logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#F7F3EC" opacity="0.5" />
+            <polygon points="20,7 31,13.5 31,26.5 20,33 9,26.5 9,13.5" fill="none" stroke="#F7F3EC" stroke-width="1.5" opacity="0.45" />
+            <polygon points="20,16 27,28 13,28" fill="#F7F3EC" opacity="0.45" />
+          </svg>
+          <span class="footer-logo-text">Trailmark</span>
+        </div>
+        <p class="footer-copy">&copy; 2026 &mdash; Celebrating America&rsquo;s National Parks</p>
+      </div>
+    </footer>
+
+    <!-- Main script (parallax only — no card rendering needed on park pages) -->
+    <script src="../js/script.js"></script>
+  </body>
+</html>

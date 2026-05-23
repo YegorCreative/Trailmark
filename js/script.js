@@ -81,7 +81,9 @@
         + '</div>'
         + '<h3 class="card-title">' + park.name + '</h3>'
         + '<p class="card-description">' + park.shortDescription + '</p>'
-        + '<button class="card-btn" disabled>Explore Park</button>'
+        + (park.pageUrl
+          ? '<a href="' + park.pageUrl + '" class="card-btn card-btn--link">Explore Park</a>'
+          : '<button class="card-btn" disabled>Explore Park</button>')
         + '</div>'
         + '</article>';
     }).join('');

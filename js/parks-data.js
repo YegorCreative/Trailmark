@@ -15,6 +15,7 @@ const PARKS = [
       'Towering granite cliffs, ancient sequoias, and cascading waterfalls in the heart of the Sierra Nevada.',
     badgeTheme: 'green',
     futureSlug: 'yosemite',
+    pageUrl: 'parks/yosemite.html',
     svgInner: `
       <defs>
         <clipPath id="clip-yosemite">
