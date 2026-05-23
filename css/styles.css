@@ -347,6 +347,56 @@ button {
 }
 
 /* =====================
+   PARK-SPECIFIC HERO
+   Yosemite
+===================== */
+#hero.hero--yosemite {
+  background:
+    /* Morning light rising east — warm glow behind Half Dome */
+    radial-gradient(ellipse 60% 50% at 72% 52%, rgba(218, 148, 48, 0.24) 0%, transparent 68%),
+    /* Atmospheric blue haze: pre-dawn Sierra Nevada sky */
+    radial-gradient(ellipse 90% 38% at 50% 4%, rgba(38, 62, 108, 0.32) 0%, transparent 72%),
+    linear-gradient(to bottom,
+      #0e1830 0%,
+      #192245 10%,
+      #1e2a3a 22%,
+      #2d2918 36%,
+      #5c4012 48%,
+      #3e5518 62%,
+      #2d5016 78%,
+      #1a3508 100%
+    );
+}
+
+.hero--yosemite .hero-fog {
+  background:
+    /* Bridalveil Fall mist zone — cool blue-white glow, right of center */
+    radial-gradient(ellipse 24% 32% at 76% 60%, rgba(192, 214, 234, 0.18) 0%, transparent 100%),
+    /* Valley floor mist band — cooler than the brand hero fog */
+    linear-gradient(
+      to bottom,
+      transparent 44%,
+      rgba(158, 186, 210, 0.06) 52%,
+      rgba(182, 208, 228, 0.14) 62%,
+      rgba(162, 190, 214, 0.08) 72%,
+      transparent 84%
+    );
+  animation: hero-valley-mist 18s ease-in-out infinite;
+}
+
+@keyframes hero-valley-mist {
+  0%, 100% { opacity: 1; }
+  42%       { opacity: 0.52; }
+  72%       { opacity: 0.82; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero--yosemite .hero-fog {
+    animation: none;
+  }
+}
+
+/* =====================
    VALUE PROP SECTION
 ===================== */
 #about-trailmark {

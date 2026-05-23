@@ -56,45 +56,67 @@
       <!-- =====================
            HERO SECTION
       ===================== -->
-      <section id="hero">
+      <section id="hero" class="hero--yosemite">
 
-        <!-- ===== PARALLAX LAYERS ===== -->
-        <!-- Stars: far background — barely shifts with scroll -->
+        <!-- ===== PARALLAX LAYERS — YOSEMITE ===== -->
+
+        <!-- Stars: pre-dawn Sierra sky — sparse faint stars visible at top -->
         <div class="hero-stars" data-speed="0.05" aria-hidden="true"></div>
 
-        <!-- Layer 1: Far — sun glow (slowest) -->
-        <div class="hero-layer" data-speed="0.15" aria-hidden="true">
+        <!-- Layer 1: Far — dawn glow + Half Dome silhouette (atmospheric, far distance) -->
+        <div class="hero-layer" data-speed="0.12" aria-hidden="true">
           <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <circle cx="600" cy="160" r="300" fill="rgba(245,195,60,0.05)" />
-            <circle cx="600" cy="160" r="190" fill="rgba(242,182,52,0.10)" />
-            <circle cx="600" cy="160" r="110" fill="rgba(248,200,65,0.16)" />
-            <circle cx="600" cy="160" r="55"  fill="rgba(252,215,78,0.22)" />
+            <!-- Warm morning light rising east of center, behind Half Dome -->
+            <ellipse cx="812" cy="210" rx="320" ry="200" fill="rgba(228,155,45,0.12)"/>
+            <ellipse cx="812" cy="210" rx="195" ry="122" fill="rgba(238,172,55,0.10)"/>
+            <ellipse cx="812" cy="210" rx="105" ry="66"  fill="rgba(248,190,65,0.09)"/>
+            <!-- Far atmospheric haze: faint distant ridgeline at horizon -->
+            <path d="M0,480 L0,305 Q120,258 245,268 Q380,278 510,250 Q640,225 730,235 Q810,242 895,225 Q980,208 1080,218 Q1145,225 1200,218 L1200,480 Z"
+                  fill="rgba(85,115,142,0.16)"/>
+            <!-- Half Dome: iconic granite dome, atmospheric blue-gray (far distance) -->
+            <!-- North face is nearly vertical on the left; dome curves to the right -->
+            <path d="M695,282 L701,130 Q718,72 760,58 Q810,46 848,70 Q882,95 892,152 Q900,205 888,258 Q876,282 852,292 Z"
+                  fill="rgba(145,158,178,0.62)"/>
+            <!-- Half Dome east face: warm first light catching the granite -->
+            <path d="M762,58 Q810,46 848,70 Q882,95 892,152 Q900,205 888,258 Q876,282 852,292 L762,285 Q762,215 762,150 Q762,100 762,58 Z"
+                  fill="rgba(200,162,105,0.38)"/>
           </svg>
         </div>
 
-        <!-- Layer 2: Mid — mountain ranges (3 depths for atmospheric perspective) -->
-        <div class="hero-layer" data-speed="0.30" aria-hidden="true">
+        <!-- Layer 2: Mid — El Capitan + valley walls (Yosemite Valley silhouette) -->
+        <div class="hero-layer" data-speed="0.25" aria-hidden="true">
           <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <!-- Furthest range: atmospheric haze tint -->
-            <path d="M0,480 L0,295 L160,252 L340,262 L520,238 L700,254 L880,240 L1060,257 L1200,248 L1200,480 Z"
-                  fill="rgba(115,150,135,0.20)" />
-            <!-- Mid-far range -->
-            <path d="M0,480 L0,320 L80,210 L180,280 L300,170 L440,250 L560,140 L680,230 L800,160 L920,230 L1040,175 L1140,215 L1200,200 L1200,480 Z"
-                  fill="rgba(80,120,42,0.38)" />
-            <!-- Mid-near range -->
-            <path d="M0,480 L0,380 L110,295 L240,355 L380,265 L510,325 L640,240 L770,310 L900,255 L1020,305 L1120,270 L1200,290 L1200,480 Z"
-                  fill="rgba(52,90,24,0.52)" />
+            <!-- Far-mid ridgeline: granite mass connecting valley walls -->
+            <path d="M220,480 L228,215 Q310,158 408,168 Q492,177 568,148 Q638,123 680,138 Q720,152 756,145 Q800,140 848,158 Q895,180 920,222 L920,480 Z"
+                  fill="rgba(88,108,132,0.32)"/>
+            <!-- El Capitan: massive dark granite cliff — left valley wall -->
+            <!-- Dawn Wall face is nearly vertical; summit plateau extends right -->
+            <path d="M0,480 L0,350 Q42,288 78,242 L88,64 Q108,44 150,41 Q212,38 258,52 Q296,66 308,128 Q320,198 310,278 Q300,342 285,392 L0,480 Z"
+                  fill="rgba(50,62,74,0.80)"/>
+            <!-- El Capitan right face: subtle early light grazing the granite edge -->
+            <path d="M86,64 Q96,50 112,45 L112,240 Q110,305 104,380 L88,382 Q86,295 86,210 Z"
+                  fill="rgba(108,125,145,0.26)"/>
+            <!-- Right valley wall: Cathedral Rocks and upper valley rim -->
+            <path d="M1200,480 L1200,338 Q1162,272 1118,228 Q1075,185 1040,168 Q1006,153 980,172 Q954,190 944,232 Q936,280 948,362 L1200,480 Z"
+                  fill="rgba(92,110,128,0.65)"/>
+            <!-- Clouds Rest: high ridge connecting toward right valley -->
+            <path d="M870,295 Q906,270 938,252 Q975,235 1015,242 Q1060,252 1085,268 Q1108,285 1108,325 L870,325 Z"
+                  fill="rgba(78,98,118,0.38)"/>
           </svg>
         </div>
 
-        <!-- Fog/mist layer — sits between mountains and forest -->
+        <!-- Valley mist layer — Yosemite morning mist, Bridalveil Fall area -->
         <div class="hero-fog" data-speed="0.38" aria-hidden="true"></div>
 
-        <!-- Layer 3: Near — forest silhouette (fastest) -->
+        <!-- Layer 3: Near — Sierra Nevada pine forest + Merced River -->
         <div class="hero-layer" data-speed="0.50" aria-hidden="true">
           <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,480 L0,430 L35,350 L65,415 L100,325 L130,400 L165,310 L200,385 L240,295 L275,370 L315,280 L350,355 L390,265 L425,340 L465,255 L500,335 L540,260 L575,340 L615,260 L650,342 L690,268 L725,348 L765,270 L800,352 L840,275 L875,358 L910,278 L948,358 L985,284 L1020,364 L1060,284 L1095,365 L1132,288 L1168,362 L1200,320 L1200,480 Z"
-                  fill="rgba(18,50,6,0.85)" />
+            <!-- Merced River: subtle lighter band winding through the valley floor -->
+            <path d="M0,452 Q180,438 360,442 Q520,447 680,435 Q840,423 1020,438 Q1120,445 1200,440 L1200,462 Q1120,457 1020,450 Q840,436 680,448 Q520,460 360,456 Q180,450 0,464 Z"
+                  fill="rgba(55,85,118,0.30)"/>
+            <!-- Pine forest: tall Sierra Nevada pines with distinct individual silhouettes -->
+            <path d="M0,480 L0,448 L22,366 L42,430 L68,342 L90,408 L118,322 L142,392 L170,308 L196,378 L226,292 L252,365 L282,282 L308,355 L338,276 L364,348 L392,272 L418,348 L448,268 L474,348 L502,272 L528,350 L558,278 L584,356 L614,282 L640,358 L670,286 L696,362 L726,288 L752,365 L782,286 L808,362 L836,282 L862,358 L890,278 L916,356 L946,278 L972,356 L1002,276 L1028,352 L1058,272 L1084,348 L1112,270 L1140,348 L1168,268 L1196,346 L1200,382 L1200,480 Z"
+                  fill="rgba(15,42,6,0.88)"/>
           </svg>
         </div>
 
