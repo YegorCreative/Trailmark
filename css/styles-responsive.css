@@ -18,6 +18,14 @@
   .facts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .value-prop-pillars {
+    gap: 1.5rem;
+  }
+
+  .stats-list {
+    gap: 3rem;
+  }
 }
 
 /* =====================
@@ -81,5 +89,34 @@
 
   .facts-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .value-prop-pillars {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .stats-list {
+    gap: 2rem;
+  }
+
+  #about-trailmark {
+    padding: 2.5rem 1.25rem;
+  }
+
+  #closing-cta {
+    padding: 3rem 1.25rem;
   }
 }

@@ -83,7 +83,7 @@
         + '<p class="card-description">' + park.shortDescription + '</p>'
         + (park.pageUrl
           ? '<a href="' + park.pageUrl + '" class="card-btn card-btn--link">Explore Park</a>'
-          : '<button class="card-btn" disabled>Explore Park</button>')
+          : '<span class="card-coming-soon">Coming Soon</span>')
         + '</div>'
         + '</article>';
     }).join('');
