@@ -305,19 +305,6 @@ button {
   line-height: 1.72;
 }
 
-/* Hero brand badge stamp */
-.hero-badge-stamp {
-  display: block;
-  width: 88px;
-  height: 88px;
-  margin: var(--space-md) auto 0;
-  opacity: 0.85;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.52));
-  transform: rotate(-4deg);
-  pointer-events: none;
-  user-select: none;
-}
-
 /* =====================
    PARK GRID SECTION
 ===================== */
