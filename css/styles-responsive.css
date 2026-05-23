@@ -29,6 +29,11 @@
     padding: 0.875rem 1.25rem;
   }
 
+  /* Hide header nav on mobile — hamburger menu planned for a future phase */
+  #site-nav {
+    display: none;
+  }
+
   #hero {
     padding: 3rem 1.25rem;
   }
