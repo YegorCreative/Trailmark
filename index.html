@@ -44,69 +44,32 @@
       <!-- =====================
            HERO SECTION
       ===================== -->
-      <section id="hero">
+      <section id="hero" class="hero--homepage">
 
-        <!-- ===== PARALLAX LAYERS ===== -->
-        <!-- Stars: far background — barely shifts with scroll -->
-        <div class="hero-stars" data-speed="0.05" aria-hidden="true"></div>
-
-        <!-- Layer 1: Far — atmospheric dawn glow, elliptical off-center (slowest) -->
-        <div class="hero-layer" data-speed="0.15" aria-hidden="true">
-          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <!-- Soft elliptical sunrise glow — cinematic, off-center -->
-            <ellipse cx="680" cy="190" rx="360" ry="110" fill="rgba(192,112,28,0.10)" />
-            <ellipse cx="660" cy="198" rx="210" ry="68" fill="rgba(218,138,38,0.09)" />
-            <!-- Atmospheric haze bands — horizontal warmth at horizon -->
-            <rect x="0" y="160" width="1200" height="55" fill="rgba(175,128,42,0.04)" />
-            <rect x="0" y="185" width="1200" height="38" fill="rgba(198,142,52,0.05)" />
-          </svg>
+        <div class="hero-scene hero-scene--base" aria-hidden="true">
+          <img src="assets/svg/parks.svg" alt="" class="hero-scene-art hero-scene-art--base" />
         </div>
 
-        <!-- Layer 2: Mountains — 4-step atmospheric recession -->
-        <div class="hero-layer" data-speed="0.30" aria-hidden="true">
-          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <!-- Range 1: Atmospheric haze — furthest ridge, dusty blue-gray -->
-            <path d="M0,480 L0,312 C120,305 265,298 420,293 C575,288 720,282 870,285 C995,288 1110,285 1200,283 L1200,480 Z"
-                  fill="rgba(88,105,125,0.22)" />
-            <!-- Range 2: Far mountains — atmospheric green-gray, gentle ridge flow -->
-            <path d="M0,480 L0,340 C65,332 145,318 245,300 C340,283 428,260 528,248 C615,237 682,242 748,233 C818,224 892,208 972,217 C1048,226 1128,222 1200,220 L1200,480 Z"
-                  fill="rgba(68,98,45,0.42)" />
-            <!-- Range 3: Mid mountain mass — broad natural ridgeline, primary peaks -->
-            <path d="M0,480 L0,365 C52,355 115,335 198,308 C272,284 352,256 435,240 C508,226 572,232 635,222 C700,212 760,194 840,204 C912,213 980,242 1048,260 C1108,275 1162,272 1200,269 L1200,480 Z"
-                  fill="rgba(44,76,18,0.66)" />
-            <!-- Range 4: Near terrain break — asymmetric foreground ridge -->
-            <path d="M0,480 L0,405 C42,396 95,380 158,360 C220,341 294,318 372,302 C445,287 512,280 582,272 C652,264 722,268 798,260 C868,252 946,255 1025,267 C1092,277 1155,275 1200,273 L1200,480 Z"
-                  fill="rgba(30,54,12,0.80)" />
-          </svg>
+        <div class="hero-atmosphere" data-speed="0.04" aria-hidden="true"></div>
+
+        <div class="hero-scene hero-scene--foreground" data-speed="0.10" aria-hidden="true">
+          <img src="assets/svg/parks.svg" alt="" class="hero-scene-art hero-scene-art--foreground" />
         </div>
 
-        <!-- Fog/mist layer — sits between mountains and forest -->
-        <div class="hero-fog" data-speed="0.38" aria-hidden="true"></div>
-
-        <!-- Layer 3: Near — pine forest, two-depth silhouette (fastest) -->
-        <div class="hero-layer" data-speed="0.50" aria-hidden="true">
-          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <!-- Mid-ground forest — smooth distant ridge, receding into atmosphere -->
-            <path d="M0,480 L0,445 C100,432 220,418 360,405 C490,393 610,386 730,380 C850,374 960,378 1080,382 C1140,384 1175,382 1200,381 L1200,480 Z"
-                  fill="rgba(22,45,8,0.48)" />
-            <!-- Foreground pines — asymmetric clustered silhouette, grouped with leader trees -->
-            <path d="M0,480 L0,430 L15,385 L35,428 L52,355 L72,418 L90,318 L110,405 L128,360 L148,420 L162,382 L165,435 L180,368 L195,425 L212,332 L228,408 L245,292 L262,395 L278,340 L295,415 L310,368 L318,438 L328,345 L344,415 L360,310 L376,402 L393,268 L410,388 L425,298 L441,398 L456,325 L465,435 L472,355 L488,420 L505,308 L522,402 L539,255 L556,385 L572,285 L588,393 L602,315 L612,438 L620,358 L636,420 L652,320 L668,408 L684,278 L700,393 L716,312 L732,405 L748,345 L758,435 L766,368 L782,422 L798,335 L815,410 L832,290 L850,397 L866,322 L882,408 L898,355 L908,435 L916,370 L932,422 L948,332 L964,410 L980,288 L996,395 L1012,325 L1028,408 L1045,355 L1062,420 L1078,380 L1095,428 L1112,398 L1130,432 L1148,412 L1168,385 L1188,408 L1200,378 L1200,480 Z"
-                  fill="rgba(15,38,5,0.90)" />
-          </svg>
-        </div>
-
-        <!-- Film grain texture overlay -->
+        <div class="hero-vignette" aria-hidden="true"></div>
         <div class="hero-grain" aria-hidden="true"></div>
 
-        <div class="hero-inner">
-          <p class="hero-eyebrow">America&rsquo;s Wild Places</p>
-          <h1 class="hero-title">Explore America&rsquo;s<br />National Parks</h1>
-          <p class="hero-subtitle">
-            Every park tells a story. Discover the wild places that make America remarkable &mdash; one badge at a time.
-          </p>
-          <div class="hero-actions">
-            <a href="#park-grid" class="hero-btn hero-btn--primary">Explore Parks</a>
-            <a href="parks/yosemite.html" class="hero-btn hero-btn--secondary">View Yosemite</a>
+        <div class="hero-shell">
+          <div class="hero-inner">
+            <p class="hero-eyebrow">Illustrated National Parks Atlas</p>
+            <h1 class="hero-title">America&rsquo;s wild places,<br />collected with care.</h1>
+            <p class="hero-subtitle">
+              Trailmark turns the National Parks into a premium illustrated universe &mdash; part field guide, part collectible archive, part invitation to go further.
+            </p>
+            <div class="hero-actions">
+              <a href="#park-grid" class="hero-btn hero-btn--primary">Explore Parks</a>
+              <a href="parks/yosemite.html" class="hero-btn hero-btn--secondary">View Yosemite</a>
+            </div>
           </div>
         </div>
       </section>
