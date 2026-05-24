@@ -31,6 +31,19 @@
     max-width: 27rem;
   }
 
+  .badge-system-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .badge-system-copy {
+    max-width: 100%;
+  }
+
+  .collector-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -107,6 +120,36 @@
 
   .hero-scene-art--base {
     object-position: 66% 50%;
+  }
+
+  #badge-system {
+    padding: 3rem 1.25rem;
+  }
+
+  .badge-system-title {
+    font-size: clamp(1.75rem, 8vw, 2.3rem);
+  }
+
+  .collector-board {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .badge-entry--featured {
+    grid-column: auto;
+  }
+
+  .badge-entry-top {
+    grid-template-columns: 1fr;
+  }
+
+  .badge-entry-badge {
+    justify-self: start;
+  }
+
+  .badge-system-mark {
+    width: 116px;
+    height: 116px;
   }
 
   #park-grid {
