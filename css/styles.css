@@ -221,6 +221,7 @@ button {
 .hero-scene--foreground {
   z-index: 2;
   clip-path: inset(58% 0 0 0);
+  opacity: 0.78;
 }
 
 .hero-scene-art {
@@ -238,7 +239,7 @@ button {
   object-fit: cover;
   object-position: center 52%;
   transform: scale(1.02);
-  filter: saturate(0.94) brightness(0.92) contrast(1.02);
+  filter: saturate(0.96) brightness(0.98) contrast(1.01);
 }
 
 .hero-atmosphere {
@@ -252,8 +253,8 @@ button {
 .hero-vignette {
   z-index: 2;
   background:
-    linear-gradient(90deg, rgba(12, 19, 15, 0.34) 0%, rgba(12, 19, 15, 0.20) 18%, rgba(12, 19, 15, 0) 38%),
-    linear-gradient(180deg, rgba(247, 243, 236, 0.06) 0%, rgba(247, 243, 236, 0) 20%, rgba(11, 18, 13, 0.16) 100%);
+    linear-gradient(90deg, rgba(12, 19, 15, 0.26) 0%, rgba(12, 19, 15, 0.14) 18%, rgba(12, 19, 15, 0) 38%),
+    linear-gradient(180deg, rgba(247, 243, 236, 0.05) 0%, rgba(247, 243, 236, 0) 20%, rgba(11, 18, 13, 0.10) 100%);
 }
 
 .yosemite-poster {
