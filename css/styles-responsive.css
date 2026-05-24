@@ -11,16 +11,24 @@
 ===================== */
 @media (max-width: 900px) {
   #hero.hero--homepage {
-    min-height: 620px;
-    padding: 4.5rem 1.75rem 3.5rem;
+    min-height: 660px;
+    padding: 4.75rem 1.75rem 3.5rem;
   }
 
   .hero-shell {
-    min-height: 500px;
+    min-height: 540px;
   }
 
   .hero-scene-art--base {
-    object-position: center 50%;
+    object-position: 58% 50%;
+  }
+
+  .hero--homepage .hero-inner {
+    max-width: 29rem;
+  }
+
+  .hero--homepage .hero-subtitle {
+    max-width: 27rem;
   }
 
   .cards-grid {
@@ -61,8 +69,8 @@
   }
 
   #hero.hero--homepage {
-    padding: 4rem 1.25rem 3rem;
-    min-height: 560px;
+    padding: 4.5rem 1.25rem 3rem;
+    min-height: 700px;
   }
 
   #hero.hero--yosemite {
@@ -71,20 +79,34 @@
   }
 
   .hero-shell {
-    min-height: 460px;
+    min-height: 580px;
     align-items: flex-end;
   }
 
   .hero--homepage .hero-inner {
-    max-width: 100%;
+    max-width: 19rem;
+    padding: 0 0 0.25rem;
   }
 
   .hero--homepage .hero-title {
-    font-size: clamp(2.4rem, 10vw, 3.5rem);
+    font-size: clamp(2.4rem, 10vw, 3.4rem);
+    line-height: 0.96;
+    margin-bottom: 1rem;
+  }
+
+  .hero--homepage .hero-eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  .hero--homepage .hero-subtitle {
+    max-width: 18rem;
+    font-size: 1rem;
+    line-height: 1.58;
+    margin-bottom: 0.75rem;
   }
 
   .hero-scene-art--base {
-    object-position: center 50%;
+    object-position: 66% 50%;
   }
 
   #park-grid {
@@ -138,7 +160,7 @@
 
   .hero-btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 240px;
     text-align: center;
   }
 

@@ -173,8 +173,8 @@ button {
       #90a29a 66%,
       #5f7057 100%
     );
-  padding: clamp(5rem, 10vw, 7rem) 2rem clamp(4rem, 7vw, 5rem);
-  min-height: 680px;
+  padding: clamp(5.5rem, 9vw, 7.25rem) 2rem clamp(4.25rem, 7vw, 5.25rem);
+  min-height: 700px;
   border-bottom: 4px solid var(--color-orange);
 }
 
@@ -185,7 +185,7 @@ button {
   z-index: 3;
   display: flex;
   align-items: center;
-  min-height: 560px;
+  min-height: 590px;
 }
 
 .hero-inner {
@@ -197,9 +197,9 @@ button {
 
 .hero--homepage .hero-inner {
   margin: 0;
-  max-width: 560px;
+  max-width: 530px;
   text-align: left;
-  padding: clamp(1.25rem, 2vw, 1.75rem) 0;
+  padding: clamp(1.5rem, 2vw, 2rem) 0;
 }
 
 .hero-scene,
@@ -226,7 +226,7 @@ button {
 
 .hero-scene-art--base {
   object-fit: cover;
-  object-position: center 52%;
+  object-position: 62% 48%;
 }
 
 .hero-atmosphere {
@@ -417,10 +417,10 @@ button {
 }
 
 .hero--homepage .hero-subtitle {
-  max-width: 34rem;
+  max-width: 31rem;
   font-size: 1.0625rem;
   color: rgba(247, 243, 236, 0.88);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   text-shadow: 0 3px 16px rgba(12, 18, 14, 0.28);
 }
 
@@ -435,7 +435,7 @@ button {
 
 .hero--homepage .hero-actions {
   justify-content: flex-start;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
 }
 
 .hero-btn {
