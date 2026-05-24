@@ -19,8 +19,7 @@
     min-height: 500px;
   }
 
-  .hero-scene-art--base,
-  .hero-scene-art--foreground {
+  .hero-scene-art--base {
     object-position: center 50%;
   }
 
@@ -84,13 +83,8 @@
     font-size: clamp(2.4rem, 10vw, 3.5rem);
   }
 
-  .hero-scene-art--base,
-  .hero-scene-art--foreground {
+  .hero-scene-art--base {
     object-position: center 50%;
-  }
-
-  .hero-scene--foreground {
-    clip-path: inset(64% 0 0 0);
   }
 
   #park-grid {
