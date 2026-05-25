@@ -1250,7 +1250,7 @@ button {
 ===================== */
 #closing-cta {
   position: relative;
-  padding: 1.25rem 2rem 0;
+  padding: 1.25rem 2rem 1.25rem;
   background:
     linear-gradient(180deg, rgba(232, 222, 202, 0) 0%, rgba(232, 222, 202, 0.82) 18%, #e8deca 100%);
 }
