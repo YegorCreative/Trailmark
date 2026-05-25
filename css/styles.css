@@ -1532,7 +1532,6 @@ a.logo-text {
 
 /* Explore button — live link variant */
 .card-btn--link {
-  display: block;
   text-align: center;
   text-decoration: none;
 }
