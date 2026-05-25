@@ -87,6 +87,8 @@
   }
 
   function renderFeaturedCard(park) {
+    const isAvailable = Boolean(park.pageUrl);
+
     return '<article class="park-card park-card--featured">'
       + '<div class="card-badge-area card-badge-area--' + park.badgeTheme + '">'
       + '<div class="card-badge-frame">'
@@ -94,11 +96,15 @@
       + '</div>'
       + '</div>'
       + '<div class="card-body">'
-      + '<p class="card-kicker">First unlocked destination</p>'
+      + '<p class="card-kicker">' + (isAvailable ? 'First unlocked destination' : 'Destination in progress') + '</p>'
       + renderMeta(park)
       + '<h3 class="card-title">' + park.name + '</h3>'
       + '<p class="card-description">' + park.shortDescription + '</p>'
-      + '<p class="card-note">The first finished park in the archive, presented as a full destination feature instead of a simple card.</p>'
+      + '<p class="card-note">'
+      + (isAvailable
+        ? 'The first finished park in the archive, presented as a full destination feature instead of a simple card.'
+        : 'Illustration and destination page are still being prepared for the archive.')
+      + '</p>'
       + renderCardAction(park)
       + '</div>'
       + '</article>';
