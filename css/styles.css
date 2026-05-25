@@ -1233,66 +1233,99 @@ button {
    CLOSING CTA
 ===================== */
 #closing-cta {
-  background-color: var(--color-green-dark);
-  padding: var(--space-xl) 2rem;
-  text-align: center;
-  border-top: 4px solid var(--color-orange);
+  position: relative;
+  padding: 1.75rem 2rem 0;
+  background:
+    linear-gradient(180deg, rgba(232, 222, 202, 0) 0%, rgba(232, 222, 202, 0.82) 18%, #e8deca 100%);
 }
 
 .closing-cta-inner {
-  max-width: 560px;
+  max-width: 740px;
   margin: 0 auto;
+  padding: 2.2rem 2.4rem 2rem;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(247, 243, 236, 0.98) 0%, rgba(239, 231, 215, 0.98) 100%);
+  border: 1px solid rgba(92, 83, 66, 0.14);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(44, 34, 19, 0.08);
+}
+
+.closing-cta-kicker {
+  margin: 0 0 0.85rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(92, 83, 66, 0.72);
 }
 
 .closing-cta-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  color: var(--color-cream);
-  margin-bottom: var(--space-sm);
-  line-height: 1.15;
+  font-size: clamp(1.9rem, 3.5vw, 2.85rem);
+  color: var(--color-text);
+  margin-bottom: 0.8rem;
+  line-height: 1.08;
 }
 
 .closing-cta-body {
   font-size: 1.0625rem;
-  color: rgba(247, 243, 236, 0.72);
+  color: var(--color-text-muted);
   line-height: 1.72;
-  margin-bottom: var(--space-lg);
+  margin: 0 auto 1.5rem;
+  max-width: 34rem;
 }
 
 .closing-cta-btn {
-  display: inline-block;
-  padding: 0.875rem 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
   background-color: var(--color-orange);
   color: var(--color-white);
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 999px;
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  transition: background-color 0.18s ease;
+  transition: background-color 0.18s ease, transform 0.18s ease;
 }
 
 .closing-cta-btn:hover {
   background-color: #d45a22;
+  transform: translateY(-1px);
+}
+
+.closing-cta-note {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: rgba(92, 83, 66, 0.78);
 }
 
 /* =====================
    FOOTER
 ===================== */
 #site-footer {
-  background-color: var(--color-green-dark);
-  padding: var(--space-md) 2rem;
+  position: relative;
+  margin-top: -1px;
+  padding: 2rem 2rem 2.25rem;
+  background:
+    linear-gradient(180deg, #314d1d 0%, #1f3412 100%);
+  border-top: 1px solid rgba(247, 243, 236, 0.12);
 }
 
 .footer-inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding-top: 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.375rem;
+  gap: 0.5rem;
 }
 
 .footer-brand {
