@@ -65,11 +65,29 @@
   let currentQuery = '';
   let showingAllMatches = false;
 
+  function getSearchRank(park, query) {
+    const name = park.name.toLowerCase();
+    const state = park.state.toLowerCase();
+    const region = park.region.toLowerCase();
+
+    if (name === query) return 0;
+    if (name.startsWith(query)) return 1;
+    if (name.includes(query)) return 2;
+    if (state.includes(query)) return 3;
+    if (region.includes(query)) return 4;
+    return 5;
+  }
+
   function filterParks(query) {
     return PARKS.filter(function (park) {
       return park.name.toLowerCase().includes(query)
         || park.state.toLowerCase().includes(query)
         || park.region.toLowerCase().includes(query);
+    }).sort(function (parkA, parkB) {
+      const rankDifference = getSearchRank(parkA, query) - getSearchRank(parkB, query);
+      if (rankDifference !== 0) return rankDifference;
+
+      return parkA.name.localeCompare(parkB.name);
     });
   }
 
