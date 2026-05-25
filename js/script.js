@@ -56,11 +56,22 @@
 
   const searchInput = document.getElementById('park-search');
   const curatedIds = ['yosemite', 'yellowstone', 'grand-canyon'];
+  const maxSearchResults = 9;
   const curatedParks = curatedIds.map(function (id) {
     return PARKS.find(function (park) {
       return park.id === id;
     });
   }).filter(Boolean);
+  let currentQuery = '';
+  let showingAllMatches = false;
+
+  function filterParks(query) {
+    return PARKS.filter(function (park) {
+      return park.name.toLowerCase().includes(query)
+        || park.state.toLowerCase().includes(query)
+        || park.region.toLowerCase().includes(query);
+    });
+  }
 
   function escapeHtml(value) {
     return String(value)
@@ -136,17 +147,22 @@
       + '</article>';
   }
 
-  function renderGrid(parks) {
+  function renderGrid(parks, options) {
+    const renderOptions = options || {};
+
     if (!parks.length) {
       grid.innerHTML = '<p class="search-empty">No parks match your search.</p>';
       return;
     }
 
-    const featuredPark = parks.find(function (park) {
-      return park.id === 'yosemite';
-    }) || parks[0];
+    const shouldLimitResults = renderOptions.isSearchResult && !renderOptions.showAll && parks.length > maxSearchResults;
+    const visibleParks = shouldLimitResults ? parks.slice(0, maxSearchResults) : parks;
 
-    const secondaryParks = parks.filter(function (park) {
+    const featuredPark = visibleParks.find(function (park) {
+      return park.id === 'yosemite';
+    }) || visibleParks[0];
+
+    const secondaryParks = visibleParks.filter(function (park) {
       return park.id !== featuredPark.id;
     });
 
@@ -155,26 +171,50 @@
       ? '<div class="cards-secondary">' + secondaryParks.map(renderSecondaryCard).join('') + '</div>'
       : '';
 
-    const filteredCount = parks.length !== PARKS.length
-      ? '<p class="cards-filter-note">' + escapeHtml(String(parks.length)) + ' destination' + (parks.length === 1 ? '' : 's') + ' matched your search.</p>'
-      : '';
+    let resultsMeta = '';
+    if (renderOptions.isSearchResult) {
+      if (shouldLimitResults) {
+        resultsMeta = '<div class="cards-results-bar">'
+          + '<p class="cards-filter-note">Showing ' + maxSearchResults + ' of ' + escapeHtml(String(parks.length)) + ' matching parks.</p>'
+          + '<button type="button" class="cards-show-all">Show all matches</button>'
+          + '</div>';
+      } else {
+        resultsMeta = '<p class="cards-filter-note">'
+          + (renderOptions.showAll && parks.length > maxSearchResults
+            ? 'Showing all ' + escapeHtml(String(parks.length)) + ' matching parks.'
+            : escapeHtml(String(parks.length)) + ' destination' + (parks.length === 1 ? '' : 's') + ' matched your search.')
+          + '</p>';
+      }
+    }
 
-    grid.innerHTML = featuredMarkup + secondaryMarkup + filteredCount;
+    grid.innerHTML = featuredMarkup + secondaryMarkup + resultsMeta;
   }
+
+  grid.addEventListener('click', function (event) {
+    const showAllButton = event.target.closest('.cards-show-all');
+    if (!showAllButton || !currentQuery) return;
+
+    showingAllMatches = true;
+    renderGrid(filterParks(currentQuery), {
+      isSearchResult: true,
+      showAll: true,
+    });
+  });
 
   if (searchInput) {
     searchInput.addEventListener('input', function () {
       const query = this.value.trim().toLowerCase();
+      currentQuery = query;
+      showingAllMatches = false;
+
       if (!query) {
         renderGrid(curatedParks);
         return;
       }
-      const filtered = PARKS.filter(function (park) {
-        return park.name.toLowerCase().includes(query)
-          || park.state.toLowerCase().includes(query)
-          || park.region.toLowerCase().includes(query);
+      renderGrid(filterParks(query), {
+        isSearchResult: true,
+        showAll: showingAllMatches,
       });
-      renderGrid(filtered);
     });
   }
 
