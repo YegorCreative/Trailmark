@@ -943,6 +943,35 @@ button {
   color: var(--color-text-muted);
 }
 
+.cards-results-bar {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.cards-results-bar .cards-filter-note {
+  text-align: right;
+}
+
+.cards-show-all {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-green-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.cards-show-all:hover {
+  color: var(--color-orange);
+}
+
 /* =====================
    CARDS GRID
 ===================== */
