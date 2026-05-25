@@ -17,39 +17,29 @@ const PARKS = [
     futureSlug: 'yosemite',
     pageUrl: 'parks/yosemite.html',
     svgInner: `
-      <defs>
-        <clipPath id="clip-yosemite">
-          <circle cx="100" cy="100" r="82" />
-        </clipPath>
-      </defs>
-      <circle cx="100" cy="100" r="97" fill="#2D5016" />
-      <g clip-path="url(#clip-yosemite)">
-        <rect x="0" y="0" width="200" height="200" fill="#7ABDE8" />
-        <rect x="0" y="128" width="200" height="72" fill="#3D6B1F" />
-        <polygon points="100,36 156,128 44,128" fill="#8FAF72" />
-        <polygon points="55,66 104,128 6,128" fill="#5C7A3E" />
-        <polygon points="145,70 194,128 96,128" fill="#6B8E4E" />
-        <polygon points="100,36 114,64 86,64" fill="#EDE9E0" />
-        <polygon points="36,128 43,108 50,128" fill="#2D5016" />
-        <rect x="39" y="128" width="7" height="9" fill="#2D5016" />
-        <polygon points="150,128 157,110 164,128" fill="#2D5016" />
-        <rect x="153" y="128" width="7" height="9" fill="#2D5016" />
-      </g>
-      <circle cx="100" cy="100" r="82" fill="none" stroke="#F7F3EC" stroke-width="2" stroke-dasharray="5,4" />
-      <circle cx="100" cy="100" r="89" fill="none" stroke="#4A7A28" stroke-width="1.5" />
-    `,
-  },
-  {
+  makePark({
+    id: 'yosemite',
+    name: 'Yosemite',
+    state: 'California',
+    region: 'West',
+    shortDescription: 'Granite walls, sequoia groves, and high Sierra waterfalls gathered into one iconic valley.',
+    badgeTheme: 'green',
+    status: 'available',
+    futureSlug: 'yosemite',
+    pageUrl: 'parks/yosemite.html',
+    svgInner: buildBadgeSvgInner('yosemite', 'green'),
+  }),
+  makePark({
     id: 'yellowstone',
     name: 'Yellowstone',
-    state: 'Wyoming',
+    state: 'Wyoming, Montana, Idaho',
     region: 'Mountain West',
-    shortDescription:
-      "The world\u2019s first national park \u2014 home to half the planet\u2019s geysers, boiling springs, and vast wildlife.",
+    shortDescription: 'Geyser basins, hot springs, and wide wildlife valleys across the high plateau.',
     badgeTheme: 'blue',
+    status: 'in-progress',
     futureSlug: 'yellowstone',
-    svgInner: `
-      <defs>
+    svgInner: buildBadgeSvgInner('yellowstone', 'blue'),
+  }),
         <clipPath id="clip-yellowstone">
           <circle cx="100" cy="100" r="82" />
         </clipPath>
