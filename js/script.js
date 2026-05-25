@@ -55,6 +55,12 @@
   if (!grid || typeof PARKS === 'undefined') return;
 
   const searchInput = document.getElementById('park-search');
+  const curatedIds = ['yosemite', 'yellowstone', 'grand-canyon'];
+  const curatedParks = curatedIds.map(function (id) {
+    return PARKS.find(function (park) {
+      return park.id === id;
+    });
+  }).filter(Boolean);
 
   function escapeHtml(value) {
     return String(value)
@@ -160,7 +166,7 @@
     searchInput.addEventListener('input', function () {
       const query = this.value.trim().toLowerCase();
       if (!query) {
-        renderGrid(PARKS);
+        renderGrid(curatedParks);
         return;
       }
       const filtered = PARKS.filter(function (park) {
@@ -172,6 +178,6 @@
     });
   }
 
-  renderGrid(PARKS);
+  renderGrid(curatedParks);
 
 }());
