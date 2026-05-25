@@ -896,6 +896,12 @@ button {
   color: var(--color-text-muted);
 }
 
+.search-note {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+}
+
 .search-input {
   width: 100%;
   max-width: 480px;
