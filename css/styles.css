@@ -1075,8 +1075,23 @@ button {
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
   justify-content: center;
   gap: 0.85rem;
+}
+
+.park-card--secondary .card-badge-area {
+  width: min(34%, 12.5rem);
+  flex-shrink: 0;
+}
+
+.park-card--secondary .card-badge-frame {
+  width: min(100%, 10.5rem);
+}
+
+.park-card--secondary .park-badge {
+  width: clamp(118px, 11vw, 156px);
+  height: clamp(118px, 11vw, 156px);
 }
 
 .park-card--secondary .card-body {
