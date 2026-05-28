@@ -66,119 +66,209 @@
         <div class="hero-grain" aria-hidden="true"></div>
 
         <div class="hero-inner">
+          <p class="hero-kicker">TrailMark Archive Edition</p>
           <p class="hero-eyebrow">California &middot; Sierra Nevada</p>
           <h1 class="hero-title">Yosemite</h1>
           <p class="hero-subtitle">
-            Towering granite cliffs, ancient sequoias, and cascading waterfalls in the heart of the Sierra Nevada.
+            Granite walls hold the morning light, waterfalls speak from unseen heights, and the valley opens slowly like a preserved print pulled from its sleeve.
           </p>
+          <div class="hero-ledger" aria-label="Archive metadata">
+            <p><span>Archive No.</span> TM-YOS-001</p>
+            <p><span>Protected</span> Since 1890</p>
+            <p><span>Collection</span> Western Parks</p>
+          </div>
         </div>
       </section>
 
       <!-- =====================
-           PARK INTRO
+           THE VALLEY
       ===================== -->
-      <section id="park-intro">
+      <section id="park-intro" class="park-section park-section--valley">
         <div class="section-inner park-intro-inner">
-
-          <!-- Badge showcase -->
-          <div class="park-badge-display">
-            <svg class="park-badge park-badge--hero" viewBox="0 0 200 200"
-                 xmlns="http://www.w3.org/2000/svg" role="img"
-                 aria-label="Yosemite National Park badge">
-              <defs>
-                <clipPath id="clip-yosemite-detail">
-                  <circle cx="100" cy="100" r="82" />
-                </clipPath>
-              </defs>
-              <circle cx="100" cy="100" r="97" fill="#2D5016" />
-              <g clip-path="url(#clip-yosemite-detail)">
-                <rect x="0" y="0" width="200" height="200" fill="#7ABDE8" />
-                <rect x="0" y="128" width="200" height="72" fill="#3D6B1F" />
-                <polygon points="100,36 156,128 44,128" fill="#8FAF72" />
-                <polygon points="55,66 104,128 6,128" fill="#5C7A3E" />
-                <polygon points="145,70 194,128 96,128" fill="#6B8E4E" />
-                <polygon points="100,36 114,64 86,64" fill="#EDE9E0" />
-                <polygon points="36,128 43,108 50,128" fill="#2D5016" />
-                <rect x="39" y="128" width="7" height="9" fill="#2D5016" />
-                <polygon points="150,128 157,110 164,128" fill="#2D5016" />
-                <rect x="153" y="128" width="7" height="9" fill="#2D5016" />
-              </g>
-              <circle cx="100" cy="100" r="82" fill="none" stroke="#F7F3EC" stroke-width="2" stroke-dasharray="5,4" />
-              <circle cx="100" cy="100" r="89" fill="none" stroke="#4A7A28" stroke-width="1.5" />
-            </svg>
+          <div class="park-section-heading">
+            <p class="section-kicker">The Valley</p>
+            <h2 class="section-title section-title--left">A landscape that expands through scale, silence, and light</h2>
           </div>
-
-          <!-- Park intro body -->
-          <div class="park-intro-body">
-            <div class="park-meta-tags">
-              <span class="card-region">West</span>
-              <span class="card-state">California</span>
+          <div class="valley-layout">
+            <div class="valley-copy">
+              <p class="valley-lead">
+                Yosemite Valley does not arrive all at once. It unfolds by degrees: a wall of granite catching pale morning light, water heard before it is seen, distance compressing and then opening again.
+              </p>
+              <p>
+                The valley floor feels quiet even when it is full of movement. Pine shadow, cold river air, and the sound of falling water give the entire basin the atmosphere of a place preserved rather than merely visited.
+              </p>
             </div>
-            <p class="park-tagline">National Park</p>
-            <p class="park-intro-desc">
-              Towering granite cliffs, ancient sequoias, and cascading waterfalls define one of America&rsquo;s most iconic wild places. Yosemite spans nearly 748,000 acres of the Sierra Nevada &mdash; from the famous valley floor to high alpine meadows above 13,000 feet.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- =====================
-           PARK FACTS
-      ===================== -->
-      <section id="park-facts">
-        <div class="section-inner">
-          <h2 class="section-title">At a Glance</h2>
-          <div class="facts-grid">
-
-            <div class="fact-card">
-              <p class="fact-label">Established</p>
-              <p class="fact-value">1890</p>
-              <p class="fact-unit">Oct 1 &mdash; 136 years ago</p>
-            </div>
-
-            <div class="fact-card">
-              <p class="fact-label">Park Size</p>
-              <p class="fact-value">748K</p>
-              <p class="fact-unit">acres &mdash; ~1,170 sq miles</p>
-            </div>
-
-            <div class="fact-card">
-              <p class="fact-label">Highest Point</p>
-              <p class="fact-value">13,114</p>
-              <p class="fact-unit">ft &mdash; Mount Lyell</p>
-            </div>
-
-            <div class="fact-card">
-              <p class="fact-label">Trails</p>
-              <p class="fact-value">800+</p>
-              <p class="fact-unit">miles of maintained trail</p>
-            </div>
-
+            <aside class="valley-ledger" aria-label="Yosemite field details">
+              <p><span>Region</span>West</p>
+              <p><span>State</span>California</p>
+              <p><span>Granite Icon</span>El Capitan</p>
+              <p><span>Waterfall Season</span>Spring Snowmelt</p>
+            </aside>
           </div>
         </div>
       </section>
 
       <!-- =====================
-           ABOUT THE PARK
+           LANDSCAPE HIGHLIGHTS
       ===================== -->
-      <section id="park-about">
+      <section id="park-facts" class="park-section park-section--highlights">
         <div class="section-inner">
-          <h2 class="section-title">About Yosemite</h2>
-          <div class="park-about-body">
+          <div class="park-section-heading park-section-heading--centered">
+            <p class="section-kicker">Landscape Highlights</p>
+            <h2 class="section-title">Three enduring forms in the Yosemite memory</h2>
+          </div>
+          <div class="highlights-grid">
+            <article class="highlight-card highlight-card--el-capitan">
+              <p class="highlight-index">01</p>
+              <h3 class="highlight-title">El Capitan</h3>
+              <p class="highlight-desc">
+                A single sheer wall rising with impossible calm, more monolith than mountain, holding the western edge of the valley in shadow and scale.
+              </p>
+            </article>
 
-            <p>
-              Yosemite National Park sits in the western Sierra Nevada of California, carved over millions of years by glaciers that sculpted its sheer granite walls and broad valley floor. President Lincoln first set aside Yosemite Valley and the Mariposa Grove in 1864 &mdash; a remarkably farsighted act that predated the National Park Service by over half a century. Full national park protection followed in 1890, driven in large part by John Muir&rsquo;s passionate advocacy.
+            <article class="highlight-card highlight-card--half-dome">
+              <p class="highlight-index">02</p>
+              <h3 class="highlight-title">Half Dome</h3>
+              <p class="highlight-desc">
+                Seen at a distance, it feels almost drawn into the skyline: stern, unmistakable, and luminous when the last light moves across its face.
+              </p>
+            </article>
+
+            <article class="highlight-card highlight-card--yosemite-falls">
+              <p class="highlight-index">03</p>
+              <h3 class="highlight-title">Yosemite Falls</h3>
+              <p class="highlight-desc">
+                In spring it arrives as sound before image, a vertical rush of white water turning cliff and air into a single column of motion.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================
+           SEASONAL MOODS
+      ===================== -->
+      <section id="park-about" class="park-section park-section--seasons">
+        <div class="section-inner">
+          <div class="park-section-heading">
+            <p class="section-kicker">Seasonal Moods</p>
+            <h2 class="section-title section-title--left">The same valley, four different emotional registers</h2>
+          </div>
+          <div class="season-grid">
+            <article class="season-card season-card--spring">
+              <p class="season-name">Spring</p>
+              <p class="season-desc">Waterfall thunder, wet granite, and river air cold enough to make the whole valley feel newly awakened.</p>
+            </article>
+            <article class="season-card season-card--summer">
+              <p class="season-name">Summer</p>
+              <p class="season-desc">Heat gathers on the stone by afternoon, the walls appear even taller, and the distance shimmers with a pale mineral haze.</p>
+            </article>
+            <article class="season-card season-card--autumn">
+              <p class="season-name">Autumn</p>
+              <p class="season-desc">Gold light settles lower in the valley, the crowds thin, and the meadows take on a softer, more reflective quiet.</p>
+            </article>
+            <article class="season-card season-card--winter">
+              <p class="season-name">Winter</p>
+              <p class="season-desc">Blue-white silence, dark pines, and snow-held edges that turn the familiar valley into something almost monastic.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================
+           FIELD NOTES
+      ===================== -->
+      <section class="park-section park-section--field-notes" aria-labelledby="field-notes-title">
+        <div class="section-inner">
+          <div class="field-notes-block">
+            <p class="section-kicker">Field Notes</p>
+            <h2 class="visually-hidden" id="field-notes-title">Field Notes</h2>
+            <blockquote class="field-note-quote">
+              <p>
+                Yosemite does not reveal itself immediately. It expands slowly through scale, silence, and distance, until even the smallest movement of water or light feels monumental.
+              </p>
+            </blockquote>
+            <p class="field-note-attribution">TrailMark Archive Journal</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================
+           BADGE SHOWCASE
+      ===================== -->
+      <section class="park-section park-section--badge" aria-labelledby="badge-showcase-title">
+        <div class="section-inner badge-showcase-layout">
+          <div class="badge-showcase-copy">
+            <p class="section-kicker">Badge Showcase</p>
+            <h2 class="section-title section-title--left" id="badge-showcase-title">An earned mark from the first completed chapter</h2>
+            <p class="badge-showcase-desc">
+              Yosemite&rsquo;s badge is presented here as a preserved park mark: clean geometry, limited color, and the distilled memory of granite, forest, and alpine light.
             </p>
+            <div class="badge-showcase-ledger" aria-label="Badge edition details">
+              <p><span>Edition</span>Founding Release</p>
+              <p><span>Medium</span>Archive Mark</p>
+              <p><span>Status</span>Collected</p>
+            </div>
+          </div>
 
-            <p>
-              The park is defined by its concentration of granite landmarks. El Capitan rises more than 3,000 feet from the valley floor in a single sheer face, drawing climbers from every continent. Half Dome&rsquo;s distinctive silhouette has become one of the enduring icons of American wilderness. Yosemite Falls drops 2,425 feet &mdash; among the tallest waterfalls in North America &mdash; roaring each spring as snowmelt pours off the high country.
+          <div class="badge-showcase-frame">
+            <div class="badge-showcase-plaque">
+              <p class="badge-plaque-label">Yosemite National Park</p>
+              <svg class="park-badge park-badge--hero" viewBox="0 0 200 200"
+                   xmlns="http://www.w3.org/2000/svg" role="img"
+                   aria-label="Yosemite National Park badge">
+                <defs>
+                  <clipPath id="clip-yosemite-detail">
+                    <circle cx="100" cy="100" r="82" />
+                  </clipPath>
+                </defs>
+                <circle cx="100" cy="100" r="97" fill="#2D5016" />
+                <g clip-path="url(#clip-yosemite-detail)">
+                  <rect x="0" y="0" width="200" height="200" fill="#7ABDE8" />
+                  <rect x="0" y="128" width="200" height="72" fill="#3D6B1F" />
+                  <polygon points="100,36 156,128 44,128" fill="#8FAF72" />
+                  <polygon points="55,66 104,128 6,128" fill="#5C7A3E" />
+                  <polygon points="145,70 194,128 96,128" fill="#6B8E4E" />
+                  <polygon points="100,36 114,64 86,64" fill="#EDE9E0" />
+                  <polygon points="36,128 43,108 50,128" fill="#2D5016" />
+                  <rect x="39" y="128" width="7" height="9" fill="#2D5016" />
+                  <polygon points="150,128 157,110 164,128" fill="#2D5016" />
+                  <rect x="153" y="128" width="7" height="9" fill="#2D5016" />
+                </g>
+                <circle cx="100" cy="100" r="82" fill="none" stroke="#F7F3EC" stroke-width="2" stroke-dasharray="5,4" />
+                <circle cx="100" cy="100" r="89" fill="none" stroke="#4A7A28" stroke-width="1.5" />
+              </svg>
+              <p class="badge-plaque-note">Archive specimen no. 001</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================
+           CONTINUE THE ARCHIVE
+      ===================== -->
+      <section class="park-section park-section--archive" aria-labelledby="archive-title">
+        <div class="section-inner archive-layout">
+          <div class="archive-copy">
+            <p class="section-kicker">Continue the Archive</p>
+            <h2 class="section-title section-title--left" id="archive-title">Yosemite is the first finished chapter, not the last.</h2>
+            <p class="archive-desc">
+              The TrailMark collection grows one preserved landscape at a time, each page treated as an artifact rather than a listing.
             </p>
-
-            <p>
-              Beyond the famous valley, Yosemite holds ancient groves of giant sequoia, the vast open expanse of Tuolumne Meadows, and over 800 miles of trails reaching well above 13,000 feet. Black bears, mule deer, peregrine falcons, and more than 400 other species share the landscape with roughly 3.5 million visitors each year.
-            </p>
-
+          </div>
+          <div class="archive-links" aria-label="Upcoming park chapters">
+            <a href="../index.html#park-grid" class="archive-link">
+              <span class="archive-link-label">Yellowstone</span>
+              <span class="archive-link-status">In progress</span>
+            </a>
+            <a href="../index.html#park-grid" class="archive-link">
+              <span class="archive-link-label">Zion</span>
+              <span class="archive-link-status">In progress</span>
+            </a>
+            <a href="../index.html#park-grid" class="archive-link">
+              <span class="archive-link-label">Glacier</span>
+              <span class="archive-link-status">In progress</span>
+            </a>
           </div>
         </div>
       </section>
