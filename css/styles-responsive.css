@@ -287,7 +287,7 @@
 
   .highlights-grid,
   .season-grid,
-  .badge-showcase-ledger {
+  .badge-plaque-footer {
     grid-template-columns: 1fr;
   }
 

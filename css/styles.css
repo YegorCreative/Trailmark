@@ -1809,8 +1809,8 @@ a.logo-text {
 
 .badge-showcase-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.8fr);
-  gap: 2.5rem;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1fr);
+  gap: 3rem;
   align-items: center;
 }
 
@@ -1825,13 +1825,19 @@ a.logo-text {
   color: rgba(28, 28, 28, 0.8);
 }
 
-.badge-showcase-ledger {
+.badge-showcase-notes {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(45, 80, 22, 0.14);
+}
+
+.badge-showcase-notes p {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.78;
+  color: rgba(28, 28, 28, 0.78);
 }
 
 .badge-showcase-frame {
@@ -1840,22 +1846,32 @@ a.logo-text {
 }
 
 .badge-showcase-plaque {
-  width: min(100%, 360px);
-  padding: 1.5rem;
-  background: linear-gradient(180deg, #f4ecde 0%, #ece0ce 100%);
-  border: 1px solid rgba(161, 141, 112, 0.28);
+  width: min(100%, 420px);
+  padding: 1.5rem 1.5rem 1.35rem;
+  background:
+    linear-gradient(180deg, rgba(246, 238, 224, 0.98) 0%, rgba(235, 224, 204, 0.98) 100%);
+  border: 1px solid rgba(161, 141, 112, 0.34);
   box-shadow: 0 24px 48px rgba(41, 35, 22, 0.10);
-  text-align: center;
+  text-align: left;
+  position: relative;
+}
+
+.badge-showcase-plaque::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(161, 141, 112, 0.16);
+  pointer-events: none;
 }
 
 .park-badge--hero {
-  width: 220px;
-  height: 220px;
-  margin: 0 auto;
+  width: 240px;
+  height: 240px;
+  margin: 0;
 }
 
 .badge-plaque-label,
-.badge-plaque-note {
+.badge-plaque-footer span {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -1864,11 +1880,36 @@ a.logo-text {
 }
 
 .badge-plaque-label {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
-.badge-plaque-note {
-  margin-top: 1rem;
+.badge-plaque-badge-wrap {
+  padding: 1.5rem;
+  margin: 0 0 1.25rem;
+  border: 1px solid rgba(161, 141, 112, 0.18);
+  background:
+    radial-gradient(circle at 50% 24%, rgba(255, 255, 255, 0.52) 0%, rgba(255, 255, 255, 0) 46%),
+    linear-gradient(180deg, rgba(255, 249, 239, 0.86) 0%, rgba(241, 232, 216, 0.92) 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.badge-plaque-footer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(161, 141, 112, 0.18);
+}
+
+.badge-plaque-footer p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  margin: 0;
+  color: var(--color-green-dark);
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .park-section--archive {
