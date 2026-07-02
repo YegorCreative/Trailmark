@@ -26,12 +26,16 @@
 
   .valley-layout,
   .badge-showcase-layout,
-  .archive-layout {
+  .archive-layout,
+  .knowledge-layout,
+  .photography-layout {
     grid-template-columns: 1fr;
   }
 
   .highlights-grid,
-  .season-grid {
+  .season-grid,
+  .discovery-grid,
+  .stewardship-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -134,9 +138,24 @@
     padding: 0.875rem 1.25rem;
   }
 
-  /* Hide header nav on mobile — hamburger menu planned for a future phase */
   #site-nav {
-    display: none;
+    width: 100%;
+  }
+
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nav-list {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .nav-link {
+    padding: 0.45rem 0.65rem;
   }
 
   #hero {
@@ -281,14 +300,37 @@
 
   .valley-layout,
   .badge-showcase-layout,
-  .archive-layout {
+  .archive-layout,
+  .knowledge-layout,
+  .photography-layout {
     grid-template-columns: 1fr;
   }
 
   .highlights-grid,
   .season-grid,
+  .discovery-grid,
+  .stewardship-list,
   .badge-plaque-footer {
     grid-template-columns: 1fr;
+  }
+
+  .park-section--overview,
+  .park-section--thesis,
+  .park-section--highlights,
+  .park-section--seasons,
+  .park-section--discovery,
+  .park-section--knowledge,
+  .park-section--photography,
+  .park-section--stewardship {
+    padding: 3rem 1.25rem;
+  }
+
+  .discovery-card {
+    min-height: 0;
+  }
+
+  .stewardship-panel {
+    padding: 1.4rem 1.2rem;
   }
 
   .hero-actions {
