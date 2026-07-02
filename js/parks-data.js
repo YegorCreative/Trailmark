@@ -114,8 +114,9 @@ const PARK_DEFINITIONS = [
     region: 'Mountain West',
     shortDescription: 'Geyser basins, hot springs, and wide wildlife valleys across the high plateau.',
     badgeTheme: 'blue',
-    status: 'in-progress',
+    status: 'available',
     futureSlug: 'yellowstone',
+    pageUrl: 'parks/yellowstone.html',
   },
   {
     id: 'acadia',

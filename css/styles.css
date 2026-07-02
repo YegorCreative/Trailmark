@@ -277,6 +277,7 @@ input:focus-visible {
     linear-gradient(180deg, rgba(247, 243, 236, 0.05) 0%, rgba(247, 243, 236, 0) 20%, rgba(11, 18, 13, 0.10) 100%);
 }
 
+.park-poster,
 .yosemite-poster {
   position: relative;
   inset: auto;
@@ -285,12 +286,14 @@ input:focus-visible {
   z-index: 0;
 }
 
+.park-poster svg,
 .yosemite-poster svg {
   width: 100%;
   height: 100%;
   display: block;
 }
 
+.park-poster-art,
 .yosemite-poster-art {
   width: 100%;
   height: auto;
@@ -526,6 +529,7 @@ input:focus-visible {
    PARK-SPECIFIC HERO
    Yosemite
 ===================== */
+#hero.hero--park,
 #hero.hero--yosemite {
   padding: 0;
   min-height: 0;
@@ -539,6 +543,7 @@ input:focus-visible {
     );
 }
 
+.hero--park::before,
 .hero--yosemite::before {
   content: '';
   position: absolute;
@@ -551,6 +556,7 @@ input:focus-visible {
   z-index: 1;
 }
 
+.hero--park .hero-inner,
 .hero--yosemite .hero-inner {
   position: absolute;
   left: clamp(1.5rem, 6vw, 6rem);
@@ -573,11 +579,13 @@ input:focus-visible {
   text-shadow: 0 2px 18px rgba(12, 18, 14, 0.34);
 }
 
+.hero--park .hero-eyebrow,
 .hero--yosemite .hero-eyebrow {
   color: #f1d7a7;
   margin-bottom: 0.75rem;
 }
 
+.hero--park .hero-title,
 .hero--yosemite .hero-title {
   color: #f7f3ec;
   font-size: clamp(3rem, 8vw, 5.5rem);
@@ -586,6 +594,7 @@ input:focus-visible {
   margin-bottom: 1rem;
 }
 
+.hero--park .hero-subtitle,
 .hero--yosemite .hero-subtitle {
   max-width: 28rem;
   color: rgba(247, 243, 236, 0.88);
@@ -1712,6 +1721,28 @@ a.logo-text {
   background:
     linear-gradient(180deg, rgba(219, 230, 235, 0.18) 0%, rgba(17, 22, 18, 0.92) 72%),
     linear-gradient(120deg, #7f97a1 0%, #536c6f 30%, #32433a 66%, #161c17 100%);
+}
+
+.highlight-card--old-faithful {
+  background:
+    linear-gradient(180deg, rgba(232, 243, 245, 0.24) 0%, rgba(15, 25, 25, 0.92) 72%),
+    radial-gradient(circle at 52% 22%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(120deg, #9ab9bf 0%, #55777c 35%, #274046 70%, #11191c 100%);
+}
+
+.highlight-card--grand-prismatic {
+  background:
+    linear-gradient(180deg, rgba(244, 225, 174, 0.18) 0%, rgba(18, 24, 20, 0.92) 72%),
+    radial-gradient(circle at 68% 24%, rgba(67, 196, 204, 0.38) 0%, rgba(67, 196, 204, 0) 28%),
+    radial-gradient(circle at 36% 34%, rgba(232, 101, 42, 0.32) 0%, rgba(232, 101, 42, 0) 36%),
+    linear-gradient(120deg, #d9a44d 0%, #9c6b35 28%, #385c52 62%, #13211f 100%);
+}
+
+.highlight-card--yellowstone-canyon {
+  background:
+    linear-gradient(180deg, rgba(247, 226, 184, 0.16) 0%, rgba(20, 24, 18, 0.92) 72%),
+    radial-gradient(circle at 72% 20%, rgba(239, 202, 122, 0.24) 0%, rgba(239, 202, 122, 0) 34%),
+    linear-gradient(120deg, #c49a55 0%, #8e6e3d 30%, #57452b 62%, #161914 100%);
 }
 
 .highlight-index {

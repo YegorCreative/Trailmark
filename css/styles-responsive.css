@@ -10,16 +10,19 @@
    2-column card grid
 ===================== */
 @media (max-width: 900px) {
+  #hero.hero--park,
   #hero.hero--yosemite {
     min-height: 620px;
   }
 
+  .hero--park .hero-inner,
   .hero--yosemite .hero-inner {
     left: 1.75rem;
     bottom: 2rem;
     width: min(calc(100% - 3.5rem), 34rem);
   }
 
+  .hero--park .hero-title,
   .hero--yosemite .hero-title {
     font-size: clamp(3.25rem, 9vw, 4.6rem);
   }
@@ -168,6 +171,7 @@
     min-height: 700px;
   }
 
+  #hero.hero--park,
   #hero.hero--yosemite {
     padding: 0;
     min-height: 540px;
@@ -348,12 +352,14 @@
     justify-content: flex-start;
   }
 
+  .hero--park .park-poster,
   .hero--yosemite .yosemite-poster {
     position: absolute;
     inset: 0;
     width: auto;
   }
 
+  .hero--park .park-poster-art,
   .hero--yosemite .yosemite-poster-art {
     width: 100%;
     height: 100%;
@@ -361,6 +367,7 @@
     object-position: center center;
   }
 
+  .hero--park .hero-inner,
   .hero--yosemite .hero-inner {
     left: 1rem;
     right: 1rem;
@@ -369,6 +376,7 @@
     padding: 1rem 0 0;
   }
 
+  .hero--park .hero-title,
   .hero--yosemite .hero-title {
     font-size: clamp(2.7rem, 14vw, 4rem);
   }

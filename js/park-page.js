@@ -43,9 +43,11 @@
   }
 
   function renderHero() {
-    return '<section id="hero" class="hero--yosemite" aria-labelledby="park-hero-title">'
-      + '<div class="yosemite-poster" aria-hidden="true">'
-      + '<img src="' + escapeHtml(park.hero.posterSrc) + '" alt="' + escapeHtml(park.hero.posterAlt) + '" class="yosemite-poster-art" />'
+    const themeClass = park.hero.theme ? ' hero--' + escapeHtml(park.hero.theme) : '';
+
+    return '<section id="hero" class="hero--park' + themeClass + '" aria-labelledby="park-hero-title">'
+      + '<div class="park-poster" aria-hidden="true">'
+      + '<img src="' + escapeHtml(park.hero.posterSrc) + '" alt="' + escapeHtml(park.hero.posterAlt) + '" class="park-poster-art" />'
       + '</div>'
       + '<div class="hero-grain" aria-hidden="true"></div>'
       + '<div class="hero-inner">'
