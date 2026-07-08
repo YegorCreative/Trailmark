@@ -332,4 +332,168 @@ const PARK_PAGE_CONTENT = {
       ],
     },
   },
+  everglades: {
+    id: 'everglades',
+    name: 'Everglades',
+    fullName: 'Everglades National Park',
+    archiveNumber: 'TM-EVG-003',
+    collection: 'Southeast Parks',
+    region: 'Southeast',
+    state: 'Florida',
+    landscape: 'River of Grass',
+    established: '1947',
+    hero: {
+      theme: 'everglades',
+      kicker: 'TrailMark Archive Edition',
+      eyebrow: 'Florida | River of Grass',
+      title: 'Everglades',
+      subtitle: 'Water moves almost invisibly through sawgrass, mangrove, marl prairie, and open sky, carrying one of North Americas most intricate wetland stories.',
+      posterSrc: '../assets/svg/parks.svg',
+      posterAlt: '',
+    },
+    overview: {
+      kicker: 'Park Overview',
+      title: 'A slow river of grass, mangrove, heat, birds, and brackish light',
+      lead: 'Everglades is not a swamp in the ordinary sense. It is a broad, shallow, moving wetland where freshwater, saltwater, limestone, plants, animals, and seasonal rainfall form a living system.',
+      body: [
+        'The park protects the southern reach of a much larger watershed. Its story begins far north of the boundary, where water once flowed slowly from Lake Okeechobee through sawgrass plains toward Florida Bay.',
+        'TrailMark treats Everglades as the third proof park because it asks the template to honor subtlety: flat horizons, hidden movement, heat, insects, ecological dependence, and conservation rather than only dramatic vertical scenery.',
+      ],
+      facts: [
+        { label: 'Region', value: 'Southeast' },
+        { label: 'State', value: 'Florida' },
+        { label: 'Protected', value: 'Since 1947' },
+        { label: 'Signature Habitat', value: 'Sawgrass Prairie' },
+        { label: 'Water Story', value: 'Freshwater to Florida Bay' },
+      ],
+    },
+    emotionalThesis: {
+      kicker: 'Emotional Thesis',
+      title: 'The landscape teaches patience because most of its movement is quiet',
+      body: [
+        'Everglades does not announce itself through cliffs or peaks. Its scale is horizontal: sky, grass, water, birds, heat, and the long shimmer of distance.',
+        'The deeper wonder comes when the eye slows down. A ripple becomes an alligator, a white shape becomes a wading bird, and a nearly still sheet of water begins to read as a river.',
+      ],
+    },
+    landscapeHighlights: {
+      kicker: 'Landscape Highlights',
+      title: 'Three habitats that hold the Everglades memory',
+      items: [
+        {
+          title: 'Sawgrass Prairie',
+          modifier: 'sawgrass-prairie',
+          body: 'A wide, shallow, living plain where water threads through grass so slowly that the river feels almost hidden in sunlight.',
+        },
+        {
+          title: 'Mangrove Coast',
+          modifier: 'mangrove-coast',
+          body: 'A tidal edge of roots, channels, brackish water, and shelter where land and sea negotiate every day.',
+        },
+        {
+          title: 'Anhinga Trail',
+          modifier: 'anhinga-trail',
+          body: 'A close, accessible window into alligators, turtles, fish, and wading birds, where stillness often becomes sudden life.',
+        },
+      ],
+    },
+    hiddenDiscoveries: {
+      kicker: 'Hidden Discoveries',
+      title: 'Small signs reveal the wetland working',
+      items: [
+        {
+          title: 'Periphyton Mats',
+          body: 'Pale, spongy mats of algae, bacteria, and tiny organisms help build the food web and quietly mark the chemistry of shallow water.',
+        },
+        {
+          title: 'Marl Prairie',
+          body: 'Thin soils over limestone create open, seasonal prairies where water depth, drought, and fire shape what can survive.',
+        },
+        {
+          title: 'Buttonwood Edges',
+          body: 'Where prairie shifts toward coastal forest, buttonwood, mangrove, and hardwood hammocks reveal subtle changes in salt, elevation, and water.',
+        },
+      ],
+    },
+    wildlife: {
+      kicker: 'Wildlife',
+      title: 'A wetland alive with birds, reptiles, fish, and rare predators',
+      lead: 'Everglades supports alligators, crocodiles, manatees, turtles, fish, herons, egrets, spoonbills, ibis, ospreys, and the endangered Florida panther within a web of freshwater, brackish, and coastal habitats.',
+      notes: [
+        'Wildlife viewing is often best in the dry season, when water levels concentrate animals near remaining channels and ponds.',
+        'Alligators and crocodiles should be given space; their stillness is not an invitation to approach.',
+        'Bird activity can change quickly with water depth, heat, wind, and the time of day.',
+      ],
+    },
+    geology: {
+      kicker: 'Geology',
+      title: 'A low limestone landscape where inches matter',
+      lead: 'Everglades geology is quiet but decisive. Porous limestone, shallow elevation changes, marl soils, peat, sea level, and freshwater flow determine where sawgrass, slough, hammock, mangrove, and bay can exist.',
+      notes: [
+        'The park is shaped by slight elevation differences rather than mountains; a few inches can change habitat.',
+        'Limestone and marl influence water chemistry, plant communities, and the open character of many prairies.',
+        'Sea-level rise and saltwater intrusion make the coastal edge especially important to the parks future.',
+      ],
+    },
+    seasons: {
+      kicker: 'Seasonal Moods',
+      title: 'Two strong seasons change the whole rhythm of the park',
+      items: [
+        { name: 'Dry Season', modifier: 'winter', body: 'Cooler air, fewer mosquitoes, lower water, concentrated wildlife, and clearer walking conditions make this the most accessible season.' },
+        { name: 'Wet Season', modifier: 'summer', body: 'Heat, storms, high water, insects, and lush growth return the park to a more humid, powerful, and less predictable mood.' },
+        { name: 'Migration', modifier: 'autumn', body: 'Bird movement and shifting water levels bring transitional energy, especially around open wetlands and coastal edges.' },
+        { name: 'Storm Light', modifier: 'spring', body: 'Cloud build-up, mirrored water, and sudden brightness can turn the flat horizon into a dramatic study of weather.' },
+      ],
+    },
+    photography: {
+      kicker: 'Photography Guidance',
+      title: 'Photograph patience, water texture, and living distance',
+      lead: 'Everglades photography is often about restraint. Instead of chasing a single grand landmark, look for layers: reflected sky, grass texture, bird posture, reptile stillness, and the edge between water and land.',
+      tips: [
+        { label: 'Morning', body: 'Use cooler light and calmer water for reflections, birds, and boardwalk wildlife before heat intensifies.' },
+        { label: 'Long Lens', body: 'A longer lens helps keep respectful distance from birds, alligators, crocodiles, and nesting areas.' },
+        { label: 'Paddling', body: 'From canoe or kayak routes, protect gear from water and compose slowly; low perspective can make the wetland feel immersive.' },
+      ],
+    },
+    fieldNotes: {
+      quote: 'Everglades asks for a different kind of attention: not awe at height, but reverence for flow, heat, wingbeats, hidden water, and the fragile patience of a living wetland.',
+      attribution: 'TrailMark Archive Journal',
+    },
+    badgeStory: {
+      kicker: 'Badge Story',
+      title: 'A mark shaped by grass, water, and quiet survival',
+      label: 'Everglades Mark No. 003',
+      description: 'The Everglades badge uses the archive green system to preserve a landscape defined by low horizons, wetland life, and ecological connection.',
+      notes: [
+        'Green tones suggest sawgrass, hammocks, and the park as a living water-shaped system.',
+        'The circular badge format turns a flat, expansive landscape into a collected field mark without forcing false monumentality.',
+        'As the third archive badge, Everglades proves TrailMark can honor subtle ecological wonder as carefully as mountains and geysers.',
+      ],
+      details: [
+        { label: 'Archive No.', value: '003' },
+        { label: 'Location', value: 'River of Grass' },
+        { label: 'Release', value: 'Third Archive Mark' },
+      ],
+    },
+    stewardship: {
+      kicker: 'Stewardship / Safety',
+      title: 'Move carefully through heat, water, insects, and fragile habitat',
+      lead: 'Everglades safety is practical and ecological at once. Sun, humidity, mosquitoes, storms, shallow water, wildlife distance, and restoration awareness all shape a respectful visit.',
+      items: [
+        'Bring sun protection, water, insect protection, and patience; conditions can feel intense even on short walks.',
+        'Keep distance from alligators, crocodiles, birds, and nesting areas, especially along boardwalks and water routes.',
+        'Check paddling, weather, tide, and storm conditions before entering remote water trails.',
+        'Stay on durable routes and respect closures; wetland vegetation and nesting habitat can be easily damaged.',
+      ],
+    },
+    archive: {
+      kicker: 'Continue the Archive',
+      title: 'Everglades proves the archive can hold quiet ecological wonder.',
+      body: 'The TrailMark collection grows stronger when each park keeps its own pace, atmosphere, and way of teaching visitors to notice.',
+      links: [
+        { label: 'Grand Canyon', status: 'In progress', href: '../index.html#park-grid' },
+        { label: 'Zion', status: 'In progress', href: '../index.html#park-grid' },
+        { label: 'Glacier', status: 'In progress', href: '../index.html#park-grid' },
+      ],
+    },
+  },
 };

@@ -1745,6 +1745,27 @@ a.logo-text {
     linear-gradient(120deg, #c49a55 0%, #8e6e3d 30%, #57452b 62%, #161914 100%);
 }
 
+.highlight-card--sawgrass-prairie {
+  background:
+    linear-gradient(180deg, rgba(224, 234, 196, 0.18) 0%, rgba(18, 29, 17, 0.92) 72%),
+    radial-gradient(circle at 72% 18%, rgba(245, 220, 142, 0.22) 0%, rgba(245, 220, 142, 0) 34%),
+    linear-gradient(120deg, #a5ad66 0%, #6f823e 34%, #344927 66%, #152014 100%);
+}
+
+.highlight-card--mangrove-coast {
+  background:
+    linear-gradient(180deg, rgba(196, 220, 206, 0.20) 0%, rgba(16, 26, 22, 0.92) 72%),
+    radial-gradient(circle at 34% 28%, rgba(75, 133, 117, 0.30) 0%, rgba(75, 133, 117, 0) 34%),
+    linear-gradient(120deg, #6e8a70 0%, #3f6658 34%, #274036 68%, #111d18 100%);
+}
+
+.highlight-card--anhinga-trail {
+  background:
+    linear-gradient(180deg, rgba(225, 236, 206, 0.18) 0%, rgba(15, 25, 18, 0.92) 72%),
+    radial-gradient(circle at 70% 22%, rgba(225, 240, 232, 0.18) 0%, rgba(225, 240, 232, 0) 32%),
+    linear-gradient(120deg, #88a665 0%, #577842 34%, #2c4c2f 68%, #111d14 100%);
+}
+
 .highlight-index {
   font-size: 0.72rem;
   font-weight: 700;

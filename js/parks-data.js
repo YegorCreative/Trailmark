@@ -305,8 +305,9 @@ const PARK_DEFINITIONS = [
     region: 'Southeast',
     shortDescription: 'Sawgrass marsh, mangrove coast, and slow-moving water shaping a subtropical wilderness.',
     badgeTheme: 'green',
-    status: 'in-progress',
+    status: 'available',
     futureSlug: 'everglades',
+    pageUrl: 'parks/everglades.html',
   },
   {
     id: 'gates-of-the-arctic',
