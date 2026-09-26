@@ -33,10 +33,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Omit original park art
+        run: rm -rf assets/Parks
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Publish the site, including assets/park-art, without the original PNGs.
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
