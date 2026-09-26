@@ -137,7 +137,7 @@ function pageHtml(park, essay, articleHtml, modified) {
         mainEntityOfPage: url,
         author: [
           { '@type': 'Organization', name: 'TrailMark' },
-          { '@type': 'Person', name: 'Yegor Hambaryan' },
+          { '@type': 'Person', name: 'Yegor Hambaryan', url: 'https://yegorcreative.com' },
         ],
         publisher: { '@type': 'Organization', name: 'TrailMark' },
       },

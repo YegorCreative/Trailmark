@@ -1865,6 +1865,25 @@ body:has(#hero) #hero.about-hero::after {
   margin: 0 0 0.75rem;
 }
 .about-body p { margin: 0 0 0.9rem; line-height: 1.6; }
+.about-person {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 0.4rem 1.4rem;
+  align-items: start;
+}
+
+.about-person img {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+@media (max-width: 640px) {
+  .about-person { grid-template-columns: 1fr; }
+}
+
 .about-body a { color: #9a3412; }
 .about-body a.hero-btn { color: #142016; }
 .about-close .hero-btn { margin-top: 0.4rem; }

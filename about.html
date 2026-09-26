@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#142016" />
     <title>About TrailMark — Illustrated Park Archive</title>
-    <meta name="description" content="TrailMark is an independent illustrated archive of the 63 U.S. national parks, written from National Park Service sources and published one park at a time." />
+    <meta name="description" content="TrailMark is an illustrated archive of the 63 U.S. national parks, designed and built by Yegor Hambaryan." />
     <link rel="canonical" href="https://yegorcreative.github.io/Trailmark/about.html" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -14,7 +14,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="TrailMark" />
     <meta property="og:title" content="About TrailMark — Illustrated Park Archive" />
-    <meta property="og:description" content="TrailMark is an independent illustrated archive of the 63 U.S. national parks, written from National Park Service sources and published one park at a time." />
+    <meta property="og:description" content="TrailMark is an illustrated archive of the 63 U.S. national parks, designed and built by Yegor Hambaryan." />
     <meta property="og:url" content="https://yegorcreative.github.io/Trailmark/about.html" />
     <meta property="og:image" content="https://yegorcreative.github.io/Trailmark/assets/park-art/grand-canyon/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -23,16 +23,31 @@
     <meta property="og:image:alt" content="Illustrated view of Grand Canyon National Park" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="About TrailMark — Illustrated Park Archive" />
-    <meta name="twitter:description" content="TrailMark is an independent illustrated archive of the 63 U.S. national parks, written from National Park Service sources and published one park at a time." />
+    <meta name="twitter:description" content="TrailMark is an illustrated archive of the 63 U.S. national parks, designed and built by Yegor Hambaryan." />
     <meta name="twitter:image" content="https://yegorcreative.github.io/Trailmark/assets/park-art/grand-canyon/og.jpg" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "About TrailMark",
-      "url": "https://yegorcreative.github.io/Trailmark/about.html",
-      "description": "TrailMark is an independent illustrated archive of the 63 U.S. national parks, written from National Park Service sources and published one park at a time.",
-      "isPartOf": { "@type": "WebSite", "name": "TrailMark", "url": "https://yegorcreative.github.io/Trailmark/" }
+      "@graph": [
+        {
+          "@type": "AboutPage",
+          "name": "About TrailMark",
+          "url": "https://yegorcreative.github.io/Trailmark/about.html",
+          "description": "TrailMark is an illustrated archive of the 63 U.S. national parks, designed and built by Yegor Hambaryan.",
+          "isPartOf": { "@type": "WebSite", "name": "TrailMark", "url": "https://yegorcreative.github.io/Trailmark/" }
+        },
+        {
+          "@type": "Person",
+          "name": "Yegor Hambaryan",
+          "url": "https://yegorcreative.com",
+          "image": "https://yegorcreative.github.io/Trailmark/assets/img/yegor-hambaryan.webp",
+          "jobTitle": "Web Designer and Developer",
+          "sameAs": [
+            "https://yegorcreative.com",
+            "https://github.com/YegorCreative"
+          ]
+        }
+      ]
     }
     </script>
 
@@ -101,11 +116,15 @@
           <p>Every park has one mark. The marks are circular illustrations, one for each of the 63 parks, and the homepage holds them as a wall. A mark becomes a link when that park&rsquo;s essay is published. Until then it stays on the wall as a record of what is still to come.</p>
         </section>
 
-        <section>
-          <h2>Who&rsquo;s behind it</h2>
-          <p>Built by Yegor Hambaryan. TrailMark is an independent project, with no affiliation with the National Park Service.</p>
-          <!-- BIO: Yegor to provide -->
-          <p>The repository is on GitHub at <a href="https://github.com/YegorCreative">github.com/YegorCreative</a>.</p>
+        <section class="about-person">
+          <img src="assets/img/yegor-hambaryan-480.webp" srcset="assets/img/yegor-hambaryan-480.webp 480w, assets/img/yegor-hambaryan.webp 1200w" sizes="136px" alt="Portrait of Yegor Hambaryan" width="1200" height="1800" loading="lazy" decoding="async" />
+          <div>
+            <h2>Who&rsquo;s building it</h2>
+            <p>TrailMark is designed and built by Yegor Hambaryan, a web designer and developer based in New York. He studies Photographic Science at RIT, and he designs websites for businesses and ships iOS apps to the App Store.</p>
+            <p>That photographic training shows up here: TrailMark pays attention to light, landscape, and how a place is actually seen.</p>
+            <p>More of his work: <a href="https://yegorcreative.com">yegorcreative.com</a></p>
+            <p>The repository is on GitHub at <a href="https://github.com/YegorCreative">github.com/YegorCreative</a>.</p>
+          </div>
         </section>
 
         <section>
