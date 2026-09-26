@@ -1425,17 +1425,41 @@ body.sheet-lock { overflow: hidden; }
 
 .atlas-footer-copy { margin: 0.8rem 0 0; opacity: 0.7; font-size: 0.85rem; }
 
-@media (max-width: 600px) {
-  #site-header .header-inner {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-  }
-  #site-header .logo-link { min-width: 0; }
-  #site-header .logo-mark { height: 36px; width: auto; }
-  #site-header .logo-text { font-size: 1rem; }
+#site-header .header-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#site-header .logo,
+#site-header .logo-link {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+#site-header .nav-toggle {
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+.nav-overlay .mega-park {
+  grid-template-columns: 4.4rem 1.8rem minmax(0, 1fr);
+}
+
+.filter-sheet.is-open {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  z-index: 70;
+  max-height: 72vh;
+  overflow: auto;
+  background: #f6f1e8;
+  border-radius: 18px 18px 0 0;
+  padding: 1rem;
 }
 
 .mega-layout { align-items: start; }
@@ -1456,7 +1480,7 @@ body.sheet-lock { overflow: hidden; }
   box-sizing: border-box;
   overflow-x: hidden;
 }
-.pill-row { max-width: 100%; }
+.pill-row { display: flex; flex-wrap: wrap; max-width: 100%; }
 
 .badge-tilt {
   transform-style: preserve-3d;
