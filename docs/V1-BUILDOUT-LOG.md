@@ -46,7 +46,19 @@ Live NPS pages opened: Bryce geology (hoodoos, amphitheater), Arches nature (arc
 
 Needs fact review: Canyonlands and Capitol Reef and Joshua Tree in full. Bryce, Arches, and Death Valley for establishment years and any sentence not taken from the pages above. Hero focus was set from the header images for a tall crop: Bryce `42% 58%`, Arches `68% 42%` (the span), Canyonlands `40% 55%` (river, not the cave frame), Capitol Reef `72% 40%` (white dome), Death Valley `62% 42%` (peaks above the salt), Joshua Tree `74% 46%` (yuccas on the right).
 
-Next batch: Saguaro, Petrified Forest, Great Sand Dunes, White Sands, Carlsbad Caverns, Guadalupe Mountains.
+Next batch after Joshua Tree: Saguaro, Petrified Forest, Great Sand Dunes, White Sands, Carlsbad Caverns, Guadalupe Mountains.
+
+### Batch 3 — Saguaro, Petrified Forest, Great Sand Dunes, White Sands, Carlsbad Caverns, Guadalupe Mountains
+
+Published. Validator passed for 21 essays. Pages generated. Sources are in `docs/park-sources/`.
+
+National-park years checked on NPS: Saguaro 1994 (monument March 1, 1933), Petrified Forest 1962 (monument 1906, from the FAQ), Great Sand Dunes 2004 (monument 1932, dunefield only), White Sands December 20, 2019 (monument January 18, 1933), Carlsbad Caverns May 14, 1930 (monument October 25, 1923), Guadalupe Mountains 1972.
+
+Hero focus from the 390-pixel-tall crop: Saguaro `64% 50%`, Petrified Forest `58% 68%`, Great Sand Dunes `52% 48%`, White Sands `58% 62%`, Carlsbad Caverns `55% 58%`, Guadalupe Mountains `68% 46%`.
+
+No park in this batch is marked needs-fact-review. Numbers that were not on the opened pages were left out, including a White Sands dune height, Carlsbad room dimensions and bat counts, and a Guadalupe Peak elevation.
+
+Next unpublished parks are the other 42. A sensible following batch is Big Bend, Mesa Verde, Black Canyon of the Gunnison, Rocky Mountain, Great Basin, and Grand Teton.
 
 ## Homepage fixes
 
