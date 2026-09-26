@@ -12,23 +12,31 @@
 // speed="0" = static, speed="1" = moves at full scroll rate.
 // =====================
 (function initParallax() {
-
-  // Respect user's motion preference
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  // Skip on small screens for performance
-  if (window.innerWidth < 600) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
 
   const layers = document.querySelectorAll('[data-speed]');
-  if (!layers.length) return;
+  const fades = document.querySelectorAll('[data-parallax="fade"]');
+  if (!layers.length && !fades.length) return;
 
+  const small = window.matchMedia('(max-width: 700px), (pointer: coarse)').matches;
+  const strength = small ? 0.35 : 1;
   let ticking = false;
 
   function update() {
     const scrollY = window.scrollY;
     layers.forEach(function (layer) {
-      const speed = parseFloat(layer.dataset.speed) || 0;
-      layer.style.transform = 'translateY(' + (scrollY * -speed) + 'px)';
+      const speed = (parseFloat(layer.dataset.speed) || 0) * strength;
+      const scale = small ? 1 : (parseFloat(layer.dataset.scale) || 1);
+      const shift = scrollY * speed * -1;
+      layer.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0) scale(' + scale + ')';
+    });
+    fades.forEach(function (el) {
+      const hero = el.closest('#hero') || el;
+      const rect = hero.getBoundingClientRect();
+      const progress = Math.min(1, Math.max(0, -rect.top / Math.max(rect.height, 1)));
+      el.style.opacity = String(1 - progress * 0.75);
+      el.style.transform = 'translate3d(0,' + (progress * -18 * strength).toFixed(2) + 'px,0)';
     });
     ticking = false;
   }
@@ -40,8 +48,35 @@
     }
   }, { passive: true });
 
-  update(); // sync layer positions on page load (handles restored scroll position)
+  update();
+}());
 
+(function initReveals() {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    window.__tmObserve = function () {};
+    return;
+  }
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  window.__tmObserve = function (root) {
+    const scope = root || document;
+    const nodes = scope.querySelectorAll('.park-section, .highlight-card, .season-card, .discovery-card, .value-prop, .badge-entry, .reveal');
+    nodes.forEach(function (node, index) {
+      if (!node.classList.contains('reveal')) node.classList.add('reveal');
+      if (!node.style.transitionDelay) node.style.transitionDelay = Math.min(index % 6, 5) * 60 + 'ms';
+      observer.observe(node);
+    });
+  };
+
+  window.__tmObserve(document);
 }());
 
 // =====================
@@ -106,6 +141,13 @@
     return base + path;
   }
 
+  function renderCardHero(park) {
+    if (!park.art || !park.art.header) return '';
+    return '<div class="card-hero-frame" aria-hidden="true">'
+      + '<img class="card-hero-img" src="' + assetUrl(park.art.header) + '" alt="" width="1672" height="941" loading="lazy" />'
+      + '</div>';
+  }
+
   function renderBadge(park) {
     if (park.art && park.art.badge) {
       return '<img class="park-badge-img" src="' + assetUrl(park.art.badge) + '" alt="'
@@ -134,8 +176,9 @@
   function renderFeaturedCard(park) {
     const isAvailable = Boolean(park.pageUrl);
 
-    return '<article class="park-card park-card--featured">'
+    return '<article class="park-card park-card--featured reveal">'
       + '<div class="card-badge-area card-badge-area--' + park.badgeTheme + '">'
+      + renderCardHero(park)
       + '<div class="card-badge-frame">'
       + renderBadge(park)
       + '</div>'
@@ -164,8 +207,9 @@
       ? 'A finished destination page is open in the archive.'
       : 'Illustration and destination page are still being prepared for the archive.';
 
-    return '<article class="park-card park-card--secondary">'
+    return '<article class="park-card park-card--secondary reveal">'
       + '<div class="card-badge-area card-badge-area--' + park.badgeTheme + '">'
+      + renderCardHero(park)
       + '<div class="card-badge-frame">'
       + renderBadge(park)
       + '</div>'
@@ -224,6 +268,7 @@
     }
 
     grid.innerHTML = featuredMarkup + secondaryMarkup + resultsMeta;
+    if (window.__tmObserve) window.__tmObserve(grid);
   }
 
   grid.addEventListener('click', function (event) {

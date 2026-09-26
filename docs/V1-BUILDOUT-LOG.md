@@ -24,6 +24,10 @@ Done in this phase:
 - Regenerated `parks/yosemite.html`, `parks/yellowstone.html`, and `parks/everglades.html` from `scripts/build-park-pages.js`. URLs unchanged. Skip link, breadcrumb classes, scripts, and the three descriptions are still present.
 - `node scripts/validate-parks.js` passed for 3 essays.
 
+## Phase 2 — motion
+
+Done. The existing `[data-speed]` parallax now also applies a slight scale, and `[data-parallax="fade"]` eases the hero title as it scrolls away. Small screens and coarse pointers use 0.35× of that movement. `prefers-reduced-motion: reduce` disables parallax and reveals and keeps content visible. Scroll reveals use IntersectionObserver. Card, badge, highlight, season, and discovery hover states also run on `:focus-within`. Cards show the park header image inside the badge frame so the zoom has a subject. Only transform and opacity are animated.
+
 ## Later phases
 
-Not started.
+Phase 3 content batches have not started. Next batch to write, in this order: Grand Canyon, Acadia, Zion, Olympic, Glacier, Great Smoky Mountains.

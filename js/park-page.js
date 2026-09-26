@@ -76,11 +76,11 @@
     const posterHidden = park.hero.posterAlt ? '' : ' aria-hidden="true"';
 
     return '<section id="hero" class="hero--park' + themeClass + '" style="' + heroVars() + '" aria-labelledby="park-hero-title">'
-      + '<div class="park-poster" data-speed="0.4"' + posterHidden + '>'
+      + '<div class="park-poster" data-speed="0.4" data-scale="1.06"' + posterHidden + '>'
       + '<img src="' + escapeHtml(assetUrl(poster)) + '" alt="' + escapeHtml(park.hero.posterAlt || '') + '" class="park-poster-art" width="1672" height="941" fetchpriority="high" />'
       + '</div>'
       + '<div class="hero-grain" aria-hidden="true"></div>'
-      + '<div class="hero-inner">'
+      + '<div class="hero-inner" data-parallax="fade">'
       + '<p class="hero-kicker">' + escapeHtml(park.hero.kicker) + '</p>'
       + '<p class="hero-eyebrow">' + escapeHtml(park.hero.eyebrow) + '</p>'
       + '<h1 class="hero-title" id="park-hero-title">' + escapeHtml(park.hero.title) + '</h1>'
