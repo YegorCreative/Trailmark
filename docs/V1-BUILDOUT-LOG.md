@@ -28,6 +28,14 @@ Done in this phase:
 
 Done. The existing `[data-speed]` parallax now also applies a slight scale, and `[data-parallax="fade"]` eases the hero title as it scrolls away. Small screens and coarse pointers use 0.35× of that movement. `prefers-reduced-motion: reduce` disables parallax and reveals and keeps content visible. Scroll reveals use IntersectionObserver. Card, badge, highlight, season, and discovery hover states also run on `:focus-within`. Cards show the park header image inside the badge frame so the zoom has a subject. Only transform and opacity are animated.
 
-## Later phases
+## Phase 3
 
-Phase 3 content batches have not started. Next batch to write, in this order: Grand Canyon, Acadia, Zion, Olympic, Glacier, Great Smoky Mountains.
+### Batch 1 — Grand Canyon, Acadia, Zion, Olympic, Glacier, Great Smoky Mountains
+
+Published. Validator passed for 9 essays. Pages generated.
+
+Needs fact review, because a live NPS page was not opened while writing them: Acadia, Zion, Olympic, Glacier, Great Smoky Mountains. Grand Canyon numbers come from the NPS statistics page and are recorded in `docs/park-sources/grand-canyon.md`.
+
+Hero focus for these six was set from the header images: Grand Canyon `42% 58%` (river bend, not the watchtower), Acadia `62% 48%` (lighthouse and headland), Zion `62% 46%` (cliff wall), Olympic `55% 48%` (river corridor), Glacier `58% 42%` (lit peaks), Smokies `48% 46%` (layered ridges). The other unpublished parks still use the default `50% 58%`.
+
+Next batch: Bryce Canyon, Arches, Canyonlands, Capitol Reef, Yosemite is done, so Death Valley, Joshua Tree, Saguaro. Proposed six: Bryce Canyon, Arches, Canyonlands, Capitol Reef, Death Valley, Joshua Tree.
