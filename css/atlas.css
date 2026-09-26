@@ -987,15 +987,23 @@ body.sheet-lock { overflow: hidden; }
   .filter-sheet.is-open {
     display: block;
     position: fixed;
-    z-index: 55;
+    z-index: 80;
     left: 0;
     right: 0;
     bottom: 0;
-    max-height: 78vh;
-    overflow: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 68vh;
+    overflow-x: hidden;
+    overflow-y: auto;
     background: #f6f1e8;
     padding: 1rem 1rem 1.4rem;
     border-radius: 18px 18px 0 0;
+    box-sizing: border-box;
+  }
+  .filter-sheet.is-open .pill-row {
+    width: 100%;
+    max-width: 100%;
   }
   .filter-compact { grid-template-columns: 1fr; }
   .atlas-card { min-height: 15rem; }
@@ -1434,18 +1442,40 @@ body.sheet-lock { overflow: hidden; }
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+#site-nav {
+  margin-left: auto;
 }
 
 #site-header .logo,
 #site-header .logo-link {
   min-width: 0;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
+  max-width: calc(100% - 7.5rem);
 }
 
 #site-header .nav-toggle {
-  margin-left: auto;
+  margin-left: 0.35rem;
   flex: 0 0 auto;
+  order: 2;
+}
+
+#site-header .logo { order: 1; }
+
+@media (max-width: 900px) {
+  #site-header .nav-toggle {
+    display: inline-flex !important;
+    background: #1c2a16;
+    color: #f7f3ec;
+    border-color: rgba(247, 243, 236, 0.7);
+  }
+  #site-header .logo-mark {
+    height: 32px;
+    max-width: 2.6rem;
+  }
 }
 
 .nav-overlay .mega-park {
@@ -1479,8 +1509,49 @@ body.sheet-lock { overflow: hidden; }
 .mega-col { break-inside: avoid; margin-bottom: 0.75rem; }
 .mega-feature { height: auto; min-height: 16rem; align-self: start; }
 
-.nav-overlay .mega-grid { column-count: 1; }
-.nav-overlay .mega-park-name { color: #1c1c1c; }
+.mobile-park {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 52px;
+  max-width: 100%;
+  color: #1c1c1c;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+}
+
+.mobile-park span {
+  min-width: 0;
+  flex: 1;
+  line-height: 1.05;
+}
+
+.mobile-park-photo {
+  width: 4.4rem;
+  height: 2.6rem;
+  object-fit: cover;
+  object-position: center bottom;
+  border-radius: 6px;
+  flex: 0 0 auto;
+}
+
+.mobile-park-badge {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.mobile-region h3 {
+  margin: 0.8rem 0 0.2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mobile-region h3 a { color: #2d5016; text-decoration: none; }
 
 .filter-sheet.is-open {
   width: 100%;

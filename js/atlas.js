@@ -183,6 +183,20 @@
       overlay.hidden = true;
       header.insertAdjacentElement('afterend', overlay);
     }
+    function mobileOpen(region) {
+      var parks = (byRegion[region] || []).filter(isOpen).sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
+      if (!parks.length) return '';
+      var items = parks.map(function (park) {
+        return '<a class="mobile-park" href="' + esc(pageHref(park)) + '">'
+          + '<img class="mobile-park-photo" src="' + esc(base() + park.art.header) + '" alt="" />'
+          + '<img class="mobile-park-badge" src="' + esc(base() + park.art.badge) + '" alt="" />'
+          + '<span>' + esc(park.name) + '</span></a>';
+      }).join('');
+      return '<section class="mobile-region"><h3><a href="' + esc(root + 'parks.html?region=' + encodeURIComponent(region)) + '">' + esc(region) + '</a></h3>' + items + '</section>';
+    }
+
     var soonParks = PARKS.filter(function (park) { return !isOpen(park); }).sort(function (a, b) {
       return a.name.localeCompare(b.name);
     });
@@ -200,7 +214,7 @@
       + '</nav>'
       + '<h2 class="nav-overlay-heading">Open parks</h2>'
       + '<p class="nav-overlay-count">' + openCount + ' of 63 open</p>'
-      + '<div class="nav-overlay-regions">' + regionColumns(true) + '</div>'
+      + '<div class="nav-overlay-regions">' + regionNames.map(mobileOpen).join('') + '</div>'
       + '<button type="button" class="soon-toggle" aria-expanded="false" aria-controls="soon-list">Coming soon (' + soonParks.length + ')</button>'
       + '<ul id="soon-list" class="soon-list" hidden>' + soonList + '</ul>'
       + '</div>';
@@ -520,6 +534,9 @@
     var launch = document.querySelector('.filter-launch');
     var sheet = document.getElementById('filter-sheet');
     var done = document.querySelector('.filter-done');
+    if (sheet && window.matchMedia('(max-width: 700px)').matches) {
+      document.body.appendChild(sheet);
+    }
     function setSheet(open) {
       if (!sheet || !launch) return;
       sheet.classList.toggle('is-open', open);
@@ -609,4 +626,8 @@
   initIndex();
   initBadgeWall();
   initFooter();
+  if (location.hash && location.hash !== '#menu' && location.hash !== '#mega' && location.hash !== '#filters') {
+    var hashed = document.querySelector(location.hash);
+    if (hashed) window.scrollTo(0, hashed.getBoundingClientRect().top + window.scrollY - 72);
+  }
 }());

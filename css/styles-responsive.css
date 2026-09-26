@@ -146,9 +146,10 @@
   }
 
   .header-inner {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.75rem;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
   }
 
   .nav-list {
