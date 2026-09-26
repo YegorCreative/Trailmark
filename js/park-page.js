@@ -87,7 +87,7 @@
       + '<p class="hero-subtitle">' + escapeHtml(park.hero.subtitle) + '</p>'
       + '<div class="hero-ledger" aria-label="Archive metadata">'
       + '<p><span>Archive No.</span> ' + escapeHtml(park.archiveNumber) + '</p>'
-      + '<p><span>Protected</span> Since ' + escapeHtml(park.established) + '</p>'
+      + '<p><span>National Park since</span> ' + escapeHtml(park.established) + '</p>'
       + '<p><span>Collection</span> ' + escapeHtml(park.collection) + '</p>'
       + '</div>'
       + '</div>'

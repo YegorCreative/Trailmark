@@ -56,3 +56,8 @@ Next batch: Saguaro, Petrified Forest, Great Sand Dunes, White Sands, Carlsbad C
 - Featured cards align the text to the top and pin the button to the bottom, so the right column does not sit as a centered block with a large empty gap.
 - Hidden-discovery cards no longer use a tall box with content pushed to the bottom.
 - The overview lead is a deliberate large serif. The body paragraphs under it share one size. A specificity bug had been shrinking the lead.
+
+## Card height and park-year label
+
+- Featured cards no longer stretch to the height of the secondary stack (`align-items: start` on the grid) and the Explore button is no longer pushed to the bottom of a tall column.
+- The hero meta label is "National Park since" followed by the year. Fact labels that said "Protected" now say "National Park since". The year strings themselves were not rewritten.

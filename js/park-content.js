@@ -43,7 +43,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'West' },
         { label: 'State', value: 'California' },
-        { label: 'Protected', value: 'Since 1890' },
+        { label: 'National Park since', value: 'Since 1890' },
         { label: 'Granite Icon', value: 'El Capitan' },
         { label: 'Waterfall Season', value: 'Spring Snowmelt' },
       ],
@@ -219,7 +219,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Mountain West' },
         { label: 'States', value: 'Wyoming, Montana, Idaho' },
-        { label: 'Protected', value: 'Since 1872' },
+        { label: 'National Park since', value: 'Since 1872' },
         { label: 'Thermal Icon', value: 'Old Faithful' },
         { label: 'Wildlife Valleys', value: 'Lamar and Hayden' },
       ],
@@ -395,7 +395,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Southeast' },
         { label: 'State', value: 'Florida' },
-        { label: 'Protected', value: 'Since 1947' },
+        { label: 'National Park since', value: 'Since 1947' },
         { label: 'Signature Habitat', value: 'Sawgrass Prairie' },
         { label: 'Water Story', value: 'Freshwater to Florida Bay' },
       ],
@@ -568,7 +568,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Southwest' },
         { label: 'State', value: 'Arizona' },
-        { label: 'Protected', value: 'National park since 1919' },
+        { label: 'National Park since', value: 'National park since 1919' },
         { label: 'River miles', value: '278 inside the park' },
         { label: 'Park size', value: '1,218,375 acres' },
       ],
@@ -720,7 +720,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Northeast' },
         { label: 'State', value: 'Maine' },
-        { label: 'Protected', value: 'National park since 1919' },
+        { label: 'National Park since', value: 'National park since 1919' },
         { label: 'Earlier name', value: 'Lafayette National Park' },
         { label: 'Coast', value: 'Gulf of Maine' },
       ],
@@ -868,7 +868,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Southwest' },
         { label: 'State', value: 'Utah' },
-        { label: 'Protected', value: 'National park since 1919' },
+        { label: 'National Park since', value: 'National park since 1919' },
         { label: 'River', value: 'Virgin River' },
         { label: 'Stone', value: 'Navajo sandstone' },
       ],
@@ -1014,7 +1014,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Pacific Northwest' },
         { label: 'State', value: 'Washington' },
-        { label: 'Protected', value: 'National park since 1938' },
+        { label: 'National Park since', value: 'National park since 1938' },
         { label: 'Peninsula', value: 'Olympic' },
         { label: 'Shore', value: 'Pacific coast' },
       ],
@@ -1160,7 +1160,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Northern Rockies' },
         { label: 'State', value: 'Montana' },
-        { label: 'Protected', value: 'National park since 1910' },
+        { label: 'National Park since', value: 'National park since 1910' },
         { label: 'Border park', value: 'Waterton-Glacier' },
         { label: 'Divide', value: 'Continental Divide' },
       ],
@@ -1306,7 +1306,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Southern Appalachians' },
         { label: 'States', value: 'Tennessee, North Carolina' },
-        { label: 'Protected', value: 'Established 1934' },
+        { label: 'National Park since', value: 'Established 1934' },
         { label: 'Dedicated', value: '1940' },
         { label: 'Crest', value: 'State-line ridgeline' },
       ],
@@ -1444,7 +1444,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Southwest' },
         { label: 'State', value: 'Utah' },
-        { label: 'Protected', value: 'National park since 1928' },
+        { label: 'National Park since', value: 'National park since 1928' },
         { label: 'Signature', value: 'Hoodoos' },
         { label: 'Amphitheater', value: 'Bryce Amphitheater' },
       ],
@@ -1582,7 +1582,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Southwest' },
         { label: 'State', value: 'Utah' },
-        { label: 'Protected', value: 'National park since 1971' },
+        { label: 'National Park since', value: 'National park since 1971' },
         { label: 'Climate', value: 'High desert' },
         { label: 'Signature', value: 'Natural arches' },
       ],
@@ -1720,7 +1720,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Southwest' },
         { label: 'State', value: 'Utah' },
-        { label: 'Protected', value: 'National park since 1964' },
+        { label: 'National Park since', value: 'National park since 1964' },
         { label: 'Rivers', value: 'Green and Colorado' },
         { label: 'Districts', value: 'Island, Needles, Maze' },
       ],
@@ -1858,7 +1858,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Southwest' },
         { label: 'State', value: 'Utah' },
-        { label: 'Protected', value: 'National park since 1971' },
+        { label: 'National Park since', value: 'National park since 1971' },
         { label: 'Structure', value: 'Waterpocket Fold' },
         { label: 'Valley', value: 'Fruita' },
       ],
@@ -1996,7 +1996,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Mojave' },
         { label: 'States', value: 'California, Nevada' },
-        { label: 'Protected', value: 'National park since 1994' },
+        { label: 'National Park since', value: 'National park since 1994' },
         { label: 'Low point', value: 'Badwater, −282 feet' },
         { label: 'Plants', value: 'More than 1,000 species' },
       ],
@@ -2134,7 +2134,7 @@ const PARK_PAGE_CONTENT = {
       facts: [
         { label: 'Region', value: 'Southwest' },
         { label: 'State', value: 'California' },
-        { label: 'Protected', value: 'National park since 1994' },
+        { label: 'National Park since', value: 'National park since 1994' },
         { label: 'Mojave plant', value: 'Yucca brevifolia' },
         { label: 'Also holds', value: 'Colorado Desert' },
       ],

@@ -1089,7 +1089,7 @@ img.badge-system-mark {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
   gap: 1.75rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 .cards-secondary {
@@ -1169,16 +1169,12 @@ img.badge-system-mark {
 }
 
 .park-card--featured {
+  align-items: flex-start;
   min-height: 0;
 }
 
 .park-card--featured .card-body {
   justify-content: flex-start;
-}
-
-.park-card--featured .card-btn,
-.park-card--featured .card-coming-soon {
-  margin-top: auto;
 }
 
 .park-card--secondary {
