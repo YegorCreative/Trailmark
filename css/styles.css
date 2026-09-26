@@ -258,8 +258,16 @@ input:focus-visible {
 }
 
 .hero-scene-art--base {
+  position: absolute;
+  inset: 0;
   object-fit: cover;
-  object-position: 62% 48%;
+  object-position: 50% 46%;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.hero-scene-art--base.is-active {
+  opacity: 1;
 }
 
 .hero-atmosphere {
@@ -273,8 +281,8 @@ input:focus-visible {
 .hero-vignette {
   z-index: 2;
   background:
-    linear-gradient(90deg, rgba(12, 19, 15, 0.26) 0%, rgba(12, 19, 15, 0.14) 18%, rgba(12, 19, 15, 0) 38%),
-    linear-gradient(180deg, rgba(247, 243, 236, 0.05) 0%, rgba(247, 243, 236, 0) 20%, rgba(11, 18, 13, 0.10) 100%);
+    linear-gradient(90deg, rgba(10, 16, 12, 0.82) 0%, rgba(10, 16, 12, 0.62) 26%, rgba(10, 16, 12, 0.28) 48%, rgba(10, 16, 12, 0.08) 68%),
+    linear-gradient(180deg, rgba(10, 16, 12, 0.28) 0%, rgba(10, 16, 12, 0.08) 28%, rgba(10, 16, 12, 0.45) 100%);
 }
 
 .park-poster,
@@ -416,6 +424,10 @@ input:focus-visible {
     transition: none;
   }
 
+  .hero-scene-art--base {
+    transition: none;
+  }
+
   .hero-stars::before,
   .hero-fog {
     animation: none;
@@ -441,8 +453,9 @@ input:focus-visible {
 }
 
 .hero--homepage .hero-eyebrow {
-  color: #f2d59d;
+  color: #ffe3b8;
   margin-bottom: 1.25rem;
+  text-shadow: 0 1px 8px rgba(8, 12, 10, 0.65);
 }
 
 .hero--homepage .hero-title {
@@ -473,9 +486,9 @@ input:focus-visible {
 .hero--homepage .hero-subtitle {
   max-width: 31rem;
   font-size: 1.0625rem;
-  color: rgba(247, 243, 236, 0.88);
+  color: #f7f3ec;
   margin-bottom: 0.75rem;
-  text-shadow: 0 3px 16px rgba(12, 18, 14, 0.28);
+  text-shadow: 0 2px 10px rgba(8, 12, 10, 0.55);
 }
 
 /* Hero action buttons */
@@ -1156,7 +1169,16 @@ img.badge-system-mark {
 }
 
 .park-card--featured {
-  min-height: 32rem;
+  min-height: 0;
+}
+
+.park-card--featured .card-body {
+  justify-content: flex-start;
+}
+
+.park-card--featured .card-btn,
+.park-card--featured .card-coming-soon {
+  margin-top: auto;
 }
 
 .park-card--secondary {
@@ -1712,12 +1734,12 @@ a.logo-text {
   max-width: 42rem;
 }
 
-.valley-lead {
+.valley-copy .valley-lead {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  line-height: 1.2;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  line-height: 1.22;
   color: var(--color-green-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
 }
 
 .valley-copy p {
@@ -1910,7 +1932,7 @@ a.logo-text {
 }
 
 .discovery-card {
-  min-height: 250px;
+  min-height: 0;
   padding: 1.4rem;
   background:
     linear-gradient(180deg, rgba(253, 250, 245, 0.94) 0%, rgba(246, 239, 226, 0.94) 100%);
@@ -1918,7 +1940,7 @@ a.logo-text {
   box-shadow: 0 18px 38px rgba(41, 35, 22, 0.07);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 0.75rem;
 }
 

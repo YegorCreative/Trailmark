@@ -46,8 +46,8 @@
       ===================== -->
       <section id="hero" class="hero--homepage">
 
-        <div class="hero-scene hero-scene--base" data-speed="0.28" data-scale="1.05" aria-hidden="true">
-          <img src="assets/svg/parks.svg" alt="" class="hero-scene-art hero-scene-art--base" width="3840" height="2160" fetchpriority="high" />
+        <div class="hero-scene hero-scene--base" data-hero-crossfade data-speed="0.28" data-scale="1.05" aria-hidden="true">
+          <img src="assets/park-art/yosemite/header.webp" alt="" class="hero-scene-art hero-scene-art--base is-active" width="1672" height="941" fetchpriority="high" />
         </div>
 
         <div class="hero-atmosphere" aria-hidden="true"></div>
@@ -110,7 +110,7 @@
             <p class="badge-system-eyebrow">The Badge System</p>
             <h2 class="badge-system-title">Collect the wild, one park at a time.</h2>
             <p class="badge-system-body">
-              Every park becomes a crafted mark &mdash; part field-note, part poster, part memory. Start with Yosemite, then watch the archive grow park by park.
+              Every park becomes a crafted mark &mdash; part field-note, part poster, part memory. Open a finished page, then watch the archive grow park by park.
             </p>
             <ol class="badge-steps">
               <li class="badge-step">
@@ -129,9 +129,9 @@
           </div>
 
           <div class="collector-board" aria-label="TrailMark collector board preview">
-            <article class="badge-entry badge-entry--available badge-entry--featured">
+            <article class="badge-entry badge-entry--featured" data-board-park="yosemite">
               <div class="badge-entry-meta">
-                <span class="badge-entry-status badge-entry-status--available">Available</span>
+                <span class="badge-entry-status" data-board-status>Available</span>
                 <span class="badge-entry-region">West</span>
               </div>
               <div class="badge-entry-top">
@@ -141,33 +141,33 @@
                 <div class="badge-entry-copy">
                   <h3 class="badge-entry-title">Yosemite</h3>
                   <p class="badge-entry-subtitle">First unlocked mark</p>
-                  <p class="badge-entry-desc">The first finished badge sets the tone: iconic terrain, collectible presentation, and a park page ready to enter.</p>
+                  <p class="badge-entry-desc" data-board-desc>The first finished badge sets the tone: iconic terrain, collectible presentation, and a park page ready to enter.</p>
                 </div>
               </div>
             </article>
 
-            <article class="badge-entry badge-entry--pending">
+            <article class="badge-entry" data-board-park="yellowstone">
               <div class="badge-entry-meta">
-                <span class="badge-entry-status badge-entry-status--available">Available</span>
+                <span class="badge-entry-status" data-board-status>Available</span>
                 <span class="badge-entry-region">Mountain West</span>
               </div>
               <div class="badge-entry-badge badge-entry-badge--blue">
                 <div class="badge-entry-badge-slot" data-badge-mount="yellowstone"></div>
               </div>
               <h3 class="badge-entry-title">Yellowstone</h3>
-              <p class="badge-entry-desc">Thermal color and steam are open in the archive, with a finished park page ready to enter.</p>
+              <p class="badge-entry-desc" data-board-desc>Thermal color and steam are open in the archive, with a finished park page ready to enter.</p>
             </article>
 
-            <article class="badge-entry badge-entry--pending">
+            <article class="badge-entry" data-board-park="grand-canyon">
               <div class="badge-entry-meta">
-                <span class="badge-entry-status badge-entry-status--pending">In Progress</span>
+                <span class="badge-entry-status" data-board-status>In Progress</span>
                 <span class="badge-entry-region">Southwest</span>
               </div>
               <div class="badge-entry-badge badge-entry-badge--red">
                 <div class="badge-entry-badge-slot" data-badge-mount="grand-canyon"></div>
               </div>
               <h3 class="badge-entry-title">Grand Canyon</h3>
-              <p class="badge-entry-desc">The canyon mark is still in progress, with its strata and river still taking shape.</p>
+              <p class="badge-entry-desc" data-board-desc>The canyon mark is still in progress, with its strata and river still taking shape.</p>
             </article>
           </div>
         </div>
@@ -201,7 +201,7 @@
       <section id="park-grid">
         <div class="section-inner">
           <h2 class="section-title">Featured Parks</h2>
-          <p class="section-subtitle">Three destinations shaping the first TrailMark archive.</p>
+          <p class="section-subtitle">Published destinations shaping the TrailMark archive.</p>
 
           <div class="search-bar">
             <label for="park-search" class="search-label">Search parks</label>
@@ -228,7 +228,7 @@
         <div class="closing-cta-inner">
           <p class="closing-cta-kicker">Field Journal / Archive Opening</p>
           <h2 class="closing-cta-title">Begin the archive with one wild place.</h2>
-          <p class="closing-cta-body">Yosemite, Yellowstone, and Everglades are open. Return as each new park mark joins the collection.</p>
+          <p class="closing-cta-body">The open parks are in the archive. Return as each new mark joins the collection.</p>
           <a href="parks/yosemite.html" class="closing-cta-btn">Open Yosemite</a>
           <p class="closing-cta-note">More illustrated parks are being added one by one.</p>
         </div>

@@ -317,6 +317,72 @@
   number.textContent = String(published);
 }());
 
+(function initHeroCrossfade() {
+  const scene = document.querySelector('[data-hero-crossfade]');
+  if (!scene || typeof PARKS === 'undefined') return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const order = ['yosemite', 'yellowstone', 'grand-canyon', 'olympic', 'zion', 'everglades'];
+  const first = scene.querySelector('img');
+  if (!first) return;
+
+  const slides = [first];
+
+  function addSlide(park) {
+    const image = document.createElement('img');
+    image.className = 'hero-scene-art hero-scene-art--base';
+    image.alt = '';
+    image.width = 1672;
+    image.height = 941;
+    image.decoding = 'async';
+    if (park.heroFocus) image.style.objectPosition = park.heroFocus;
+    image.src = park.art.header;
+    scene.appendChild(image);
+    return image;
+  }
+
+  window.addEventListener('load', function () {
+    order.forEach(function (id) {
+      const park = PARKS.find(function (entry) { return entry.id === id && entry.pageUrl && entry.art; });
+      if (!park) return;
+      if (first.getAttribute('src') && first.getAttribute('src').indexOf('/' + id + '/') !== -1) {
+        if (park.heroFocus) first.style.objectPosition = park.heroFocus;
+        return;
+      }
+      slides.push(addSlide(park));
+    });
+    if (slides.length < 2) return;
+    let index = 0;
+    window.setInterval(function () {
+      slides[index].classList.remove('is-active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('is-active');
+    }, 6000);
+  });
+}());
+
+(function syncBadgeBoard() {
+  if (typeof PARKS === 'undefined') return;
+  document.querySelectorAll('[data-board-park]').forEach(function (article) {
+    const park = PARKS.find(function (entry) {
+      return entry.id === article.getAttribute('data-board-park');
+    });
+    if (!park) return;
+    const open = Boolean(park.pageUrl);
+    const status = article.querySelector('[data-board-status]');
+    if (status) {
+      status.textContent = open ? 'Available' : 'In Progress';
+      status.className = 'badge-entry-status ' + (open ? 'badge-entry-status--available' : 'badge-entry-status--pending');
+    }
+    article.classList.toggle('badge-entry--pending', !open);
+    article.classList.toggle('badge-entry--available', open);
+    const desc = article.querySelector('[data-board-desc]');
+    if (desc && open && /in progress|still being|still taking shape/i.test(desc.textContent)) {
+      desc.textContent = 'Open in the archive, with a finished park page ready to enter.';
+    }
+  });
+}());
+
 (function mountBadgeSlots() {
   if (typeof PARKS === 'undefined') return;
 

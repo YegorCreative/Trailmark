@@ -38,4 +38,13 @@ Needs fact review, because a live NPS page was not opened while writing them: Ac
 
 Hero focus for these six was set from the header images: Grand Canyon `42% 58%` (river bend, not the watchtower), Acadia `62% 48%` (lighthouse and headland), Zion `62% 46%` (cliff wall), Olympic `55% 48%` (river corridor), Glacier `58% 42%` (lit peaks), Smokies `48% 46%` (layered ridges). The other unpublished parks still use the default `50% 58%`.
 
-Next batch: Bryce Canyon, Arches, Canyonlands, Capitol Reef, Yosemite is done, so Death Valley, Joshua Tree, Saguaro. Proposed six: Bryce Canyon, Arches, Canyonlands, Capitol Reef, Death Valley, Joshua Tree.
+Next batch: Bryce Canyon, Arches, Canyonlands, Capitol Reef, Death Valley, Joshua Tree.
+
+## Homepage fixes
+
+- Replaced the homepage hero art. `assets/svg/parks.svg` stays in the repo and is no longer used. The hero crossfades six published headers (Yosemite, Yellowstone, Grand Canyon, Olympic, Zion, Everglades), about 6 seconds each with a 1.5 second fade, inside the existing parallax layer. Only Yosemite loads eagerly. `prefers-reduced-motion` keeps that one still image.
+- The left scrim is darker so the cream headline, cream subtitle, and gold eyebrow stay above 4.5:1 even over a white image (calculated about 9:1 or higher under an 82% dark scrim).
+- Badge-board status is set from `pageUrl`. Grand Canyon now reads Available. Section and closing lines no longer name a fixed set of three parks.
+- Featured cards align the text to the top and pin the button to the bottom, so the right column does not sit as a centered block with a large empty gap.
+- Hidden-discovery cards no longer use a tall box with content pushed to the bottom.
+- The overview lead is a deliberate large serif. The body paragraphs under it share one size. A specificity bug had been shrinking the lead.
