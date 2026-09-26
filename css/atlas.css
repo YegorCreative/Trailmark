@@ -1974,6 +1974,13 @@ body:has(#hero) #hero.about-hero::after {
   margin: 0 auto;
   padding: 4.5rem 1.5rem;
 }
+.about-maker h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 1.6rem 0 0.6rem;
+}
 .about-maker img {
   width: 100%;
   height: auto;
