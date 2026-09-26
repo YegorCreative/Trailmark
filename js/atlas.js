@@ -172,6 +172,7 @@
     if (megaEl) {
       megaEl.innerHTML = '<div class="mega-layout"><div class="mega-grid">' + regionColumns(true) + '</div>' + feature + '</div>'
         + '<a class="mega-all" href="' + esc(root + 'parks.html') + '">See all 63 parks →</a>';
+      if (location.hash === '#mega') megaEl.style.display = 'block';
     }
 
     var overlay = document.getElementById('nav-overlay');
@@ -527,6 +528,7 @@
     }
     if (launch) launch.addEventListener('click', function () { setSheet(!sheet.classList.contains('is-open')); });
     if (done) done.addEventListener('click', function () { setSheet(false); });
+    if (location.hash === '#filters') setSheet(true);
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && sheet && sheet.classList.contains('is-open')) setSheet(false);
     });
@@ -562,9 +564,49 @@
     });
   }
 
+  function initFooter() {
+    var footer = document.getElementById('site-footer');
+    if (!footer) return;
+    var root = base();
+    var open = PARKS.filter(isOpen);
+    var byRegion = {};
+    open.forEach(function (park) {
+      if (!byRegion[park.region]) byRegion[park.region] = [];
+      byRegion[park.region].push(park);
+    });
+    var cols = Object.keys(byRegion).sort().map(function (region) {
+      var links = byRegion[region].sort(function (a, b) { return a.name.localeCompare(b.name); }).map(function (park) {
+        return '<li><a href="' + esc(pageHref(park)) + '">' + esc(park.name) + '</a></li>';
+      }).join('');
+      return '<div><h3><a href="' + esc(root + 'parks.html?region=' + encodeURIComponent(region)) + '">' + esc(region) + '</a></h3><ul>' + links + '</ul></div>';
+    }).join('');
+    var badges = open.slice().sort(function (a, b) {
+      return (b.archiveSeq || 0) - (a.archiveSeq || 0);
+    }).slice(0, 6).map(function (park) {
+      return '<a href="' + esc(pageHref(park)) + '" title="' + esc(park.name) + '"><img src="' + esc(base() + park.art.badge) + '" alt="' + esc(park.name) + ' badge" /></a>';
+    }).join('');
+    var texture = base() + 'assets/park-art/yosemite/header.webp';
+    footer.className = 'atlas-footer';
+    footer.innerHTML = '<div class="atlas-footer-texture" style="background-image:url(' + esc(texture) + ')" aria-hidden="true"></div>'
+      + '<div class="atlas-footer-inner">'
+      + '<div class="atlas-footer-brand"><p class="atlas-footer-name">TrailMark</p>'
+      + '<p>An illustrated archive of the 63 U.S. national parks, built one park at a time.</p>'
+      + '<div class="atlas-footer-badges">' + badges + '</div></div>'
+      + '<div class="atlas-footer-regions">' + cols + '</div>'
+      + '<nav class="atlas-footer-pages" aria-label="Footer">'
+      + '<a href="' + esc(root + 'about.html') + '">About</a>'
+      + '<a href="' + esc(root + 'faq.html') + '">FAQ</a>'
+      + '<a href="' + esc(root + 'contact.html') + '">Contact</a>'
+      + '<a href="' + esc(root + 'parks.html') + '">All parks</a>'
+      + '</nav>'
+      + '<p class="atlas-footer-copy">© 2026 TrailMark</p>'
+      + '</div>';
+  }
+
   initHeader();
   initNav();
   initStrip();
   initIndex();
   initBadgeWall();
+  initFooter();
 }());
