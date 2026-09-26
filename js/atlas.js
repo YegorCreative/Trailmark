@@ -319,12 +319,41 @@
       moved = false;
     }, true);
 
+    var reps = {
+      mountain: 'glacier',
+      desert: 'death-valley',
+      canyon: 'grand-canyon',
+      'coast/island': 'acadia',
+      forest: 'olympic',
+      wetland: 'everglades',
+      volcanic: 'yellowstone',
+      arctic: 'gates-of-the-arctic',
+      cave: 'carlsbad-caverns',
+    };
     var tiles = document.querySelector('[data-landscape-tiles]');
     if (tiles) {
       tiles.innerHTML = LANDSCAPES.map(function (pair) {
+        var rep = PARKS.find(function (park) { return park.id === reps[pair[0]]; }) || PARKS[0];
+        var openN = PARKS.filter(function (park) { return park.landscape === pair[0] && isOpen(park); }).length;
         return '<a class="landscape-tile" href="' + esc(base() + 'parks.html?landscape=' + encodeURIComponent(pair[0])) + '">'
-          + '<span>' + esc(pair[1]) + '</span></a>';
+          + '<img src="' + esc(base() + rep.art.header) + '" alt="" />'
+          + '<span><strong>' + esc(pair[1]) + '</strong><small>' + openN + ' open</small></span></a>';
       }).join('');
+    }
+
+    var picksHost = document.querySelector('[data-next-picks]');
+    var bandArt = document.querySelector('.next-band-art');
+    if (picksHost) {
+      var pool = PARKS.filter(isOpen).slice();
+      for (var i = pool.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var swap = pool[i];
+        pool[i] = pool[j];
+        pool[j] = swap;
+      }
+      var picks = pool.slice(0, 3);
+      if (bandArt && picks[0]) bandArt.src = base() + picks[0].art.header;
+      picksHost.innerHTML = picks.map(function (park) { return cardHtml(park, false); }).join('');
     }
   }
 
