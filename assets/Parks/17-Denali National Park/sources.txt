@@ -1,0 +1,15 @@
+Park: Denali National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: DenaliHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: DenaliBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: DenaliDallSheep-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/dena/learn/management/upload/FoundationDoc_Denali_2014_corrected_final.pdf
+  Landscape reference: https://www.nps.gov/dena/
+  Wildlife reference: https://www.nps.gov/dena/learn/nature/mammals.htm

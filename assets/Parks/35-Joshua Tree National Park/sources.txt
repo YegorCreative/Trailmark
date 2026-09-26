@@ -1,0 +1,11 @@
+Park: Joshua Tree National Park
+Header / hero drawing:
+  Generated file: 01-header/joshua-tree-header-Codex.png
+  Official NPS reference: https://www.nps.gov/jotr/learn/nature/index.htm
+Badge / emblem art:
+  Generated file: 02-badge/joshua-tree-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/jotr/planyourvisit/park-map-and-brochure.htm
+Extra illustration:
+  Generated file: 03-extra/joshua-tree-desert-tortoise-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/jotr/learn/nature/tortoise.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

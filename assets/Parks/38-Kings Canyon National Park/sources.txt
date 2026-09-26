@@ -1,0 +1,11 @@
+Park: Kings Canyon National Park
+Header / hero drawing:
+  Generated file: 01-header/kings-canyon-header-Codex.png
+  Official NPS reference: https://www.nps.gov/seki/learn/nature/naturalfeaturesandecosystems.htm
+Badge / emblem art:
+  Generated file: 02-badge/kings-canyon-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/seki/learn/news/quick-fact-sheet.htm
+Extra illustration:
+  Generated file: 03-extra/kings-canyon-yellow-bellied-marmot-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/seki/learn/nature/animals.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

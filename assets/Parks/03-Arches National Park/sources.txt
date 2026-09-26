@@ -1,0 +1,14 @@
+Park: Arches National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: ArchesHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: ArchesBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: ArchesBalancedRock-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-24.
+  Identity reference: https://www.nps.gov/arch/planyourvisit/delicate-arch.htm
+  Extra reference: https://www.nps.gov/arch/planyourvisit/balancedrock.htm

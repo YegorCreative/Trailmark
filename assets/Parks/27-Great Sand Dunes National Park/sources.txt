@@ -1,0 +1,17 @@
+Park: Great Sand Dunes National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/great-sand-dunes-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/great-sand-dunes-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/great-sand-dunes-kangaroo-rat-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/grsa/learn/nature/geology.htm
+  https://www.nps.gov/grsa/learn/nature/dune-types.htm
+  https://www.nps.gov/grsa/learn/nature/hydrology.htm
+  https://www.nps.gov/grsa/learn/nature/mammals.htm

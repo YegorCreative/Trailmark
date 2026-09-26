@@ -1,0 +1,25 @@
+Park: Voyageurs National Park
+Header / hero drawing:
+  Generated file: 01-header/voyageurs-header-Codex.png
+  Subject: Island-studded northern lake, Canadian Shield granite, boreal forest, canoe, and aurora
+  Official NPS references:
+    https://www.nps.gov/voya/index.htm
+    https://www.nps.gov/voya/learn/nature/index.htm
+    https://www.nps.gov/voya/planyourvisit/lake-navigation.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/voyageurs-badge-Codex.png
+  Subject: Interconnected lake channels, granite islands, boreal forest, canoe, and northern lights
+  Official NPS references:
+    https://www.nps.gov/voya/planyourvisit/lake-navigation.htm
+    https://www.nps.gov/voya/learn/nature/index.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/voyageurs-common-loon-extra-Codex.png
+  Subject: Common loon
+  Official NPS reference:
+    https://www.nps.gov/voya/learn/nature/common-loon.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

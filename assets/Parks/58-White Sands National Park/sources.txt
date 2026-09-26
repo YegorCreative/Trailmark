@@ -1,0 +1,25 @@
+Park: White Sands National Park
+Header / hero drawing:
+  Generated file: 01-header/white-sands-header-Codex.png
+  Subject: White gypsum dunes, San Andres Mountains, and soaptree yuccas at sunset
+  Official NPS references:
+    https://www.nps.gov/whsa/learn/management/white-sands-purpose-and-significance-statement.htm
+    https://www.nps.gov/whsa/learn/gypsum.htm
+    https://www.nps.gov/whsa/learn/geology-of-white-sands.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/white-sands-badge-Codex.png
+  Subject: Flowing gypsum dunes, San Andres Mountains, and soaptree yucca
+  Official NPS references:
+    https://www.nps.gov/whsa/learn/gypsum.htm
+    https://www.nps.gov/whsa/learn/geology-of-white-sands.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/white-sands-bleached-earless-lizard-extra-Codex.png
+  Subject: Bleached earless lizard with diagnostic abdominal spots
+  Official NPS reference:
+    https://www.nps.gov/whsa/learn/nature/bleachedearlesslizard.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

@@ -1,0 +1,26 @@
+Park: Yellowstone National Park
+Header / hero drawing:
+  Generated file: 01-header/yellowstone-header-Codex.png
+  Subject: Grand Prismatic Spring, microbial color bands, steam, and lodgepole forest
+  Official NPS references:
+    https://www.nps.gov/yell/planyourvisit/brochure-text.htm
+    https://www.nps.gov/yell/learn/kidsyouth/places.htm
+    https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/yellowstone-badge-Codex.png
+  Subject: Old Faithful eruption and a prismatic thermal pool
+  Official NPS references:
+    https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm
+    https://www.nps.gov/yell/planyourvisit/brochure-text.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/yellowstone-gray-wolf-extra-Codex.png
+  Subject: Yellowstone gray wolf
+  Official NPS references:
+    https://www.nps.gov/yell/learn/nature/wolf.htm
+    https://www.nps.gov/yell/learn/nature/mammals.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

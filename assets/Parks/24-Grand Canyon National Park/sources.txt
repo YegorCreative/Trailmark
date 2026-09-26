@@ -1,0 +1,17 @@
+Park: Grand Canyon National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/grand-canyon-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/grand-canyon-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/grand-canyon-condor-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/grca/learn/nature/naturalfeaturesandecosystems.htm
+  https://www.nps.gov/grca/learn/nature/geologicformations.htm
+  https://www.nps.gov/grca/planyourvisit/desert-view-drive.htm
+  https://www.nps.gov/grca/learn/nature/california-condors.htm

@@ -1,0 +1,16 @@
+Park: Zion National Park
+Header / hero drawing:
+  Generated file: 01-header/zion-header-Codex.png
+  Source: Original AI-generated TrailMark artwork created with OpenAI image generation on 2026-08-26.
+Badge / emblem art:
+  Generated file: 02-badge/zion-badge-Codex.png
+  Source: Original AI-generated TrailMark artwork created with OpenAI image generation on 2026-08-26.
+Extra illustration:
+  Generated file: 03-extra/zion-desert-bighorn-extra-Codex.png
+  Source: Original AI-generated TrailMark artwork created with OpenAI image generation on 2026-08-26.
+Official NPS references:
+  https://www.nps.gov/zion/index.htm
+  https://www.nps.gov/zion/planyourvisit/watchman-campground.htm
+  https://www.nps.gov/zion/learn/nature/bighorn.htm
+  https://www.nps.gov/zion/learn/nature/mammals.htm
+Notes: Visual concepts were informed by official NPS descriptions of Zion's cream, pink, and red sandstone cliffs, the Watchman, the Virgin River, and restored desert bighorn sheep.

@@ -1,0 +1,15 @@
+Park: Black Canyon of the Gunnison National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: BlackCanyonHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: BlackCanyonBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: BlackCanyonPeregrine-Codex.png
+Notes:
+Generation provenance: Original AI-generated TrailMark artwork created with OpenAI image generation.
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Geology reference: https://www.nps.gov/blca/learn/nature/geology.htm
+  Painted Wall and wildlife reference: https://www.nps.gov/blca/planyourvisit/park-brochure.htm

@@ -1,0 +1,11 @@
+Park: Kenai Fjords National Park
+Header / hero drawing:
+  Generated file: 01-header/kenai-fjords-header-Codex.png
+  Official NPS reference: https://www.nps.gov/kefj/learn/nature/glaciers.htm
+Badge / emblem art:
+  Generated file: 02-badge/kenai-fjords-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/kefj/planyourvisit/basicinfo.htm
+Extra illustration:
+  Generated file: 03-extra/kenai-fjords-tufted-puffin-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/kefj/learn/nature/puffins.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

@@ -1,0 +1,11 @@
+Park: Olympic National Park
+Header / hero drawing:
+  Generated file: 01-header/olympic-header-Codex.png
+  Official NPS reference: https://www.nps.gov/olym/learn/nature/index.htm
+Badge / emblem art:
+  Generated file: 02-badge/olympic-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/olym/planyourvisit/park-overview-three-parks-in-one.htm
+Extra illustration:
+  Generated file: 03-extra/olympic-roosevelt-elk-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/olym/learn/nature/roosevelt-elk.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-26.

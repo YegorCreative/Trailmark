@@ -1,0 +1,15 @@
+Park: Congaree National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: CongareeHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: CongareeBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: CongareeFireflies-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/cong/
+  Foundation reference: https://www.nps.gov/cong/learn/management/upload/CONG_FD_SP.pdf
+  Firefly reference: https://www.nps.gov/cong/learn/nature/synchronous-fireflies-at-congaree.htm

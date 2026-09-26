@@ -1,0 +1,17 @@
+Park: Yosemite National Park
+Header / hero drawing:
+  Generated file: 01-header/yosemite-header-Codex.png
+  Source: Original AI-generated TrailMark artwork created with OpenAI image generation on 2026-08-26.
+Badge / emblem art:
+  Generated file: 02-badge/yosemite-badge-Codex.png
+  Source: Original AI-generated TrailMark artwork created with OpenAI image generation on 2026-08-26.
+Extra illustration:
+  Generated file: 03-extra/yosemite-peregrine-falcon-extra-Codex.png
+  Source: Original AI-generated TrailMark artwork created with OpenAI image generation on 2026-08-26.
+Official NPS references:
+  https://www.nps.gov/yose/index.htm
+  https://www.nps.gov/yose/planyourvisit/yv.htm
+  https://www.nps.gov/yose/planyourvisit/formations.htm
+  https://www.nps.gov/yose/learn/nature/ss-bird-species.htm
+  https://www.nps.gov/yose/learn/nature/birds.htm
+Notes: Visual concepts were informed by official NPS descriptions of Yosemite Valley, its granite formations and waterfalls, the Merced River, and the park's peregrine falcon recovery.

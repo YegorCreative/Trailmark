@@ -1,0 +1,11 @@
+Park: Indiana Dunes National Park
+Header / hero drawing:
+  Generated file: 01-header/indiana-dunes-header-Codex.png
+  Official NPS reference: https://www.nps.gov/indu/learn/nature/index.htm
+Badge / emblem art:
+  Generated file: 02-badge/indiana-dunes-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/indu/planyourvisit/eight-beaches.htm
+Extra illustration:
+  Generated file: 03-extra/indiana-dunes-karner-blue-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/indu/learn/nature/animals.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

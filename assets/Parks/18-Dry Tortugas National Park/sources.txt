@@ -1,0 +1,15 @@
+Park: Dry Tortugas National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: DryTortugasHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: DryTortugasBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: DryTortugasHatchling-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://parkplanning.nps.gov/document.cfm?documentID=80720&parkID=373&projectID=73182
+  Fort and marine reference: https://www.nps.gov/drto/index.htm
+  Sea turtle reference: https://www.nps.gov/drto/learn/nature/sea-turtles.htm

@@ -1,0 +1,14 @@
+Park: National Park of American Samoa
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: AmericanSamoaHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: AmericanSamoaBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: AmericanSamoaCoralReef-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-24.
+  Identity references: https://www.nps.gov/npsa/planyourvisit/index.htm
+  Wildlife reference: https://www.nps.gov/npsa/learn/nature/animals.htm

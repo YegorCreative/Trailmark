@@ -1,0 +1,25 @@
+Park: Sequoia National Park
+Header / hero drawing:
+  Generated file: 01-header/sequoia-header-Codex.png
+  Subject: Giant Forest with a General Sherman-inspired giant sequoia, trail, and granite
+  Official NPS references:
+    https://www.nps.gov/seki/planyourvisit/sequoia-national-park.htm
+    https://www.nps.gov/seki/planyourvisit/sequoiagroves.htm
+    https://www.nps.gov/seki/learn/news/fact-sheet.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/sequoia-badge-Codex.png
+  Subject: Monumental giant sequoia trunk, open forest, ferns, and trail
+  Official NPS references:
+    https://www.nps.gov/seki/planyourvisit/sequoiagroves.htm
+    https://www.nps.gov/seki/faqs.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/sequoia-black-bear-extra-Codex.png
+  Subject: Cinnamon-color American black bear
+  Official NPS reference:
+    https://www.nps.gov/seki/learn/nature/ns_bears.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

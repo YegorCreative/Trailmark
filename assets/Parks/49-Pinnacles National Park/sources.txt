@@ -1,0 +1,25 @@
+Park: Pinnacles National Park
+Header / hero drawing:
+  Generated file: 01-header/pinnacles-header-Codex.png
+  Subject: High Peaks volcanic spires, chaparral, live oaks, and trail
+  Official NPS references:
+    https://www.nps.gov/pinn/index.htm
+    https://www.nps.gov/pinn/learn/nature/geology.htm
+    https://www.nps.gov/pinn/learn/nature/geologicformations.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/pinnacles-badge-Codex.png
+  Subject: Simplified volcanic spires and California chaparral
+  Official NPS reference:
+    https://www.nps.gov/pinn/learn/nature/geologicformations.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/pinnacles-california-condor-extra-Codex.png
+  Subject: Soaring California condor
+  Official NPS references:
+    https://www.nps.gov/pinn/learn/nature/condor.htm
+    https://www.nps.gov/pinn/learn/nature/california-condor-information.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

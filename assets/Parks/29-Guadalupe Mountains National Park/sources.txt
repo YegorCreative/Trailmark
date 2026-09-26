@@ -1,0 +1,17 @@
+Park: Guadalupe Mountains National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/guadalupe-mountains-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/guadalupe-mountains-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/guadalupe-mountains-ringtail-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/places/gumo_el_capitam.htm
+  https://www.nps.gov/places/gumo_guadalupe_peak.htm
+  https://www.nps.gov/gumo/learn/wilderness.htm
+  https://www.nps.gov/gumo/learn/nature/mammals.htm

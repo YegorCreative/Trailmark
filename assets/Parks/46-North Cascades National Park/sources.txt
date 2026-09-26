@@ -1,0 +1,11 @@
+Park: North Cascades National Park
+Header / hero drawing:
+  Generated file: 01-header/north-cascades-header-Codex.png
+  Official NPS reference: https://www.nps.gov/noca/index.htm
+Badge / emblem art:
+  Generated file: 02-badge/north-cascades-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/noca/learn/nature/glaciers.htm
+Extra illustration:
+  Generated file: 03-extra/north-cascades-american-pika-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/noca/learn/nature/mammals.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

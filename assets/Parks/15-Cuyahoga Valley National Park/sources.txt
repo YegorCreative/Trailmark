@@ -1,0 +1,15 @@
+Park: Cuyahoga Valley National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: CuyahogaValleyHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: CuyahogaValleyBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: CuyahogaValleyBeaver-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/cuva/getinvolved/planning.htm
+  Brandywine Falls reference: https://www.nps.gov/cuva/learn/historyculture/brandywine-falls.htm
+  Beaver Marsh reference: https://www.nps.gov/cuva/planyourvisit/the-beaver-marsh.htm

@@ -1,0 +1,11 @@
+Park: Lassen Volcanic National Park
+Header / hero drawing:
+  Generated file: 01-header/lassen-volcanic-header-Codex.png
+  Official NPS reference: https://www.nps.gov/lavo/learn/management/park-significance.htm
+Badge / emblem art:
+  Generated file: 02-badge/lassen-volcanic-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/lavo/planyourvisit/exploring-the-hydrothermal-areas.htm
+Extra illustration:
+  Generated file: 03-extra/lassen-sierra-nevada-red-fox-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/lavo/learn/nature/snrf.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

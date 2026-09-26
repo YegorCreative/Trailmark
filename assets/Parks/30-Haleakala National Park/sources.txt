@@ -1,0 +1,17 @@
+Park: Haleakala National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/haleakala-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/haleakala-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/haleakala-nene-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/hale/planyourvisit/summit-district.htm
+  https://www.nps.gov/hale/planyourvisit/sunrise.htm
+  https://www.nps.gov/hale/learn/nature/haleakala-nene.htm
+  https://www.nps.gov/hale/learn/management/upload/HALE_PRINT-508-reduced.pdf

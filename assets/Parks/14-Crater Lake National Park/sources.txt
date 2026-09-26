@@ -1,0 +1,15 @@
+Park: Crater Lake National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: CraterLakeHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: CraterLakeBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: CraterLakeNutcracker-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/crla/getinvolved/upload/CRLA_Foundation-Document_emailsize-508.pdf
+  Wizard Island reference: https://www.nps.gov/crla/learn/nature/wizardisland.htm
+  Wildlife reference: https://www.nps.gov/crla/learn/nature/animals.htm

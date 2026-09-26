@@ -1,0 +1,24 @@
+Park: Redwood National and State Parks
+Header / hero drawing:
+  Generated file: 01-header/redwood-header-Codex.png
+  Subject: Ancient coast redwood forest, fern understory, mist, and trail
+  Official NPS references:
+    https://www.nps.gov/redw/learn/park-facts.htm
+    https://www.nps.gov/redw/learn/nature/about-the-trees.htm
+    https://www.nps.gov/redw/learn/nature/forestthinning.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/redwood-badge-Codex.png
+  Subject: Giant coast redwood trunks, fern understory, and forest trail
+  Official NPS reference:
+    https://www.nps.gov/redw/learn/nature/about-the-trees.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/redwood-roosevelt-elk-extra-Codex.png
+  Subject: Roosevelt elk
+  Official NPS reference:
+    https://www.nps.gov/redw/learn/nature/roosevelt-elk.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

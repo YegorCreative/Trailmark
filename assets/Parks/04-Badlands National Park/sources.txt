@@ -1,0 +1,15 @@
+Park: Badlands National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: BadlandsHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: BadlandsBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: BadlandsBighorn-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/badl
+  Geology reference: https://www.nps.gov/articles/000/badl-geologic-formations.htm
+  Wildlife reference: https://www.nps.gov/articles/000/bighorn-sheep-badl.htm

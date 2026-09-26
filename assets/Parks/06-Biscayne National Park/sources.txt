@@ -1,0 +1,16 @@
+Park: Biscayne National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: BiscayneHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: BiscayneBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: BiscayneSeaTurtle-Codex.png
+Notes:
+Generation provenance: Original AI-generated TrailMark artwork created with OpenAI image generation.
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/bisc/index.htm
+  Ecosystems reference: https://www.nps.gov/bisc/learn/nature/ecosystems.htm
+  Coral reef reference: https://www.nps.gov/bisc/learn/nature/coralreefs.htm

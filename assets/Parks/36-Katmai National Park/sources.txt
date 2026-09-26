@@ -1,0 +1,11 @@
+Park: Katmai National Park
+Header / hero drawing:
+  Generated file: 01-header/katmai-header-Codex.png
+  Official NPS reference: https://www.nps.gov/places/valley-of-ten-thousand-smokes.htm
+Badge / emblem art:
+  Generated file: 02-badge/katmai-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/katm/learn/nature/the-bears-of-brooks-river.htm
+Extra illustration:
+  Generated file: 03-extra/katmai-sockeye-salmon-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/katm/learn/nature/bears-of-katmai.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

@@ -1,0 +1,26 @@
+Park: Virgin Islands National Park
+Header / hero drawing:
+  Generated file: 01-header/virgin-islands-header-Codex.png
+  Subject: Trunk Bay crescent beach, clear Caribbean water, coral, and forested St. John hills
+  Official NPS references:
+    https://www.nps.gov/viis/index.htm
+    https://www.nps.gov/viis/planyourvisit/snorkeling.htm
+    https://www.nps.gov/viis/planyourvisit/placestogo.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/virgin-islands-badge-Codex.png
+  Subject: Trunk Bay-inspired beach, offshore cay, tropical hills, and coral reef
+  Official NPS references:
+    https://www.nps.gov/viis/planyourvisit/snorkeling.htm
+    https://www.nps.gov/viis/learn/nature/coral.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/virgin-islands-hawksbill-turtle-extra-Codex.png
+  Subject: Hawksbill sea turtle
+  Official NPS references:
+    https://www.nps.gov/viis/learn/nature/turtles-of-the-virgin-islands.htm
+    https://www.nps.gov/viis/learn/nature/viisturtlemonitoring.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

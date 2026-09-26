@@ -1,0 +1,15 @@
+Park: Capitol Reef National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: CapitolReefHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: CapitolReefBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: CapitolReefOrchard-Codex.png
+Notes:
+Generation provenance: Original AI-generated TrailMark artwork created with OpenAI image generation.
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/care/learn/management/upload/CARE-Foundation-Document-508.pdf
+  Fruita orchard reference: https://www.nps.gov/care/learn/historyculture/orchards.htm

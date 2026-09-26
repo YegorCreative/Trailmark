@@ -1,0 +1,11 @@
+Park: Kobuk Valley National Park
+Header / hero drawing:
+  Generated file: 01-header/kobuk-valley-header-Codex.png
+  Official NPS reference: https://www.nps.gov/kova/learn/nature/great-kobuk-sand-dunes.htm
+Badge / emblem art:
+  Generated file: 02-badge/kobuk-valley-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/kova/learn/nature/index.htm
+Extra illustration:
+  Generated file: 03-extra/kobuk-valley-caribou-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/kova/learn/nature/animals.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

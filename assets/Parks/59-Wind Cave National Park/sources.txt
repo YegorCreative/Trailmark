@@ -1,0 +1,26 @@
+Park: Wind Cave National Park
+Header / hero drawing:
+  Generated file: 01-header/wind-cave-header-Codex.png
+  Subject: Mixed-grass prairie and Black Hills above a boxwork-filled cave cutaway
+  Official NPS references:
+    https://www.nps.gov/wica/learn/nature/prairies.htm
+    https://www.nps.gov/wica/learn/nature/wind-cave-geology.htm
+    https://www.nps.gov/wica/learn/nature/speleothems-boxwork.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/wind-cave-badge-Codex.png
+  Subject: Prairie-and-cave cutaway with distinctive calcite boxwork
+  Official NPS references:
+    https://www.nps.gov/wica/learn/nature/speleothems-boxwork.htm
+    https://www.nps.gov/wica/learn/nature/cave-formations-speleothems.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/wind-cave-black-footed-ferret-extra-Codex.png
+  Subject: Reintroduced black-footed ferret
+  Official NPS references:
+    https://www.nps.gov/wica/learn/nature/mammals-of-wind-cave.htm
+    https://www.nps.gov/wica/learn/management/wildlife-management.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

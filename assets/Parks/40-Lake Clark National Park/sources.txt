@@ -1,0 +1,11 @@
+Park: Lake Clark National Park
+Header / hero drawing:
+  Generated file: 01-header/lake-clark-header-Codex.png
+  Official NPS reference: https://www.nps.gov/lacl/learn/nature/lake-clark.htm
+Badge / emblem art:
+  Generated file: 02-badge/lake-clark-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/lacl/learn/nature/volcanoes.htm
+Extra illustration:
+  Generated file: 03-extra/lake-clark-clamming-bear-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/lacl/planyourvisit/bear-viewing.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

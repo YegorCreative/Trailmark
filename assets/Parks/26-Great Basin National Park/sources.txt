@@ -1,0 +1,17 @@
+Park: Great Basin National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/great-basin-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/great-basin-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/great-basin-lehman-caves-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/grba/index.htm
+  https://www.nps.gov/grba/planyourvisit/great-basin-stargazing.htm
+  https://www.nps.gov/grba/learn/historyculture/why-wheeler.htm
+  https://www.nps.gov/grba/learn/nature/mammals.htm

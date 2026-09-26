@@ -1,0 +1,12 @@
+Park: Acadia National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: AcadiaHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: AcadiaBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: AcadiaCarriageRoadBridge-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-24.

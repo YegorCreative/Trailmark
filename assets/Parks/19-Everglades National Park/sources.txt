@@ -1,0 +1,15 @@
+Park: Everglades National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: EvergladesHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: EvergladesBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: EvergladesAlligatorHeron-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/ever/learn/management/everglades-national-park-foundation-document-overview.htm
+  Hydrology reference: https://www.nps.gov/ever/learn/nature/hydrologicactivity.htm
+  Wildlife reference: https://www.nps.gov/ever/learn/nature/wildlife.htm

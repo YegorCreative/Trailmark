@@ -1,0 +1,15 @@
+Park: Bryce Canyon National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: BryceCanyonHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: BryceCanyonBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: BryceCanyonPrairieDog-Codex.png
+Notes:
+Generation provenance: Original AI-generated TrailMark artwork created with OpenAI image generation.
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity and geology reference: https://www.nps.gov/brca/learn/management/index.htm
+  Wildlife reference: https://www.nps.gov/brca/learn/nature/wildlife.htm

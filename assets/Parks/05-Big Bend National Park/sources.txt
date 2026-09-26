@@ -1,0 +1,15 @@
+Park: Big Bend National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: BigBendHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: BigBendBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: BigBendBatAgave-Codex.png
+Notes:
+Generation provenance: Original AI-generated TrailMark artwork created with OpenAI image generation.
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/bibe/index.htm
+  Wildlife reference: https://www.nps.gov/bibe/learn/nature/what-animal.htm

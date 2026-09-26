@@ -1,0 +1,11 @@
+Park: Mount Rainier National Park
+Header / hero drawing:
+  Generated file: 01-header/mount-rainier-header-Codex.png
+  Official NPS reference: https://www.nps.gov/mora/index.htm
+Badge / emblem art:
+  Generated file: 02-badge/mount-rainier-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/mora/learn/nature/wildflowers.htm
+Extra illustration:
+  Generated file: 03-extra/mount-rainier-hoary-marmot-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/mora/faqs.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

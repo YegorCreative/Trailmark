@@ -1,0 +1,16 @@
+Park: Glacier National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/glacier-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/glacier-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/glacier-red-bus-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/glac/learn/education/glacier-s-purpose-significance-and-designations.htm
+  https://www.nps.gov/glac/planyourvisit/gtsrinfo.htm
+  https://www.nps.gov/glac/learn/education/plants-and-animals.htm

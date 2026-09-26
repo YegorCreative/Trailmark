@@ -1,0 +1,16 @@
+Park: Carlsbad Caverns National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: CarlsbadCavernsHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: CarlsbadCavernsBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: CarlsbadCavernsBatFlight-Codex.png
+Notes:
+Generation provenance: Original AI-generated TrailMark artwork created with OpenAI image generation.
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/cave/learn/management/upload/2017-Carlsbad-Caverns-National-Park-Foundation-Document.pdf
+  Big Room reference: https://www.nps.gov/places/carlsbad-cavern.htm
+  Bat reference: https://www.nps.gov/cave/learn/nature/bats.htm

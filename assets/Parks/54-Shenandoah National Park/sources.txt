@@ -1,0 +1,25 @@
+Park: Shenandoah National Park
+Header / hero drawing:
+  Generated file: 01-header/shenandoah-header-Codex.png
+  Subject: Skyline Drive overlook, autumn hardwood forest, and misty Blue Ridge layers
+  Official NPS references:
+    https://www.nps.gov/shen/planyourvisit/driving-skyline-drive.htm
+    https://www.nps.gov/shen/learn/nature/scenicvistas.htm
+    https://www.nps.gov/shen/faqs.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/shenandoah-badge-Codex.png
+  Subject: Receding Blue Ridge Mountains, valley mist, autumn forest, and Skyline Drive
+  Official NPS references:
+    https://www.nps.gov/shen/learn/nature/scenicvistas.htm
+    https://www.nps.gov/shen/learn/historyculture/skylinedrivehistory.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/shenandoah-white-tailed-deer-extra-Codex.png
+  Subject: White-tailed deer buck
+  Official NPS reference:
+    https://www.nps.gov/shen/learn/nature/mammals.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

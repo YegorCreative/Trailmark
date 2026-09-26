@@ -1,0 +1,25 @@
+Park: Petrified Forest National Park
+Header / hero drawing:
+  Generated file: 01-header/petrified-forest-header-Codex.png
+  Subject: Painted Desert badlands with colorful petrified logs
+  Official NPS references:
+    https://www.nps.gov/pefo/index.htm
+    https://www.nps.gov/pefo/learn/nature/petrified-wood.htm
+    https://www.nps.gov/pefo/learn/nature/geologicformations.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/petrified-forest-badge-Codex.png
+  Subject: Rainbow quartz petrified log cross-section and striped badlands
+  Official NPS references:
+    https://www.nps.gov/pefo/learn/nature/petrified-wood.htm
+    https://www.nps.gov/pefo/learn/nature/geologicformations.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/petrified-forest-pronghorn-extra-Codex.png
+  Subject: Pronghorn of the park's shortgrass prairie
+  Official NPS reference:
+    https://www.nps.gov/pefo/learn/nature/mammals.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

@@ -1,0 +1,17 @@
+Park: Great Smoky Mountains National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/great-smoky-mountains-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/great-smoky-mountains-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/great-smoky-mountains-fireflies-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/grsm/learn/nature/plants.htm
+  https://www.nps.gov/grsm/planyourvisit/kuwohi-nfg.htm
+  https://www.nps.gov/grsm/learn/nature/animals.htm
+  https://www.nps.gov/grsm/learn/nature/fireflies.htm

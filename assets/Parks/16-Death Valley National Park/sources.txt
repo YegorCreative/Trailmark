@@ -1,0 +1,15 @@
+Park: Death Valley National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: DeathValleyHeader-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: DeathValleyBadge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: DeathValleyPupfish-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Park identity reference: https://www.nps.gov/deva/getinvolved/upload/DEVA_FD_2017_508.pdf
+  Landscape reference: https://www.nps.gov/deva/
+  Wildlife reference: https://www.nps.gov/deva/learn/nature/animals.htm

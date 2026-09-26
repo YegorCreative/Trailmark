@@ -1,0 +1,11 @@
+Park: Isle Royale National Park
+Header / hero drawing:
+  Generated file: 01-header/isle-royale-header-Codex.png
+  Official NPS reference: https://www.nps.gov/isro/learn/news/presskit.htm
+Badge / emblem art:
+  Generated file: 02-badge/isle-royale-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/isro/planyourvisit/index.htm
+Extra illustration:
+  Generated file: 03-extra/isle-royale-moose-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/isro/learn/nature/moose.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.

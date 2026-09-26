@@ -1,0 +1,16 @@
+Park: Gates of the Arctic National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/gates-of-the-arctic-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/gates-of-the-arctic-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/gates-of-the-arctic-caribou-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/gaar/learn/what-is-gates-of-the-arctic.htm
+  https://www.nps.gov/gaar/planyourvisit/arrigetch-peaks.htm
+  https://www.nps.gov/gaar/learn/nature/wildlife.htm

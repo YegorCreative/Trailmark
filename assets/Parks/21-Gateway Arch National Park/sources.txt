@@ -1,0 +1,16 @@
+Park: Gateway Arch National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/gateway-arch-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/gateway-arch-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/gateway-arch-tram-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/jeff/learn/historyculture/index.htm
+  https://www.nps.gov/jeff/planyourvisit/the-significance-of-the-gateway-arch-landscape.htm
+  https://www.nps.gov/jeff/planyourvisit/gateway-arch-fact-sheet.htm

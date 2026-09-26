@@ -1,0 +1,25 @@
+Park: Wrangell-St. Elias National Park and Preserve
+Header / hero drawing:
+  Generated file: 01-header/wrangell-st-elias-header-Codex.png
+  Subject: Root Glacier-inspired icefield, Wrangell–St. Elias peaks, and historic Kennecott mill
+  Official NPS references:
+    https://www.nps.gov/wrst/index.htm
+    https://www.nps.gov/wrst/learn/nature/glaciers.htm
+    https://www.nps.gov/wrst/faqs.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/wrangell-st-elias-badge-Codex.png
+  Subject: Snowbound Alaska peak, moraine-striped glacier, spruce, and Kennecott mill
+  Official NPS references:
+    https://www.nps.gov/wrst/index.htm
+    https://www.nps.gov/wrst/learn/nature/glaciers.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/wrangell-st-elias-dall-sheep-extra-Codex.png
+  Subject: Dall sheep ram
+  Official NPS reference:
+    https://www.nps.gov/wrst/learn/nature/mammals.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

@@ -1,0 +1,25 @@
+Park: Saguaro National Park
+Header / hero drawing:
+  Generated file: 01-header/saguaro-header-Codex.png
+  Subject: Sonoran Desert saguaro forest, ocotillo, prickly pear, and Rincon Mountains
+  Official NPS references:
+    https://www.nps.gov/sagu/learn/nature/saguaro.htm
+    https://www.nps.gov/sagu/learn/nature/nature-and-science.htm
+    https://www.nps.gov/sagu/learn/nature/plants.htm
+  Freepik URL:
+Badge / emblem art:
+  Generated file: 02-badge/saguaro-badge-Codex.png
+  Subject: Giant saguaro, prickly pear, and Sonoran Desert mountains
+  Official NPS references:
+    https://www.nps.gov/sagu/learn/nature/saguaro.htm
+    https://www.nps.gov/sagu/learn/nature/cacti-and-desert-succulents.htm
+  Freepik URL:
+Extra illustration:
+  Generated file: 03-extra/saguaro-gila-woodpecker-extra-Codex.png
+  Subject: Gila woodpecker at a saguaro nest cavity
+  Official NPS reference:
+    https://www.nps.gov/sagu/learn/nature/birds.htm
+  Freepik URL:
+Notes:
+  Original AI-generated artwork created with OpenAI ImageGen on 2026-08-26.
+  No third-party artwork was copied or embedded; official NPS pages were used only for factual and visual subject research.

@@ -1,0 +1,17 @@
+Park: Hot Springs National Park
+Header / hero drawing:
+  Freepik URL:
+  Codex generated: 01-header/hot-springs-header-Codex.png
+Badge / emblem art:
+  Freepik URL:
+  Codex generated: 02-badge/hot-springs-badge-Codex.png
+Extra illustration:
+  Freepik URL:
+  Codex generated: 03-extra/hot-springs-hydrotherapy-tub-extra-Codex.png
+Notes:
+  Generated with OpenAI built-in image generation on 2026-08-25.
+  Official NPS references:
+  https://www.nps.gov/hosp/learn/historyculture/bathhouse-row-today.htm
+  https://www.nps.gov/hosp/learn/nature/collection-today.htm
+  https://www.nps.gov/hosp/planyourvisit/soak-in-the-springs.htm
+  https://www.nps.gov/hosp/learn/historyculture/index.htm

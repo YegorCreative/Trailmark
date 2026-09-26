@@ -1,0 +1,11 @@
+Park: New River Gorge National Park and Preserve
+Header / hero drawing:
+  Generated file: 01-header/new-river-gorge-header-Codex.png
+  Official NPS reference: https://www.nps.gov/neri/planyourvisit/nrgbridge.htm
+Badge / emblem art:
+  Generated file: 02-badge/new-river-gorge-badge-Codex.png
+  Official NPS reference: https://www.nps.gov/neri/learn/nature/geology.htm
+Extra illustration:
+  Generated file: 03-extra/new-river-gorge-hellbender-extra-Codex.png
+  Official NPS reference: https://www.nps.gov/neri/learn/nature/hellebenders.htm
+Notes: Generated with OpenAI built-in image generation on 2026-08-25.
