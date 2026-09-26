@@ -1522,7 +1522,7 @@ body:has(#hero) #hero::after {
   margin: 1.75rem 0;
 }
 
-.atlas-footer-regions h3 {
+.atlas-footer-regions .atlas-footer-label {
   font-family: var(--font-body);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -1531,7 +1531,7 @@ body:has(#hero) #hero::after {
 }
 
 .atlas-footer-regions ul { list-style: none; margin: 0; padding: 0; }
-.atlas-footer-regions a { display: inline-flex; min-height: 32px; align-items: center; }
+.atlas-footer-regions a { display: inline-flex; min-height: 44px; align-items: center; }
 
 .atlas-footer-badges { display: flex; gap: 0.5rem; margin-top: 1rem; }
 .atlas-footer-badges img {

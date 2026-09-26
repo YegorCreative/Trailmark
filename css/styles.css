@@ -511,7 +511,7 @@ input:focus-visible {
 
 .hero-btn--primary {
   background-color: var(--color-orange);
-  color: var(--color-white);
+  color: #142016;
 }
 
 .hero-btn--primary:hover {
@@ -948,7 +948,7 @@ img.badge-system-mark {
   font-weight: 500;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: rgba(247, 243, 236, 0.58);
+  color: #e7eee0;
 }
 
 /* =====================

@@ -86,7 +86,7 @@
       ? ' data-src="' + esc(dir + 'badge-160.webp') + '"'
       : ' src="' + esc(dir + 'badge-160.webp') + '" srcset="' + esc(dir + 'badge-160.webp') + ' 160w, ' + esc(dir + 'badge-320.webp') + ' 320w"';
     var inner = '<img class="atlas-card-photo" ' + photoAttr + ' alt="" width="640" height="360" loading="lazy" decoding="async" />'
-      + '<img class="atlas-card-badge" ' + badgeAttr + ' sizes="72px" alt="' + name + ' badge" width="160" height="160" loading="lazy" decoding="async" />'
+      + '<img class="atlas-card-badge" ' + badgeAttr + ' sizes="72px" alt="' + name + ' National Park badge" width="160" height="160" loading="lazy" decoding="async" />'
       + '<span class="atlas-card-shade" aria-hidden="true"></span>'
       + '<span class="atlas-card-copy"><span class="atlas-card-name">' + name + '</span>'
       + '<span class="atlas-card-meta">' + meta + '</span>' + flag + '</span>';
@@ -409,7 +409,7 @@
       if (!row) return;
       row.innerHTML = pairs.map(function (pair) {
         var on = select.value === pair[0];
-        return '<button type="button" class="filter-pill' + (on ? ' is-on' : '') + '" data-value="' + esc(pair[0]) + '">' + esc(pair[1]) + '</button>';
+        return '<button type="button" class="filter-pill' + (on ? ' is-on' : '') + '" aria-pressed="' + (on ? 'true' : 'false') + '" data-value="' + esc(pair[0]) + '">' + esc(pair[1]) + '</button>';
       }).join('');
       row.querySelectorAll('button').forEach(function (button) {
         button.addEventListener('click', function () {
@@ -426,7 +426,7 @@
       function add(select, label) {
         if (!select.value) return;
         var text = select.options[select.selectedIndex] ? select.options[select.selectedIndex].text : select.value;
-        chips.push('<button type="button" class="filter-chip" data-chip="' + select.id + '">' + esc(label ? text : text) + ' <span aria-hidden="true">×</span></button>');
+        chips.push('<button type="button" class="filter-chip" data-chip="' + select.id + '" aria-label="Remove ' + esc(text) + '">' + esc(text) + ' <span aria-hidden="true">×</span></button>');
       }
       add(regionSelect);
       add(stateSelect);
@@ -434,7 +434,7 @@
       if (statusSelect.value) add(statusSelect);
       if (sortSelect.value && sortSelect.value !== 'az') add(sortSelect);
       if (search.value.trim()) {
-        chips.push('<button type="button" class="filter-chip" data-chip="park-search">' + esc(search.value.trim()) + ' <span aria-hidden="true">×</span></button>');
+        chips.push('<button type="button" class="filter-chip" data-chip="park-search" aria-label="Remove ' + esc(search.value.trim()) + '">' + esc(search.value.trim()) + ' <span aria-hidden="true">×</span></button>');
       }
       host.innerHTML = chips.join('');
       var launchBtn = document.querySelector('.filter-launch');
@@ -478,17 +478,48 @@
     if (sheet && window.matchMedia('(max-width: 700px)').matches) {
       document.body.appendChild(sheet);
     }
-    function setSheet(open) {
+    var sheetReturn = null;
+    function sheetFocusables() {
+      if (!sheet) return [];
+      return Array.prototype.slice.call(sheet.querySelectorAll('a, button, input, select, textarea')).filter(function (el) {
+        return !el.disabled && el.offsetParent !== null;
+      });
+    }
+    function setSheet(open, restore) {
       if (!sheet || !launch) return;
       sheet.classList.toggle('is-open', open);
       launch.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('sheet-lock', open);
+      if (open) {
+        sheetReturn = document.activeElement;
+        var nodes = sheetFocusables();
+        if (nodes[0]) nodes[0].focus();
+      } else if (restore) {
+        (sheetReturn || launch).focus();
+      }
     }
-    if (launch) launch.addEventListener('click', function () { setSheet(!sheet.classList.contains('is-open')); });
-    if (done) done.addEventListener('click', function () { setSheet(false); });
-    if (location.hash === '#filters') setSheet(true);
+    if (launch) launch.addEventListener('click', function () { setSheet(!sheet.classList.contains('is-open'), true); });
+    if (done) done.addEventListener('click', function () { setSheet(false, true); });
+    if (location.hash === '#filters') setSheet(true, false);
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && sheet && sheet.classList.contains('is-open')) setSheet(false);
+      if (!sheet || !sheet.classList.contains('is-open')) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setSheet(false, true);
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      var nodes = sheetFocusables();
+      if (!nodes.length) return;
+      var first = nodes[0];
+      var last = nodes[nodes.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     });
     read();
     onChange();
@@ -505,7 +536,7 @@
       var href = open ? ' href="' + esc(pageHref(park)) + '"' : '';
       var badgeDir = base() + 'assets/park-art/' + park.id + '/';
       return '<' + tag + ' class="badge-wall-item' + (open ? '' : ' is-soon') + '"' + href + '>'
-        + '<img data-src="' + esc(badgeDir + 'badge-160.webp') + '" alt="' + esc(park.name) + ' badge" width="160" height="160" loading="lazy" decoding="async" />'
+        + '<img data-src="' + esc(badgeDir + 'badge-160.webp') + '" alt="' + esc(park.name) + ' National Park badge" width="160" height="160" loading="lazy" decoding="async" />'
         + '<span class="badge-wall-name">' + esc(park.name) + '</span>'
         + '</' + tag + '>';
     }).join('');
@@ -537,13 +568,13 @@
       var links = byRegion[region].sort(function (a, b) { return a.name.localeCompare(b.name); }).map(function (park) {
         return '<li><a href="' + esc(pageHref(park)) + '">' + esc(park.name) + '</a></li>';
       }).join('');
-      return '<div><h3><a href="' + esc(root + 'parks.html?region=' + encodeURIComponent(region)) + '">' + esc(region) + '</a></h3><ul>' + links + '</ul></div>';
+      return '<div><p class="atlas-footer-label"><a href="' + esc(root + 'parks.html?region=' + encodeURIComponent(region)) + '">' + esc(region) + '</a></p><ul>' + links + '</ul></div>';
     }).join('');
     var badges = open.slice().sort(function (a, b) {
       return (b.archiveSeq || 0) - (a.archiveSeq || 0);
     }).slice(0, 6).map(function (park) {
       var bdir = base() + 'assets/park-art/' + park.id + '/';
-      return '<a href="' + esc(pageHref(park)) + '" title="' + esc(park.name) + '"><img src="' + esc(bdir + 'badge-160.webp') + '" alt="' + esc(park.name) + ' badge" width="160" height="160" loading="lazy" decoding="async" /></a>';
+      return '<a href="' + esc(pageHref(park)) + '" title="' + esc(park.name) + '"><img src="' + esc(bdir + 'badge-160.webp') + '" alt="' + esc(park.name) + ' National Park badge" width="160" height="160" loading="lazy" decoding="async" /></a>';
     }).join('');
     var texture = base() + 'assets/park-art/yosemite/header-640.webp';
     footer.className = 'atlas-footer';
