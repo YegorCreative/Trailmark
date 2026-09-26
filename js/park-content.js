@@ -184,7 +184,7 @@ const PARK_PAGE_CONTENT = {
       eyebrow: 'Wyoming | Montana | Idaho',
       title: 'Yellowstone',
       subtitle: 'Steam rises from mineral color, rivers cut through ancient volcanic stone, and broad valleys hold wildlife with a stillness that feels older than the road.',
-      posterSrc: '../assets/svg/parks.svg',
+      posterSrc: '../assets/park-art/yellowstone/header.webp',
       posterAlt: '',
     },
     overview: {
@@ -348,7 +348,7 @@ const PARK_PAGE_CONTENT = {
       eyebrow: 'Florida | River of Grass',
       title: 'Everglades',
       subtitle: 'Water moves almost invisibly through sawgrass, mangrove, marl prairie, and open sky, carrying one of North America\'s most intricate wetland stories.',
-      posterSrc: '../assets/svg/parks.svg',
+      posterSrc: '../assets/park-art/everglades/header.webp',
       posterAlt: '',
     },
     overview: {

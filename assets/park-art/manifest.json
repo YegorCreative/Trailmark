@@ -1,0 +1,585 @@
+{
+  "parks": {
+    "yosemite": {
+      "header": "assets/park-art/yosemite/header.webp",
+      "badge": "assets/park-art/yosemite/badge.webp",
+      "extra": "assets/park-art/yosemite/extra.webp"
+    },
+    "yellowstone": {
+      "header": "assets/park-art/yellowstone/header.webp",
+      "badge": "assets/park-art/yellowstone/badge.webp",
+      "extra": "assets/park-art/yellowstone/extra.webp"
+    },
+    "acadia": {
+      "header": null,
+      "badge": "assets/park-art/acadia/badge.webp",
+      "extra": "assets/park-art/acadia/extra.webp"
+    },
+    "american-samoa": {
+      "header": "assets/park-art/american-samoa/header.webp",
+      "badge": "assets/park-art/american-samoa/badge.webp",
+      "extra": "assets/park-art/american-samoa/extra.webp"
+    },
+    "arches": {
+      "header": "assets/park-art/arches/header.webp",
+      "badge": "assets/park-art/arches/badge.webp",
+      "extra": "assets/park-art/arches/extra.webp"
+    },
+    "badlands": {
+      "header": "assets/park-art/badlands/header.webp",
+      "badge": "assets/park-art/badlands/badge.webp",
+      "extra": "assets/park-art/badlands/extra.webp"
+    },
+    "big-bend": {
+      "header": "assets/park-art/big-bend/header.webp",
+      "badge": "assets/park-art/big-bend/badge.webp",
+      "extra": "assets/park-art/big-bend/extra.webp"
+    },
+    "biscayne": {
+      "header": "assets/park-art/biscayne/header.webp",
+      "badge": "assets/park-art/biscayne/badge.webp",
+      "extra": "assets/park-art/biscayne/extra.webp"
+    },
+    "black-canyon-of-the-gunnison": {
+      "header": "assets/park-art/black-canyon-of-the-gunnison/header.webp",
+      "badge": "assets/park-art/black-canyon-of-the-gunnison/badge.webp",
+      "extra": "assets/park-art/black-canyon-of-the-gunnison/extra.webp"
+    },
+    "bryce-canyon": {
+      "header": "assets/park-art/bryce-canyon/header.webp",
+      "badge": "assets/park-art/bryce-canyon/badge.webp",
+      "extra": "assets/park-art/bryce-canyon/extra.webp"
+    },
+    "canyonlands": {
+      "header": "assets/park-art/canyonlands/header.webp",
+      "badge": "assets/park-art/canyonlands/badge.webp",
+      "extra": "assets/park-art/canyonlands/extra.webp"
+    },
+    "capitol-reef": {
+      "header": "assets/park-art/capitol-reef/header.webp",
+      "badge": "assets/park-art/capitol-reef/badge.webp",
+      "extra": "assets/park-art/capitol-reef/extra.webp"
+    },
+    "carlsbad-caverns": {
+      "header": "assets/park-art/carlsbad-caverns/header.webp",
+      "badge": "assets/park-art/carlsbad-caverns/badge.webp",
+      "extra": "assets/park-art/carlsbad-caverns/extra.webp"
+    },
+    "channel-islands": {
+      "header": "assets/park-art/channel-islands/header.webp",
+      "badge": "assets/park-art/channel-islands/badge.webp",
+      "extra": "assets/park-art/channel-islands/extra.webp"
+    },
+    "congaree": {
+      "header": "assets/park-art/congaree/header.webp",
+      "badge": "assets/park-art/congaree/badge.webp",
+      "extra": "assets/park-art/congaree/extra.webp"
+    },
+    "crater-lake": {
+      "header": "assets/park-art/crater-lake/header.webp",
+      "badge": "assets/park-art/crater-lake/badge.webp",
+      "extra": "assets/park-art/crater-lake/extra.webp"
+    },
+    "cuyahoga-valley": {
+      "header": "assets/park-art/cuyahoga-valley/header.webp",
+      "badge": "assets/park-art/cuyahoga-valley/badge.webp",
+      "extra": "assets/park-art/cuyahoga-valley/extra.webp"
+    },
+    "death-valley": {
+      "header": "assets/park-art/death-valley/header.webp",
+      "badge": "assets/park-art/death-valley/badge.webp",
+      "extra": "assets/park-art/death-valley/extra.webp"
+    },
+    "denali": {
+      "header": "assets/park-art/denali/header.webp",
+      "badge": "assets/park-art/denali/badge.webp",
+      "extra": "assets/park-art/denali/extra.webp"
+    },
+    "dry-tortugas": {
+      "header": "assets/park-art/dry-tortugas/header.webp",
+      "badge": "assets/park-art/dry-tortugas/badge.webp",
+      "extra": "assets/park-art/dry-tortugas/extra.webp"
+    },
+    "everglades": {
+      "header": "assets/park-art/everglades/header.webp",
+      "badge": "assets/park-art/everglades/badge.webp",
+      "extra": "assets/park-art/everglades/extra.webp"
+    },
+    "gates-of-the-arctic": {
+      "header": "assets/park-art/gates-of-the-arctic/header.webp",
+      "badge": "assets/park-art/gates-of-the-arctic/badge.webp",
+      "extra": "assets/park-art/gates-of-the-arctic/extra.webp"
+    },
+    "gateway-arch": {
+      "header": "assets/park-art/gateway-arch/header.webp",
+      "badge": "assets/park-art/gateway-arch/badge.webp",
+      "extra": "assets/park-art/gateway-arch/extra.webp"
+    },
+    "glacier": {
+      "header": "assets/park-art/glacier/header.webp",
+      "badge": "assets/park-art/glacier/badge.webp",
+      "extra": "assets/park-art/glacier/extra.webp"
+    },
+    "glacier-bay": {
+      "header": "assets/park-art/glacier-bay/header.webp",
+      "badge": "assets/park-art/glacier-bay/badge.webp",
+      "extra": "assets/park-art/glacier-bay/extra.webp"
+    },
+    "grand-canyon": {
+      "header": "assets/park-art/grand-canyon/header.webp",
+      "badge": "assets/park-art/grand-canyon/badge.webp",
+      "extra": "assets/park-art/grand-canyon/extra.webp"
+    },
+    "grand-teton": {
+      "header": "assets/park-art/grand-teton/header.webp",
+      "badge": "assets/park-art/grand-teton/badge.webp",
+      "extra": "assets/park-art/grand-teton/extra.webp"
+    },
+    "great-basin": {
+      "header": "assets/park-art/great-basin/header.webp",
+      "badge": "assets/park-art/great-basin/badge.webp",
+      "extra": "assets/park-art/great-basin/extra.webp"
+    },
+    "great-sand-dunes": {
+      "header": "assets/park-art/great-sand-dunes/header.webp",
+      "badge": "assets/park-art/great-sand-dunes/badge.webp",
+      "extra": "assets/park-art/great-sand-dunes/extra.webp"
+    },
+    "great-smoky-mountains": {
+      "header": "assets/park-art/great-smoky-mountains/header.webp",
+      "badge": "assets/park-art/great-smoky-mountains/badge.webp",
+      "extra": "assets/park-art/great-smoky-mountains/extra.webp"
+    },
+    "guadalupe-mountains": {
+      "header": "assets/park-art/guadalupe-mountains/header.webp",
+      "badge": "assets/park-art/guadalupe-mountains/badge.webp",
+      "extra": "assets/park-art/guadalupe-mountains/extra.webp"
+    },
+    "haleakala": {
+      "header": "assets/park-art/haleakala/header.webp",
+      "badge": "assets/park-art/haleakala/badge.webp",
+      "extra": "assets/park-art/haleakala/extra.webp"
+    },
+    "hawaii-volcanoes": {
+      "header": "assets/park-art/hawaii-volcanoes/header.webp",
+      "badge": "assets/park-art/hawaii-volcanoes/badge.webp",
+      "extra": "assets/park-art/hawaii-volcanoes/extra.webp"
+    },
+    "hot-springs": {
+      "header": "assets/park-art/hot-springs/header.webp",
+      "badge": "assets/park-art/hot-springs/badge.webp",
+      "extra": "assets/park-art/hot-springs/extra.webp"
+    },
+    "indiana-dunes": {
+      "header": "assets/park-art/indiana-dunes/header.webp",
+      "badge": "assets/park-art/indiana-dunes/badge.webp",
+      "extra": "assets/park-art/indiana-dunes/extra.webp"
+    },
+    "isle-royale": {
+      "header": "assets/park-art/isle-royale/header.webp",
+      "badge": "assets/park-art/isle-royale/badge.webp",
+      "extra": "assets/park-art/isle-royale/extra.webp"
+    },
+    "joshua-tree": {
+      "header": "assets/park-art/joshua-tree/header.webp",
+      "badge": "assets/park-art/joshua-tree/badge.webp",
+      "extra": "assets/park-art/joshua-tree/extra.webp"
+    },
+    "katmai": {
+      "header": "assets/park-art/katmai/header.webp",
+      "badge": "assets/park-art/katmai/badge.webp",
+      "extra": "assets/park-art/katmai/extra.webp"
+    },
+    "kenai-fjords": {
+      "header": "assets/park-art/kenai-fjords/header.webp",
+      "badge": "assets/park-art/kenai-fjords/badge.webp",
+      "extra": "assets/park-art/kenai-fjords/extra.webp"
+    },
+    "kings-canyon": {
+      "header": "assets/park-art/kings-canyon/header.webp",
+      "badge": "assets/park-art/kings-canyon/badge.webp",
+      "extra": "assets/park-art/kings-canyon/extra.webp"
+    },
+    "kobuk-valley": {
+      "header": "assets/park-art/kobuk-valley/header.webp",
+      "badge": "assets/park-art/kobuk-valley/badge.webp",
+      "extra": "assets/park-art/kobuk-valley/extra.webp"
+    },
+    "lake-clark": {
+      "header": "assets/park-art/lake-clark/header.webp",
+      "badge": "assets/park-art/lake-clark/badge.webp",
+      "extra": "assets/park-art/lake-clark/extra.webp"
+    },
+    "lassen-volcanic": {
+      "header": "assets/park-art/lassen-volcanic/header.webp",
+      "badge": "assets/park-art/lassen-volcanic/badge.webp",
+      "extra": "assets/park-art/lassen-volcanic/extra.webp"
+    },
+    "mammoth-cave": {
+      "header": "assets/park-art/mammoth-cave/header.webp",
+      "badge": "assets/park-art/mammoth-cave/badge.webp",
+      "extra": "assets/park-art/mammoth-cave/extra.webp"
+    },
+    "mesa-verde": {
+      "header": "assets/park-art/mesa-verde/header.webp",
+      "badge": "assets/park-art/mesa-verde/badge.webp",
+      "extra": "assets/park-art/mesa-verde/extra.webp"
+    },
+    "mount-rainier": {
+      "header": "assets/park-art/mount-rainier/header.webp",
+      "badge": "assets/park-art/mount-rainier/badge.webp",
+      "extra": "assets/park-art/mount-rainier/extra.webp"
+    },
+    "new-river-gorge": {
+      "header": "assets/park-art/new-river-gorge/header.webp",
+      "badge": "assets/park-art/new-river-gorge/badge.webp",
+      "extra": "assets/park-art/new-river-gorge/extra.webp"
+    },
+    "north-cascades": {
+      "header": "assets/park-art/north-cascades/header.webp",
+      "badge": "assets/park-art/north-cascades/badge.webp",
+      "extra": "assets/park-art/north-cascades/extra.webp"
+    },
+    "olympic": {
+      "header": "assets/park-art/olympic/header.webp",
+      "badge": "assets/park-art/olympic/badge.webp",
+      "extra": "assets/park-art/olympic/extra.webp"
+    },
+    "petrified-forest": {
+      "header": "assets/park-art/petrified-forest/header.webp",
+      "badge": "assets/park-art/petrified-forest/badge.webp",
+      "extra": "assets/park-art/petrified-forest/extra.webp"
+    },
+    "pinnacles": {
+      "header": "assets/park-art/pinnacles/header.webp",
+      "badge": "assets/park-art/pinnacles/badge.webp",
+      "extra": "assets/park-art/pinnacles/extra.webp"
+    },
+    "redwood": {
+      "header": "assets/park-art/redwood/header.webp",
+      "badge": "assets/park-art/redwood/badge.webp",
+      "extra": "assets/park-art/redwood/extra.webp"
+    },
+    "rocky-mountain": {
+      "header": "assets/park-art/rocky-mountain/header.webp",
+      "badge": "assets/park-art/rocky-mountain/badge.webp",
+      "extra": "assets/park-art/rocky-mountain/extra.webp"
+    },
+    "saguaro": {
+      "header": "assets/park-art/saguaro/header.webp",
+      "badge": "assets/park-art/saguaro/badge.webp",
+      "extra": "assets/park-art/saguaro/extra.webp"
+    },
+    "sequoia": {
+      "header": "assets/park-art/sequoia/header.webp",
+      "badge": "assets/park-art/sequoia/badge.webp",
+      "extra": "assets/park-art/sequoia/extra.webp"
+    },
+    "shenandoah": {
+      "header": "assets/park-art/shenandoah/header.webp",
+      "badge": "assets/park-art/shenandoah/badge.webp",
+      "extra": "assets/park-art/shenandoah/extra.webp"
+    },
+    "theodore-roosevelt": {
+      "header": "assets/park-art/theodore-roosevelt/header.webp",
+      "badge": "assets/park-art/theodore-roosevelt/badge.webp",
+      "extra": "assets/park-art/theodore-roosevelt/extra.webp"
+    },
+    "virgin-islands": {
+      "header": "assets/park-art/virgin-islands/header.webp",
+      "badge": "assets/park-art/virgin-islands/badge.webp",
+      "extra": "assets/park-art/virgin-islands/extra.webp"
+    },
+    "voyageurs": {
+      "header": "assets/park-art/voyageurs/header.webp",
+      "badge": "assets/park-art/voyageurs/badge.webp",
+      "extra": "assets/park-art/voyageurs/extra.webp"
+    },
+    "white-sands": {
+      "header": "assets/park-art/white-sands/header.webp",
+      "badge": "assets/park-art/white-sands/badge.webp",
+      "extra": "assets/park-art/white-sands/extra.webp"
+    },
+    "wind-cave": {
+      "header": "assets/park-art/wind-cave/header.webp",
+      "badge": "assets/park-art/wind-cave/badge.webp",
+      "extra": "assets/park-art/wind-cave/extra.webp"
+    },
+    "wrangell-st-elias": {
+      "header": "assets/park-art/wrangell-st-elias/header.webp",
+      "badge": "assets/park-art/wrangell-st-elias/badge.webp",
+      "extra": "assets/park-art/wrangell-st-elias/extra.webp"
+    },
+    "zion": {
+      "header": "assets/park-art/zion/header.webp",
+      "badge": "assets/park-art/zion/badge.webp",
+      "extra": "assets/park-art/zion/extra.webp"
+    }
+  },
+  "problems": [
+    {
+      "issue": "unmatched-folder",
+      "path": "assets/Parks/National_Parks_Artwork"
+    },
+    {
+      "issue": "unexpected-directory",
+      "parkId": "acadia",
+      "path": "assets/Parks/01-Acadia National Park/01-header 2",
+      "imageCount": 0
+    },
+    {
+      "issue": "duplicate",
+      "parkId": "acadia",
+      "slot": "header",
+      "files": [
+        "assets/Parks/01-Acadia National Park/01-header/AcadiaHeader-Codex.png",
+        "assets/Parks/01-Acadia National Park/01-header/AcadiaHeader.png"
+      ]
+    }
+  ],
+  "sourceNotes": {
+    "yosemite": [
+      "assets/Parks/62-Yosemite National Park/sources.txt"
+    ],
+    "yellowstone": [
+      "assets/Parks/61-Yellowstone National Park/sources.txt"
+    ],
+    "acadia": [
+      "assets/Parks/01-Acadia National Park/sources 2.txt",
+      "assets/Parks/01-Acadia National Park/sources.txt"
+    ],
+    "american-samoa": [
+      "assets/Parks/02-National Park of American Samoa/sources 2.txt",
+      "assets/Parks/02-National Park of American Samoa/sources.txt"
+    ],
+    "arches": [
+      "assets/Parks/03-Arches National Park/sources 2.txt",
+      "assets/Parks/03-Arches National Park/sources.txt"
+    ],
+    "badlands": [
+      "assets/Parks/04-Badlands National Park/sources 2.txt",
+      "assets/Parks/04-Badlands National Park/sources.txt"
+    ],
+    "big-bend": [
+      "assets/Parks/05-Big Bend National Park/sources 2.txt",
+      "assets/Parks/05-Big Bend National Park/sources.txt"
+    ],
+    "biscayne": [
+      "assets/Parks/06-Biscayne National Park/sources 2.txt",
+      "assets/Parks/06-Biscayne National Park/sources.txt"
+    ],
+    "black-canyon-of-the-gunnison": [
+      "assets/Parks/07-Black Canyon of the Gunnison National Park/sources 2.txt",
+      "assets/Parks/07-Black Canyon of the Gunnison National Park/sources.txt"
+    ],
+    "bryce-canyon": [
+      "assets/Parks/08-Bryce Canyon National Park/sources 2.txt",
+      "assets/Parks/08-Bryce Canyon National Park/sources.txt"
+    ],
+    "canyonlands": [
+      "assets/Parks/09-Canyonlands National Park/sources 2.txt",
+      "assets/Parks/09-Canyonlands National Park/sources.txt"
+    ],
+    "capitol-reef": [
+      "assets/Parks/10-Capitol Reef National Park/sources.txt"
+    ],
+    "carlsbad-caverns": [
+      "assets/Parks/11-Carlsbad Caverns National Park/sources 2.txt",
+      "assets/Parks/11-Carlsbad Caverns National Park/sources.txt"
+    ],
+    "channel-islands": [
+      "assets/Parks/12-Channel Islands National Park/sources.txt"
+    ],
+    "congaree": [
+      "assets/Parks/13-Congaree National Park/sources 2.txt",
+      "assets/Parks/13-Congaree National Park/sources.txt"
+    ],
+    "crater-lake": [
+      "assets/Parks/14-Crater Lake National Park/sources 2.txt",
+      "assets/Parks/14-Crater Lake National Park/sources.txt"
+    ],
+    "cuyahoga-valley": [
+      "assets/Parks/15-Cuyahoga Valley National Park/sources 2.txt",
+      "assets/Parks/15-Cuyahoga Valley National Park/sources.txt"
+    ],
+    "death-valley": [
+      "assets/Parks/16-Death Valley National Park/sources.txt"
+    ],
+    "denali": [
+      "assets/Parks/17-Denali National Park/sources 2.txt",
+      "assets/Parks/17-Denali National Park/sources.txt"
+    ],
+    "dry-tortugas": [
+      "assets/Parks/18-Dry Tortugas National Park/sources 2.txt",
+      "assets/Parks/18-Dry Tortugas National Park/sources.txt"
+    ],
+    "everglades": [
+      "assets/Parks/19-Everglades National Park/sources 2.txt",
+      "assets/Parks/19-Everglades National Park/sources.txt"
+    ],
+    "gates-of-the-arctic": [
+      "assets/Parks/20-Gates of the Arctic National Park/sources.txt"
+    ],
+    "gateway-arch": [
+      "assets/Parks/21-Gateway Arch National Park/sources 2.txt",
+      "assets/Parks/21-Gateway Arch National Park/sources.txt"
+    ],
+    "glacier": [
+      "assets/Parks/22-Glacier National Park/sources 2.txt",
+      "assets/Parks/22-Glacier National Park/sources.txt"
+    ],
+    "glacier-bay": [
+      "assets/Parks/23-Glacier Bay National Park/sources 2.txt",
+      "assets/Parks/23-Glacier Bay National Park/sources.txt"
+    ],
+    "grand-canyon": [
+      "assets/Parks/24-Grand Canyon National Park/sources 2.txt",
+      "assets/Parks/24-Grand Canyon National Park/sources.txt"
+    ],
+    "grand-teton": [
+      "assets/Parks/25-Grand Teton National Park/sources 2.txt",
+      "assets/Parks/25-Grand Teton National Park/sources.txt"
+    ],
+    "great-basin": [
+      "assets/Parks/26-Great Basin National Park/sources 2.txt",
+      "assets/Parks/26-Great Basin National Park/sources.txt"
+    ],
+    "great-sand-dunes": [
+      "assets/Parks/27-Great Sand Dunes National Park/sources 2.txt",
+      "assets/Parks/27-Great Sand Dunes National Park/sources.txt"
+    ],
+    "great-smoky-mountains": [
+      "assets/Parks/28-Great Smoky Mountains National Park/sources 2.txt",
+      "assets/Parks/28-Great Smoky Mountains National Park/sources.txt"
+    ],
+    "guadalupe-mountains": [
+      "assets/Parks/29-Guadalupe Mountains National Park/sources 2.txt",
+      "assets/Parks/29-Guadalupe Mountains National Park/sources.txt"
+    ],
+    "haleakala": [
+      "assets/Parks/30-Haleakala National Park/sources 2.txt",
+      "assets/Parks/30-Haleakala National Park/sources.txt"
+    ],
+    "hawaii-volcanoes": [
+      "assets/Parks/31-Hawaii Volcanoes National Park/sources 2.txt",
+      "assets/Parks/31-Hawaii Volcanoes National Park/sources.txt"
+    ],
+    "hot-springs": [
+      "assets/Parks/32-Hot Springs National Park/sources 2.txt",
+      "assets/Parks/32-Hot Springs National Park/sources.txt"
+    ],
+    "indiana-dunes": [
+      "assets/Parks/33-Indiana Dunes National Park/sources 2.txt",
+      "assets/Parks/33-Indiana Dunes National Park/sources.txt"
+    ],
+    "isle-royale": [
+      "assets/Parks/34-Isle Royale National Park/sources 2.txt",
+      "assets/Parks/34-Isle Royale National Park/sources.txt"
+    ],
+    "joshua-tree": [
+      "assets/Parks/35-Joshua Tree National Park/sources 2.txt",
+      "assets/Parks/35-Joshua Tree National Park/sources.txt"
+    ],
+    "katmai": [
+      "assets/Parks/36-Katmai National Park/sources 2.txt",
+      "assets/Parks/36-Katmai National Park/sources.txt"
+    ],
+    "kenai-fjords": [
+      "assets/Parks/37-Kenai Fjords National Park/sources 2.txt",
+      "assets/Parks/37-Kenai Fjords National Park/sources.txt"
+    ],
+    "kings-canyon": [
+      "assets/Parks/38-Kings Canyon National Park/sources 2.txt",
+      "assets/Parks/38-Kings Canyon National Park/sources.txt"
+    ],
+    "kobuk-valley": [
+      "assets/Parks/39-Kobuk Valley National Park/sources.txt"
+    ],
+    "lake-clark": [
+      "assets/Parks/40-Lake Clark National Park/sources 2.txt",
+      "assets/Parks/40-Lake Clark National Park/sources.txt"
+    ],
+    "lassen-volcanic": [
+      "assets/Parks/41-Lassen Volcanic National Park/sources 2.txt",
+      "assets/Parks/41-Lassen Volcanic National Park/sources.txt"
+    ],
+    "mammoth-cave": [
+      "assets/Parks/42-Mammoth Cave National Park/sources 2.txt",
+      "assets/Parks/42-Mammoth Cave National Park/sources.txt"
+    ],
+    "mesa-verde": [
+      "assets/Parks/43-Mesa Verde National Park/sources 2.txt",
+      "assets/Parks/43-Mesa Verde National Park/sources.txt"
+    ],
+    "mount-rainier": [
+      "assets/Parks/44-Mount Rainier National Park/sources 2.txt",
+      "assets/Parks/44-Mount Rainier National Park/sources.txt"
+    ],
+    "new-river-gorge": [
+      "assets/Parks/45-New River Gorge National Park and Preserve/sources 2.txt",
+      "assets/Parks/45-New River Gorge National Park and Preserve/sources.txt"
+    ],
+    "north-cascades": [
+      "assets/Parks/46-North Cascades National Park/sources 2.txt",
+      "assets/Parks/46-North Cascades National Park/sources.txt"
+    ],
+    "olympic": [
+      "assets/Parks/47-Olympic National Park/sources 2.txt",
+      "assets/Parks/47-Olympic National Park/sources.txt"
+    ],
+    "petrified-forest": [
+      "assets/Parks/48-Petrified Forest National Park/sources 2.txt",
+      "assets/Parks/48-Petrified Forest National Park/sources.txt"
+    ],
+    "pinnacles": [
+      "assets/Parks/49-Pinnacles National Park/sources 2.txt",
+      "assets/Parks/49-Pinnacles National Park/sources.txt"
+    ],
+    "redwood": [
+      "assets/Parks/50-Redwood National and State Parks/sources 2.txt",
+      "assets/Parks/50-Redwood National and State Parks/sources.txt"
+    ],
+    "rocky-mountain": [
+      "assets/Parks/51-Rocky Mountain National Park/sources 2.txt",
+      "assets/Parks/51-Rocky Mountain National Park/sources.txt"
+    ],
+    "saguaro": [
+      "assets/Parks/52-Saguaro National Park/sources 2.txt",
+      "assets/Parks/52-Saguaro National Park/sources.txt"
+    ],
+    "sequoia": [
+      "assets/Parks/53-Sequoia National Park/sources 2.txt",
+      "assets/Parks/53-Sequoia National Park/sources.txt"
+    ],
+    "shenandoah": [
+      "assets/Parks/54-Shenandoah National Park/sources 2.txt",
+      "assets/Parks/54-Shenandoah National Park/sources.txt"
+    ],
+    "theodore-roosevelt": [
+      "assets/Parks/55-Theodore Roosevelt National Park/sources.txt"
+    ],
+    "virgin-islands": [
+      "assets/Parks/56-Virgin Islands National Park/sources 2.txt",
+      "assets/Parks/56-Virgin Islands National Park/sources.txt"
+    ],
+    "voyageurs": [
+      "assets/Parks/57-Voyageurs National Park/sources 2.txt",
+      "assets/Parks/57-Voyageurs National Park/sources.txt"
+    ],
+    "white-sands": [
+      "assets/Parks/58-White Sands National Park/sources 2.txt",
+      "assets/Parks/58-White Sands National Park/sources.txt"
+    ],
+    "wind-cave": [
+      "assets/Parks/59-Wind Cave National Park/sources 2.txt",
+      "assets/Parks/59-Wind Cave National Park/sources.txt"
+    ],
+    "wrangell-st-elias": [
+      "assets/Parks/60-Wrangell-St. Elias National Park and Preserve/sources.txt"
+    ],
+    "zion": [
+      "assets/Parks/63-Zion National Park/sources 2.txt",
+      "assets/Parks/63-Zion National Park/sources.txt"
+    ]
+  }
+}
