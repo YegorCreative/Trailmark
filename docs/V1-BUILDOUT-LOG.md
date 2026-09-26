@@ -64,6 +64,7 @@ Next batch: Saguaro, Petrified Forest, Great Sand Dunes, White Sands, Carlsbad C
 - Open parks carry `archiveSeq` in catalog order. "Newest in archive" sorts by that number, highest first.
 - The desktop Parks menu lists only regions that already have an open park, plus a link to all 63. The mobile menu lists every park, with unpublished ones labeled Coming soon and not linked.
 - Homepage hero art is pinned to the bottom edge. Parallax on that layer scales from the bottom and does not translate the painting upward. Badges stay circles (`aspect-ratio: 1`), not ovals inside rounded plates.
+- Homepage type is Fraunces for display and Outfit for text. The hero is a full viewport. The crossfade still runs, with a Ken Burns scale from the bottom and a slide caption. The badge board is a wall of all 63 circular marks.
 
 ## Card height and park-year label
 

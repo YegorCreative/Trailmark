@@ -478,4 +478,172 @@ img.badge-system-mark,
 
 @media (prefers-reduced-motion: reduce) {
   .park-strip { scroll-behavior: auto; }
+  .hero-scene-art--base.is-active { animation: none; }
+  .badge-wall-item { transform: none !important; }
+}
+
+/* Homepage atlas */
+:root {
+  --font-heading: "Fraunces", "Iowan Old Style", Palatino, serif;
+  --font-body: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+#hero.hero--homepage {
+  min-height: 100svh;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero--homepage .hero-shell {
+  min-height: 0;
+  width: min(1200px, 100%);
+  padding: 0 6vw 11vh;
+}
+
+.hero--homepage .hero-title {
+  font-size: clamp(3.4rem, 8vw, 8rem);
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  font-weight: 560;
+}
+
+.hero--homepage .hero-eyebrow,
+.atlas-kicker {
+  font-family: var(--font-body);
+}
+
+.hero-slide-link,
+.scroll-cue {
+  position: absolute;
+  z-index: 4;
+  color: #f7f3ec;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-slide-link {
+  right: 1.5rem;
+  bottom: 1.4rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-slide-link::after { content: " \2192"; }
+
+.scroll-cue {
+  left: 6vw;
+  bottom: 1.4rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+@keyframes tm-ken {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+.hero-scene-art--base {
+  transform-origin: center bottom;
+}
+
+.hero-scene-art--base.is-active {
+  animation: tm-ken 18s linear forwards;
+}
+
+.bleed-band {
+  height: 70vh;
+  min-height: 22rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.bleed-band img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center bottom;
+  transform-origin: center bottom;
+}
+
+#about-trailmark {
+  padding: 7rem 1.5rem;
+}
+
+.value-prop-title,
+.closing-cta-title,
+.park-strip-head h2,
+.section-block-head h2 {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+.value-prop-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.pillar {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  border-top: 1px solid #d8d0c0;
+  padding-top: 1rem;
+}
+
+.badge-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: 1.25rem 0.75rem;
+  max-width: 1280px;
+  margin: 0 auto 4rem;
+  padding: 0 1.25rem 2rem;
+  perspective: 800px;
+}
+
+.badge-wall-item {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: #1c1c1c;
+  min-height: 44px;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+.badge-wall-item img {
+  width: min(100%, 7.2rem);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f7f3ec;
+}
+
+.badge-wall-item.is-soon img {
+  filter: grayscale(1);
+  opacity: 0.72;
+}
+
+.badge-wall-name {
+  font-size: 0.78rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+@media (max-width: 800px) {
+  .value-prop-pillars { grid-template-columns: 1fr; }
+  .hero-slide-link { right: 1rem; }
+}
+
+@media (pointer: coarse) {
+  .badge-wall-item { transform: none !important; }
 }

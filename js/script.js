@@ -45,7 +45,7 @@
       const rect = hero.getBoundingClientRect();
       const progress = Math.min(1, Math.max(0, -rect.top / Math.max(rect.height, 1)));
       el.style.opacity = String(1 - progress * 0.75);
-      el.style.transform = 'translate3d(0,' + (progress * -18 * strength).toFixed(2) + 'px,0)';
+      el.style.transform = 'translate3d(0,' + (progress * -56 * strength).toFixed(2) + 'px,0)';
     });
     ticking = false;
   }
@@ -336,6 +336,15 @@
   if (!first) return;
 
   const slides = [first];
+  const slideParks = [];
+  const caption = document.querySelector('[data-hero-slide]');
+
+  function labelFor(park) {
+    if (!caption || !park) return;
+    const state = String(park.state || '').split(',')[0].trim();
+    caption.textContent = park.name + ', ' + state;
+    caption.setAttribute('href', 'parks/' + park.id + '.html');
+  }
 
   function addSlide(park) {
     const image = document.createElement('img');
@@ -344,7 +353,6 @@
     image.width = 1672;
     image.height = 941;
     image.decoding = 'async';
-    if (park.heroFocus) image.style.objectPosition = park.heroFocus;
     image.src = park.art.header;
     scene.appendChild(image);
     return image;
@@ -355,17 +363,24 @@
       const park = PARKS.find(function (entry) { return entry.id === id && entry.pageUrl && entry.art; });
       if (!park) return;
       if (first.getAttribute('src') && first.getAttribute('src').indexOf('/' + id + '/') !== -1) {
-        if (park.heroFocus) first.style.objectPosition = park.heroFocus;
+        slideParks[0] = park;
+        labelFor(park);
         return;
       }
       slides.push(addSlide(park));
+      slideParks[slides.length - 1] = park;
     });
+    if (!slideParks[0]) {
+      slideParks[0] = PARKS.find(function (entry) { return entry.id === 'yosemite'; });
+      labelFor(slideParks[0]);
+    }
     if (slides.length < 2) return;
     let index = 0;
     window.setInterval(function () {
       slides[index].classList.remove('is-active');
       index = (index + 1) % slides.length;
       slides[index].classList.add('is-active');
+      labelFor(slideParks[index]);
     }, 6000);
   });
 }());
