@@ -75,7 +75,16 @@
     const poster = (parkCard && parkCard.art && parkCard.art.header) || park.hero.posterSrc;
     const posterHidden = park.hero.posterAlt ? '' : ' aria-hidden="true"';
 
+    const region = (parkCard && parkCard.region) || park.region || '';
+    const crumb = '<nav class="hero-crumb" aria-label="Breadcrumb"><ol>'
+      + '<li><a href="../index.html">Home</a></li>'
+      + '<li><a href="../parks.html">Parks</a></li>'
+      + '<li><a href="../parks.html?region=' + encodeURIComponent(region) + '">' + escapeHtml(region) + '</a></li>'
+      + '<li aria-current="page">' + escapeHtml(park.name) + '</li>'
+      + '</ol></nav>';
+
     return '<section id="hero" class="hero--park' + themeClass + '" style="' + heroVars() + '" aria-labelledby="park-hero-title">'
+      + crumb
       + '<div class="park-poster" data-pin-bottom data-speed="0.16" data-scale="1.08"' + posterHidden + '>'
       + '<img src="' + escapeHtml(assetUrl(poster)) + '" alt="' + escapeHtml(park.hero.posterAlt || '') + '" class="park-poster-art" width="1672" height="941" fetchpriority="high" style="view-transition-name: park-' + escapeHtml(parkId) + '" />'
       + '</div>'
@@ -125,14 +134,18 @@
   }
 
   function renderHighlights() {
+    const poster = (parkCard && parkCard.art && parkCard.art.header) || park.hero.posterSrc;
+    const focuses = ['28% 42%', '72% 48%', '50% 78%', '40% 30%'];
     const cards = park.landscapeHighlights.items.map(function (item, index) {
       const number = String(index + 1).padStart(2, '0');
-      const wash = item.wash ? ' style="background:' + item.wash + '"' : '';
-      return '<article class="highlight-card highlight-card--' + escapeHtml(item.modifier || 'plain') + '"' + wash + '>'
+      const focus = focuses[index % focuses.length];
+      return '<article class="highlight-card highlight-card--' + escapeHtml(item.modifier || 'plain') + '">'
+        + '<img class="highlight-photo" src="' + escapeHtml(assetUrl(poster)) + '" alt="" style="object-position:' + focus + '" />'
+        + '<div class="highlight-copy">'
         + '<p class="highlight-index">' + number + '</p>'
         + '<h3 class="highlight-title">' + escapeHtml(item.title) + '</h3>'
         + '<p class="highlight-desc">' + escapeHtml(item.body) + '</p>'
-        + '</article>';
+        + '</div></article>';
     }).join('');
 
     return '<section id="park-highlights" class="park-section park-section--highlights" aria-labelledby="park-highlights-title">'
@@ -145,17 +158,18 @@
 
   function renderDiscoverySection(key, id, cardClass) {
     const section = park[key];
-    const cards = section.items.map(function (item) {
-      return '<article class="' + cardClass + '">'
-        + '<h3>' + escapeHtml(item.title) + '</h3>'
-        + '<p>' + escapeHtml(item.body) + '</p>'
+    const cards = section.items.map(function (item, index) {
+      const number = String(index + 1).padStart(2, '0');
+      return '<article class="editorial-item">'
+        + '<p class="editorial-num">' + number + '</p>'
+        + '<div><h3>' + escapeHtml(item.title) + '</h3><p>' + escapeHtml(item.body) + '</p></div>'
         + '</article>';
     }).join('');
 
-    return '<section id="' + id + '" class="park-section park-section--discovery" aria-labelledby="' + id + '-title">'
+    return '<section id="' + id + '" class="park-section park-section--editorial" aria-labelledby="' + id + '-title">'
       + '<div class="section-inner">'
-      + sectionHeading(section, id + '-title', 'center')
-      + '<div class="discovery-grid">' + cards + '</div>'
+      + sectionHeading(section, id + '-title')
+      + '<div class="editorial-list">' + cards + '</div>'
       + '</div>'
       + '</section>';
   }
@@ -193,37 +207,37 @@
   }
 
   function renderSeasons() {
+    const poster = (parkCard && parkCard.art && parkCard.art.header) || park.hero.posterSrc;
     const cards = park.seasons.items.map(function (season) {
-      const wash = season.wash ? ' style="background:' + season.wash + '"' : '';
-      return '<article class="season-card season-card--' + escapeHtml(season.modifier || 'plain') + '"' + wash + '>'
-        + '<p class="season-name">' + escapeHtml(season.name) + '</p>'
-        + '<p class="season-desc">' + escapeHtml(season.body) + '</p>'
+      return '<article class="season-col">'
+        + '<h3>' + escapeHtml(season.name) + '</h3>'
+        + '<p>' + escapeHtml(season.body) + '</p>'
         + '</article>';
     }).join('');
 
-    return '<section id="park-seasons" class="park-section park-section--seasons" aria-labelledby="park-seasons-title">'
-      + '<div class="section-inner">'
-      + sectionHeading(park.seasons, 'park-seasons-title')
-      + '<div class="season-grid">' + cards + '</div>'
+    return '<section id="park-seasons" class="season-band" aria-labelledby="park-seasons-title">'
+      + '<img class="season-band-art" src="' + escapeHtml(assetUrl(poster)) + '" alt="" />'
+      + '<div class="season-band-inner">'
+      + '<h2 id="park-seasons-title">' + escapeHtml(park.seasons.title) + '</h2>'
+      + '<div class="season-cols">' + cards + '</div>'
       + '</div>'
       + '</section>';
   }
 
   function renderPhotography() {
-    const tips = park.photography.tips.map(function (tip) {
-      return '<article class="photo-tip">'
-        + '<p class="photo-tip-label">' + escapeHtml(tip.label) + '</p>'
-        + '<p>' + escapeHtml(tip.body) + '</p>'
+    const tips = park.photography.tips.map(function (tip, index) {
+      const number = String(index + 1).padStart(2, '0');
+      return '<article class="editorial-item">'
+        + '<p class="editorial-num">' + number + '</p>'
+        + '<div><h3>' + escapeHtml(tip.label) + '</h3><p>' + escapeHtml(tip.body) + '</p></div>'
         + '</article>';
     }).join('');
 
-    return '<section id="park-photography" class="park-section park-section--photography" aria-labelledby="park-photography-title">'
-      + '<div class="section-inner photography-layout">'
-      + '<div>'
+    return '<section id="park-photography" class="park-section park-section--editorial" aria-labelledby="park-photography-title">'
+      + '<div class="section-inner">'
       + sectionHeading(park.photography, 'park-photography-title')
       + '<p class="knowledge-lead">' + escapeHtml(park.photography.lead) + '</p>'
-      + '</div>'
-      + '<div class="photo-tips">' + tips + '</div>'
+      + '<div class="editorial-list">' + tips + '</div>'
       + '</div>'
       + '</section>';
   }
@@ -252,22 +266,18 @@
       return '<p>' + escapeHtml(note) + '</p>';
     }).join('');
 
-    return '<section class="park-section park-section--badge" aria-labelledby="badge-showcase-title">'
-      + '<div class="section-inner badge-showcase-layout">'
-      + '<div class="badge-showcase-frame">'
-      + '<div class="badge-showcase-plaque">'
-      + '<p class="badge-plaque-label">' + escapeHtml(park.badgeStory.label) + '</p>'
-      + '<div class="badge-plaque-badge-wrap badge-tilt">'
+    const accent = (park.palette && park.palette.hero && park.palette.hero[2]) || '#243224';
+    return '<section class="park-section badge-panel" aria-labelledby="badge-showcase-title" style="background:' + accent + '">'
+      + '<div class="badge-panel-inner">'
+      + '<div class="badge-tilt">'
       + renderBadgeImage(park.fullName + ' badge', 'park-badge--hero')
       + '</div>'
-      + '<div class="badge-plaque-footer" aria-label="Artifact details">' + details + '</div>'
-      + '</div>'
-      + '</div>'
-      + '<div class="badge-showcase-copy">'
+      + '<div class="badge-panel-copy">'
       + '<p class="section-kicker">' + escapeHtml(park.badgeStory.kicker) + '</p>'
-      + '<h2 class="section-title section-title--left" id="badge-showcase-title">' + escapeHtml(park.badgeStory.title) + '</h2>'
-      + '<p class="badge-showcase-desc">' + escapeHtml(park.badgeStory.description) + '</p>'
-      + '<div class="badge-showcase-notes" aria-label="Archival note details">' + notes + '</div>'
+      + '<h2 id="badge-showcase-title">' + escapeHtml(park.badgeStory.title) + '</h2>'
+      + '<p>' + escapeHtml(park.badgeStory.description) + '</p>'
+      + '<div class="badge-panel-notes">' + notes + '</div>'
+      + '<div class="badge-detail-row" aria-label="Artifact details">' + details + '</div>'
       + '</div>'
       + '</div>'
       + '</section>';
@@ -372,15 +382,7 @@
 
   function renderCrumb() {
     const crumb = document.querySelector('.park-back');
-    if (!crumb || !parkCard) return;
-    const region = parkCard.region || park.region;
-    crumb.setAttribute('aria-label', 'Breadcrumb');
-    crumb.innerHTML = '<ol class="park-crumb-list">'
-      + '<li><a href="../index.html">Home</a></li>'
-      + '<li><a href="../parks.html">Parks</a></li>'
-      + '<li><a href="../parks.html?region=' + encodeURIComponent(region) + '">' + escapeHtml(region) + '</a></li>'
-      + '<li aria-current="page">' + escapeHtml(park.name) + '</li>'
-      + '</ol>';
+    if (crumb) crumb.remove();
   }
 
   function initChapters() {
