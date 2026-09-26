@@ -13,6 +13,10 @@
 
 .logo-mark {
   height: 46px;
+  width: auto;
+  max-width: 9rem;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .logo-text {
@@ -697,7 +701,7 @@ img.badge-system-mark,
   #site-nav { display: none; }
   .header-inner { flex-wrap: nowrap; align-items: center; }
   .logo { min-width: 0; }
-  .logo-mark { height: 40px; }
+  .logo-mark { height: 36px; max-width: 6.5rem; }
   .logo-text { font-size: 1.05rem; white-space: nowrap; }
   .atlas-filters { grid-template-columns: 1fr 1fr; }
   .atlas-index { grid-template-columns: 1fr 1fr; }
@@ -1455,11 +1459,15 @@ body.sheet-lock { overflow: hidden; }
   bottom: 0;
   top: auto;
   z-index: 70;
+  width: 100%;
+  max-width: 100%;
   max-height: 72vh;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: #f6f1e8;
   border-radius: 18px 18px 0 0;
-  padding: 1rem;
+  padding: 1rem 1rem 1.4rem;
+  box-sizing: border-box;
 }
 
 .mega-layout { align-items: start; }
