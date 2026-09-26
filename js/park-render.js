@@ -11,6 +11,7 @@
       assetBase = (typeof document !== 'undefined' && document.documentElement.getAttribute('data-asset-base')) || '';
     }
     var parkId = (parkCard && parkCard.id) || park.id;
+    var visitorPhotos = options.photos || [];
 
   function escapeHtml(value) {
     return String(value)
@@ -337,6 +338,12 @@
       + '</div></nav>';
   }
 
+  function renderVisitorPhotos() {
+    if (!visitorPhotos.length || !root.trailmarkRenderVisitorSection) return '';
+    const label = park.fullName || (parkCard && parkCard.name) || 'This park';
+    return root.trailmarkRenderVisitorSection(visitorPhotos, label, assetBase);
+  }
+
   function renderNeighbors() {
     if (!parkCard || !catalog.length) return '';
     const open = catalog.filter(function (entry) { return entry.pageUrl; }).sort(function (a, b) {
@@ -395,6 +402,7 @@
       renderBadge(),
       renderStewardship(),
       renderArchive(),
+      renderVisitorPhotos(),
       renderNeighbors(),
     ].join('');
   }

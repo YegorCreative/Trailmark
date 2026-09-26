@@ -2031,3 +2031,83 @@ body:has(#hero) #hero.about-hero::after {
 @media (prefers-reduced-motion: reduce) {
   .about-piece, .about-piece:hover { transform: none; transition: none; }
 }
+
+.photo-share-note { font-size: 0.92rem; }
+.about-btn:disabled {
+  background: #243224;
+  color: #f6efe4;
+  opacity: 1;
+  cursor: not-allowed;
+}
+.photo-gallery { max-width: 1100px; margin: 0 auto; }
+.photo-gallery h1,
+.visitor-park h2 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.photo-gallery h1 { font-size: clamp(2.4rem, 5vw, 4rem); margin: 0 0 0.8rem; }
+.visitor-empty { margin: 0; }
+.visitor-park { margin-top: 2.2rem; }
+.visitor-park h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 0; }
+.visitor-park h2 a { color: inherit; }
+.visitor-grid {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  columns: 3 15rem;
+  column-gap: 1rem;
+}
+.visitor-grid li { break-inside: avoid; margin: 0 0 1.25rem; }
+.visitor-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.visitor-open img { width: 100%; height: auto; display: block; }
+.visitor-credit, .visitor-caption { margin: 0.4rem 0 0; line-height: 1.45; }
+.visitor-credit a { color: #9a3412; }
+.photo-lightbox[hidden] { display: none; }
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(8, 12, 10, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.photo-lightbox-dialog {
+  width: min(1100px, 100%);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "close close close" "prev figure next";
+  gap: 0.75rem;
+  align-items: center;
+}
+.photo-lightbox-close { grid-area: close; justify-self: end; }
+.photo-lightbox-prev { grid-area: prev; }
+.photo-lightbox-next { grid-area: next; }
+.photo-lightbox figure { grid-area: figure; margin: 0; text-align: center; }
+.photo-lightbox img { max-width: 100%; max-height: 74vh; width: auto; height: auto; }
+.photo-lightbox figcaption { color: #f6efe4; margin-top: 0.6rem; }
+.photo-lightbox button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 0.9rem;
+  border: 0;
+  border-radius: 999px;
+  background: #f6efe4;
+  color: #142016;
+  font: inherit;
+  font-weight: 600;
+}
+body.photo-lightbox-open { overflow: hidden; }
+@media (max-width: 700px) {
+  .visitor-grid { columns: 1; }
+  .photo-lightbox-dialog { grid-template-columns: 1fr 1fr; grid-template-areas: "close close" "figure figure" "prev next"; }
+}

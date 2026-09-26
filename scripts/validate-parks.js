@@ -107,7 +107,25 @@ function main() {
   });
 
   const SITE = 'https://yegorcreative.github.io/Trailmark/';
-  const pages = ['index.html', 'parks.html', 'about.html', 'faq.html', 'contact.html', '404.html']
+  let photoList = [];
+  try { photoList = load('js/photos-data.js', 'PHOTOS'); }
+  catch (error) { errors.push('js/photos-data.js could not be loaded'); }
+  const photoIds = new Set();
+  photoList.forEach(function (photo) {
+    const id = photo && photo.id ? photo.id : '(missing id)';
+    if (!photo || !String(photo.photographer || '').trim()) errors.push('photo missing photographer: ' + id);
+    if (!photo || !byId[photo.parkId]) errors.push('photo unknown parkId: ' + (photo && photo.parkId));
+    if (!photo || !String(photo.file || '').trim()) errors.push('photo missing file: ' + id);
+    if (photo && photoIds.has(photo.id)) errors.push('duplicate photo id ' + photo.id);
+    if (photo && photo.id) photoIds.add(photo.id);
+    ['-640.webp', '-1280.webp'].forEach(function (suffix) {
+      if (!photo || !photo.parkId || !photo.id) return;
+      const rel = 'assets/photos/' + photo.parkId + '/' + photo.id + suffix;
+      if (!fs.existsSync(path.join(root, rel))) errors.push('photo missing file: ' + rel);
+    });
+  });
+
+  const pages = ['index.html', 'parks.html', 'about.html', 'faq.html', 'contact.html', 'photos.html', '404.html']
     .concat(parks.filter(function (park) { return park.pageUrl; }).map(function (park) { return park.pageUrl; }));
   const titles = new Map();
   const descriptions = new Map();

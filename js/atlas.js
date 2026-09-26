@@ -587,6 +587,7 @@
       + '<nav class="atlas-footer-pages" aria-label="Footer">'
       + '<a href="' + esc(root + 'about.html') + '">About</a>'
       + '<a href="' + esc(root + 'faq.html') + '">FAQ</a>'
+      + '<a href="' + esc(root + 'photos.html') + '">Photos</a>'
       + '<a href="' + esc(root + 'contact.html') + '">Contact</a>'
       + '<a href="' + esc(root + 'parks.html') + '">All parks</a>'
       + '</nav>'

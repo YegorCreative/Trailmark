@@ -25,7 +25,10 @@
   if (staleCrumb) staleCrumb.remove();
 
   if (!mount.querySelector('#hero')) {
-    mount.innerHTML = trailmarkRenderPark(park, parkCard, { parks: typeof PARKS !== 'undefined' ? PARKS : [] });
+    const photos = typeof PHOTOS !== 'undefined'
+      ? PHOTOS.filter(function (photo) { return photo.parkId === parkId; })
+      : [];
+    mount.innerHTML = trailmarkRenderPark(park, parkCard, { parks: typeof PARKS !== 'undefined' ? PARKS : [], photos: photos });
   }
 
   function initChapters() {

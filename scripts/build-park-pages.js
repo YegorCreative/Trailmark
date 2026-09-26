@@ -32,6 +32,29 @@ function load(file, returned) {
   return new Function(source + '\nreturn ' + returned + ';')();
 }
 
+function webpSize(filePath) {
+  const buf = fs.readFileSync(filePath);
+  if (buf.toString('ascii', 0, 4) !== 'RIFF' || buf.toString('ascii', 8, 12) !== 'WEBP') return null;
+  let offset = 12;
+  while (offset + 8 <= buf.length) {
+    const tag = buf.toString('ascii', offset, offset + 4);
+    const size = buf.readUInt32LE(offset + 4);
+    const data = offset + 8;
+    if (tag === 'VP8X' && size >= 10) {
+      return { width: 1 + buf.readUIntLE(data + 4, 3), height: 1 + buf.readUIntLE(data + 7, 3) };
+    }
+    if (tag === 'VP8 ' && size >= 10) {
+      return { width: buf.readUInt16LE(data + 6) & 0x3fff, height: buf.readUInt16LE(data + 8) & 0x3fff };
+    }
+    if (tag === 'VP8L' && size >= 5) {
+      const bits = buf.readUInt32LE(data + 1);
+      return { width: (bits & 0x3fff) + 1, height: ((bits >> 14) & 0x3fff) + 1 };
+    }
+    offset = data + size + (size % 2);
+  }
+  return null;
+}
+
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, '&amp;')
@@ -216,17 +239,21 @@ function pageHtml(park, essay, articleHtml, modified) {
     + '          <a href="../parks.html" class="footer-nav-link">Parks</a>\n'
     + '          <a href="../about.html" class="footer-nav-link">About</a>\n'
     + '          <a href="../faq.html" class="footer-nav-link">FAQ</a>\n'
+    + '          <a href="../photos.html" class="footer-nav-link">Photos</a>\n'
     + '          <a href="../contact.html" class="footer-nav-link">Contact</a>\n'
     + '        </nav>\n'
     + '        <p class="footer-copy">&copy; 2026 TrailMark</p>\n'
     + '      </div>\n'
     + '    </footer>\n'
     + '    <script src="../js/parks-data.js"></script>\n'
+    + '    <script src="../js/photos-data.js"></script>\n'
+    + '    <script src="../js/photos-render.js"></script>\n'
     + '    <script src="../js/park-content.js"></script>\n'
     + '    <script src="../js/park-render.js"></script>\n'
     + '    <script src="../js/park-page.js"></script>\n'
     + '    <script src="../js/atlas.js"></script>\n'
     + '    <script src="../js/script.js"></script>\n'
+    + '    <script src="../js/photos.js"></script>\n'
     + '  </body>\n'
     + '</html>\n';
 }
@@ -276,9 +303,57 @@ function writeSitemap(entries) {
   fs.writeFileSync(path.join(root, 'sitemap.xml'), xml);
 }
 
+function withSizes(photo) {
+  const smallPath = path.join(root, 'assets/photos', photo.parkId, photo.id + '-640.webp');
+  const largePath = path.join(root, 'assets/photos', photo.parkId, photo.id + '-1280.webp');
+  const small = fs.existsSync(smallPath) ? webpSize(smallPath) : null;
+  const large = fs.existsSync(largePath) ? webpSize(largePath) : null;
+  return Object.assign({}, photo, {
+    width: small && small.width,
+    height: small && small.height,
+    fullWidth: large && large.width,
+  });
+}
+
+function updatePhotoGallery(photos, parks, content) {
+  const file = path.join(root, 'photos.html');
+  if (!fs.existsSync(file)) return;
+  const byId = {};
+  parks.forEach(function (park) { byId[park.id] = park; });
+  const grouped = {};
+  photos.forEach(function (photo) {
+    if (!grouped[photo.parkId]) grouped[photo.parkId] = [];
+    grouped[photo.parkId].push(photo);
+  });
+  const groups = Object.keys(grouped).map(function (id) {
+    const park = byId[id];
+    const list = grouped[id].slice().sort(function (a, b) {
+      return String(b.dateAdded).localeCompare(String(a.dateAdded));
+    });
+    const essay = content[id];
+    return {
+      id: id,
+      name: park ? park.name : id,
+      label: (essay && essay.fullName) || ((park && park.name) ? park.name + ' National Park' : id),
+      href: park && park.pageUrl ? park.pageUrl : '',
+      newest: list[0] ? list[0].dateAdded : '',
+      photos: list,
+    };
+  }).sort(function (a, b) { return String(b.newest).localeCompare(String(a.newest)); });
+  const inner = globalThis.trailmarkRenderPhotoGallery(groups, '');
+  let html = fs.readFileSync(file, 'utf8');
+  const next = html.replace(
+    /<div id="visitor-gallery">[\s\S]*?<\/div>/,
+    '<div id="visitor-gallery">\n            ' + inner + '\n          </div>'
+  );
+  fs.writeFileSync(file, next);
+}
+
 function main() {
   const parks = load('js/parks-data.js', 'PARKS');
   const content = load('js/park-content.js', 'PARK_PAGE_CONTENT');
+  const photos = load('js/photos-data.js', 'PHOTOS').map(withSizes);
+  new Function(fs.readFileSync(path.join(root, 'js/photos-render.js'), 'utf8'))();
   const renderSource = fs.readFileSync(path.join(root, 'js/park-render.js'), 'utf8');
   new Function(renderSource)();
   const render = globalThis.trailmarkRenderPark;
@@ -290,13 +365,17 @@ function main() {
 
   published.forEach(function (park) {
     const essay = content[park.id];
-    const article = render(essay, park, { parks: parks, assetBase: '../' });
+    const mine = photos.filter(function (photo) { return photo.parkId === park.id; }).sort(function (a, b) {
+      return String(b.dateAdded).localeCompare(String(a.dateAdded));
+    });
+    const article = render(essay, park, { parks: parks, assetBase: '../', photos: mine });
     const modified = gitDate('parks/' + park.id + '.html') || gitDate('js/park-content.js') || contentDate;
     fs.writeFileSync(path.join(outDir, park.id + '.html'), pageHtml(park, essay, article, modified));
     written.push(park.id);
   });
 
   updateParksIndex(published.slice().sort(function (a, b) { return a.name.localeCompare(b.name); }));
+  updatePhotoGallery(photos, parks, content);
 
   const today = contentDate;
   const staticPages = [
@@ -305,6 +384,7 @@ function main() {
     { loc: SITE + '/about.html', file: 'about.html' },
     { loc: SITE + '/faq.html', file: 'faq.html' },
     { loc: SITE + '/contact.html', file: 'contact.html' },
+    { loc: SITE + '/photos.html', file: 'photos.html' },
   ];
   const urls = staticPages.map(function (page) {
     return { loc: page.loc, lastmod: gitDate(page.file) || today };
