@@ -352,7 +352,7 @@
         var openN = PARKS.filter(function (park) { return park.landscape === pair[0] && isOpen(park); }).length;
         return '<a class="landscape-tile" href="' + esc(base() + 'parks.html?landscape=' + encodeURIComponent(pair[0])) + '">'
           + '<img src="' + esc(base() + rep.art.header) + '" alt="" />'
-          + '<span><strong>' + esc(pair[1]) + '</strong><small>' + openN + ' open</small></span></a>';
+          + '<span><strong>' + esc(pair[1]) + '</strong><small>' + (openN ? openN + ' open' : 'Coming soon') + '</small></span></a>';
       }).join('');
     }
 
@@ -501,6 +501,11 @@
         chips.push('<button type="button" class="filter-chip" data-chip="park-search">' + esc(search.value.trim()) + ' <span aria-hidden="true">×</span></button>');
       }
       host.innerHTML = chips.join('');
+      var launchBtn = document.querySelector('.filter-launch');
+      if (launchBtn) {
+        var badge = chips.length ? '<span class="filter-count">' + chips.length + '</span>' : '';
+        launchBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12l-4.6 5.3V13l-2.8 1.1V8.3L2 3z" fill="currentColor"/></svg> Filter &amp; sort' + badge;
+      }
       host.querySelectorAll('.filter-chip').forEach(function (chip) {
         chip.addEventListener('click', function () {
           var id = chip.getAttribute('data-chip');
@@ -630,4 +635,6 @@
     var hashed = document.querySelector(location.hash);
     if (hashed) window.scrollTo(0, hashed.getBoundingClientRect().top + window.scrollY - 72);
   }
+  if (location.search.indexOf('shot=scrolled') !== -1) window.scrollTo(0, 520);
+  if (location.search.indexOf('shot=bottom') !== -1) window.scrollTo(0, Math.max(document.body.scrollHeight, document.documentElement.scrollHeight));
 }());
