@@ -138,15 +138,20 @@
     });
     var regionNames = Object.keys(byRegion).sort();
 
+    function parkThumb(park) {
+      return '<a class="mega-park" href="' + esc(pageHref(park)) + '">'
+        + '<span class="mega-thumb"><img src="' + esc(base() + park.art.header) + '" alt="" /></span>'
+        + '<img class="mega-badge" src="' + esc(base() + park.art.badge) + '" alt="" />'
+        + '<span class="mega-park-name">' + esc(park.name) + '</span></a>';
+    }
+
     function regionColumns(openOnly) {
       return regionNames.map(function (region) {
         var parks = byRegion[region].filter(function (park) { return openOnly ? isOpen(park) : true; });
         if (!parks.length) return '';
         parks.sort(function (a, b) { return a.name.localeCompare(b.name); });
         var items = parks.map(function (park) {
-          if (isOpen(park)) {
-            return '<li><a href="' + esc(pageHref(park)) + '">' + esc(park.name) + '</a></li>';
-          }
+          if (isOpen(park)) return '<li>' + parkThumb(park) + '</li>';
           return '<li><span class="mega-soon">' + esc(park.name) + '<small>Coming soon</small></span></li>';
         }).join('');
         var regionHref = root + 'parks.html?region=' + encodeURIComponent(region);
@@ -154,10 +159,19 @@
       }).join('');
     }
 
+    var latest = PARKS.filter(isOpen).slice().sort(function (a, b) {
+      return (b.archiveSeq || 0) - (a.archiveSeq || 0);
+    })[0];
+    var feature = latest
+      ? '<a class="mega-feature" href="' + esc(pageHref(latest)) + '">'
+        + '<img src="' + esc(base() + latest.art.header) + '" alt="" />'
+        + '<span><small>Latest in the archive</small>' + esc(latest.name) + '</span></a>'
+      : '';
+
     var megaEl = document.getElementById('park-mega');
     if (megaEl) {
-      megaEl.innerHTML = '<div class="mega-grid">' + regionColumns(true) + '</div>'
-        + '<a class="mega-all" href="' + esc(root + 'parks.html') + '">See all 63 parks</a>';
+      megaEl.innerHTML = '<div class="mega-layout"><div class="mega-grid">' + regionColumns(true) + '</div>' + feature + '</div>'
+        + '<a class="mega-all" href="' + esc(root + 'parks.html') + '">See all 63 parks →</a>';
     }
 
     var overlay = document.getElementById('nav-overlay');
