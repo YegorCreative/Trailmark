@@ -37,7 +37,9 @@
     const art = parkCard && parkCard.art && parkCard.art.badge;
     const className = 'park-badge-img' + (extraClass ? ' ' + extraClass : '');
     if (art) {
-      return '<img class="' + className + '" src="' + escapeHtml(assetUrl(art)) + '" alt="' + escapeHtml(label) + '" width="600" height="600" />';
+      var small = assetUrl(art).replace(/badge\.webp$/, 'badge-160.webp');
+      var mid = assetUrl(art).replace(/badge\.webp$/, 'badge-320.webp');
+      return '<img class="' + className + '" src="' + escapeHtml(mid) + '" srcset="' + escapeHtml(small) + ' 160w, ' + escapeHtml(mid) + ' 320w" sizes="(max-width: 700px) 160px, 256px" alt="' + escapeHtml(label) + '" width="320" height="320" loading="lazy" decoding="async" />';
     }
     if (!parkCard) return '';
     return '<svg class="park-badge' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + escapeHtml(label) + '">'
@@ -85,10 +87,9 @@
 
     return '<section id="hero" class="hero--park' + themeClass + '" style="' + heroVars() + '" aria-labelledby="park-hero-title">'
       + crumb
-      + '<div class="park-poster" data-pin-bottom data-speed="0.16" data-scale="1.08"' + posterHidden + '>'
-      + '<img src="' + escapeHtml(assetUrl(poster)) + '" alt="' + escapeHtml(park.hero.posterAlt || '') + '" class="park-poster-art" width="1672" height="941" fetchpriority="high" style="view-transition-name: park-' + escapeHtml(parkId) + '" />'
+      + '<div class="park-poster" data-hero-parallax' + posterHidden + '>'
+      + '<img src="' + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + '" srcset="' + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + ' 1280w, ' + escapeHtml(assetUrl(poster)) + ' 1672w" sizes="100vw" alt="' + escapeHtml(park.hero.posterAlt || '') + '" class="park-poster-art" width="1672" height="941" decoding="async" fetchpriority="high" style="view-transition-name: park-' + escapeHtml(parkId) + '" />'
       + '</div>'
-      + '<div class="hero-grain" aria-hidden="true"></div>'
       + '<div class="hero-inner" data-parallax="fade">'
       + '<p class="hero-kicker">' + escapeHtml(park.hero.kicker) + '</p>'
       + '<p class="hero-eyebrow">' + escapeHtml(park.hero.eyebrow) + '</p>'
@@ -179,10 +180,10 @@
     const src = parkCard && parkCard.art && parkCard.art.extra;
     if (!extra || !src) return '';
     const alt = extra.alt || '';
-    return '<figure class="park-extra" data-speed="0.06">'
+    return '<figure class="park-extra">'
       + '<img src="' + escapeHtml(assetUrl(src)) + '" alt="' + escapeHtml(alt) + '"'
       + (alt ? '' : ' aria-hidden="true"')
-      + ' width="600" height="600" loading="lazy" />'
+      + ' width="600" height="600" loading="lazy" decoding="async" />'
       + (extra.caption ? '<figcaption>' + escapeHtml(extra.caption) + '</figcaption>' : '')
       + '</figure>';
   }
@@ -321,7 +322,9 @@
 
   function imageBreak(position) {
     const poster = (parkCard && parkCard.art && parkCard.art.header) || park.hero.posterSrc;
-    return '<div class="park-break" aria-hidden="true"><img src="' + escapeHtml(assetUrl(poster)) + '" alt="" width="1672" height="941" style="object-position:' + position + '" data-pin-bottom data-speed="0.08" data-scale="1.05" /></div>';
+    var full = assetUrl(poster);
+    var mid = full.replace(/header\.webp$/, 'header-1280.webp');
+    return '<div class="park-break" aria-hidden="true"><img src="' + escapeHtml(mid) + '" alt="" width="1280" height="720" style="object-position:' + position + '" loading="lazy" decoding="async" /></div>';
   }
 
   function renderChapters() {
@@ -362,7 +365,7 @@
     }
     function neighborCard(entry, label) {
       return '<a class="neighbor-card" href="' + escapeHtml(entry.id) + '.html" style="view-transition-name: park-' + escapeHtml(entry.id) + '">'
-        + '<img src="' + escapeHtml(assetUrl(entry.art.header)) + '" alt="" />'
+        + '<img src="' + escapeHtml(assetUrl(entry.art.header).replace(/header\.webp$/, 'header-640.webp')) + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
         + '<span><small>' + escapeHtml(label) + '</small>' + escapeHtml(entry.name) + '</span></a>';
     }
     const kind = parkCard.landscape ? parkCard.landscape.replace('coast/island', 'coast and island') : 'open';
@@ -395,38 +398,13 @@
     const sections = links.map(function (link) {
       return document.querySelector(link.getAttribute('href'));
     }).filter(Boolean);
-    function mark() {
-      const line = window.scrollY + 120;
-      let current = sections[0];
-      sections.forEach(function (section) {
-        if (section.offsetTop <= line) current = section;
-      });
-      links.forEach(function (link) {
-        const on = current && link.getAttribute('href') === '#' + current.id;
-        link.classList.toggle('is-current', on);
-        if (on) link.setAttribute('aria-current', 'true');
-        else link.removeAttribute('aria-current');
-      });
-      if (bar) {
-        const height = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = height > 0 ? Math.min(1, window.scrollY / height) : 0;
-        bar.style.transform = 'scaleX(' + progress.toFixed(4) + ')';
-      }
-    }
-    let ticking = false;
-    window.addEventListener('scroll', function () {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(function () {
-        mark();
-        ticking = false;
-      });
-    }, { passive: true });
-    mark();
+    window.__tmChapters = { links: links, sections: sections, bar: bar, tops: [] };
+    if (window.__tmCacheLayout) window.__tmCacheLayout();
   }
 
   function initTilt() {
-    if (window.matchMedia('(pointer: coarse), (prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     document.querySelectorAll('.badge-tilt').forEach(function (item) {
       item.addEventListener('pointermove', function (event) {
         const rect = item.getBoundingClientRect();

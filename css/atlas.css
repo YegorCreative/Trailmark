@@ -49,17 +49,13 @@ body.has-hero #site-header .nav-link {
 }
 
 body.has-hero #site-header.is-solid {
-  background: rgba(16, 24, 16, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #142016;
 }
 
 @media (max-width: 900px) {
   body.has-hero #site-header.is-solid,
   #site-header {
     background: #142016;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
   }
   body.has-hero #site-header:not(.is-solid) {
     background: transparent;
@@ -810,17 +806,8 @@ img.badge-system-mark,
   font-size: 0.72rem;
 }
 
-@keyframes tm-ken {
-  from { transform: scale(1); }
-  to { transform: scale(1.06); }
-}
-
-.hero-scene-art--base {
-  transform-origin: center bottom;
-}
-
 .hero-scene-art--base.is-active {
-  animation: tm-ken 18s linear forwards;
+  animation: none;
 }
 
 .bleed-band {

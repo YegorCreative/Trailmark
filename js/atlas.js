@@ -54,13 +54,12 @@
 
   function cardHtml(park, compact) {
     var open = isOpen(park);
-    var photo = base() + park.art.header;
-    var badge = base() + park.art.badge;
+    var dir = base() + 'assets/park-art/' + park.id + '/';
     var name = esc(park.name);
     var meta = esc(park.state) + ' · ' + esc(park.region);
     var flag = open ? '' : '<span class="atlas-card-flag">Coming soon</span>';
-    var inner = '<img class="atlas-card-photo" src="' + esc(photo) + '" alt="" width="1672" height="941" />'
-      + '<img class="atlas-card-badge" src="' + esc(badge) + '" alt="' + name + ' badge" width="600" height="600" />'
+    var inner = '<img class="atlas-card-photo" src="' + esc(dir + 'header-640.webp') + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
+      + '<img class="atlas-card-badge" src="' + esc(dir + 'badge-160.webp') + '" srcset="' + esc(dir + 'badge-160.webp') + ' 160w, ' + esc(dir + 'badge-320.webp') + ' 320w" sizes="72px" alt="' + name + ' badge" width="160" height="160" loading="lazy" decoding="async" />'
       + '<span class="atlas-card-shade" aria-hidden="true"></span>'
       + '<span class="atlas-card-copy"><span class="atlas-card-name">' + name + '</span>'
       + '<span class="atlas-card-meta">' + meta + '</span>' + flag + '</span>';
@@ -75,17 +74,8 @@
     var header = document.getElementById('site-header');
     if (!header || !document.getElementById('hero')) return;
     document.body.classList.add('has-hero');
-    var ticking = false;
-    function paint() {
-      header.classList.toggle('is-solid', window.scrollY > 80);
-      ticking = false;
-    }
-    window.addEventListener('scroll', function () {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(paint);
-    }, { passive: true });
-    paint();
+    window.__tmHeader = header;
+    header.classList.toggle('is-solid', window.scrollY > 80);
   }
 
   function initNav() {
@@ -109,13 +99,6 @@
     if (parksLink) {
       parksLink.setAttribute('href', root + 'parks.html');
       parksLink.setAttribute('data-nav', 'parks');
-      if (!parksLink.parentElement.querySelector('.mega')) {
-        var mega = document.createElement('div');
-        mega.className = 'mega';
-        mega.id = 'park-mega';
-        parksLink.parentElement.classList.add('nav-item--parks');
-        parksLink.parentElement.appendChild(mega);
-      }
     }
 
     var path = location.pathname;
@@ -131,50 +114,6 @@
       else link.removeAttribute('aria-current');
     });
 
-    var byRegion = {};
-    PARKS.forEach(function (park) {
-      if (!byRegion[park.region]) byRegion[park.region] = [];
-      byRegion[park.region].push(park);
-    });
-    var regionNames = Object.keys(byRegion).sort();
-
-    function parkThumb(park) {
-      return '<a class="mega-park" href="' + esc(pageHref(park)) + '">'
-        + '<span class="mega-thumb"><img src="' + esc(base() + park.art.header) + '" alt="" /></span>'
-        + '<img class="mega-badge" src="' + esc(base() + park.art.badge) + '" alt="" />'
-        + '<span class="mega-park-name">' + esc(park.name) + '</span></a>';
-    }
-
-    function regionColumns(openOnly) {
-      return regionNames.map(function (region) {
-        var parks = byRegion[region].filter(function (park) { return openOnly ? isOpen(park) : true; });
-        if (!parks.length) return '';
-        parks.sort(function (a, b) { return a.name.localeCompare(b.name); });
-        var items = parks.map(function (park) {
-          if (isOpen(park)) return '<li>' + parkThumb(park) + '</li>';
-          return '<li><span class="mega-soon">' + esc(park.name) + '<small>Coming soon</small></span></li>';
-        }).join('');
-        var regionHref = root + 'parks.html?region=' + encodeURIComponent(region);
-        return '<section class="mega-col"><h3><a href="' + esc(regionHref) + '">' + esc(region) + '</a></h3><ul>' + items + '</ul></section>';
-      }).join('');
-    }
-
-    var latest = PARKS.filter(isOpen).slice().sort(function (a, b) {
-      return (b.archiveSeq || 0) - (a.archiveSeq || 0);
-    })[0];
-    var feature = latest
-      ? '<a class="mega-feature" href="' + esc(pageHref(latest)) + '">'
-        + '<img src="' + esc(base() + latest.art.header) + '" alt="" />'
-        + '<span><small>Latest in the archive</small>' + esc(latest.name) + '</span></a>'
-      : '';
-
-    var megaEl = document.getElementById('park-mega');
-    if (megaEl) {
-      megaEl.innerHTML = '<div class="mega-layout"><div class="mega-grid">' + regionColumns(true) + '</div>' + feature + '</div>'
-        + '<a class="mega-all" href="' + esc(root + 'parks.html') + '">See all 63 parks →</a>';
-      if (location.hash === '#mega') megaEl.style.display = 'block';
-    }
-
     var overlay = document.getElementById('nav-overlay');
     if (!overlay) {
       overlay = document.createElement('div');
@@ -183,51 +122,16 @@
       overlay.hidden = true;
       header.insertAdjacentElement('afterend', overlay);
     }
-    function mobileOpen(region) {
-      var parks = (byRegion[region] || []).filter(isOpen).sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-      });
-      if (!parks.length) return '';
-      var items = parks.map(function (park) {
-        return '<a class="mobile-park" href="' + esc(pageHref(park)) + '">'
-          + '<img class="mobile-park-photo" src="' + esc(base() + park.art.header) + '" alt="" />'
-          + '<img class="mobile-park-badge" src="' + esc(base() + park.art.badge) + '" alt="" />'
-          + '<span>' + esc(park.name) + '</span></a>';
-      }).join('');
-      return '<section class="mobile-region"><h3><a href="' + esc(root + 'parks.html?region=' + encodeURIComponent(region)) + '">' + esc(region) + '</a></h3>' + items + '</section>';
-    }
-
-    var soonParks = PARKS.filter(function (park) { return !isOpen(park); }).sort(function (a, b) {
-      return a.name.localeCompare(b.name);
-    });
-    var soonList = soonParks.map(function (park) {
-      return '<li>' + esc(park.name) + '</li>';
-    }).join('');
     overlay.innerHTML = '<div class="nav-overlay-panel" role="dialog" aria-modal="true" aria-label="Menu">'
       + '<div class="nav-overlay-bar"><a class="nav-overlay-brand" href="' + esc(root + 'index.html') + '">TrailMark</a>'
       + '<button type="button" class="nav-overlay-close">Close</button></div>'
       + '<nav class="nav-overlay-links" aria-label="Pages">'
-      + '<a href="' + esc(root + 'parks.html') + '">All parks</a>'
+      + '<a href="' + esc(root + 'parks.html') + '">Parks</a>'
       + '<a href="' + esc(root + 'about.html') + '">About</a>'
       + '<a href="' + esc(root + 'faq.html') + '">FAQ</a>'
       + '<a href="' + esc(root + 'contact.html') + '">Contact</a>'
       + '</nav>'
-      + '<h2 class="nav-overlay-heading">Open parks</h2>'
-      + '<p class="nav-overlay-count">' + openCount + ' of 63 open</p>'
-      + '<div class="nav-overlay-regions">' + regionNames.map(mobileOpen).join('') + '</div>'
-      + '<button type="button" class="soon-toggle" aria-expanded="false" aria-controls="soon-list">Coming soon (' + soonParks.length + ')</button>'
-      + '<ul id="soon-list" class="soon-list" hidden>' + soonList + '</ul>'
       + '</div>';
-
-    var soonToggle = overlay.querySelector('.soon-toggle');
-    var soonListEl = overlay.querySelector('.soon-list');
-    if (soonToggle && soonListEl) {
-      soonToggle.addEventListener('click', function () {
-        var open = soonListEl.hidden;
-        soonListEl.hidden = !open;
-        soonToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
 
     var toggleBtn = header.querySelector('.nav-toggle');
     var closeBtn = overlay.querySelector('.nav-overlay-close');
@@ -351,7 +255,7 @@
         var rep = PARKS.find(function (park) { return park.id === reps[pair[0]]; }) || PARKS[0];
         var openN = PARKS.filter(function (park) { return park.landscape === pair[0] && isOpen(park); }).length;
         return '<a class="landscape-tile" href="' + esc(base() + 'parks.html?landscape=' + encodeURIComponent(pair[0])) + '">'
-          + '<img src="' + esc(base() + rep.art.header) + '" alt="" />'
+          + '<img src="' + esc(base() + 'assets/park-art/' + rep.id + '/header-640.webp') + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
           + '<span><strong>' + esc(pair[1]) + '</strong><small>' + (openN ? openN + ' open' : 'Coming soon') + '</small></span></a>';
       }).join('');
     }
@@ -367,7 +271,11 @@
         pool[j] = swap;
       }
       var picks = pool.slice(0, 3);
-      if (bandArt && picks[0]) bandArt.src = base() + picks[0].art.header;
+      if (bandArt && picks[0]) {
+        bandArt.src = base() + 'assets/park-art/' + picks[0].id + '/header-1280.webp';
+        bandArt.setAttribute('loading', 'lazy');
+        bandArt.setAttribute('decoding', 'async');
+      }
       picksHost.innerHTML = picks.map(function (park) { return cardHtml(park, false); }).join('');
     }
   }
@@ -561,18 +469,19 @@
   function initBadgeWall() {
     var wall = document.querySelector('[data-badge-wall]');
     if (!wall) return;
-    var coarse = window.matchMedia('(pointer: coarse)').matches;
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     wall.innerHTML = PARKS.map(function (park) {
       var open = isOpen(park);
       var tag = open ? 'a' : 'div';
       var href = open ? ' href="' + esc(pageHref(park)) + '"' : '';
+      var badgeDir = base() + 'assets/park-art/' + park.id + '/';
       return '<' + tag + ' class="badge-wall-item' + (open ? '' : ' is-soon') + '"' + href + '>'
-        + '<img src="' + esc(base() + park.art.badge) + '" alt="' + esc(park.name) + ' badge" width="600" height="600" />'
+        + '<img src="' + esc(badgeDir + 'badge-160.webp') + '" srcset="' + esc(badgeDir + 'badge-160.webp') + ' 160w, ' + esc(badgeDir + 'badge-320.webp') + ' 320w" sizes="96px" alt="' + esc(park.name) + ' badge" width="160" height="160" loading="lazy" decoding="async" />'
         + '<span class="badge-wall-name">' + esc(park.name) + '</span>'
         + '</' + tag + '>';
     }).join('');
-    if (coarse || reduce) return;
+    if (!canTilt) return;
     wall.querySelectorAll('.badge-wall-item').forEach(function (item) {
       item.addEventListener('pointermove', function (event) {
         var rect = item.getBoundingClientRect();
@@ -605,9 +514,10 @@
     var badges = open.slice().sort(function (a, b) {
       return (b.archiveSeq || 0) - (a.archiveSeq || 0);
     }).slice(0, 6).map(function (park) {
-      return '<a href="' + esc(pageHref(park)) + '" title="' + esc(park.name) + '"><img src="' + esc(base() + park.art.badge) + '" alt="' + esc(park.name) + ' badge" /></a>';
+      var bdir = base() + 'assets/park-art/' + park.id + '/';
+      return '<a href="' + esc(pageHref(park)) + '" title="' + esc(park.name) + '"><img src="' + esc(bdir + 'badge-160.webp') + '" alt="' + esc(park.name) + ' badge" width="160" height="160" loading="lazy" decoding="async" /></a>';
     }).join('');
-    var texture = base() + 'assets/park-art/yosemite/header.webp';
+    var texture = base() + 'assets/park-art/yosemite/header-640.webp';
     footer.className = 'atlas-footer';
     footer.innerHTML = '<div class="atlas-footer-texture" style="background-image:url(' + esc(texture) + ')" aria-hidden="true"></div>'
       + '<div class="atlas-footer-inner">'
@@ -631,7 +541,7 @@
   initIndex();
   initBadgeWall();
   initFooter();
-  if (location.hash && location.hash !== '#menu' && location.hash !== '#mega' && location.hash !== '#filters') {
+  if (location.hash && location.hash !== '#menu' && location.hash !== '#filters') {
     var hashed = document.querySelector(location.hash);
     if (hashed) window.scrollTo(0, hashed.getBoundingClientRect().top + window.scrollY - 72);
   }

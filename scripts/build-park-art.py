@@ -276,6 +276,18 @@ def main():
                         "size": [image.width, image.height],
                     })
                 write_webp(image, dest)
+                if slot == "header":
+                    for width in (1280, 640):
+                        variant = image
+                        if image.width > width:
+                            height = max(1, round(image.height * width / image.width))
+                            variant = image.resize((width, height), Image.Resampling.LANCZOS)
+                        write_webp(variant, out_dir / ("header-%d.webp" % width))
+                if slot == "badge":
+                    for width in (320, 160):
+                        side = min(image.width, image.height, width)
+                        variant = image.resize((side, side), Image.Resampling.LANCZOS) if image.width != side else image
+                        write_webp(variant, out_dir / ("badge-%d.webp" % width))
                 entry[slot] = web_path
             else:
                 if dest.exists():

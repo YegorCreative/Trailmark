@@ -11,53 +11,76 @@
 // Any element with [data-speed] participates.
 // speed="0" = static, speed="1" = moves at full scroll rate.
 // =====================
-(function initParallax() {
+(function initScroll() {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) return;
-
-  const layers = document.querySelectorAll('[data-speed]');
-  const fades = document.querySelectorAll('[data-parallax="fade"]');
-  if (!layers.length && !fades.length) return;
-
-  const small = window.matchMedia('(max-width: 700px), (pointer: coarse)').matches;
-  const strength = small ? 0.35 : 1;
+  const heroLayer = document.querySelector('#hero [data-hero-parallax], #hero [data-pin-bottom], #hero [data-hero-crossfade]');
+  const fades = reduce ? [] : Array.prototype.slice.call(document.querySelectorAll('#hero [data-parallax="fade"]'));
+  let heroTop = 0;
+  let heroHeight = 1;
   let ticking = false;
 
-  function update() {
-    const scrollY = window.scrollY;
-    layers.forEach(function (layer) {
-      const speed = (parseFloat(layer.dataset.speed) || 0) * strength;
-      const baseScale = parseFloat(layer.dataset.scale) || 1;
-      if (layer.hasAttribute('data-pin-bottom')) {
-        const hero = layer.closest('#hero') || layer;
-        const rect = hero.getBoundingClientRect();
-        const progress = Math.min(1, Math.max(0, -rect.top / Math.max(rect.height, 1)));
-        const scale = small ? 1 : baseScale - progress * (baseScale - 1);
-        layer.style.transformOrigin = 'center bottom';
-        layer.style.transform = 'translate3d(0,0,0) scale(' + scale.toFixed(4) + ')';
-        return;
+  function cache() {
+    const hero = document.getElementById('hero');
+    if (hero) {
+      heroTop = hero.offsetTop;
+      heroHeight = hero.offsetHeight || 1;
+    }
+    const chapters = window.__tmChapters;
+    if (chapters && chapters.sections) {
+      chapters.tops = chapters.sections.map(function (section) { return section.offsetTop; });
+    }
+  }
+
+  window.__tmCacheLayout = cache;
+
+  function frame() {
+    const y = window.scrollY;
+    const header = window.__tmHeader;
+    if (header) header.classList.toggle('is-solid', y > 80);
+
+    if (!reduce && heroLayer && heroHeight) {
+      const progress = Math.min(1, Math.max(0, (y - heroTop) / heroHeight));
+      const shift = progress * -24;
+      heroLayer.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0)';
+      const inView = y < heroTop + heroHeight && y + window.innerHeight > heroTop;
+      heroLayer.style.willChange = inView ? 'transform' : 'auto';
+      fades.forEach(function (el) {
+        el.style.opacity = String(1 - progress * 0.75);
+        el.style.transform = 'translate3d(0,' + (progress * -28).toFixed(2) + 'px,0)';
+      });
+    }
+
+    const chapters = window.__tmChapters;
+    if (chapters && chapters.sections && chapters.sections.length) {
+      const line = y + 120;
+      let current = 0;
+      chapters.tops.forEach(function (top, index) {
+        if (top <= line) current = index;
+      });
+      const currentId = chapters.sections[current] && chapters.sections[current].id;
+      chapters.links.forEach(function (link) {
+        const on = link.getAttribute('href') === '#' + currentId;
+        link.classList.toggle('is-current', on);
+        if (on) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      });
+      if (chapters.bar) {
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = height > 0 ? Math.min(1, y / height) : 0;
+        chapters.bar.style.transform = 'scaleX(' + progress.toFixed(4) + ')';
       }
-      const shift = scrollY * speed * -1;
-      layer.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0) scale(' + (small ? 1 : baseScale) + ')';
-    });
-    fades.forEach(function (el) {
-      const hero = el.closest('#hero') || el;
-      const rect = hero.getBoundingClientRect();
-      const progress = Math.min(1, Math.max(0, -rect.top / Math.max(rect.height, 1)));
-      el.style.opacity = String(1 - progress * 0.75);
-      el.style.transform = 'translate3d(0,' + (progress * -56 * strength).toFixed(2) + 'px,0)';
-    });
+    }
     ticking = false;
   }
 
   window.addEventListener('scroll', function () {
-    if (!ticking) {
-      window.requestAnimationFrame(update);
-      ticking = true;
-    }
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(frame);
   }, { passive: true });
-
-  update();
+  window.addEventListener('resize', cache);
+  cache();
+  frame();
 }());
 
 (function initReveals() {
@@ -153,7 +176,7 @@
   function renderCardHero(park) {
     if (!park.art || !park.art.header) return '';
     return '<div class="card-hero-frame" aria-hidden="true">'
-      + '<img class="card-hero-img" src="' + assetUrl(park.art.header) + '" alt="" width="1672" height="941" loading="lazy" />'
+      + '<img class="card-hero-img" src="' + assetUrl(park.art.header).replace(/header\\.webp$/, 'header-640.webp') + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
       + '</div>';
   }
 
@@ -346,6 +369,10 @@
     caption.setAttribute('href', 'parks/' + park.id + '.html');
   }
 
+  function slideSrc(park) {
+    return park.art.header.replace(/header\.webp$/, 'header-1280.webp');
+  }
+
   function addSlide(park) {
     const image = document.createElement('img');
     image.className = 'hero-scene-art hero-scene-art--base';
@@ -353,36 +380,49 @@
     image.width = 1672;
     image.height = 941;
     image.decoding = 'async';
-    image.src = park.art.header;
     scene.appendChild(image);
     return image;
   }
 
-  window.addEventListener('load', function () {
-    order.forEach(function (id) {
-      const park = PARKS.find(function (entry) { return entry.id === id && entry.pageUrl && entry.art; });
-      if (!park) return;
-      if (first.getAttribute('src') && first.getAttribute('src').indexOf('/' + id + '/') !== -1) {
-        slideParks[0] = park;
-        labelFor(park);
-        return;
-      }
-      slides.push(addSlide(park));
-      slideParks[slides.length - 1] = park;
-    });
-    if (!slideParks[0]) {
-      slideParks[0] = PARKS.find(function (entry) { return entry.id === 'yosemite'; });
-      labelFor(slideParks[0]);
-    }
-    if (slides.length < 2) return;
-    let index = 0;
-    window.setInterval(function () {
-      slides[index].classList.remove('is-active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('is-active');
-      labelFor(slideParks[index]);
-    }, 6000);
+  const queue = [];
+  order.forEach(function (id) {
+    const park = PARKS.find(function (entry) { return entry.id === id && entry.pageUrl && entry.art; });
+    if (park) queue.push(park);
   });
+  if (!queue.length) return;
+  slideParks[0] = queue[0];
+  labelFor(queue[0]);
+  let index = 0;
+
+  function arm(image, park, done) {
+    if (image.getAttribute('data-ready') === '1') {
+      done();
+      return;
+    }
+    image.addEventListener('load', function () {
+      image.setAttribute('data-ready', '1');
+      done();
+    }, { once: true });
+    if (!image.getAttribute('src')) image.src = slideSrc(park);
+    else if (image.complete) {
+      image.setAttribute('data-ready', '1');
+      done();
+    }
+  }
+
+  function advance() {
+    const next = (index + 1) % queue.length;
+    if (!slides[next]) slides[next] = addSlide(queue[next]);
+    arm(slides[next], queue[next], function () {
+      slides[index].classList.remove('is-active');
+      slides[next].classList.add('is-active');
+      index = next;
+      labelFor(queue[next]);
+      window.setTimeout(advance, 6000);
+    });
+  }
+
+  window.setTimeout(advance, 5500);
 }());
 
 (function syncBadgeBoard() {
