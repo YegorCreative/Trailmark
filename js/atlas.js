@@ -424,9 +424,58 @@
       }
     }
 
+    function paintPills(kind, select, pairs) {
+      var row = document.querySelector('[data-pills="' + kind + '"]');
+      if (!row) return;
+      row.innerHTML = pairs.map(function (pair) {
+        var on = select.value === pair[0];
+        return '<button type="button" class="filter-pill' + (on ? ' is-on' : '') + '" data-value="' + esc(pair[0]) + '">' + esc(pair[1]) + '</button>';
+      }).join('');
+      row.querySelectorAll('button').forEach(function (button) {
+        button.addEventListener('click', function () {
+          select.value = button.getAttribute('data-value');
+          onChange();
+        });
+      });
+    }
+
+    function paintChips() {
+      var host = document.querySelector('[data-filter-chips]');
+      if (!host) return;
+      var chips = [];
+      function add(select, label) {
+        if (!select.value) return;
+        var text = select.options[select.selectedIndex] ? select.options[select.selectedIndex].text : select.value;
+        chips.push('<button type="button" class="filter-chip" data-chip="' + select.id + '">' + esc(label ? text : text) + ' <span aria-hidden="true">×</span></button>');
+      }
+      add(regionSelect);
+      add(stateSelect);
+      add(landscapeSelect);
+      if (statusSelect.value) add(statusSelect);
+      if (sortSelect.value && sortSelect.value !== 'az') add(sortSelect);
+      if (search.value.trim()) {
+        chips.push('<button type="button" class="filter-chip" data-chip="park-search">' + esc(search.value.trim()) + ' <span aria-hidden="true">×</span></button>');
+      }
+      host.innerHTML = chips.join('');
+      host.querySelectorAll('.filter-chip').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var id = chip.getAttribute('data-chip');
+          if (id === 'park-search') search.value = '';
+          else {
+            var el = document.getElementById(id);
+            if (el) el.value = id === 'filter-sort' ? 'az' : '';
+          }
+          onChange();
+        });
+      });
+    }
+
     function onChange() {
       write();
       render();
+      paintPills('region', regionSelect, [['', 'All regions']].concat(regions.map(function (region) { return [region, region]; })));
+      paintPills('landscape', landscapeSelect, [['', 'All landscapes']].concat(LANDSCAPES));
+      paintChips();
     }
     [regionSelect, stateSelect, landscapeSelect, statusSelect, sortSelect].forEach(function (el) {
       el.addEventListener('change', onChange);
@@ -436,10 +485,24 @@
     if (form) form.addEventListener('submit', function (event) { event.preventDefault(); onChange(); });
     window.addEventListener('popstate', function () {
       read();
-      render();
+      onChange();
+    });
+    var launch = document.querySelector('.filter-launch');
+    var sheet = document.getElementById('filter-sheet');
+    var done = document.querySelector('.filter-done');
+    function setSheet(open) {
+      if (!sheet || !launch) return;
+      sheet.classList.toggle('is-open', open);
+      launch.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('sheet-lock', open);
+    }
+    if (launch) launch.addEventListener('click', function () { setSheet(!sheet.classList.contains('is-open')); });
+    if (done) done.addEventListener('click', function () { setSheet(false); });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && sheet && sheet.classList.contains('is-open')) setSheet(false);
     });
     read();
-    render();
+    onChange();
   }
 
   function initBadgeWall() {

@@ -807,6 +807,119 @@ img.badge-system-mark,
   .badge-wall-item { transform: none !important; }
 }
 
+.filter-native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.atlas-filters {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.filter-pill,
+.filter-chip,
+.filter-launch,
+.filter-done {
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: #2a261f;
+}
+
+.filter-pill,
+.filter-chip {
+  border-radius: 999px;
+  padding: 0 0.85rem;
+  background: rgba(36, 50, 36, 0.06);
+}
+
+.filter-pill.is-on {
+  background: #243224;
+  color: #f7f3ec;
+}
+
+.filter-compact {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr 0.8fr 1.2fr;
+  gap: 0.6rem;
+}
+
+.filter-field {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b6560;
+}
+
+.filter-field select,
+.filter-field input {
+  min-height: 44px;
+  border: 0;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.2);
+  border-radius: 0;
+  background: transparent;
+  font: inherit;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #1c1c1c;
+  padding: 0;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.filter-launch,
+.filter-done { display: none; }
+
+body.sheet-lock { overflow: hidden; }
+
+@media (max-width: 700px) {
+  .atlas-page { padding: 0.6rem 1rem 2.5rem; }
+  .atlas-title { font-size: 2.2rem; }
+  .atlas-count { margin-top: 0.25rem; }
+  .filter-launch,
+  .filter-done {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.2rem;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+  }
+  .filter-sheet { display: none; }
+  .filter-sheet.is-open {
+    display: block;
+    position: fixed;
+    z-index: 55;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 78vh;
+    overflow: auto;
+    background: #f6f1e8;
+    padding: 1rem 1rem 1.4rem;
+    border-radius: 18px 18px 0 0;
+  }
+  .filter-compact { grid-template-columns: 1fr; }
+  .atlas-card { min-height: 15rem; }
+}
+
 @view-transition {
   navigation: auto;
 }

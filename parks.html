@@ -38,34 +38,41 @@
           <p class="atlas-kicker">The collection</p>
           <h1 class="atlas-title">All 63 parks.</h1>
           <p class="atlas-count"><span data-index-count>0 of 63 open</span> <span data-index-shown></span></p>
+          <div class="index-toolbar">
+            <button type="button" class="filter-launch" aria-expanded="false" aria-controls="filter-sheet">Filter &amp; sort</button>
+            <div class="filter-chips" data-filter-chips></div>
+          </div>
+          <div id="filter-sheet" class="filter-sheet">
           <form class="atlas-filters" action="parks.html" role="search">
-            <label>Region
-              <select id="filter-region" name="region"></select>
-            </label>
-            <label>State
-              <select id="filter-state" name="state"></select>
-            </label>
-            <label>Landscape
-              <select id="filter-landscape" name="landscape"></select>
-            </label>
-            <label>Status
-              <select id="filter-status" name="status">
-                <option value="">Open and coming soon</option>
-                <option value="open">Open</option>
-                <option value="soon">Coming soon</option>
-              </select>
-            </label>
-            <label>Sort
-              <select id="filter-sort" name="sort">
-                <option value="az">A–Z</option>
-                <option value="region">By region</option>
-                <option value="newest">Newest in archive</option>
-              </select>
-            </label>
-            <label>Search
-              <input id="park-search" name="q" type="search" placeholder="Name, state, region" autocomplete="off" />
-            </label>
+            <div class="pill-row" data-pills="region" aria-label="Region"></div>
+            <div class="pill-row" data-pills="landscape" aria-label="Landscape"></div>
+            <div class="filter-compact">
+              <label class="filter-field">State
+                <select id="filter-state" name="state"></select>
+              </label>
+              <label class="filter-field">Status
+                <select id="filter-status" name="status">
+                  <option value="">Open and coming soon</option>
+                  <option value="open">Open</option>
+                  <option value="soon">Coming soon</option>
+                </select>
+              </label>
+              <label class="filter-field">Sort
+                <select id="filter-sort" name="sort">
+                  <option value="az">A–Z</option>
+                  <option value="region">By region</option>
+                  <option value="newest">Newest in archive</option>
+                </select>
+              </label>
+              <label class="filter-field filter-field--search">Search
+                <input id="park-search" name="q" type="search" placeholder="Name, state, region" autocomplete="off" />
+              </label>
+            </div>
+            <select id="filter-region" class="filter-native" aria-label="Region"></select>
+            <select id="filter-landscape" class="filter-native" aria-label="Landscape"></select>
+            <button type="button" class="filter-done">Show parks</button>
           </form>
+          </div>
           <div class="atlas-index" data-park-index></div>
         </div>
       </section>
