@@ -91,6 +91,12 @@ function makePark(config) {
     status: config.status,
     futureSlug: config.futureSlug,
     ...(config.pageUrl ? { pageUrl: config.pageUrl } : {}),
+    ...(config.heroFocus ? { heroFocus: config.heroFocus } : {}),
+    art: {
+      header: 'assets/park-art/' + config.id + '/header.webp',
+      badge: 'assets/park-art/' + config.id + '/badge.webp',
+      extra: 'assets/park-art/' + config.id + '/extra.webp',
+    },
     svgInner: buildBadgeSvgInner(config.id, config.badgeTheme),
   };
 }

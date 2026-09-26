@@ -20,8 +20,17 @@ const PARK_PAGE_CONTENT = {
       eyebrow: 'California | Sierra Nevada',
       title: 'Yosemite',
       subtitle: 'Granite walls hold the morning light, waterfalls speak from unseen heights, and the valley opens slowly like a preserved print pulled from its sleeve.',
-      posterSrc: '../assets/svg/yosemite.svg',
+      posterSrc: '../assets/park-art/yosemite/header.webp',
       posterAlt: '',
+      focus: '50% 62%',
+    },
+    extraIllustration: {
+      alt: 'A peregrine falcon in flight above Yosemite granite and forest.',
+      caption: 'Peregrine falcon',
+    },
+    seo: {
+      addressRegion: 'CA',
+      description: 'Explore Yosemite National Park through TrailMark\'s illustrated archive: granite landmarks, hidden discoveries, wildlife, geology, seasons, photography guidance, stewardship, and badge story.',
     },
     overview: {
       kicker: 'Park Overview',
@@ -186,6 +195,18 @@ const PARK_PAGE_CONTENT = {
       subtitle: 'Steam rises from mineral color, rivers cut through ancient volcanic stone, and broad valleys hold wildlife with a stillness that feels older than the road.',
       posterSrc: '../assets/park-art/yellowstone/header.webp',
       posterAlt: '',
+      focus: '50% 68%',
+    },
+    palette: {
+      hero: ['#1A4A6B', '#7EB8C9', '#E07A3D', '#C4622D', '#24362C'],
+    },
+    extraIllustration: {
+      alt: 'A gray wolf standing in a Yellowstone meadow.',
+      caption: 'Gray wolf',
+    },
+    seo: {
+      addressRegion: 'WY',
+      description: 'Explore Yellowstone National Park through TrailMark\'s illustrated archive: thermal basins, wildlife valleys, geology, seasons, photography guidance, stewardship, and badge story.',
     },
     overview: {
       kicker: 'Park Overview',
@@ -350,6 +371,18 @@ const PARK_PAGE_CONTENT = {
       subtitle: 'Water moves almost invisibly through sawgrass, mangrove, marl prairie, and open sky, carrying one of North America\'s most intricate wetland stories.',
       posterSrc: '../assets/park-art/everglades/header.webp',
       posterAlt: '',
+      focus: '50% 60%',
+    },
+    palette: {
+      hero: ['#F3D48A', '#E0A15A', '#7EA24A', '#3E6B62', '#1C332C'],
+    },
+    extraIllustration: {
+      alt: 'An alligator and a heron in shallow Everglades water.',
+      caption: 'Alligator and heron',
+    },
+    seo: {
+      addressRegion: 'FL',
+      description: 'Explore Everglades National Park through TrailMark\'s illustrated archive: wetlands, wildlife, ecology, seasons, paddling, photography guidance, stewardship, and badge story.',
     },
     overview: {
       kicker: 'Park Overview',
@@ -438,10 +471,10 @@ const PARK_PAGE_CONTENT = {
       kicker: 'Seasonal Moods',
       title: 'Two strong seasons change the whole rhythm of the park',
       items: [
-        { name: 'Dry Season', modifier: 'winter', body: 'Cooler air, fewer mosquitoes, lower water, concentrated wildlife, and clearer walking conditions make this the most accessible season.' },
-        { name: 'Wet Season', modifier: 'summer', body: 'Heat, storms, high water, insects, and lush growth return the park to a more humid, powerful, and less predictable mood.' },
-        { name: 'Migration', modifier: 'autumn', body: 'Bird movement and shifting water levels bring transitional energy, especially around open wetlands and coastal edges.' },
-        { name: 'Storm Light', modifier: 'spring', body: 'Cloud build-up, mirrored water, and sudden brightness can turn the flat horizon into a dramatic study of weather.' },
+        { name: 'Dry Season', modifier: 'dry', wash: 'linear-gradient(180deg, rgba(214, 228, 216, 0.94) 0%, rgba(244, 246, 241, 0.96) 100%)', body: 'Cooler air, fewer mosquitoes, lower water, concentrated wildlife, and clearer walking conditions make this the most accessible season.' },
+        { name: 'Wet Season', modifier: 'wet', wash: 'linear-gradient(180deg, rgba(232, 214, 156, 0.94) 0%, rgba(247, 241, 224, 0.96) 100%)', body: 'Heat, storms, high water, insects, and lush growth return the park to a more humid, powerful, and less predictable mood.' },
+        { name: 'Migration', modifier: 'migration', wash: 'linear-gradient(180deg, rgba(226, 206, 168, 0.94) 0%, rgba(246, 239, 224, 0.96) 100%)', body: 'Bird movement and shifting water levels bring transitional energy, especially around open wetlands and coastal edges.' },
+        { name: 'Storm Light', modifier: 'storm', wash: 'linear-gradient(180deg, rgba(198, 214, 216, 0.94) 0%, rgba(236, 240, 238, 0.96) 100%)', body: 'Cloud build-up, mirrored water, and sudden brightness can turn the flat horizon into a dramatic study of weather.' },
       ],
     },
     photography: {

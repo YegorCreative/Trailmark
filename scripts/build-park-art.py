@@ -39,6 +39,10 @@ OUTPUT_NAMES = {
     "badge": "badge.webp",
     "extra": "extra.webp",
 }
+# When a slot has more than one file, use this filename instead of skipping.
+HEADER_FILE_OVERRIDES = {
+    "acadia": "AcadiaHeader-Codex.png",
+}
 
 
 def normalize_title(title):
@@ -143,10 +147,15 @@ def main():
 
         folder_match = re.match(r"^(\d+)-(.+)$", entry.name)
         if not folder_match:
-            problems.append({
-                "issue": "unmatched-folder",
-                "path": rel(entry),
-            })
+            has_images = any(
+                path.is_file() and path.suffix.lower() in IMAGE_EXTS
+                for path in entry.rglob("*")
+            )
+            if has_images:
+                problems.append({
+                    "issue": "unmatched-folder",
+                    "path": rel(entry),
+                })
             continue
 
         key = normalize_title(folder_match.group(2))
@@ -221,7 +230,7 @@ def main():
                         "path": rel(child),
                         "files": [rel(path) for path in extra_images],
                     })
-                else:
+                elif extra_images:
                     problems.append({
                         "issue": "unexpected-directory",
                         "parkId": park_id,
@@ -241,6 +250,19 @@ def main():
         entry = {}
         for slot, filename in OUTPUT_NAMES.items():
             found = slots[slot]
+            if slot == "header" and park_id in HEADER_FILE_OVERRIDES and len(found) != 1:
+                wanted = HEADER_FILE_OVERRIDES[park_id]
+                chosen = [path for path in found if path.name == wanted]
+                if len(chosen) == 1:
+                    found = chosen
+                else:
+                    problems.append({
+                        "issue": "override-not-found",
+                        "parkId": park_id,
+                        "slot": slot,
+                        "wanted": wanted,
+                        "files": [rel(path) for path in found],
+                    })
             dest = out_dir / filename
             web_path = "assets/park-art/%s/%s" % (park_id, filename)
             if len(found) == 1:

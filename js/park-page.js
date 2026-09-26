@@ -27,6 +27,24 @@
       .replace(/'/g, '&#39;');
   }
 
+  function assetUrl(path) {
+    if (!path || path.indexOf('../') === 0 || path.indexOf('http') === 0 || path.indexOf('/') === 0) return path;
+    const base = document.documentElement.getAttribute('data-asset-base') || '';
+    return base + path;
+  }
+
+  function renderBadgeImage(label, extraClass) {
+    const art = parkCard && parkCard.art && parkCard.art.badge;
+    const className = 'park-badge-img' + (extraClass ? ' ' + extraClass : '');
+    if (art) {
+      return '<img class="' + className + '" src="' + escapeHtml(assetUrl(art)) + '" alt="' + escapeHtml(label) + '" width="600" height="600" />';
+    }
+    if (!parkCard) return '';
+    return '<svg class="park-badge' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + escapeHtml(label) + '">'
+      + parkCard.svgInner
+      + '</svg>';
+  }
+
   function renderParagraphs(paragraphs) {
     return paragraphs.map(function (text) {
       return '<p>' + escapeHtml(text) + '</p>';
@@ -42,12 +60,24 @@
       + '</div>';
   }
 
+  function heroVars() {
+    const colors = (park.palette && park.palette.hero) || [];
+    const focus = (park.hero && park.hero.focus) || (parkCard && parkCard.heroFocus) || '50% 58%';
+    const parts = ['--hero-focus:' + focus];
+    colors.forEach(function (color, index) {
+      parts.push('--hero-' + index + ':' + color);
+    });
+    return parts.join(';');
+  }
+
   function renderHero() {
     const themeClass = park.hero.theme ? ' hero--' + escapeHtml(park.hero.theme) : '';
+    const poster = (parkCard && parkCard.art && parkCard.art.header) || park.hero.posterSrc;
+    const posterHidden = park.hero.posterAlt ? '' : ' aria-hidden="true"';
 
-    return '<section id="hero" class="hero--park' + themeClass + '" aria-labelledby="park-hero-title">'
-      + '<div class="park-poster" aria-hidden="true">'
-      + '<img src="' + escapeHtml(park.hero.posterSrc) + '" alt="' + escapeHtml(park.hero.posterAlt) + '" class="park-poster-art" />'
+    return '<section id="hero" class="hero--park' + themeClass + '" style="' + heroVars() + '" aria-labelledby="park-hero-title">'
+      + '<div class="park-poster" data-speed="0.4"' + posterHidden + '>'
+      + '<img src="' + escapeHtml(assetUrl(poster)) + '" alt="' + escapeHtml(park.hero.posterAlt || '') + '" class="park-poster-art" width="1672" height="941" fetchpriority="high" />'
       + '</div>'
       + '<div class="hero-grain" aria-hidden="true"></div>'
       + '<div class="hero-inner">'
@@ -97,7 +127,8 @@
   function renderHighlights() {
     const cards = park.landscapeHighlights.items.map(function (item, index) {
       const number = String(index + 1).padStart(2, '0');
-      return '<article class="highlight-card highlight-card--' + escapeHtml(item.modifier) + '">'
+      const wash = item.wash ? ' style="background:' + item.wash + '"' : '';
+      return '<article class="highlight-card highlight-card--' + escapeHtml(item.modifier || 'plain') + '"' + wash + '>'
         + '<p class="highlight-index">' + number + '</p>'
         + '<h3 class="highlight-title">' + escapeHtml(item.title) + '</h3>'
         + '<p class="highlight-desc">' + escapeHtml(item.body) + '</p>'
@@ -129,18 +160,33 @@
       + '</section>';
   }
 
+  function renderExtraFigure() {
+    const extra = park.extraIllustration;
+    const src = parkCard && parkCard.art && parkCard.art.extra;
+    if (!extra || !src) return '';
+    const alt = extra.alt || '';
+    return '<figure class="park-extra">'
+      + '<img src="' + escapeHtml(assetUrl(src)) + '" alt="' + escapeHtml(alt) + '"'
+      + (alt ? '' : ' aria-hidden="true"')
+      + ' width="600" height="600" loading="lazy" />'
+      + (extra.caption ? '<figcaption>' + escapeHtml(extra.caption) + '</figcaption>' : '')
+      + '</figure>';
+  }
+
   function renderKnowledgeSection(key, id) {
     const section = park[key];
     const notes = section.notes.map(function (note) {
       return '<li>' + escapeHtml(note) + '</li>';
     }).join('');
+    const extra = key === 'wildlife' ? renderExtraFigure() : '';
 
     return '<section id="' + id + '" class="park-section park-section--knowledge" aria-labelledby="' + id + '-title">'
-      + '<div class="section-inner knowledge-layout">'
+      + '<div class="section-inner knowledge-layout' + (extra ? ' knowledge-layout--with-extra' : '') + '">'
       + '<div>'
       + sectionHeading(section, id + '-title')
       + '<p class="knowledge-lead">' + escapeHtml(section.lead) + '</p>'
       + '</div>'
+      + extra
       + '<ul class="knowledge-list">' + notes + '</ul>'
       + '</div>'
       + '</section>';
@@ -148,7 +194,8 @@
 
   function renderSeasons() {
     const cards = park.seasons.items.map(function (season) {
-      return '<article class="season-card season-card--' + escapeHtml(season.modifier) + '">'
+      const wash = season.wash ? ' style="background:' + season.wash + '"' : '';
+      return '<article class="season-card season-card--' + escapeHtml(season.modifier || 'plain') + '"' + wash + '>'
         + '<p class="season-name">' + escapeHtml(season.name) + '</p>'
         + '<p class="season-desc">' + escapeHtml(season.body) + '</p>'
         + '</article>';
@@ -211,9 +258,7 @@
       + '<div class="badge-showcase-plaque">'
       + '<p class="badge-plaque-label">' + escapeHtml(park.badgeStory.label) + '</p>'
       + '<div class="badge-plaque-badge-wrap">'
-      + '<svg class="park-badge park-badge--hero" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + escapeHtml(park.fullName) + ' badge">'
-      + parkCard.svgInner
-      + '</svg>'
+      + renderBadgeImage(park.fullName + ' badge', 'park-badge--hero')
       + '</div>'
       + '<div class="badge-plaque-footer" aria-label="Artifact details">' + details + '</div>'
       + '</div>'

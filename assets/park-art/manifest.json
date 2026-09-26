@@ -11,7 +11,7 @@
       "extra": "assets/park-art/yellowstone/extra.webp"
     },
     "acadia": {
-      "header": null,
+      "header": "assets/park-art/acadia/header.webp",
       "badge": "assets/park-art/acadia/badge.webp",
       "extra": "assets/park-art/acadia/extra.webp"
     },
@@ -316,27 +316,7 @@
       "extra": "assets/park-art/zion/extra.webp"
     }
   },
-  "problems": [
-    {
-      "issue": "unmatched-folder",
-      "path": "assets/Parks/National_Parks_Artwork"
-    },
-    {
-      "issue": "unexpected-directory",
-      "parkId": "acadia",
-      "path": "assets/Parks/01-Acadia National Park/01-header 2",
-      "imageCount": 0
-    },
-    {
-      "issue": "duplicate",
-      "parkId": "acadia",
-      "slot": "header",
-      "files": [
-        "assets/Parks/01-Acadia National Park/01-header/AcadiaHeader-Codex.png",
-        "assets/Parks/01-Acadia National Park/01-header/AcadiaHeader.png"
-      ]
-    }
-  ],
+  "problems": [],
   "sourceNotes": {
     "yosemite": [
       "assets/Parks/62-Yosemite National Park/sources.txt"

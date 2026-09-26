@@ -299,7 +299,7 @@ input:focus-visible {
   height: auto;
   display: block;
   object-fit: initial;
-  object-position: center center;
+  object-position: var(--hero-focus, center center);
   transform: none;
 }
 
@@ -535,11 +535,11 @@ input:focus-visible {
   min-height: 0;
   background:
     linear-gradient(to bottom,
-      #43566d 0%,
-      #64798a 26%,
-      #d5b08a 58%,
-      #8da08d 76%,
-      #536750 100%
+      var(--hero-0, #43566d) 0%,
+      var(--hero-1, #64798a) 26%,
+      var(--hero-2, #d5b08a) 58%,
+      var(--hero-3, #8da08d) 76%,
+      var(--hero-4, #536750) 100%
     );
 }
 
@@ -868,6 +868,11 @@ input:focus-visible {
   height: 132px;
 }
 
+img.badge-system-mark {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .badge-entry-title {
   font-family: var(--font-heading);
   font-size: 1.35rem;
@@ -1146,9 +1151,16 @@ input:focus-visible {
   -webkit-backdrop-filter: blur(3px);
 }
 
-.park-badge {
+.park-badge,
+.park-badge-img {
   width: clamp(150px, 16vw, 196px);
   height: clamp(150px, 16vw, 196px);
+}
+
+.park-badge-img {
+  object-fit: cover;
+  border-radius: 50%;
+  aspect-ratio: 1;
 }
 
 /* Card text body */
@@ -1173,7 +1185,8 @@ input:focus-visible {
   width: min(100%, 11.5rem);
 }
 
-.park-card--secondary .park-badge {
+.park-card--secondary .park-badge,
+.park-card--secondary .park-badge-img {
   width: 132px;
   height: 132px;
 }
@@ -1872,6 +1885,29 @@ a.logo-text {
   grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1fr);
   gap: 3rem;
   align-items: start;
+}
+
+.knowledge-layout--with-extra {
+  grid-template-columns: minmax(0, 0.9fr) minmax(160px, 220px) minmax(240px, 1fr);
+}
+
+.park-extra {
+  margin: 0;
+}
+
+.park-extra img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(216, 208, 192, 0.9);
+}
+
+.park-extra figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(92, 83, 66, 0.78);
 }
 
 .knowledge-lead {

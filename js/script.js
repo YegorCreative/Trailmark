@@ -100,7 +100,17 @@
       .replace(/'/g, '&#39;');
   }
 
+  function assetUrl(path) {
+    if (!path || path.indexOf('../') === 0 || path.indexOf('http') === 0 || path.indexOf('/') === 0) return path;
+    const base = document.documentElement.getAttribute('data-asset-base') || '';
+    return base + path;
+  }
+
   function renderBadge(park) {
+    if (park.art && park.art.badge) {
+      return '<img class="park-badge-img" src="' + assetUrl(park.art.badge) + '" alt="'
+        + escapeHtml(park.name) + ' badge" width="600" height="600" />';
+    }
     return '<svg class="park-badge" viewBox="0 0 200 200"'
       + ' xmlns="http://www.w3.org/2000/svg" role="img"'
       + ' aria-label="' + escapeHtml(park.name) + ' National Park badge">'
@@ -260,4 +270,23 @@
   }).length;
 
   number.textContent = String(published);
+}());
+
+(function mountBadgeSlots() {
+  if (typeof PARKS === 'undefined') return;
+
+  document.querySelectorAll('[data-badge-mount]').forEach(function (slot) {
+    const park = PARKS.find(function (entry) {
+      return entry.id === slot.getAttribute('data-badge-mount');
+    });
+    if (!park || !park.art || !park.art.badge) return;
+
+    const image = document.createElement('img');
+    image.className = 'badge-system-mark park-badge-img';
+    image.src = park.art.badge;
+    image.alt = park.name + ' badge';
+    image.width = 600;
+    image.height = 600;
+    slot.replaceChildren(image);
+  });
 }());
