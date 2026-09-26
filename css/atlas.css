@@ -1425,6 +1425,39 @@ body.sheet-lock { overflow: hidden; }
 
 .atlas-footer-copy { margin: 0.8rem 0 0; opacity: 0.7; font-size: 0.85rem; }
 
+@media (max-width: 600px) {
+  #site-header .header-inner {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  #site-header .logo-link { min-width: 0; }
+  #site-header .logo-mark { height: 36px; width: auto; }
+  #site-header .logo-text { font-size: 1rem; }
+}
+
+.mega-layout { align-items: start; }
+.mega-grid {
+  display: block;
+  column-count: 4;
+  column-gap: 1.25rem;
+}
+.mega-col { break-inside: avoid; margin-bottom: 0.75rem; }
+.mega-feature { height: auto; min-height: 16rem; align-self: start; }
+
+.nav-overlay .mega-grid { column-count: 1; }
+.nav-overlay .mega-park-name { color: #1c1c1c; }
+
+.filter-sheet.is-open {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.pill-row { max-width: 100%; }
+
 .badge-tilt {
   transform-style: preserve-3d;
   position: relative;

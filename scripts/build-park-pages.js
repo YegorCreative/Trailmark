@@ -156,9 +156,9 @@ function pageHtml(park, essay) {
     + '      </div>\n'
     + '    </footer>\n'
     + '    <script src="../js/parks-data.js"></script>\n'
-    + '    <script src="../js/atlas.js"></script>\n'
     + '    <script src="../js/park-content.js"></script>\n'
     + '    <script src="../js/park-page.js"></script>\n'
+    + '    <script src="../js/atlas.js"></script>\n'
     + '    <script src="../js/script.js"></script>\n'
     + '  </body>\n'
     + '</html>\n';
