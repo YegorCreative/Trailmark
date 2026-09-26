@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <!-- Responsive overrides -->
     <link rel="stylesheet" href="css/styles-responsive.css" />
+    <link rel="stylesheet" href="css/atlas.css" />
   </head>
   <body>
 
@@ -30,10 +31,10 @@
         </div>
         <nav id="site-nav" aria-label="Site navigation">
           <ul class="nav-list">
-            <li><a href="index.html#park-grid" class="nav-link nav-link--active" aria-current="page">Parks</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="faq.html" class="nav-link">FAQ</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item--parks"><a href="parks.html" class="nav-link" data-nav="parks">Parks</a></li>
+            <li><a href="about.html" class="nav-link" data-nav="about">About</a></li>
+            <li><a href="faq.html" class="nav-link" data-nav="faq">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -46,7 +47,7 @@
       ===================== -->
       <section id="hero" class="hero--homepage">
 
-        <div class="hero-scene hero-scene--base" data-hero-crossfade data-speed="0.28" data-scale="1.05" aria-hidden="true">
+        <div class="hero-scene hero-scene--base" data-hero-crossfade data-pin-bottom data-speed="0.28" data-scale="1.08" aria-hidden="true">
           <img src="assets/park-art/yosemite/header.webp" alt="" class="hero-scene-art hero-scene-art--base is-active" width="1672" height="941" fetchpriority="high" />
         </div>
 
@@ -63,7 +64,7 @@
               TrailMark turns the National Parks into a premium illustrated universe &mdash; part field guide, part collectible archive, part invitation to go further.
             </p>
             <div class="hero-actions">
-              <a href="#park-grid" class="hero-btn hero-btn--primary">Explore Parks</a>
+              <a href="parks.html" class="hero-btn hero-btn--primary">Explore Parks</a>
               <a href="parks/yosemite.html" class="hero-btn hero-btn--secondary">View Yosemite</a>
             </div>
           </div>
@@ -198,27 +199,29 @@
       <!-- =====================
            PARK GRID SECTION
       ===================== -->
-      <section id="park-grid">
-        <div class="section-inner">
-          <h2 class="section-title">Featured Parks</h2>
-          <p class="section-subtitle">Published destinations shaping the TrailMark archive.</p>
-
-          <div class="search-bar">
-            <label for="park-search" class="search-label">Search parks</label>
-            <input
-              type="search"
-              id="park-search"
-              class="search-input"
-              placeholder="Name, state, or region…"
-              autocomplete="off"
-            >
-            <p class="search-note">Search the full 63-park archive.</p>
+      <section id="open-parks" class="park-strip-wrap" aria-labelledby="open-parks-title">
+        <div class="park-strip-head">
+          <div>
+            <p class="atlas-kicker">In the archive</p>
+            <h2 id="open-parks-title">Open parks</h2>
           </div>
+          <div class="strip-controls">
+            <button type="button" data-strip="prev" aria-label="Previous parks">&#8592;</button>
+            <button type="button" data-strip="next" aria-label="Next parks">&#8594;</button>
+          </div>
+        </div>
+        <div class="park-strip" data-park-strip tabindex="0" role="region" aria-label="Open parks"></div>
+      </section>
 
-          <div class="cards-grid">
-            <!-- Cards rendered dynamically by js/script.js -->
-          </div><!-- /.cards-grid -->
-        </div><!-- /.section-inner -->
+      <section id="browse-landscape" aria-labelledby="landscape-title">
+        <div class="section-block-head">
+          <div>
+            <p class="atlas-kicker">Find a kind of place</p>
+            <h2 id="landscape-title">Browse by landscape</h2>
+          </div>
+        </div>
+        <div class="landscape-tiles" data-landscape-tiles></div>
+        <a class="explore-all" href="parks.html">Explore all 63 parks</a>
       </section>
 
       <!-- =====================
@@ -250,7 +253,7 @@
           <span class="footer-logo-text">TrailMark</span>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="index.html#park-grid" class="footer-nav-link">Parks</a>
+          <a href="parks.html" class="footer-nav-link">Parks</a>
           <a href="about.html" class="footer-nav-link">About</a>
           <a href="faq.html" class="footer-nav-link">FAQ</a>
           <a href="contact.html" class="footer-nav-link">Contact</a>
@@ -261,7 +264,7 @@
 
     <!-- Park data -->
     <script src="js/parks-data.js"></script>
-    <!-- Main script -->
+    <script src="js/atlas.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

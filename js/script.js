@@ -27,9 +27,18 @@
     const scrollY = window.scrollY;
     layers.forEach(function (layer) {
       const speed = (parseFloat(layer.dataset.speed) || 0) * strength;
-      const scale = small ? 1 : (parseFloat(layer.dataset.scale) || 1);
+      const baseScale = parseFloat(layer.dataset.scale) || 1;
+      if (layer.hasAttribute('data-pin-bottom')) {
+        const hero = layer.closest('#hero') || layer;
+        const rect = hero.getBoundingClientRect();
+        const progress = Math.min(1, Math.max(0, -rect.top / Math.max(rect.height, 1)));
+        const scale = small ? 1 : baseScale - progress * (baseScale - 1);
+        layer.style.transformOrigin = 'center bottom';
+        layer.style.transform = 'translate3d(0,0,0) scale(' + scale.toFixed(4) + ')';
+        return;
+      }
       const shift = scrollY * speed * -1;
-      layer.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0) scale(' + scale + ')';
+      layer.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0) scale(' + (small ? 1 : baseScale) + ')';
     });
     fades.forEach(function (el) {
       const hero = el.closest('#hero') || el;

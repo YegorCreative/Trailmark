@@ -57,6 +57,14 @@ Next batch: Saguaro, Petrified Forest, Great Sand Dunes, White Sands, Carlsbad C
 - Hidden-discovery cards no longer use a tall box with content pushed to the bottom.
 - The overview lead is a deliberate large serif. The body paragraphs under it share one size. A specificity bug had been shrinking the lead.
 
+## Navigation
+
+- `parks.html` is the all-parks index. Filters write `region`, `state`, `landscape`, `status`, `sort`, and `q` into the URL.
+- Each park has one `landscape` value used by those filters: mountain, desert, canyon, coast/island, forest, wetland, volcanic, arctic, or cave. Gateway Arch is filed under forest because the filter list has no civic type. Kings Canyon is canyon. Olympic is forest.
+- Open parks carry `archiveSeq` in catalog order. "Newest in archive" sorts by that number, highest first.
+- The desktop Parks menu lists only regions that already have an open park, plus a link to all 63. The mobile menu lists every park, with unpublished ones labeled Coming soon and not linked.
+- Homepage hero art is pinned to the bottom edge. Parallax on that layer scales from the bottom and does not translate the painting upward. Badges stay circles (`aspect-ratio: 1`), not ovals inside rounded plates.
+
 ## Card height and park-year label
 
 - Featured cards no longer stretch to the height of the secondary stack (`align-items: start` on the grid) and the Explore button is no longer pushed to the bottom of a tall column.

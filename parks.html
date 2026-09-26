@@ -3,24 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact &mdash; TrailMark</title>
-
-    <!-- Google Fonts -->
+    <title>All Parks &mdash; TrailMark</title>
+    <meta name="description" content="All 63 U.S. national parks in the TrailMark illustrated archive. Filter by region, state, landscape, and which pages are open." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-    <!-- Main styles -->
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Responsive overrides -->
     <link rel="stylesheet" href="css/styles-responsive.css" />
     <link rel="stylesheet" href="css/atlas.css" />
   </head>
   <body>
-
-    <!-- =====================
-         HEADER
-    ===================== -->
+    <a class="skip-link" href="#park-index">Skip to the park index</a>
     <header id="site-header">
       <div class="header-inner">
         <div class="logo">
@@ -39,52 +32,47 @@
         </nav>
       </div>
     </header>
-
     <main id="main-content">
-
-      <!-- =====================
-           PAGE HERO
-      ===================== -->
-      <section class="page-hero">
-        <div class="page-hero-inner">
-          <p class="hero-eyebrow">Get in Touch</p>
-          <h1 class="hero-title">Contact</h1>
-          <p class="hero-subtitle">
-            Reach out, contribute, or follow the project.
-          </p>
+      <section class="atlas-page" id="park-index">
+        <div class="atlas-page-inner">
+          <p class="atlas-kicker">The collection</p>
+          <h1 class="atlas-title">All 63 parks.</h1>
+          <p class="atlas-count"><span data-index-count>0 of 63 open</span> <span data-index-shown></span></p>
+          <form class="atlas-filters" action="parks.html" role="search">
+            <label>Region
+              <select id="filter-region" name="region"></select>
+            </label>
+            <label>State
+              <select id="filter-state" name="state"></select>
+            </label>
+            <label>Landscape
+              <select id="filter-landscape" name="landscape"></select>
+            </label>
+            <label>Status
+              <select id="filter-status" name="status">
+                <option value="">Open and coming soon</option>
+                <option value="open">Open</option>
+                <option value="soon">Coming soon</option>
+              </select>
+            </label>
+            <label>Sort
+              <select id="filter-sort" name="sort">
+                <option value="az">A–Z</option>
+                <option value="region">By region</option>
+                <option value="newest">Newest in archive</option>
+              </select>
+            </label>
+            <label>Search
+              <input id="park-search" name="q" type="search" placeholder="Name, state, region" autocomplete="off" />
+            </label>
+          </form>
+          <div class="atlas-index" data-park-index></div>
         </div>
       </section>
-
-      <!-- =====================
-           PAGE CONTENT
-      ===================== -->
-      <section id="page-content">
-        <div class="section-inner page-body">
-
-          <p>
-            TrailMark is an open project. The best way to reach us is through GitHub &mdash; you can open issues, suggest improvements, or contribute directly at <a href="https://github.com/YegorCreative/Trailmark" class="page-link">github.com/YegorCreative/Trailmark</a>.
-          </p>
-
-          <p>
-            A contact form is planned for a future update. Until then, GitHub is the right place for all feedback, corrections, and questions.
-          </p>
-
-        </div>
-      </section>
-
     </main>
-
-    <!-- =====================
-         FOOTER
-    ===================== -->
     <footer id="site-footer">
       <div class="footer-inner">
         <div class="footer-brand">
-          <svg class="footer-logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#F7F3EC" opacity="0.5" />
-            <polygon points="20,7 31,13.5 31,26.5 20,33 9,26.5 9,13.5" fill="none" stroke="#F7F3EC" stroke-width="1.5" opacity="0.45" />
-            <polygon points="20,16 27,28 13,28" fill="#F7F3EC" opacity="0.45" />
-          </svg>
           <span class="footer-logo-text">TrailMark</span>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
@@ -96,8 +84,7 @@
         <p class="footer-copy">&copy; 2026 &mdash; Celebrating America&rsquo;s National Parks</p>
       </div>
     </footer>
-
-      <script src="js/parks-data.js"></script>
+    <script src="js/parks-data.js"></script>
     <script src="js/atlas.js"></script>
   </body>
 </html>
