@@ -103,15 +103,15 @@
   function renderBadge(park) {
     return '<svg class="park-badge" viewBox="0 0 200 200"'
       + ' xmlns="http://www.w3.org/2000/svg" role="img"'
-      + ' aria-label="' + park.name + ' National Park badge">'
+      + ' aria-label="' + escapeHtml(park.name) + ' National Park badge">'
       + park.svgInner
       + '</svg>';
   }
 
   function renderMeta(park) {
     return '<div class="card-meta">'
-      + '<span class="card-region">' + park.region + '</span>'
-      + '<span class="card-state">' + park.state + '</span>'
+      + '<span class="card-region">' + escapeHtml(park.region) + '</span>'
+      + '<span class="card-state">' + escapeHtml(park.state) + '</span>'
       + '</div>';
   }
 
@@ -131,13 +131,13 @@
       + '</div>'
       + '</div>'
       + '<div class="card-body">'
-      + '<p class="card-kicker">' + (isAvailable ? 'First unlocked destination' : 'Destination in progress') + '</p>'
+      + '<p class="card-kicker">' + (isAvailable ? 'Open archive destination' : 'Destination in progress') + '</p>'
       + renderMeta(park)
-      + '<h3 class="card-title">' + park.name + '</h3>'
-      + '<p class="card-description">' + park.shortDescription + '</p>'
+      + '<h3 class="card-title">' + escapeHtml(park.name) + '</h3>'
+      + '<p class="card-description">' + escapeHtml(park.shortDescription) + '</p>'
       + '<p class="card-note">'
       + (isAvailable
-        ? 'The first finished park in the archive, presented as a full destination feature instead of a simple card.'
+        ? 'A finished park in the archive, presented as a full destination feature instead of a simple card.'
         : 'Illustration and destination page are still being prepared for the archive.')
       + '</p>'
       + renderCardAction(park)
@@ -146,6 +146,14 @@
   }
 
   function renderSecondaryCard(park) {
+    const isAvailable = Boolean(park.pageUrl);
+    const statusMarkup = isAvailable
+      ? ''
+      : '<span class="card-status">Coming Soon</span>';
+    const note = isAvailable
+      ? 'A finished destination page is open in the archive.'
+      : 'Illustration and destination page are still being prepared for the archive.';
+
     return '<article class="park-card park-card--secondary">'
       + '<div class="card-badge-area card-badge-area--' + park.badgeTheme + '">'
       + '<div class="card-badge-frame">'
@@ -155,11 +163,11 @@
       + '<div class="card-body">'
       + '<div class="card-topline">'
       + renderMeta(park)
-      + '<span class="card-status">Coming Soon</span>'
+      + statusMarkup
       + '</div>'
-      + '<h3 class="card-title">' + park.name + '</h3>'
-      + '<p class="card-description">' + park.shortDescription + '</p>'
-      + '<p class="card-note">Illustration and destination page are still being prepared for the archive.</p>'
+      + '<h3 class="card-title">' + escapeHtml(park.name) + '</h3>'
+      + '<p class="card-description">' + escapeHtml(park.shortDescription) + '</p>'
+      + '<p class="card-note">' + note + '</p>'
       + renderCardAction(park)
       + '</div>'
       + '</article>';
@@ -238,4 +246,18 @@
 
   renderGrid(curatedParks);
 
+}());
+
+// Published-archive count follows parks that have a pageUrl.
+(function updatePublishedCount() {
+  if (typeof PARKS === 'undefined') return;
+
+  const number = document.querySelector('[data-published-count]');
+  if (!number) return;
+
+  const published = PARKS.filter(function (park) {
+    return park.pageUrl;
+  }).length;
+
+  number.textContent = String(published);
 }());

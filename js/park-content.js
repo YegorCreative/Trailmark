@@ -26,7 +26,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A high Sierra sanctuary shaped by granite, water, and time',
-      lead: 'Yosemite gathers some of the American Wests most recognizable forms into one valley: sheer granite, spring waterfalls, meadow light, black oak, pine shadow, and the slow presence of stone.',
+      lead: 'Yosemite gathers some of the American West\'s most recognizable forms into one valley: sheer granite, spring waterfalls, meadow light, black oak, pine shadow, and the slow presence of stone.',
       body: [
         'The park reaches far beyond Yosemite Valley, but the valley remains its emotional center. It is where scale becomes immediate, where cliffs rise like architecture, and where water turns distance into sound.',
         'TrailMark treats Yosemite as the first archive chapter because it contains the core language every future park page should carry: wonder first, meaningful context second, and a preserved sense of place throughout.',
@@ -74,7 +74,7 @@ const PARK_PAGE_CONTENT = {
       items: [
         {
           title: 'Meadow Edges',
-          body: 'The open meadows are not empty foreground. They hold seasonal water, soft grasses, animal movement, and some of the valleys clearest views of changing light.',
+          body: 'The open meadows are not empty foreground. They hold seasonal water, soft grasses, animal movement, and some of the valley\'s clearest views of changing light.',
         },
         {
           title: 'Granite After Weather',
@@ -99,7 +99,7 @@ const PARK_PAGE_CONTENT = {
     geology: {
       kicker: 'Geology',
       title: 'Granite made visible by uplift, ice, and water',
-      lead: 'Yosemites signature walls are the exposed remains of deep granitic rock, shaped over immense time by uplift, erosion, glaciers, rivers, and freeze-thaw weathering.',
+      lead: 'Yosemite\'s signature walls are the exposed remains of deep granitic rock, shaped over immense time by uplift, erosion, glaciers, rivers, and freeze-thaw weathering.',
       notes: [
         'Glaciers widened and polished the valley, leaving a form that feels carved rather than merely eroded.',
         'Domes and cliffs reveal how durable granite responds when pressure, joints, ice, and water work across geologic time.',
@@ -138,7 +138,7 @@ const PARK_PAGE_CONTENT = {
       notes: [
         'The circular mark reduces Yosemite to its essential forms: stone, forest, sky, and snow light.',
         'Its restrained palette gives it the feel of a preserved patch or field-journal stamp rather than a modern badge set.',
-        'Placed on warm paper with quiet labeling, it reads as a collected artifact from the archives first completed chapter.',
+        'Placed on warm paper with quiet labeling, it reads as a collected artifact from the archive\'s first completed chapter.',
       ],
       details: [
         { label: 'Archive No.', value: '001' },
@@ -149,7 +149,7 @@ const PARK_PAGE_CONTENT = {
     stewardship: {
       kicker: 'Stewardship / Safety',
       title: 'The park is strongest when visitors move with care',
-      lead: 'Yosemites beauty depends on restraint: staying on durable surfaces, storing food correctly, respecting closures, giving wildlife space, and treating crowded places with patience.',
+      lead: 'Yosemite\'s beauty depends on restraint: staying on durable surfaces, storing food correctly, respecting closures, giving wildlife space, and treating crowded places with patience.',
       items: [
         'Use marked trails and boardwalks where provided, especially around meadows and wet areas.',
         'Store food and scented items exactly as required; bear safety is visitor safety and wildlife protection.',
@@ -162,8 +162,8 @@ const PARK_PAGE_CONTENT = {
       title: 'Yosemite is the first finished chapter, not the last.',
       body: 'The TrailMark collection grows one preserved landscape at a time, each page treated as an artifact rather than a listing.',
       links: [
-        { label: 'Yellowstone', status: 'In progress', href: '../index.html#park-grid' },
-        { label: 'Zion', status: 'In progress', href: '../index.html#park-grid' },
+        { label: 'Yellowstone', status: 'Available', href: 'yellowstone.html' },
+        { label: 'Everglades', status: 'Available', href: 'everglades.html' },
         { label: 'Glacier', status: 'In progress', href: '../index.html#park-grid' },
       ],
     },
@@ -246,13 +246,13 @@ const PARK_PAGE_CONTENT = {
         },
         {
           title: 'Forest Recovery',
-          body: 'Young lodgepole pines and open burn areas show how fire remains part of Yellowstones living pattern rather than only a past disturbance.',
+          body: 'Young lodgepole pines and open burn areas show how fire remains part of Yellowstone\'s living pattern rather than only a past disturbance.',
         },
       ],
     },
     wildlife: {
       kicker: 'Wildlife',
-      title: 'One of North Americas great intact wildlife stages',
+      title: 'One of North America\'s great intact wildlife stages',
       lead: 'Yellowstone is home to bison, elk, pronghorn, bighorn sheep, wolves, coyotes, grizzly bears, black bears, trumpeter swans, raptors, and many smaller species tied to valley, forest, river, and thermal habitats.',
       notes: [
         'Wildlife distance is essential here; large animals can move quickly and unpredictably.',
@@ -267,7 +267,7 @@ const PARK_PAGE_CONTENT = {
       notes: [
         'Thermal features are fragile and dangerous; boardwalks protect both visitors and the thin mineral crusts around hot water.',
         'Geysers depend on heat, water supply, pressure, and underground plumbing that can change over time.',
-        'The parks canyon colors come from altered volcanic rock, oxidation, and water working through stone over long periods.',
+        'The park\'s canyon colors come from altered volcanic rock, oxidation, and water working through stone over long periods.',
       ],
     },
     seasons: {
@@ -275,7 +275,7 @@ const PARK_PAGE_CONTENT = {
       title: 'A park transformed by snow, steam, green valleys, and gold light',
       items: [
         { name: 'Spring', modifier: 'spring', body: 'Snow retreats unevenly, rivers run full, newborn animals appear in the valleys, and steam feels especially visible in cold morning air.' },
-        { name: 'Summer', modifier: 'summer', body: 'Boardwalks, basins, and overlooks fill with movement while long daylight opens the parks largest circuit of landscapes.' },
+        { name: 'Summer', modifier: 'summer', body: 'Boardwalks, basins, and overlooks fill with movement while long daylight opens the park\'s largest circuit of landscapes.' },
         { name: 'Autumn', modifier: 'autumn', body: 'Elk bugles, cottonwoods turn, crowds thin, and the valleys take on a quieter, more watchful atmosphere.' },
         { name: 'Winter', modifier: 'winter', body: 'Snow simplifies the park into white ground, dark trees, blue shadows, and thermal clouds rising like signals through the cold.' },
       ],
@@ -326,9 +326,9 @@ const PARK_PAGE_CONTENT = {
       title: 'Yellowstone expands the archive from stone monument to living geology.',
       body: 'The TrailMark collection grows by giving each park its own emotional structure, not by forcing every landscape into the same mood.',
       links: [
+        { label: 'Yosemite', status: 'Available', href: 'yosemite.html' },
+        { label: 'Everglades', status: 'Available', href: 'everglades.html' },
         { label: 'Grand Canyon', status: 'In progress', href: '../index.html#park-grid' },
-        { label: 'Zion', status: 'In progress', href: '../index.html#park-grid' },
-        { label: 'Glacier', status: 'In progress', href: '../index.html#park-grid' },
       ],
     },
   },
@@ -347,7 +347,7 @@ const PARK_PAGE_CONTENT = {
       kicker: 'TrailMark Archive Edition',
       eyebrow: 'Florida | River of Grass',
       title: 'Everglades',
-      subtitle: 'Water moves almost invisibly through sawgrass, mangrove, marl prairie, and open sky, carrying one of North Americas most intricate wetland stories.',
+      subtitle: 'Water moves almost invisibly through sawgrass, mangrove, marl prairie, and open sky, carrying one of North America\'s most intricate wetland stories.',
       posterSrc: '../assets/svg/parks.svg',
       posterAlt: '',
     },
@@ -431,7 +431,7 @@ const PARK_PAGE_CONTENT = {
       notes: [
         'The park is shaped by slight elevation differences rather than mountains; a few inches can change habitat.',
         'Limestone and marl influence water chemistry, plant communities, and the open character of many prairies.',
-        'Sea-level rise and saltwater intrusion make the coastal edge especially important to the parks future.',
+        'Sea-level rise and saltwater intrusion make the coastal edge especially important to the park\'s future.',
       ],
     },
     seasons: {
@@ -490,9 +490,9 @@ const PARK_PAGE_CONTENT = {
       title: 'Everglades proves the archive can hold quiet ecological wonder.',
       body: 'The TrailMark collection grows stronger when each park keeps its own pace, atmosphere, and way of teaching visitors to notice.',
       links: [
+        { label: 'Yosemite', status: 'Available', href: 'yosemite.html' },
+        { label: 'Yellowstone', status: 'Available', href: 'yellowstone.html' },
         { label: 'Grand Canyon', status: 'In progress', href: '../index.html#park-grid' },
-        { label: 'Zion', status: 'In progress', href: '../index.html#park-grid' },
-        { label: 'Glacier', status: 'In progress', href: '../index.html#park-grid' },
       ],
     },
   },
