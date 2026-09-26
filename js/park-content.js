@@ -862,7 +862,7 @@ const PARK_PAGE_CONTENT = {
     palette: { hero: ['#F6D7A8', '#E07040', '#C44828', '#8A5030', '#2E4030'] },
     extraIllustration: { alt: 'Desert bighorn in Zion, the extra mark for the park.', caption: 'Desert bighorn' },
     seo: {
-      titleHook: 'Canyon Walls and the Narrows', addressRegion: 'UT', description: 'TrailMark archive page for Zion National Park: Navajo sandstone, the Virgin River, and hanging gardens in southern Utah.' },
+      titleHook: 'The Narrows', addressRegion: 'UT', description: 'TrailMark archive page for Zion National Park: Navajo sandstone, the Virgin River, and hanging gardens in southern Utah.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A canyon you enter from the bottom',
@@ -2832,7 +2832,7 @@ const PARK_PAGE_CONTENT = {
     palette: { hero: ['#1C2430', '#C4843A', '#E8D2A8', '#3E3428', '#8A5A32'] },
     extraIllustration: { alt: 'Bats stream from a cave mouth in desert rock, the extra drawing for the park.', caption: 'Cave mouth' },
     seo: {
-      titleHook: 'Cave Rooms and Bat Flights', addressRegion: 'NM', description: 'TrailMark archive page for Carlsbad Caverns National Park: a limestone cave in a Permian fossil reef in southeastern New Mexico.' },
+      titleHook: 'Big Room', addressRegion: 'NM', description: 'TrailMark archive page for Carlsbad Caverns National Park: a limestone cave in a Permian fossil reef in southeastern New Mexico.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A cave monument that Congress turned into a park',
