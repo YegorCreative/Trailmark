@@ -71,6 +71,23 @@
     return '<a class="atlas-card' + (compact ? ' atlas-card--strip' : '') + '" href="' + esc(pageHref(park)) + '"' + vt + '>' + inner + '</a>';
   }
 
+  function initHeader() {
+    var header = document.getElementById('site-header');
+    if (!header || !document.getElementById('hero')) return;
+    document.body.classList.add('has-hero');
+    var ticking = false;
+    function paint() {
+      header.classList.toggle('is-solid', window.scrollY > 80);
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(paint);
+    }, { passive: true });
+    paint();
+  }
+
   function initNav() {
     var header = document.getElementById('site-header');
     var nav = document.getElementById('site-nav');
@@ -420,6 +437,7 @@
     });
   }
 
+  initHeader();
   initNav();
   initStrip();
   initIndex();
