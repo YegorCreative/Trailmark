@@ -72,46 +72,58 @@
     </header>
 
     <main id="main-content">
-
-      <!-- =====================
-           PAGE HERO
-      ===================== -->
-      <section class="page-hero">
-        <div class="page-hero-inner">
-          <p class="hero-eyebrow">Our Mission</p>
-          <h1 class="hero-title">About TrailMark</h1>
-          <p class="hero-subtitle">
-            A project built to celebrate and explore America&rsquo;s National Parks &mdash; one badge at a time.
-          </p>
+      <section id="hero" class="about-hero" aria-labelledby="about-title">
+        <img src="assets/park-art/grand-canyon/header-1280.webp" srcset="assets/park-art/grand-canyon/header-1280.webp 1280w, assets/park-art/grand-canyon/header.webp 1672w" sizes="(max-width: 900px) 100vw, 1200px" alt="" width="1280" height="720" fetchpriority="high" />
+        <div class="about-hero-copy">
+          <p class="hero-eyebrow">The archive</p>
+          <h1 class="hero-title" id="about-title">About TrailMark</h1>
+          <p class="hero-subtitle">An illustrated record of the 63 U.S. national parks, published one park at a time.</p>
         </div>
       </section>
 
-      <!-- =====================
-           PAGE CONTENT
-      ===================== -->
-      <section id="page-content">
-        <div class="section-inner page-body">
+      <article class="about-body">
+        <section>
+          <h2>What TrailMark is</h2>
+          <p>TrailMark is an illustrated archive of all 63 U.S. national parks. It is not a trip planner and it is not a government site. Each park is written and drawn as its own chapter, then added to the archive when that chapter is ready.</p>
+          <p>The Parks index lists every park. Open essays can be read. The rest are marked Coming soon until their pages are published.</p>
+        </section>
 
-          <p>
-            TrailMark is a digital field guide to America&rsquo;s 63 National Parks. Each park gets its own illustrated badge, curated facts, and a dedicated page documenting the landscapes, wildlife, and stories that make it remarkable. The goal is a reference worth returning to &mdash; not a database to scroll past.
-          </p>
+        <section>
+          <h2>How a park page is made</h2>
+          <p>Research starts with the National Park Service. The pages used for a park are written down in a source note for that park. Establishment years and numbers come from those pages. If a figure was not on a page that was opened, it is left out.</p>
+          <p>The writing is specific to that place. It does not use filler, and it does not treat fees, permits, shuttles, or road closures as permanent facts. For anything that changes, the page points to the Park Service.</p>
+          <p>The art for each park is a set of illustrations created for TrailMark: a header painting, a circular badge, and an extra piece, usually an animal or another living detail. The paintings are not photographs.</p>
+        </section>
 
-          <p>
-            This is an ongoing project. Parks are added gradually, with care given to each badge design and write-up. Yosemite, Yellowstone, and Everglades are the published park pages. All 63 parks are planned for future updates.
-          </p>
+        <section>
+          <h2>The badge collection</h2>
+          <p>Every park has one mark. The marks are circular illustrations, one for each of the 63 parks, and the homepage holds them as a wall. A mark becomes a link when that park&rsquo;s essay is published. Until then it stays on the wall as a record of what is still to come.</p>
+        </section>
 
-          <p>
-            TrailMark has no affiliation with the National Park Service or any government agency. It is an independent project made for anyone who loves the American wilderness.
-          </p>
+        <section>
+          <h2>Who&rsquo;s behind it</h2>
+          <p>Built by Yegor Hambaryan. TrailMark is an independent project, with no affiliation with the National Park Service.</p>
+          <!-- BIO: Yegor to provide -->
+          <p>The repository is on GitHub at <a href="https://github.com/YegorCreative">github.com/YegorCreative</a>.</p>
+        </section>
 
+        <section>
+          <h2>Accuracy and sources</h2>
+          <p>The National Park Service is the authority for facts about the parks. TrailMark records the pages it used and would rather omit a number than guess one. If a page is wrong, report it through <a href="contact.html">Contact</a>.</p>
+        </section>
+
+        <section>
           <h2>Accessibility</h2>
-          <p>
-            TrailMark aims for WCAG 2.2 AA. Pages can be used with a keyboard, honor reduced motion, and keep text at a contrast of at least 4.5:1. If a page blocks you, report it on the <a href="contact.html">Contact</a> page.
-          </p>
+          <p>TrailMark aims for WCAG 2.2 AA. Pages work from the keyboard, including the menu, the park filters, and the chapter links on a park page. Reduced motion turns off the homepage crossfade, parallax, badge tilt, and scroll reveals, and leaves the content visible. Text is kept at a contrast of at least 4.5:1, including type that sits over paintings.</p>
+          <p>If something on the site blocks you, say so on the <a href="contact.html">Contact</a> page.</p>
+        </section>
 
-        </div>
-      </section>
-
+        <section class="about-close">
+          <h2>Read the parks</h2>
+          <p>The index is the whole collection: the essays that are open, and the parks still waiting for a chapter.</p>
+          <p><a class="hero-btn hero-btn--primary" href="parks.html">All Parks</a></p>
+        </section>
+      </article>
     </main>
 
     <!-- =====================
@@ -137,7 +149,8 @@
       </div>
     </footer>
 
-      <script src="js/parks-data.js"></script>
+    <script src="js/parks-data.js"></script>
     <script src="js/atlas.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
