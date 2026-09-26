@@ -1809,7 +1809,7 @@ body:has(#hero) #hero::after {
   .highlight-card .highlight-desc { opacity: 1; transform: none; }
 }
 
-.about-hero {
+#hero.about-hero {
   position: relative;
   min-height: 100svh;
   display: flex;
@@ -1817,6 +1817,7 @@ body:has(#hero) #hero::after {
   overflow: hidden;
   background: #142016;
   padding: 0;
+  text-align: left;
 }
 
 .about-hero > img {
@@ -1832,35 +1833,49 @@ body:has(#hero) #hero.about-hero::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
   height: auto;
+  pointer-events: none;
   background:
-    linear-gradient(to top, rgba(8, 14, 10, 0.82), rgba(8, 14, 10, 0.28) 48%, rgba(8, 14, 10, 0.55)),
-    linear-gradient(90deg, rgba(8, 14, 10, 0.78) 0%, rgba(8, 14, 10, 0.28) 52%, rgba(8, 14, 10, 0.1) 100%);
+    linear-gradient(to top, rgba(6, 10, 8, 0.94) 0%, rgba(6, 10, 8, 0.82) 34%, rgba(6, 10, 8, 0.5) 68%, rgba(6, 10, 8, 0.38) 100%),
+    linear-gradient(90deg, rgba(6, 10, 8, 0.9) 0%, rgba(6, 10, 8, 0.62) 46%, rgba(6, 10, 8, 0.22) 100%);
 }
 
 .about-hero-copy {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(1100px, 100%);
   margin: 0 auto;
   padding: 8rem 1.5rem 4rem;
   color: #f6efe4;
+  text-align: left;
+  opacity: 1;
 }
 
-.about-hero .hero-eyebrow { color: #ffe3b8; }
-.about-hero .hero-title {
+.about-hero .hero-eyebrow,
+.about-hero .hero-title,
+.about-hero .hero-subtitle,
+.about-hero .about-progress-line {
   color: #f6efe4;
+  opacity: 1;
+  text-align: left;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+.about-hero .hero-title {
   font-size: clamp(2.8rem, 6vw, 5.4rem);
   line-height: 0.95;
   max-width: 16ch;
+  margin-left: 0;
+  margin-right: 0;
 }
-.about-hero .hero-subtitle { color: #f6efe4; max-width: 38rem; font-size: 1.15rem; }
+.about-hero .hero-subtitle { max-width: 38rem; font-size: 1.15rem; }
 
 .about-progress-line { margin: 1.4rem 0 0.55rem; letter-spacing: 0.04em; }
 .about-progress {
-  width: min(16rem, 70%);
+  width: min(16rem, 100%);
+  margin-left: 0;
   height: 3px;
-  background: rgba(246, 239, 228, 0.28);
+  background: rgba(246, 239, 228, 0.35);
   overflow: hidden;
 }
 .about-progress span {
@@ -1885,6 +1900,7 @@ body:has(#hero) #hero.about-hero::after {
 .about-idea p, .about-access p, .about-band p { line-height: 1.6; }
 
 .about-band { background: #efe6d6; }
+.about-band .steward-rows { grid-template-columns: 1fr; }
 .about-band h2, .about-collection h2, .about-maker h2, .about-access h2 {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -1914,6 +1930,14 @@ body:has(#hero) #hero.about-hero::after {
   margin: 0 auto;
   border-radius: 50%;
   object-fit: cover;
+}
+.about-piece--detail img {
+  aspect-ratio: 1;
+  width: min(100%, 18rem);
+  margin: 0 auto;
+  background: transparent;
+  /* Off-white paper in the illustration drops out against the tan band. */
+  mix-blend-mode: darken;
 }
 .about-piece figcaption { margin-top: 0.75rem; line-height: 1.45; }
 .about-piece figcaption strong { display: block; font-family: var(--font-heading); font-size: 1.35rem; font-weight: 560; }

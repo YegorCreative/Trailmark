@@ -51,6 +51,8 @@
       });
     }
 
+    if (window.__tmRevealPass) window.__tmRevealPass(y);
+
     const chapters = window.__tmChapters;
     if (chapters && chapters.sections && chapters.sections.length) {
       const line = y + 120;
@@ -90,23 +92,33 @@
     window.__tmObserve = function () {};
     return;
   }
+  document.documentElement.classList.add('js-reveal');
 
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
+  let pending = [];
+  // Viewport-relative: offsetTop is not document position when an ancestor
+  // is positioned, so a jump to the bottom never revealed those sections.
+  function pass() {
+    const line = window.innerHeight * 0.92;
+    pending = pending.filter(function (el) {
+      if (el.getBoundingClientRect().top <= line) {
+        el.classList.add('is-visible');
+        return false;
+      }
+      return true;
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  }
+  window.__tmRevealPass = pass;
 
   window.__tmObserve = function (root) {
     const scope = root || document;
     const nodes = scope.querySelectorAll('.park-section, .highlight-card, .season-card, .discovery-card, .value-prop, .badge-entry, .reveal');
     nodes.forEach(function (node, index) {
       if (!node.classList.contains('reveal')) node.classList.add('reveal');
+      if (node.classList.contains('is-visible')) return;
       if (!node.style.transitionDelay) node.style.transitionDelay = Math.min(index % 6, 5) * 60 + 'ms';
-      observer.observe(node);
+      if (pending.indexOf(node) === -1) pending.push(node);
     });
+    pass(window.scrollY);
   };
 
   window.__tmObserve(document);

@@ -1141,14 +1141,28 @@ img.badge-system-mark {
 }
 
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.js-reveal .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reveal.is-visible {
+html.js-reveal .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-reveal .reveal,
+  html.js-reveal .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .park-card::before {
