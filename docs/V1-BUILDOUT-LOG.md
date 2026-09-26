@@ -38,7 +38,15 @@ Needs fact review, because a live NPS page was not opened while writing them: Ac
 
 Hero focus for these six was set from the header images: Grand Canyon `42% 58%` (river bend, not the watchtower), Acadia `62% 48%` (lighthouse and headland), Zion `62% 46%` (cliff wall), Olympic `55% 48%` (river corridor), Glacier `58% 42%` (lit peaks), Smokies `48% 46%` (layered ridges). The other unpublished parks still use the default `50% 58%`.
 
-Next batch: Bryce Canyon, Arches, Canyonlands, Capitol Reef, Death Valley, Joshua Tree.
+### Batch 2 — Bryce Canyon, Arches, Canyonlands, Capitol Reef, Death Valley, Joshua Tree
+
+Published. Validator passed for 15 essays.
+
+Live NPS pages opened: Bryce geology (hoodoos, amphitheater), Arches nature (arch density, high desert, soil crust), Death Valley nature (Badwater −282 feet, Panamints, heat, plant count, Racetrack, Devil's Hole).
+
+Needs fact review: Canyonlands and Capitol Reef and Joshua Tree in full. Bryce, Arches, and Death Valley for establishment years and any sentence not taken from the pages above. Hero focus was set from the header images for a tall crop: Bryce `42% 58%`, Arches `68% 42%` (the span), Canyonlands `40% 55%` (river, not the cave frame), Capitol Reef `72% 40%` (white dome), Death Valley `62% 42%` (peaks above the salt), Joshua Tree `74% 46%` (yuccas on the right).
+
+Next batch: Saguaro, Petrified Forest, Great Sand Dunes, White Sands, Carlsbad Caverns, Guadalupe Mountains.
 
 ## Homepage fixes
 
