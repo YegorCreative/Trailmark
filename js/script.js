@@ -40,8 +40,9 @@
 
     if (!reduce && heroLayer && heroHeight) {
       const progress = Math.min(1, Math.max(0, (y - heroTop) / heroHeight));
-      const shift = progress * -24;
-      heroLayer.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0)';
+      // Scale from the bottom edge so the foreground is not translated out of frame.
+      heroLayer.style.transformOrigin = 'center bottom';
+      heroLayer.style.transform = 'scale(' + (1 + progress * 0.035).toFixed(4) + ')';
       const inView = y < heroTop + heroHeight && y + window.innerHeight > heroTop;
       heroLayer.style.willChange = inView ? 'transform' : 'auto';
       fades.forEach(function (el) {

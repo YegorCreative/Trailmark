@@ -35,7 +35,14 @@
   width: 100%;
 }
 
-body.has-hero #site-header {
+body:has([data-park-id]) #site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+body:has(#hero) #site-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -44,25 +51,25 @@ body.has-hero #site-header {
   transition: background 0.2s ease;
 }
 
-body.has-hero #site-header .nav-link {
+body:has(#hero) #site-header .nav-link {
   color: #f7f3ec;
 }
 
-body.has-hero #site-header.is-solid {
+body:has(#hero) #site-header.is-solid {
   background: #142016;
 }
 
 @media (max-width: 900px) {
-  body.has-hero #site-header.is-solid,
+  body:has(#hero) #site-header.is-solid,
   #site-header {
     background: #142016;
   }
-  body.has-hero #site-header:not(.is-solid) {
+  body:has(#hero) #site-header:not(.is-solid) {
     background: transparent;
   }
 }
 
-body.has-hero #hero.hero--homepage {
+body:has(#hero) #hero.hero--homepage {
   margin-top: 0;
 }
 
@@ -366,6 +373,11 @@ body.nav-lock {
 .nav-overlay-regions {
   display: grid;
   gap: 1.25rem;
+}
+
+.atlas-page,
+#park-page {
+  min-height: 100svh;
 }
 
 .atlas-page {
@@ -1088,7 +1100,7 @@ body.sheet-lock { overflow: hidden; }
   border-bottom: 1px solid #d8d0c0;
 }
 
-body.has-hero #hero::after {
+body:has(#hero) #hero::after {
   content: "";
   position: absolute;
   left: 0;

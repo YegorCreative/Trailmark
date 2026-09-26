@@ -71,3 +71,15 @@ Next batch: Saguaro, Petrified Forest, Great Sand Dunes, White Sands, Carlsbad C
 
 - Featured cards no longer stretch to the height of the secondary stack (`align-items: start` on the grid) and the Explore button is no longer pushed to the bottom of a tall column.
 - The hero meta label is "National Park since" followed by the year. Fact labels that said "Protected" now say "National Park since". The year strings themselves were not rewritten.
+
+## Simple navigation and performance
+
+- The desktop mega-menu is gone. Parks is a plain link to `parks.html`. The mobile menu is four text links: Parks, About, FAQ, Contact. No park list, thumbnails, badges, or Coming soon toggle, and no park image in the header.
+- `scripts/build-park-art.py` also writes `header-640.webp`, `header-1280.webp`, `badge-160.webp`, and `badge-320.webp`. Cards and tiles use the 640 header. Heroes use 1280, with the full 1672 file only when the slot is wider than that. Badges use 160 and 320, not the 600 circle.
+- The hero image is the only eager image (`fetchpriority="high"`). Everything else is lazy. Index cards after the first six, strip cards after the first three, the badge wall, and landscape tiles stay on `data-src` until the first scroll, then an IntersectionObserver fills them. That is what keeps `parks.html` from downloading the whole grid on open.
+- The homepage crossfade loads the first slide only, then the next slide just before it is shown. The Ken Burns zoom is gone. Hero parallax scales from the bottom edge so the foreground is not translated out of the frame. Parallax does not run on full-bleed breaks.
+- One requestAnimationFrame scroll listener updates the solid header, the hero scale, and the chapter marker. Positions are cached on resize. Backdrop-filter blur is removed. The grain overlay is not painted. Badge tilt runs only for a fine pointer that can hover. `will-change` is set only on the hero layer while it is in view.
+- Hero pages fix the header in CSS (`body:has(#hero)` and `body:has([data-park-id])`) so the bar does not leave the document flow after script runs. The index and the empty park shell reserve at least one viewport, so the footer is below the fold when script fills the page.
+- Open-page bytes in headless Chrome, no scrolling, site and font bytes only, 1440×900: homepage 0.39 MB, `parks.html` 0.53 MB, `parks/zion.html` 0.54 MB.
+- Lighthouse mobile performance: homepage 96 (LCP 2.6 s, CLS 0.002, TBT 0 ms), `parks.html` 95 (LCP 2.9 s, CLS 0, TBT 0 ms), `zion.html` 88 (LCP 3.4 s, CLS 0.051, TBT 0 ms).
+- A Performance scroll of `zion.html` at 4× CPU slowdown covered the page in 238 frames. No frame gap was over 32 ms. The worst gap was 16.8 ms.
