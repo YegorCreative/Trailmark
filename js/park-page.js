@@ -189,19 +189,20 @@
 
   function renderKnowledgeSection(key, id) {
     const section = park[key];
-    const notes = section.notes.map(function (note) {
-      return '<li>' + escapeHtml(note) + '</li>';
+    const notes = section.notes.map(function (note, index) {
+      const number = String(index + 1).padStart(2, '0');
+      return '<article class="editorial-item"><p class="editorial-num">' + number + '</p><div><p>' + escapeHtml(note) + '</p></div></article>';
     }).join('');
     const extra = key === 'wildlife' ? renderExtraFigure() : '';
 
-    return '<section id="' + id + '" class="park-section park-section--knowledge" aria-labelledby="' + id + '-title">'
+    return '<section id="' + id + '" class="park-section park-section--editorial" aria-labelledby="' + id + '-title">'
       + '<div class="section-inner knowledge-layout' + (extra ? ' knowledge-layout--with-extra' : '') + '">'
       + '<div>'
       + sectionHeading(section, id + '-title')
       + '<p class="knowledge-lead">' + escapeHtml(section.lead) + '</p>'
       + '</div>'
       + extra
-      + '<ul class="knowledge-list">' + notes + '</ul>'
+      + '<div class="editorial-list">' + notes + '</div>'
       + '</div>'
       + '</section>';
   }
@@ -283,15 +284,17 @@
   }
 
   function renderStewardship() {
-    const items = park.stewardship.items.map(function (item) {
-      return '<li>' + escapeHtml(item) + '</li>';
+    const rows = park.stewardship.items.map(function (item, index) {
+      const number = String(index + 1).padStart(2, '0');
+      return '<li><span>' + number + '</span><p>' + escapeHtml(item) + '</p></li>';
     }).join('');
 
-    return '<section id="park-stewardship" class="park-section park-section--stewardship" aria-labelledby="park-stewardship-title">'
-      + '<div class="section-inner stewardship-panel">'
+    return '<section id="park-stewardship" class="park-section park-section--editorial" aria-labelledby="park-stewardship-title">'
+      + '<div class="section-inner">'
       + sectionHeading(park.stewardship, 'park-stewardship-title')
       + '<p class="knowledge-lead">' + escapeHtml(park.stewardship.lead) + '</p>'
-      + '<ul class="stewardship-list">' + items + '</ul>'
+      + '<ol class="steward-rows">' + rows + '</ol>'
+      + '<p class="nps-line"><a href="https://www.nps.gov/">Current conditions, fees, and alerts are on the National Park Service site.</a></p>'
       + '</div>'
       + '</section>';
   }
