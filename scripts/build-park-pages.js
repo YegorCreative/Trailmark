@@ -127,7 +127,7 @@ function pageHtml(park, essay) {
     + '    </header>\n'
     + '    <nav class="park-back" aria-label="Breadcrumb">\n'
     + '      <div class="park-back-inner">\n'
-    + '        <a href="../index.html#park-grid" class="park-back-link">\n'
+    + '        <a href="../parks.html" class="park-back-link">\n'
     + '          <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>\n'
     + '          All Parks\n'
     + '        </a>\n'

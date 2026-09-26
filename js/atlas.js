@@ -194,6 +194,7 @@
       if (overlay.hidden) openMenu();
       else closeMenu();
     });
+    if (location.hash === '#menu') openMenu();
     closeBtn.addEventListener('click', closeMenu);
     overlay.addEventListener('click', function (event) {
       if (event.target === overlay) closeMenu();

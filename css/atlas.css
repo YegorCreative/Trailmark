@@ -79,6 +79,9 @@
 
 .mega-soon {
   color: #6b6b6b;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
 }
 
 .mega-soon small {
@@ -646,4 +649,285 @@ img.badge-system-mark,
 
 @media (pointer: coarse) {
   .badge-wall-item { transform: none !important; }
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+#hero.hero--park,
+#hero.hero--yosemite {
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero--park .park-poster,
+.hero--yosemite .yosemite-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  min-height: 100%;
+}
+
+.hero--park .park-poster-art,
+.hero--yosemite .yosemite-poster-art {
+  width: 100%;
+  height: 118%;
+  object-fit: cover;
+  object-position: center bottom;
+  transform-origin: center bottom;
+}
+
+.hero--park .hero-title,
+.hero--yosemite .hero-title {
+  font-size: clamp(3.4rem, 9vw, 8rem);
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+}
+
+.chapter-nav {
+  position: sticky;
+  top: 6.4rem;
+  z-index: 20;
+  background: rgba(247, 243, 236, 0.94);
+  border-bottom: 1px solid #d8d0c0;
+}
+
+.chapter-progress {
+  height: 3px;
+  background: rgba(28, 28, 28, 0.08);
+}
+
+.chapter-progress span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--hero-2, #e8652a);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.chapter-nav-scroller {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  padding: 0.35rem 1rem;
+}
+
+.chapter-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  text-decoration: none;
+  color: #1c1c1c;
+  white-space: nowrap;
+  border-radius: 999px;
+}
+
+.chapter-nav a.is-current {
+  background: #243224;
+  color: #f7f3ec;
+}
+
+.park-break {
+  height: 52vh;
+  min-height: 16rem;
+  overflow: hidden;
+}
+
+.park-break img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center bottom;
+  transform-origin: center bottom;
+}
+
+.park-crumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.8rem 1.25rem;
+  font-size: 0.92rem;
+}
+
+.park-crumb-list a {
+  color: #2d5016;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.park-crumb-list li:not(:last-child)::after {
+  content: "›";
+  margin-left: 0.5rem;
+  color: #6b6b6b;
+}
+
+.highlight-card {
+  min-height: 16rem;
+  color: #f7f3ec;
+  border-radius: 18px;
+  padding: 1.25rem;
+  position: relative;
+}
+
+.highlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(10, 14, 12, 0.28), rgba(10, 14, 12, 0.62));
+}
+
+.highlight-card > * { position: relative; z-index: 1; }
+
+.highlight-card .highlight-title,
+.highlight-card .highlight-desc,
+.highlight-card .highlight-index {
+  color: #f7f3ec;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .highlight-card .highlight-desc {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .highlight-card:hover .highlight-desc,
+  .highlight-card:focus-within .highlight-desc {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.badge-tilt {
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.badge-tilt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.45) 50%, transparent 65%);
+  transform: translateX(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.badge-tilt:hover::after,
+.badge-tilt:focus-within::after {
+  opacity: 1;
+  transform: translateX(120%);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.neighbor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.neighbor-grid--related {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.neighbor-card {
+  position: relative;
+  display: block;
+  min-height: 16rem;
+  border-radius: 18px;
+  overflow: hidden;
+  color: #f7f3ec;
+  text-decoration: none;
+}
+
+.neighbor-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.neighbor-card span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: 0.15rem;
+  padding: 2.5rem 1rem 1rem;
+  background: linear-gradient(180deg, transparent, rgba(8, 12, 10, 0.82));
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  line-height: 0.95;
+}
+
+.neighbor-card small {
+  font-family: var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.neighbor-sub {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin: 0;
+}
+
+.park-extra {
+  transform-origin: center center;
+}
+
+@media (max-width: 800px) {
+  .logo-mark { height: 56px; }
+  #hero.hero--park,
+  #hero.hero--yosemite {
+    min-height: calc(100svh - 11rem);
+  }
+  .neighbor-grid,
+  .neighbor-grid--related { grid-template-columns: 1fr; }
+  #hero.hero--park .hero-inner,
+  #hero.hero--yosemite .hero-inner {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.8rem;
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+    padding: 0;
+    color: #f7f3ec;
+  }
+  .hero--park .hero-subtitle,
+  .hero--yosemite .hero-subtitle {
+    display: block;
+    width: min(17.5rem, calc(100vw - 2.5rem));
+    max-width: min(17.5rem, calc(100vw - 2.5rem));
+    font-size: 0.95rem;
+    white-space: normal;
+  }
+  #hero.hero--park .hero-title,
+  #hero.hero--yosemite .hero-title {
+    color: #f7f3ec;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-tilt::after { display: none; }
+  .highlight-card .highlight-desc { opacity: 1; transform: none; }
 }
