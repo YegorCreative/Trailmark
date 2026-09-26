@@ -1122,8 +1122,9 @@ body.has-hero #hero::after {
 }
 
 .park-break {
-  height: 52vh;
-  min-height: 16rem;
+  height: 38vh;
+  min-height: 14rem;
+  max-height: 22rem;
   overflow: hidden;
 }
 
@@ -1184,9 +1185,31 @@ body.has-hero #hero::after {
 }
 
 .highlight-card {
+  position: relative;
   overflow: hidden;
-  min-height: 22rem;
-  padding: 0;
+  min-height: 16rem;
+  padding: 1.4rem;
+  color: #f7f3ec;
+}
+
+.highlight-card--solid::before { display: none; }
+
+.highlight-card--solid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.55) 0.6px, transparent 0.6px);
+  background-size: 4px 4px;
+}
+
+.highlight-card--solid > * { position: relative; z-index: 1; }
+
+@media (hover: hover) and (pointer: fine) {
+  .highlight-card--solid { transition: transform 0.25s ease; }
+  .highlight-card--solid:hover,
+  .highlight-card--solid:focus-within { transform: translateY(-6px); }
 }
 
 .highlight-photo {
@@ -1254,10 +1277,10 @@ body.has-hero #hero::after {
 
 .season-band {
   position: relative;
-  min-height: 28rem;
-  overflow: hidden;
-  color: #f7f3ec;
+  color: #1c1c1c;
 }
+
+.season-band-art { display: none; }
 
 .season-band-art {
   position: absolute;
@@ -1272,8 +1295,10 @@ body.has-hero #hero::after {
 .season-band-inner {
   position: relative;
   z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 3rem 1.25rem;
-  background: rgba(16, 22, 18, 0.55);
+  background: transparent;
 }
 
 .season-band h2,
@@ -1391,7 +1416,8 @@ body.has-hero #hero::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .highlight-photo { transform: none; }
+  .highlight-photo,
+  .highlight-card--solid { transform: none; }
 }
 
 .atlas-footer {
@@ -1675,6 +1701,12 @@ body.has-hero #hero::after {
 
 .park-extra {
   transform-origin: center center;
+  margin: 0;
+}
+
+.park-extra img {
+  width: min(100%, 24rem);
+  height: auto;
 }
 
 @media (max-width: 800px) {

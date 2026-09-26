@@ -133,19 +133,19 @@
       + '</section>';
   }
 
+  function paletteColor(index) {
+    const colors = (park.palette && park.palette.hero) || ['#243224', '#6a3418', '#1d3d4a', '#8a5a32', '#3a3028'];
+    return colors[index % colors.length];
+  }
+
   function renderHighlights() {
-    const poster = (parkCard && parkCard.art && parkCard.art.header) || park.hero.posterSrc;
-    const focuses = ['28% 42%', '72% 48%', '50% 78%', '40% 30%'];
     const cards = park.landscapeHighlights.items.map(function (item, index) {
       const number = String(index + 1).padStart(2, '0');
-      const focus = focuses[index % focuses.length];
-      return '<article class="highlight-card highlight-card--' + escapeHtml(item.modifier || 'plain') + '">'
-        + '<img class="highlight-photo" src="' + escapeHtml(assetUrl(poster)) + '" alt="" style="object-position:' + focus + '" />'
-        + '<div class="highlight-copy">'
+      return '<article class="highlight-card highlight-card--solid" style="background:' + paletteColor(index) + '">'
         + '<p class="highlight-index">' + number + '</p>'
         + '<h3 class="highlight-title">' + escapeHtml(item.title) + '</h3>'
         + '<p class="highlight-desc">' + escapeHtml(item.body) + '</p>'
-        + '</div></article>';
+        + '</article>';
     }).join('');
 
     return '<section id="park-highlights" class="park-section park-section--highlights" aria-labelledby="park-highlights-title">'
@@ -207,17 +207,16 @@
   }
 
   function renderSeasons() {
-    const poster = (parkCard && parkCard.art && parkCard.art.header) || park.hero.posterSrc;
     const cards = park.seasons.items.map(function (season) {
       return '<article class="season-col">'
         + '<h3>' + escapeHtml(season.name) + '</h3>'
         + '<p>' + escapeHtml(season.body) + '</p>'
         + '</article>';
     }).join('');
+    const tint = paletteColor(3);
 
-    return '<section id="park-seasons" class="season-band" aria-labelledby="park-seasons-title">'
-      + '<img class="season-band-art" src="' + escapeHtml(assetUrl(poster)) + '" alt="" />'
-      + '<div class="season-band-inner">'
+    return '<section id="park-seasons" class="season-band" aria-labelledby="park-seasons-title" style="background: color-mix(in srgb, ' + tint + ' 14%, #f6f1e8)">'
+      + '<div class="section-inner season-band-inner">'
       + '<h2 id="park-seasons-title">' + escapeHtml(park.seasons.title) + '</h2>'
       + '<div class="season-cols">' + cards + '</div>'
       + '</div>'
@@ -441,14 +440,12 @@
     renderHero(),
     renderChapters(),
     renderOverview(),
-    imageBreak('center bottom'),
     renderEmotionalThesis(),
+    imageBreak('82% 18%'),
     renderHighlights(),
     renderDiscoverySection('hiddenDiscoveries', 'park-hidden-discoveries', 'discovery-card'),
-    imageBreak('50% 40%'),
     renderKnowledgeSection('wildlife', 'park-wildlife'),
     renderKnowledgeSection('geology', 'park-geology'),
-    imageBreak('center 70%'),
     renderSeasons(),
     renderPhotography(),
     renderFieldNotes(),
