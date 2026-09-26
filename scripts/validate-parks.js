@@ -128,7 +128,21 @@ function main() {
     if (!title) errors.push(rel + ' missing title');
     else if (titles.has(title)) errors.push(rel + ' duplicate title with ' + titles.get(title));
     else titles.set(title, rel);
-    if (rel.indexOf('parks/') === 0 && title.length > 60) errors.push(rel + ' title is ' + title.length + ' chars');
+    if (rel.indexOf('parks/') === 0) {
+      const parkId = path.basename(rel, '.html');
+      const essay = content[parkId];
+      const hook = essay && essay.seo && String(essay.seo.titleHook || '').trim();
+      if (!hook) errors.push(parkId + ' missing titleHook');
+      else {
+        const name = essay.fullName;
+        const withHook = name + ' — ' + hook + ' | TrailMark';
+        const expected = withHook.length <= 60 ? withHook : name + ' | TrailMark';
+        if (title.length > 60) errors.push(parkId + ' title is ' + title.length + ' chars');
+        if (title !== expected) errors.push(parkId + ' title does not match its titleHook');
+        const cut = title.split(' — ')[1];
+        if (cut && cut.replace(/ \| TrailMark$/, '') !== hook) errors.push(parkId + ' title cuts off a word');
+      }
+    }
 
     const descMatch = html.match(/<meta name="description" content="([^"]*)"/);
     const description = descMatch ? decode(descMatch[1]).trim() : '';

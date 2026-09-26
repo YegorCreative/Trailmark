@@ -15,6 +15,7 @@ is reported and skipped, so duplicates are never chosen automatically.
 
 import json
 import re
+import sys
 from pathlib import Path
 
 from PIL import Image
@@ -119,6 +120,52 @@ def write_webp(image, dest):
     image.save(dest, "WEBP", quality=WEBP_QUALITY, method=4)
 
 
+def parse_focus(value):
+    if not value:
+        return 50.0, 58.0
+    parts = str(value).replace("%", "").split()
+    if len(parts) < 2:
+        return 50.0, 58.0
+    return float(parts[0]), float(parts[1])
+
+
+def cover_crop(image, size, focus):
+    target_w, target_h = size
+    pos_x, pos_y = parse_focus(focus)
+    scale = max(target_w / image.width, target_h / image.height)
+    drawn_w = image.width * scale
+    drawn_h = image.height * scale
+    offset_x = (drawn_w - target_w) * (pos_x / 100.0)
+    offset_y = (drawn_h - target_h) * (pos_y / 100.0)
+    box = (
+        offset_x / scale,
+        offset_y / scale,
+        (offset_x + target_w) / scale,
+        (offset_y + target_h) / scale,
+    )
+    return image.crop(box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+
+
+def load_focuses():
+    text = (ROOT / "js" / "park-content.js").read_text(encoding="utf-8")
+    focuses = {}
+    for match in re.finditer(r"\n  (?:'([^']+)'|([A-Za-z0-9-]+)): \{", text):
+        park_id = match.group(1) or match.group(2)
+        window = text[match.start():match.start() + 5000]
+        found = re.search(r"focus: '([^']+)'", window)
+        if found:
+            focuses[park_id] = found.group(1)
+    return focuses
+
+
+def write_og_jpg(image, dest, focus):
+    """1200×630 social crop. focus is a CSS object-position, such as '50% 62%'."""
+    frame = image.convert("RGB") if image.mode != "RGB" else image
+    cropped = cover_crop(frame, (1200, 630), focus)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    cropped.save(dest, "JPEG", quality=82, optimize=True)
+
+
 def main():
     parks = load_parks()
     by_key = {}
@@ -187,6 +234,7 @@ def main():
 
     manifest_parks = {}
     source_notes = {}
+    focuses = load_focuses()
 
     for park in parks:
         park_id = park["id"]
@@ -283,6 +331,8 @@ def main():
                             height = max(1, round(image.height * width / image.width))
                             variant = image.resize((width, height), Image.Resampling.LANCZOS)
                         write_webp(variant, out_dir / ("header-%d.webp" % width))
+                    focus = focuses.get(park_id) or park.get("heroFocus") or "50% 58%"
+                    write_og_jpg(image, out_dir / "og.jpg", focus)
                 if slot == "badge":
                     for width in (320, 160):
                         side = min(image.width, image.height, width)
@@ -334,5 +384,24 @@ def main():
         print("PROBLEM %s" % json.dumps(problem, sort_keys=True))
 
 
+def write_existing_ogs():
+    """Write og.jpg from the headers already in assets/park-art."""
+    parks = load_parks()
+    focuses = load_focuses()
+    count = 0
+    for park in parks:
+        header = OUTPUT_ROOT / park["id"] / "header.webp"
+        if not header.is_file():
+            continue
+        focus = focuses.get(park["id"]) or park.get("heroFocus") or "50% 58%"
+        with Image.open(header) as image:
+            write_og_jpg(image, header.with_name("og.jpg"), focus)
+        count += 1
+    print("og.jpg %s" % count)
+
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "--og-only":
+        write_existing_ogs()
+    else:
+        main()

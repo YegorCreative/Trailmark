@@ -29,6 +29,7 @@ const PARK_PAGE_CONTENT = {
       caption: 'Peregrine falcon',
     },
     seo: {
+      titleHook: 'Granite and Waterfalls',
       addressRegion: 'CA',
       description: 'Explore Yosemite National Park through TrailMark\'s illustrated archive: granite landmarks, hidden discoveries, wildlife, geology, seasons, photography guidance, stewardship, and badge story.',
     },
@@ -205,6 +206,7 @@ const PARK_PAGE_CONTENT = {
       caption: 'Gray wolf',
     },
     seo: {
+      titleHook: 'Geysers and Wildlife',
       addressRegion: 'WY',
       description: 'Explore Yellowstone National Park through TrailMark\'s illustrated archive: thermal basins, wildlife valleys, geology, seasons, photography guidance, stewardship, and badge story.',
     },
@@ -381,6 +383,7 @@ const PARK_PAGE_CONTENT = {
       caption: 'Alligator and heron',
     },
     seo: {
+      titleHook: 'River of Grass',
       addressRegion: 'FL',
       description: 'Explore Everglades National Park through TrailMark\'s illustrated archive: wetlands, wildlife, ecology, seasons, paddling, photography guidance, stewardship, and badge story.',
     },
@@ -554,6 +557,7 @@ const PARK_PAGE_CONTENT = {
       caption: 'California condor',
     },
     seo: {
+      titleHook: 'Colorado River',
       addressRegion: 'AZ',
       description: 'TrailMark archive page for Grand Canyon National Park: layered stone, the Colorado River, condors, and rim-to-river scale.',
     },
@@ -706,6 +710,7 @@ const PARK_PAGE_CONTENT = {
       caption: 'Carriage road country',
     },
     seo: {
+      titleHook: 'Granite and Tide',
       addressRegion: 'ME',
       description: 'TrailMark archive page for Acadia National Park: Maine granite, tide, spruce forest, and carriage roads.',
     },
@@ -856,7 +861,8 @@ const PARK_PAGE_CONTENT = {
     },
     palette: { hero: ['#F6D7A8', '#E07040', '#C44828', '#8A5030', '#2E4030'] },
     extraIllustration: { alt: 'Desert bighorn in Zion, the extra mark for the park.', caption: 'Desert bighorn' },
-    seo: { addressRegion: 'UT', description: 'TrailMark archive page for Zion National Park: Navajo sandstone, the Virgin River, and hanging gardens in southern Utah.' },
+    seo: {
+      titleHook: 'Canyon Walls and the Narrows', addressRegion: 'UT', description: 'TrailMark archive page for Zion National Park: Navajo sandstone, the Virgin River, and hanging gardens in southern Utah.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A canyon you enter from the bottom',
@@ -1002,7 +1008,8 @@ const PARK_PAGE_CONTENT = {
     },
     palette: { hero: ['#E4F0E6', '#7AAA78', '#2F6A58', '#1E4038', '#16302C'] },
     extraIllustration: { alt: 'Roosevelt elk in Olympic forest, the extra mark for the park.', caption: 'Roosevelt elk' },
-    seo: { addressRegion: 'WA', description: 'TrailMark archive page for Olympic National Park: temperate rainforest, Pacific coast, and glaciated mountains on the Olympic Peninsula.' },
+    seo: {
+      titleHook: 'Rainforest and Coast', addressRegion: 'WA', description: 'TrailMark archive page for Olympic National Park: temperate rainforest, Pacific coast, and glaciated mountains on the Olympic Peninsula.' },
     overview: {
       kicker: 'Park Overview',
       title: 'Three parks that refuse to be separated',
@@ -1148,7 +1155,8 @@ const PARK_PAGE_CONTENT = {
     },
     palette: { hero: ['#E7F2F4', '#7EB8C8', '#D08A62', '#4E6A58', '#243038'] },
     extraIllustration: { alt: 'A red bus on the Going-to-the-Sun corridor, the extra mark for Glacier.', caption: 'Red bus country' },
-    seo: { addressRegion: 'MT', description: 'TrailMark archive page for Glacier National Park: the northern Rockies, alpine lakes, and a living continental divide in Montana.' },
+    seo: {
+      titleHook: 'Alpine Lakes and Peaks', addressRegion: 'MT', description: 'TrailMark archive page for Glacier National Park: the northern Rockies, alpine lakes, and a living continental divide in Montana.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A divide you can stand on, and ice that is leaving',
@@ -1294,7 +1302,8 @@ const PARK_PAGE_CONTENT = {
     },
     palette: { hero: ['#F3C9A0', '#E09A62', '#7A8A9A', '#3E5870', '#243044'] },
     extraIllustration: { alt: 'A black bear in the Smokies, the extra mark for the park.', caption: 'Black bear' },
-    seo: { addressRegion: 'TN', description: 'TrailMark archive page for Great Smoky Mountains National Park: Appalachian ridges, cove forest, and mist along the Tennessee and North Carolina line.' },
+    seo: {
+      titleHook: 'Appalachian Ridges', addressRegion: 'TN', description: 'TrailMark archive page for Great Smoky Mountains National Park: Appalachian ridges, cove forest, and mist along the Tennessee and North Carolina line.' },
     overview: {
       kicker: 'Park Overview',
       title: 'An eastern park built from bought-back land',
@@ -1432,7 +1441,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'Utah | Paunsaugunt Plateau', title: 'Bryce Canyon', subtitle: 'A forest rim breaks into a city of hoodoos, pink and orange stone standing in rows below the plateau.', posterSrc: '../assets/park-art/bryce-canyon/header.webp', posterAlt: '', focus: '42% 58%' },
     palette: { hero: ['#F6E2B8', '#E8894A', '#C45532', '#8A4030', '#2C3A48'] },
     extraIllustration: { alt: 'A prairie dog at the rim of Bryce Canyon, the extra mark for the park.', caption: 'Rim wildlife' },
-    seo: { addressRegion: 'UT', description: 'TrailMark archive page for Bryce Canyon National Park: hoodoos of the Bryce Amphitheater on the Paunsaugunt Plateau.' },
+    seo: {
+      titleHook: 'Limestone Hoodoos', addressRegion: 'UT', description: 'TrailMark archive page for Bryce Canyon National Park: hoodoos of the Bryce Amphitheater on the Paunsaugunt Plateau.' },
     overview: {
       kicker: 'Park Overview',
       title: 'Not a canyon cut by one river, but an amphitheater of fins',
@@ -1570,7 +1580,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'Utah | High desert', title: 'Arches', subtitle: 'A sandstone span holds a piece of sky, and the desert around it is full of fins that have not fallen yet.', posterSrc: '../assets/park-art/arches/header.webp', posterAlt: '', focus: '68% 42%' },
     palette: { hero: ['#F6C48A', '#E07040', '#C44828', '#8A4038', '#3A3428'] },
     extraIllustration: { alt: 'Balanced rock in Arches, the extra mark for the park.', caption: 'Balanced rock' },
-    seo: { addressRegion: 'UT', description: 'TrailMark archive page for Arches National Park: sandstone fins, natural arches, and high-desert stone near Moab.' },
+    seo: {
+      titleHook: 'Sandstone Arches', addressRegion: 'UT', description: 'TrailMark archive page for Arches National Park: sandstone fins, natural arches, and high-desert stone near Moab.' },
     overview: {
       kicker: 'Park Overview',
       title: 'The desert with the greatest density of natural arches',
@@ -1708,7 +1719,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'Utah | Green and Colorado', title: 'Canyonlands', subtitle: 'Two rivers cut a maze of mesas, and from the rim the scale arrives before any trail does.', posterSrc: '../assets/park-art/canyonlands/header.webp', posterAlt: '', focus: '40% 55%' },
     palette: { hero: ['#F3D7A4', '#E08A48', '#C45A32', '#8A4838', '#3A4038'] },
     extraIllustration: { alt: 'Bighorn sheep on a Canyonlands rim, the extra mark for the park.', caption: 'Desert bighorn' },
-    seo: { addressRegion: 'UT', description: 'TrailMark archive page for Canyonlands National Park: Island in the Sky, the Needles, and the meeting of the Green and Colorado rivers.' },
+    seo: {
+      titleHook: 'Rivers and Mesas', addressRegion: 'UT', description: 'TrailMark archive page for Canyonlands National Park: Island in the Sky, the Needles, and the meeting of the Green and Colorado rivers.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A park split by rivers into districts you do not drive between',
@@ -1846,7 +1858,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'Utah | Waterpocket Fold', title: 'Capitol Reef', subtitle: 'A wrinkle in the plateau makes a long cliff of domes and reefs, with orchards tucked in the only easy gap.', posterSrc: '../assets/park-art/capitol-reef/header.webp', posterAlt: '', focus: '72% 40%' },
     palette: { hero: ['#F4E2C0', '#E09058', '#C45838', '#8A5040', '#3A4030'] },
     extraIllustration: { alt: 'The Fruita orchard and cliffs of Capitol Reef, the extra mark for the park.', caption: 'Fruita orchards' },
-    seo: { addressRegion: 'UT', description: 'TrailMark archive page for Capitol Reef National Park: the Waterpocket Fold, sandstone domes, and the Fruita orchards in Utah.' },
+    seo: {
+      titleHook: 'Waterpocket Fold', addressRegion: 'UT', description: 'TrailMark archive page for Capitol Reef National Park: the Waterpocket Fold, sandstone domes, and the Fruita orchards in Utah.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A hundred-mile wrinkle, visited at one gap',
@@ -1984,7 +1997,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'California | Nevada', title: 'Death Valley', subtitle: 'Salt polygons in the foreground, dunes, and a snow-capable mountain wall behind the lowest basin in North America.', posterSrc: '../assets/park-art/death-valley/header.webp', posterAlt: '', focus: '62% 42%' },
     palette: { hero: ['#F6C98A', '#E09060', '#C46858', '#8A5878', '#3A4868'] },
     extraIllustration: { alt: 'A desert pupfish, the extra mark for Death Valley.', caption: 'Pupfish' },
-    seo: { addressRegion: 'CA', description: 'TrailMark archive page for Death Valley National Park: Badwater Basin, dunes, and the Panamint Range above the lowest point in North America.' },
+    seo: {
+      titleHook: 'Badwater Basin', addressRegion: 'CA', description: 'TrailMark archive page for Death Valley National Park: Badwater Basin, dunes, and the Panamint Range above the lowest point in North America.' },
     overview: {
       kicker: 'Park Overview',
       title: 'The lowest ground in North America, under a wall of mountains',
@@ -2122,7 +2136,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'California | Two deserts', title: 'Joshua Tree', subtitle: 'Yucca branches and piled granite sit where the Mojave gives way to the lower Colorado Desert.', posterSrc: '../assets/park-art/joshua-tree/header.webp', posterAlt: '', focus: '74% 46%' },
     palette: { hero: ['#F6B070', '#E07040', '#C45030', '#8A5048', '#4A3828'] },
     extraIllustration: { alt: 'A desert animal among Joshua trees, the extra mark for the park.', caption: 'Desert life' },
-    seo: { addressRegion: 'CA', description: 'TrailMark archive page for Joshua Tree National Park: Mojave yuccas, monzogranite boulders, and the Colorado Desert in Southern California.' },
+    seo: {
+      titleHook: 'Yuccas and Boulders', addressRegion: 'CA', description: 'TrailMark archive page for Joshua Tree National Park: Mojave yuccas, monzogranite boulders, and the Colorado Desert in Southern California.' },
     overview: {
       kicker: 'Park Overview',
       title: 'Two deserts sharing one pile of stone',
@@ -2260,7 +2275,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'Arizona | Two districts', title: 'Saguaro', subtitle: 'A cactus forest stands on both sides of Tucson, with the Rincons rising into oak and pine above the desert floor.', posterSrc: '../assets/park-art/saguaro/header.webp', posterAlt: '', focus: '64% 50%' },
     palette: { hero: ['#E8A05A', '#C46A32', '#2F6B45', '#8C4A62', '#3A2A22'] },
     extraIllustration: { alt: 'A woodpecker clings to a saguaro beside a round nest hole.', caption: 'Cactus and bird' },
-    seo: { addressRegion: 'AZ', description: 'TrailMark archive page for Saguaro National Park: the Sonoran Desert on both sides of Tucson, from cactus forest to the Rincon Mountains.' },
+    seo: {
+      titleHook: 'Sonoran Cactus Forest', addressRegion: 'AZ', description: 'TrailMark archive page for Saguaro National Park: the Sonoran Desert on both sides of Tucson, from cactus forest to the Rincon Mountains.' },
     overview: {
       kicker: 'Park Overview',
       title: 'One cactus, two mountain districts',
@@ -2398,7 +2414,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'Arizona | Painted Desert', title: 'Petrified Forest', subtitle: 'Colorful stone logs lie in shortgrass prairie, inside a badland the park says is entirely within the Painted Desert.', posterSrc: '../assets/park-art/petrified-forest/header.webp', posterAlt: '', focus: '58% 68%' },
     palette: { hero: ['#E8A060', '#C45A48', '#7A6A9A', '#D8C4A0', '#3E342C'] },
     extraIllustration: { alt: 'A pronghorn standing in grass, the extra mark for the park.', caption: 'Pronghorn' },
-    seo: { addressRegion: 'AZ', description: 'TrailMark archive page for Petrified Forest National Park: petrified wood, Painted Desert badlands, and Ancestral Puebloan sites in Arizona.' },
+    seo: {
+      titleHook: 'Petrified Wood', addressRegion: 'AZ', description: 'TrailMark archive page for Petrified Forest National Park: petrified wood, Painted Desert badlands, and Ancestral Puebloan sites in Arizona.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A monument for the wood, a park for everything else around it',
@@ -2536,7 +2553,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'Colorado | Sangre de Cristo', title: 'Great Sand Dunes', subtitle: 'The tallest dunes in North America sit against alpine peaks, with Medano Creek recycling the sand.', posterSrc: '../assets/park-art/great-sand-dunes/header.webp', posterAlt: '', focus: '52% 48%' },
     palette: { hero: ['#E8B25A', '#C4843A', '#3E6A8A', '#D8C8A0', '#2C3A32'] },
     extraIllustration: { alt: 'A small long-tailed rodent leaps over a low dune.', caption: 'Dune life' },
-    seo: { addressRegion: 'CO', description: 'TrailMark archive page for Great Sand Dunes National Park and Preserve: North America\'s tallest dunes, Medano Creek, and the Sangre de Cristo.' },
+    seo: {
+      titleHook: 'Tallest Dunes', addressRegion: 'CO', description: 'TrailMark archive page for Great Sand Dunes National Park and Preserve: North America\'s tallest dunes, Medano Creek, and the Sangre de Cristo.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A dunefield that became a whole water system',
@@ -2674,7 +2692,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'New Mexico | Tularosa Basin', title: 'White Sands', subtitle: 'The largest gypsum dunefield in the world fills the basin. The park holds more than half of it.', posterSrc: '../assets/park-art/white-sands/header.webp', posterAlt: '', focus: '58% 62%' },
     palette: { hero: ['#F4C9A0', '#E8A070', '#F7F4EE', '#8A6A8A', '#3A342C'] },
     extraIllustration: { alt: 'A pale lizard on white sand, the extra drawing for the park.', caption: 'Pale lizard' },
-    seo: { addressRegion: 'NM', description: 'TrailMark archive page for White Sands National Park: the gypsum dunefield of the Tularosa Basin, established as a national park in 2019.' },
+    seo: {
+      titleHook: 'Gypsum Dunefield', addressRegion: 'NM', description: 'TrailMark archive page for White Sands National Park: the gypsum dunefield of the Tularosa Basin, established as a national park in 2019.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A monument for the white sand, a park for what else was found in it',
@@ -2812,7 +2831,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'New Mexico | Guadalupe reef', title: 'Carlsbad Caverns', subtitle: 'One of more than 300 caves in a fossil reef, opened to early visitors in a guano bucket.', posterSrc: '../assets/park-art/carlsbad-caverns/header.webp', posterAlt: '', focus: '55% 58%' },
     palette: { hero: ['#1C2430', '#C4843A', '#E8D2A8', '#3E3428', '#8A5A32'] },
     extraIllustration: { alt: 'Bats stream from a cave mouth in desert rock, the extra drawing for the park.', caption: 'Cave mouth' },
-    seo: { addressRegion: 'NM', description: 'TrailMark archive page for Carlsbad Caverns National Park: a limestone cave in a Permian fossil reef in southeastern New Mexico.' },
+    seo: {
+      titleHook: 'Cave Rooms and Bat Flights', addressRegion: 'NM', description: 'TrailMark archive page for Carlsbad Caverns National Park: a limestone cave in a Permian fossil reef in southeastern New Mexico.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A cave monument that Congress turned into a park',
@@ -2950,7 +2970,8 @@ const PARK_PAGE_CONTENT = {
     hero: { kicker: 'TrailMark Archive Edition', eyebrow: 'Texas | Chihuahuan Desert', title: 'Guadalupe Mountains', subtitle: 'El Capitan stands over the desert, the exposed face of a reef built in a Permian sea.', posterSrc: '../assets/park-art/guadalupe-mountains/header.webp', posterAlt: '', focus: '68% 46%' },
     palette: { hero: ['#E6C49A', '#C47848', '#5C6A48', '#8A6848', '#2E3430'] },
     extraIllustration: { alt: 'A ring-tailed animal on a rock ledge at night, the extra drawing for the park.', caption: 'Night on the rock' },
-    seo: { addressRegion: 'TX', description: 'TrailMark archive page for Guadalupe Mountains National Park: a Permian fossil reef in West Texas, a national park since 1972.' },
+    seo: {
+      titleHook: 'El Capitan', addressRegion: 'TX', description: 'TrailMark archive page for Guadalupe Mountains National Park: a Permian fossil reef in West Texas, a national park since 1972.' },
     overview: {
       kicker: 'Park Overview',
       title: 'A reef in the daylight, and a park since 1972',

@@ -72,17 +72,10 @@ function metaDescription(essay) {
 function pageTitle(essay) {
   const name = essay.fullName || essay.name;
   const suffix = ' | TrailMark';
-  const sep = ' — ';
-  const hookSource = (essay.hero && essay.hero.subtitle) || (essay.overview && essay.overview.lead) || '';
-  let budget = 60 - name.length - sep.length - suffix.length;
-  let hook = '';
-  if (budget >= 8) {
-    hook = clip(hookSource, budget);
-    if (hook.length < 8) hook = clip(hookSource.replace(/[,.].*$/, ''), budget);
-  }
-  let title = hook ? name + sep + hook + suffix : name + suffix;
-  if (title.length > 60) title = clip(name + suffix, 60);
-  return title;
+  const hook = essay.seo && String(essay.seo.titleHook || '').trim();
+  const withHook = name + ' — ' + hook + suffix;
+  if (hook && withHook.length <= 60) return withHook;
+  return name + suffix;
 }
 
 function gitDate(relPath) {
@@ -109,6 +102,7 @@ function pageHtml(park, essay, articleHtml, modified) {
   const title = pageTitle(essay);
   const url = SITE + '/parks/' + park.id + '.html';
   const image = SITE + '/assets/park-art/' + park.id + '/header-1280.webp';
+  const social = SITE + '/assets/park-art/' + park.id + '/og.jpg';
   const alt = (essay.hero && essay.hero.posterAlt) || (essay.fullName + ' illustrated header');
   const graph = {
     '@context': 'https://schema.org',
@@ -168,14 +162,15 @@ function pageHtml(park, essay, articleHtml, modified) {
     + '    <meta property="og:title" content="' + escapeHtml(title) + '" />\n'
     + '    <meta property="og:description" content="' + escapeHtml(desc) + '" />\n'
     + '    <meta property="og:url" content="' + url + '" />\n'
-    + '    <meta property="og:image" content="' + image + '" />\n'
-    + '    <meta property="og:image:width" content="1280" />\n'
-    + '    <meta property="og:image:height" content="720" />\n'
+    + '    <meta property="og:image" content="' + social + '" />\n'
+    + '    <meta property="og:image:type" content="image/jpeg" />\n'
+    + '    <meta property="og:image:width" content="1200" />\n'
+    + '    <meta property="og:image:height" content="630" />\n'
     + '    <meta property="og:image:alt" content="' + escapeHtml(alt) + '" />\n'
     + '    <meta name="twitter:card" content="summary_large_image" />\n'
     + '    <meta name="twitter:title" content="' + escapeHtml(title) + '" />\n'
     + '    <meta name="twitter:description" content="' + escapeHtml(desc) + '" />\n'
-    + '    <meta name="twitter:image" content="' + image + '" />\n'
+    + '    <meta name="twitter:image" content="' + social + '" />\n'
     + '    <meta name="twitter:image:alt" content="' + escapeHtml(alt) + '" />\n'
     + '    <script type="application/ld+json">\n'
     + jsonLd(graph) + '\n'
