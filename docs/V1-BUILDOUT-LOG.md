@@ -60,6 +60,12 @@ No park in this batch is marked needs-fact-review. Numbers that were not on the 
 
 Next unpublished parks are the other 42. A sensible following batch is Big Bend, Mesa Verde, Black Canyon of the Gunnison, Rocky Mountain, Great Basin, and Grand Teton.
 
+## SEO metadata
+
+- `scripts/build-park-pages.js` writes each park title, description, canonical, Open Graph, Twitter card, and JSON-LD, and pre-renders the article into `#park-page`. `js/park-render.js` is shared with the browser. `js/park-page.js` only binds chapters, tilt, and reveals when the article is already in the page.
+- The same script rewrites the parks index ItemList and `sitemap.xml`. Unpublished parks stay out of the sitemap. `robots.txt`, `404.html`, and favicon files live at the site root.
+- `scripts/validate-parks.js` checks titles, descriptions, canonicals, image files, JSON-LD, sitemap membership, alt text, and a single h1.
+
 ## Homepage fixes
 
 - Replaced the homepage hero art. `assets/svg/parks.svg` stays in the repo and is no longer used. The hero crossfades six published headers (Yosemite, Yellowstone, Grand Canyon, Olympic, Zion, Everglades), about 6 seconds each with a 1.5 second fade, inside the existing parallax layer. Only Yosemite loads eagerly. `prefers-reduced-motion` keeps that one still image.

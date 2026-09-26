@@ -106,11 +106,88 @@ function main() {
     }
   });
 
+  const SITE = 'https://yegorcreative.github.io/Trailmark/';
+  const pages = ['index.html', 'parks.html', 'about.html', 'faq.html', 'contact.html', '404.html']
+    .concat(parks.filter(function (park) { return park.pageUrl; }).map(function (park) { return park.pageUrl; }));
+  const titles = new Map();
+  const descriptions = new Map();
+  let sitemap = '';
+  const sitemapPath = path.join(root, 'sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) errors.push('sitemap.xml is missing');
+  else sitemap = fs.readFileSync(sitemapPath, 'utf8');
+
+  pages.forEach(function (rel) {
+    const file = path.join(root, rel);
+    if (!fs.existsSync(file)) {
+      errors.push(rel + ' is missing');
+      return;
+    }
+    const html = fs.readFileSync(file, 'utf8');
+    const titleMatch = html.match(/<title>([^<]*)<\/title>/);
+    const title = titleMatch ? decode(titleMatch[1]).trim() : '';
+    if (!title) errors.push(rel + ' missing title');
+    else if (titles.has(title)) errors.push(rel + ' duplicate title with ' + titles.get(title));
+    else titles.set(title, rel);
+    if (rel.indexOf('parks/') === 0 && title.length > 60) errors.push(rel + ' title is ' + title.length + ' chars');
+
+    const descMatch = html.match(/<meta name="description" content="([^"]*)"/);
+    const description = descMatch ? decode(descMatch[1]).trim() : '';
+    if (!description) errors.push(rel + ' missing description');
+    else if (description.length < 70 || description.length > 160) errors.push(rel + ' description is ' + description.length + ' chars');
+    else if (descriptions.has(description)) errors.push(rel + ' duplicate description with ' + descriptions.get(description));
+    else descriptions.set(description, rel);
+
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
+    if (!canonical) errors.push(rel + ' missing canonical');
+
+    const image = html.match(/<meta property="og:image" content="([^"]+)"/);
+    if (!image) errors.push(rel + ' missing og:image');
+    else {
+      const url = decode(image[1]);
+      let local = '';
+      if (url.indexOf(SITE) === 0) local = decodeURIComponent(url.slice(SITE.length));
+      else if (url.indexOf('../') === 0) local = url.slice(3);
+      else local = url.replace(/^\//, '');
+      if (!local || !fs.existsSync(path.join(root, local))) errors.push(rel + ' og:image does not resolve: ' + url);
+    }
+
+    const blocks = html.match(/<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g) || [];
+    if (!blocks.length) errors.push(rel + ' missing JSON-LD');
+    blocks.forEach(function (block) {
+      const raw = block.replace(/^<script type="application\/ld\+json"[^>]*>/, '').replace(/<\/script>$/, '').trim();
+      try { JSON.parse(raw); }
+      catch (error) { errors.push(rel + ' invalid JSON-LD: ' + error.message); }
+    });
+
+    const h1s = html.match(/<h1\b/g) || [];
+    if (h1s.length !== 1) errors.push(rel + ' has ' + h1s.length + ' h1 elements');
+
+    const images = html.match(/<img\b[^>]*>/g) || [];
+    images.forEach(function (tag) {
+      if (!/\salt=/.test(tag)) errors.push(rel + ' img missing alt: ' + tag.slice(0, 80));
+    });
+
+    if (rel !== '404.html') {
+      const loc = rel === 'index.html' ? SITE : SITE + rel;
+      if (sitemap.indexOf('<loc>' + loc + '</loc>') === -1) errors.push(rel + ' missing from sitemap.xml');
+    }
+  });
+
   if (errors.length) {
     console.error(errors.join('\n'));
     process.exit(1);
   }
   console.log('validate-parks: ok (' + Object.keys(content).length + ' essays)');
+}
+
+function decode(value) {
+  return String(value)
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&mdash;/g, '—');
 }
 
 main();
