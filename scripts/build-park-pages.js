@@ -111,7 +111,7 @@ function pageHtml(park, essay) {
     + '      <div class="header-inner">\n'
     + '        <div class="logo">\n'
     + '          <a href="../index.html" class="logo-link">\n'
-    + '            <img class="logo-mark" src="../assets/img/TrailMarkLogo-3.png" alt="" aria-hidden="true" width="320" height="80" />\n'
+    + '            <img class="logo-mark" src="../assets/img/logo-mark.webp" alt="" aria-hidden="true" width="320" height="80" />\n'
     + '            <span class="logo-text">TrailMark</span>\n'
     + '          </a>\n'
     + '        </div>\n'

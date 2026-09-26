@@ -88,7 +88,7 @@
     return '<section id="hero" class="hero--park' + themeClass + '" style="' + heroVars() + '" aria-labelledby="park-hero-title">'
       + crumb
       + '<div class="park-poster" data-hero-parallax' + posterHidden + '>'
-      + '<img src="' + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + '" srcset="' + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + ' 1280w, ' + escapeHtml(assetUrl(poster)) + ' 1672w" sizes="100vw" alt="' + escapeHtml(park.hero.posterAlt || '') + '" class="park-poster-art" width="1672" height="941" decoding="async" fetchpriority="high" style="view-transition-name: park-' + escapeHtml(parkId) + '" />'
+      + '<img src="' + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + '" srcset="' + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + ' 1280w, ' + escapeHtml(assetUrl(poster)) + ' 1672w" sizes="(max-width: 1500px) 1200px, 100vw" alt="' + escapeHtml(park.hero.posterAlt || '') + '" class="park-poster-art" width="1672" height="941" decoding="async" fetchpriority="high" style="view-transition-name: park-' + escapeHtml(parkId) + '" />'
       + '</div>'
       + '<div class="hero-inner" data-parallax="fade">'
       + '<p class="hero-kicker">' + escapeHtml(park.hero.kicker) + '</p>'

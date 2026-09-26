@@ -52,14 +52,41 @@
     return String(park.state || '').split(',').map(function (part) { return part.trim(); }).filter(Boolean);
   }
 
-  function cardHtml(park, compact) {
+  function observeDeferred(root) {
+    var images = (root || document).querySelectorAll('img[data-src]');
+    if (!images.length) return;
+    function start() {
+      if (!('IntersectionObserver' in window)) {
+        images.forEach(function (img) { img.src = img.getAttribute('data-src'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var img = entry.target;
+          img.src = img.getAttribute('data-src');
+          observer.unobserve(img);
+        });
+      }, { rootMargin: '120px' });
+      images.forEach(function (img) { observer.observe(img); });
+    }
+    window.addEventListener('scroll', start, { passive: true, once: true });
+  }
+
+  function cardHtml(park, compact, defer) {
     var open = isOpen(park);
     var dir = base() + 'assets/park-art/' + park.id + '/';
     var name = esc(park.name);
     var meta = esc(park.state) + ' · ' + esc(park.region);
     var flag = open ? '' : '<span class="atlas-card-flag">Coming soon</span>';
-    var inner = '<img class="atlas-card-photo" src="' + esc(dir + 'header-640.webp') + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
-      + '<img class="atlas-card-badge" src="' + esc(dir + 'badge-160.webp') + '" srcset="' + esc(dir + 'badge-160.webp') + ' 160w, ' + esc(dir + 'badge-320.webp') + ' 320w" sizes="72px" alt="' + name + ' badge" width="160" height="160" loading="lazy" decoding="async" />'
+    var photoAttr = defer
+      ? ' data-src="' + esc(dir + 'header-640.webp') + '"'
+      : ' src="' + esc(dir + 'header-640.webp') + '"';
+    var badgeAttr = defer
+      ? ' data-src="' + esc(dir + 'badge-160.webp') + '"'
+      : ' src="' + esc(dir + 'badge-160.webp') + '" srcset="' + esc(dir + 'badge-160.webp') + ' 160w, ' + esc(dir + 'badge-320.webp') + ' 320w"';
+    var inner = '<img class="atlas-card-photo" ' + photoAttr + ' alt="" width="640" height="360" loading="lazy" decoding="async" />'
+      + '<img class="atlas-card-badge" ' + badgeAttr + ' sizes="72px" alt="' + name + ' badge" width="160" height="160" loading="lazy" decoding="async" />'
       + '<span class="atlas-card-shade" aria-hidden="true"></span>'
       + '<span class="atlas-card-copy"><span class="atlas-card-name">' + name + '</span>'
       + '<span class="atlas-card-meta">' + meta + '</span>' + flag + '</span>';
@@ -196,7 +223,7 @@
     var open = PARKS.filter(isOpen).slice().sort(function (a, b) {
       return a.name.localeCompare(b.name);
     });
-    strip.innerHTML = open.map(function (park) { return cardHtml(park, true); }).join('');
+    strip.innerHTML = open.map(function (park, index) { return cardHtml(park, true, index > 2); }).join('');
     var scroller = strip;
     var prev = document.querySelector('[data-strip="prev"]');
     var next = document.querySelector('[data-strip="next"]');
@@ -255,7 +282,7 @@
         var rep = PARKS.find(function (park) { return park.id === reps[pair[0]]; }) || PARKS[0];
         var openN = PARKS.filter(function (park) { return park.landscape === pair[0] && isOpen(park); }).length;
         return '<a class="landscape-tile" href="' + esc(base() + 'parks.html?landscape=' + encodeURIComponent(pair[0])) + '">'
-          + '<img src="' + esc(base() + 'assets/park-art/' + rep.id + '/header-640.webp') + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
+          + '<img data-src="' + esc(base() + 'assets/park-art/' + rep.id + '/header-640.webp') + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
           + '<span><strong>' + esc(pair[1]) + '</strong><small>' + (openN ? openN + ' open' : 'Coming soon') + '</small></span></a>';
       }).join('');
     }
@@ -272,7 +299,7 @@
       }
       var picks = pool.slice(0, 3);
       if (bandArt && picks[0]) {
-        bandArt.src = base() + 'assets/park-art/' + picks[0].id + '/header-1280.webp';
+        bandArt.setAttribute('data-src', base() + 'assets/park-art/' + picks[0].id + '/header-1280.webp');
         bandArt.setAttribute('loading', 'lazy');
         bandArt.setAttribute('decoding', 'async');
       }
@@ -369,8 +396,9 @@
         return a.name.localeCompare(b.name);
       });
       grid.innerHTML = list.length
-        ? list.map(function (park) { return cardHtml(park, false); }).join('')
+        ? list.map(function (park, index) { return cardHtml(park, false, index > 5); }).join('')
         : '<p class="search-empty">No parks match those filters.</p>';
+
       if (shown) {
         shown.textContent = list.length === PARKS.length ? '' : 'Showing ' + list.length;
       }
@@ -477,7 +505,7 @@
       var href = open ? ' href="' + esc(pageHref(park)) + '"' : '';
       var badgeDir = base() + 'assets/park-art/' + park.id + '/';
       return '<' + tag + ' class="badge-wall-item' + (open ? '' : ' is-soon') + '"' + href + '>'
-        + '<img src="' + esc(badgeDir + 'badge-160.webp') + '" srcset="' + esc(badgeDir + 'badge-160.webp') + ' 160w, ' + esc(badgeDir + 'badge-320.webp') + ' 320w" sizes="96px" alt="' + esc(park.name) + ' badge" width="160" height="160" loading="lazy" decoding="async" />'
+        + '<img data-src="' + esc(badgeDir + 'badge-160.webp') + '" alt="' + esc(park.name) + ' badge" width="160" height="160" loading="lazy" decoding="async" />'
         + '<span class="badge-wall-name">' + esc(park.name) + '</span>'
         + '</' + tag + '>';
     }).join('');
@@ -541,6 +569,7 @@
   initIndex();
   initBadgeWall();
   initFooter();
+  observeDeferred(document);
   if (location.hash && location.hash !== '#menu' && location.hash !== '#filters') {
     var hashed = document.querySelector(location.hash);
     if (hashed) window.scrollTo(0, hashed.getBoundingClientRect().top + window.scrollY - 72);
