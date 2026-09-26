@@ -182,6 +182,12 @@
       overlay.hidden = true;
       header.insertAdjacentElement('afterend', overlay);
     }
+    var soonParks = PARKS.filter(function (park) { return !isOpen(park); }).sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    });
+    var soonList = soonParks.map(function (park) {
+      return '<li>' + esc(park.name) + '</li>';
+    }).join('');
     overlay.innerHTML = '<div class="nav-overlay-panel" role="dialog" aria-modal="true" aria-label="Menu">'
       + '<div class="nav-overlay-bar"><a class="nav-overlay-brand" href="' + esc(root + 'index.html') + '">TrailMark</a>'
       + '<button type="button" class="nav-overlay-close">Close</button></div>'
@@ -191,9 +197,22 @@
       + '<a href="' + esc(root + 'faq.html') + '">FAQ</a>'
       + '<a href="' + esc(root + 'contact.html') + '">Contact</a>'
       + '</nav>'
+      + '<h2 class="nav-overlay-heading">Open parks</h2>'
       + '<p class="nav-overlay-count">' + openCount + ' of 63 open</p>'
-      + '<div class="nav-overlay-regions">' + regionColumns(false) + '</div>'
+      + '<div class="nav-overlay-regions">' + regionColumns(true) + '</div>'
+      + '<button type="button" class="soon-toggle" aria-expanded="false" aria-controls="soon-list">Coming soon (' + soonParks.length + ')</button>'
+      + '<ul id="soon-list" class="soon-list" hidden>' + soonList + '</ul>'
       + '</div>';
+
+    var soonToggle = overlay.querySelector('.soon-toggle');
+    var soonListEl = overlay.querySelector('.soon-list');
+    if (soonToggle && soonListEl) {
+      soonToggle.addEventListener('click', function () {
+        var open = soonListEl.hidden;
+        soonListEl.hidden = !open;
+        soonToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
 
     var toggleBtn = header.querySelector('.nav-toggle');
     var closeBtn = overlay.querySelector('.nav-overlay-close');

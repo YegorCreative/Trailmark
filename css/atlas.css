@@ -311,6 +311,40 @@ body.nav-lock {
   color: #6b6b6b;
 }
 
+.nav-overlay-heading {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.soon-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 1rem;
+  padding: 0.4rem 0;
+  border: 0;
+  border-top: 1px solid rgba(28, 28, 28, 0.15);
+  background: transparent;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.soon-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 1rem;
+  columns: 2;
+  color: #5c564c;
+}
+
+.soon-list li {
+  min-height: 2rem;
+  break-inside: avoid;
+}
+
 .nav-overlay-regions {
   display: grid;
   gap: 1.25rem;
