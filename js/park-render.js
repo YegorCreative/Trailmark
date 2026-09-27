@@ -128,6 +128,61 @@
       + '</section>';
   }
 
+  function channelLinear(value) {
+    const c = value / 255;
+    return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  function hexChannels(hex) {
+    const raw = String(hex || '').replace('#', '');
+    const full = raw.length === 3 ? raw.replace(/./g, function (ch) { return ch + ch; }) : raw;
+    return [
+      parseInt(full.slice(0, 2), 16),
+      parseInt(full.slice(2, 4), 16),
+      parseInt(full.slice(4, 6), 16),
+    ];
+  }
+
+  function relativeLuminance(hex) {
+    const rgb = hexChannels(hex);
+    return 0.2126 * channelLinear(rgb[0]) + 0.7152 * channelLinear(rgb[1]) + 0.0722 * channelLinear(rgb[2]);
+  }
+
+  function contrastRatio(foreground, background) {
+    const lighter = Math.max(relativeLuminance(foreground), relativeLuminance(background));
+    const darker = Math.min(relativeLuminance(foreground), relativeLuminance(background));
+    return (lighter + 0.05) / (darker + 0.05);
+  }
+
+  function mixHex(from, to, amount) {
+    const a = hexChannels(from);
+    const b = hexChannels(to);
+    const mixed = a.map(function (channel, index) {
+      return Math.round(channel + (b[index] - channel) * amount);
+    });
+    return '#' + mixed.map(function (channel) {
+      return channel.toString(16).padStart(2, '0');
+    }).join('');
+  }
+
+  function badgeInk(background) {
+    const dark = '#142016';
+    const light = '#f7f3ec';
+    const darkRatio = contrastRatio(dark, background);
+    const lightRatio = contrastRatio(light, background);
+    let ink = darkRatio >= lightRatio ? dark : light;
+    if (contrastRatio(ink, background) < 4.5) ink = darkRatio >= lightRatio ? '#000000' : '#ffffff';
+    let muted = ink;
+    for (let amount = 0.42; amount >= 0; amount -= 0.03) {
+      const candidate = mixHex(ink, background, amount);
+      if (contrastRatio(candidate, background) >= 4.6) {
+        muted = candidate;
+        break;
+      }
+    }
+    return { ink: ink, muted: muted };
+  }
+
   function paletteColor(index) {
     const colors = (park.palette && park.palette.hero) || ['#243224', '#6a3418', '#1d3d4a', '#8a5a32', '#3a3028'];
     return colors[index % colors.length];
@@ -262,7 +317,8 @@
     }).join('');
 
     const accent = (park.palette && park.palette.hero && park.palette.hero[2]) || '#243224';
-    return '<section class="park-section badge-panel" aria-labelledby="badge-showcase-title" style="background:' + accent + '">'
+    const ink = badgeInk(accent);
+    return '<section class="park-section badge-panel" aria-labelledby="badge-showcase-title" style="background:' + accent + ';color:' + ink.ink + ';--badge-muted:' + ink.muted + '">'
       + '<div class="badge-panel-inner">'
       + '<div class="badge-tilt">'
       + renderBadgeImage(park.fullName + ' badge', 'park-badge--hero')

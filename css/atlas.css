@@ -1421,8 +1421,10 @@ body:has(#hero) #hero::after {
   line-height: 1.7;
 }
 
-.badge-panel { color: #f7f3ec; }
-.badge-panel .section-kicker { color: #f6efe4; }
+.badge-panel { color: var(--badge-ink, #142016); }
+.badge-panel .section-kicker,
+.badge-panel h2,
+.badge-panel p { color: inherit; }
 
 .badge-panel-inner {
   max-width: 1100px;
@@ -1467,7 +1469,7 @@ body:has(#hero) #hero::after {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.75;
+  color: var(--badge-muted, inherit);
 }
 
 @media (max-width: 800px) {
