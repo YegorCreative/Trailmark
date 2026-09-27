@@ -2732,7 +2732,7 @@ const PARK_PAGE_CONTENT = {
       title: 'Hearthmounds, a long human record, and a basin that can blow away',
       items: [
         { title: 'Hearthmounds', body: 'The 2019 news release names gypsum hearthmounds found nowhere else on Earth. The establishment page calls the same features dunehearth mounds. Either way, they are a reason the monument became a park, not a scenic extra.' },
-        { title: 'Footprints in the basin', body: 'The establishment page, updated in 2023, points to human footprints 21,000 to 23,000 years old, and to the largest collection of Ice Age animal trackways. The 2019 release had already called the human presence more than 10,000 years. The later page is the more specific date.' },
+        { title: 'Footprints in the basin', body: 'A 2019 news release calls the human presence more than 10,000 years. The establishment page, updated in 2023, points to human footprints 21,000 to 23,000 years old, and to the largest collection of Ice Age animal trackways. No statistics page settles the age. The figure both support is more than 10,000 years.' },
         { title: 'A balanced white', body: 'NPS says the field needs a particular mix of rain, sun, groundwater, and wind. Salt cedar can drink up to 200 gallons a day and outcompete native plants. If evaporation speeds up, the northeasterly winds that shape the dunes could blow them away.' },
       ],
     },
@@ -4080,9 +4080,9 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'The park year is 1978. The monument year is 1939.',
-      lead: 'Badlands National Park protects 244,000 acres of buttes, pinnacles, and spires in southwestern South Dakota, wrapped in mixed-grass prairie.',
+      lead: 'Badlands National Park protects more than 240,000 acres of buttes, pinnacles, and spires in southwestern South Dakota, wrapped in mixed-grass prairie.',
       body: [
-        'The park nature page gives that acreage and the two prairie neighbors: tall-grass to the east, short-grass to the west. The mixed-grass prairie is the transition. The rocks were deposited as early as 75 million years ago and began eroding about 500,000 years ago.',
+        'The nature page says 244,000 acres. The Geodiversity Atlas says 242,756. There is no park statistics page to choose between them, so the shared figure is more than 240,000 acres. The prairie is the transition between tall-grass to the east and short-grass to the west. The rocks were deposited as early as 75 million years ago and began eroding about 500,000 years ago.',
         'The NPS Geodiversity Atlas gives the legal sequence the nature page does not: paleontology was a reason for making Badlands a national monument in 1939, for adding acreage in 1976, and for elevating the monument to a national park in 1978. The day of that 1978 redesignation is not on the atlas page, so this essay uses the year.',
       ],
       facts: [
@@ -4090,7 +4090,7 @@ const PARK_PAGE_CONTENT = {
         { label: 'State', value: 'South Dakota' },
         { label: 'Monument', value: '1939' },
         { label: 'National park', value: '1978' },
-        { label: 'Park nature page', value: '244,000 acres' },
+        { label: 'Extent', value: 'More than 240,000 acres' },
       ],
     },
     emotionalThesis: {
@@ -4136,7 +4136,7 @@ const PARK_PAGE_CONTENT = {
       notes: [
         'More than 250 vertebrate species are represented, herbivores and carnivores. The atlas also says more than 50 herbivore species and 14 carnivore species are known from the Eocene and Oligocene White River Group, mostly in the Brule Formation.',
         'Oligocene animals here ranged from rodents to elephant-size titanotheres. The atlas says fossil beds of the White River Group preserve nearly twice as many mammalian families as are known today for all of North America.',
-        'The nature page\'s erosion start, about 500,000 years ago, is the cut you see. The atlas says those same processes are still exposing fossils. The park nature page says 244,000 acres. The atlas says 242,756. Both figures are on NPS pages. This essay does not average them.',
+        'The nature page\'s erosion start, about 500,000 years ago, is the cut you see. The atlas says those same processes are still exposing fossils.',
       ],
     },
     seasons: {
@@ -4528,7 +4528,7 @@ const PARK_PAGE_CONTENT = {
       kicker: 'Hidden Discoveries',
       title: 'Congaree people, maroons, and a logger who stopped',
       items: [
-        { title: 'The name', body: 'The park and the river are named for the Congaree people. The history page says a significant number are thought to have died in the 17th and 18th centuries from warfare and disease, and that remaining Congaree were absorbed into neighboring tribes. Archaeology puts people here at least 10,000 years. The history index says over 13,000. Both sentences are on NPS pages. This essay does not collapse them into one number.' },
+        { title: 'The name', body: 'The park and the river are named for the Congaree people. The history page says a significant number are thought to have died in the 17th and 18th centuries from warfare and disease, and that remaining Congaree were absorbed into neighboring tribes. That page puts people here at least 10,000 years. The history index says over 13,000. The shared figure is more than 10,000 years.' },
         { title: 'A refuge', body: 'The floodplain page describes maroons: enslaved people who lived in this wilderness, sometimes for years, rather than accept slavery. It also records de Soto in April 1541 and John Lawson in 1701 at the confluence of the Wateree and Congaree.' },
         { title: 'Beidler and Hampton', body: 'Francis Beidler bought 15,000 acres and logged old-growth cypress for almost 20 years. Operations ceased by 1917. Harry Hampton, a newspaper editor who hunted here, argued in print that the tract was the last of its size. Action Now and a willing sale produced the 1976 monument.' },
       ],
@@ -4550,7 +4550,7 @@ const PARK_PAGE_CONTENT = {
       notes: [
         'Cypress and tupelo take the wet ground. Oaks and loblolly take the inches that stay drier. The boardwalk is a way to see that gradient without inventing a soil map.',
         'The bluff is the edge where fire, not flood, is the manager. Longleaf remnants are what remains of a savannah measured in the tens of millions of acres.',
-        'The wilderness page, separate from the nature essay, says Congaree has 21,700 acres of designated wilderness and that the whole park encompasses 26,692.6 acres. The history page says over 26,000. The essay keeps both and does not round one into the other.',
+        'Designated wilderness is 21,700 acres on the wilderness page, and a foundation document agrees. Total acreage does not: that wilderness page says 26,692.6 acres, a foundation document says 26,546, and the history page says over 26,000. No statistics page chooses. The shared figure is more than 26,000 acres.',
       ],
     },
     seasons: {
@@ -4773,7 +4773,7 @@ const PARK_PAGE_CONTENT = {
       lead: 'On December 27, 1974, President Ford authorized Cuyahoga Valley as a national recreation area. It was officially designated on June 26, 1975, and renamed a national park on October 11, 2000.',
       body: [
         'The history page places that law in a decade when Northeast Ohio was fighting suburban development, and when a 1969 fire on the Cuyahoga River, just north of the park, had become a national symbol for polluted water. The Nixon administration was pushing federal parks near cities. This one was one of them.',
-        'The kids\' park-basics page says the valley includes more than fifty square miles, 26 miles of the river, and 13,000 years of people. A press kit puts the size at about 33,000 acres, and more precisely about 32,950, between Cleveland and Akron. This essay keeps both figures.',
+        'The kids\' park-basics page says the valley includes more than fifty square miles, 26 miles of the river, and 13,000 years of people. A press kit says about 33,000 acres and, in the same snapshot, about 32,950. No statistics page chooses. Both support about 33,000 acres, between Cleveland and Akron.',
       ],
       facts: [
         { label: 'Region', value: 'Midwest' },
@@ -4911,7 +4911,7 @@ const PARK_PAGE_CONTENT = {
       lead: 'President Woodrow Wilson signed Mount McKinley National Park into law on February 26, 1917. ANILCA, on December 2, 1980, enlarged it and renamed it Denali National Park and Preserve.',
       body: [
         'The enabling page says Congress established the 1917 park as a game refuge. The basic-information page says the main reason was Dall sheep. Charles Sheldon and Harry Karstens had wintered near the Toklat; Sheldon pushed the idea of a park to conserve wildlife, and Karstens became the first superintendent in 1921.',
-        'A 2017 fact sheet gives the later size: about 4.70 million acres of park and about 1.33 million acres of preserve, together about 6.08 million acres. The park homepage rounds the same country to six million acres and one road. The south peak of the mountain is listed at 20,310 feet.',
+        'The homepage and the management page put the park and preserve at about 6 million acres, with one road. A 2017 fact sheet totals 6,075,029 acres. The shared figure is about 6 million acres. The south peak of Mount McKinley is listed at 20,310 feet on that sheet and on the homepage.',
       ],
       facts: [
         { label: 'Region', value: 'Alaska' },
@@ -5186,8 +5186,8 @@ const PARK_PAGE_CONTENT = {
       title: 'December 2, 1980, and still no road',
       lead: 'Gates of the Arctic National Park and Preserve was established on December 2, 1980, under the Alaska National Interest Lands Conservation Act.',
       body: [
-        'The park\'s own explainer says the 1980 law protected 8.4 million acres, to be managed for wild and undeveloped character, solitude, and wilderness recreation. Sport hunting and trapping are allowed in the preserve and not in the park. That is the line between the two words in the name.',
-        'The same page says about 7,052,000 acres were designated wilderness, later adjusted to about 7,154,000. Six wild and scenic rivers were named, among them the Alatna, the John, and the Kobuk. The homepage says the landscape contains no roads or trails.',
+        'The park\'s explainer gives a precise total of 8,472,505 acres and also rounds the 1980 park to 8.4 million acres. The shared figure is about 8.4 million acres. Sport hunting and trapping are allowed in the preserve and not in the park. That is the line between the two words in the name.',
+        'Wilderness on that page is 7,167,192 acres in the opening figures and about 7,154,000 after a land-status note. ANILCA first designated about 7,052,000. No statistics page chooses among the current pair. Both support about 7.2 million acres. Six wild and scenic rivers were named. A text-only brochure lists all six: Alatna, John, Kobuk, Noatak, North Fork of the Koyukuk, and Tinayguk. The homepage says the landscape contains no roads or trails.',
       ],
       facts: [
         { label: 'Region', value: 'Alaska' },
@@ -5210,15 +5210,15 @@ const PARK_PAGE_CONTENT = {
       title: 'A river valley, a pass, and peaks with no trail to them',
       items: [
         { title: 'The gates', modifier: 'gates', wash: 'linear-gradient(180deg, #f2e6d4 0%, #c48868 38%, #2a3a48 100%)', body: 'Frigid Crags and Boreal Mountain are the pair Marshall named. The painting\'s spires are that kind of Brooks Range wall. They are not a claim that the header is a portrait of those two summits.' },
-        { title: 'Six rivers', modifier: 'rivers', wash: 'linear-gradient(165deg, #d8e8ea 0%, #3a88a0 46%, #1a3038 100%)', body: 'The Alatna, the John, and the Kobuk are three of the six wild and scenic rivers on the explainer page. Floaters use the valleys. Hikers use them as corridors over passes. There is still no trail.' },
+        { title: 'Six rivers', modifier: 'rivers', wash: 'linear-gradient(165deg, #d8e8ea 0%, #3a88a0 46%, #1a3038 100%)', body: 'A text-only brochure names all six wild and scenic rivers: Alatna, John, Kobuk, Noatak, North Fork of the Koyukuk, and Tinayguk. Floaters use the valleys. Hikers use them as corridors over passes. There is still no trail.' },
         { title: 'The preserve line', modifier: 'preserve', wash: 'linear-gradient(160deg, #e8dcc0 0%, #8a7048 44%, #2a3428 100%)', body: 'Inside the park, sport hunting is not the tool. Inside the preserve, it is. The caribou in the drawing cross water without a sign that says which side of that line they are on. You need the map.' },
       ],
     },
     hiddenDiscoveries: {
       kicker: 'Hidden Discoveries',
-      title: 'Anaktuvuk Pass, a 1978 monument, and thirteen thousand years',
+      title: 'Anaktuvuk Pass, a 1978 monument, and a long human record',
       items: [
-        { title: 'People of the range', body: 'The history index says people have lived in the Brooks Range for more than 13,000 years. The basic-information page says the park preserves a 12,000-year record. Both sentences are on NPS pages. Athabascan and Iñupiat descendants, and other Alaskans, live in eleven resident-zone communities. Subsistence is part of the law, not a sidebar.' },
+        { title: 'People of the range', body: 'The history index says more than 13,000 years. The basic-information page says a 12,000-year record. The shared figure is at least 12,000 years. Athabascan and Iñupiat descendants, and other Alaskans, live in eleven resident-zone communities. Subsistence is part of the law, not a sidebar.' },
         { title: 'The village inside the line', body: 'The Anaktuvuk Pass history says the park, once established, included the village and surrounding lands as an inholding. A ban on all-terrain vehicles on park land followed and conflicted with how residents reached food. The negotiations did not end in 1980.' },
         { title: 'Carter\'s monument', body: 'The creation page says President Carter designated national monuments in 1978 when the Alaska bill was stalled, including this country, and that Congress then passed the 1980 act. The final park was about eight million contiguous acres, not the small park split by a pipeline that some developers wanted.' },
       ],
@@ -5324,7 +5324,7 @@ const PARK_PAGE_CONTENT = {
       title: 'A memorial in 1935, a national park on February 22, 2018',
       lead: 'Gateway Arch National Park was Jefferson National Expansion Memorial from 1935 until Congress redesignated it on February 22, 2018.',
       body: [
-        'The basic-information page says it has been a Park Service unit since 1935, when Executive Order 7253 designated 40 city blocks. The history page says the grounds are the Arch, the museum under it, and the Old Courthouse, 90.96 acres in all. A park brochure rounds the site to 91 acres and calls the Arch the tallest human-built monument in the United States: 630 feet tall and 630 feet across at the base.',
+        'The basic-information page says it has been a Park Service unit since 1935, when Executive Order 7253 designated 40 city blocks. The history page says 90.96 acres. The nature page and the brochure say 91. No statistics page chooses. The shared figure is about 91 acres. The brochure calls the Arch the tallest human-built monument in the United States: 630 feet tall and 630 feet across at the base.',
         'The purpose page says the 2018 change did not alter operations, boundaries, or the mission. Eero Saarinen\'s design was chosen from 172 proposals. Construction began February 12, 1963, and ended October 28, 1965. The Arch opened to the public on June 9, 1967.',
       ],
       facts: [
@@ -5357,7 +5357,7 @@ const PARK_PAGE_CONTENT = {
       title: 'A competition, a tram, and a name that changed without moving the boundary',
       items: [
         { title: '172 proposals', body: 'The brochure says Saarinen\'s design won a national competition. The history page dates that competition to 1947–48. The purpose page dates groundbreaking to June 1959 and completion to October 1965. The brochure\'s construction window, February 12, 1963 to October 28, 1965, is the build itself. Both pairs of dates are on NPS pages.' },
-        { title: 'The tram', body: 'Bi-State Development paid for the tram, about 2 million dollars of a brochure total around 13 million for construction, with the Arch itself about 11 million. The history page says the whole project cost less than 15 million. The little car in the drawing is that ride. Tickets are not a fact this essay freezes.' },
+        { title: 'The tram', body: 'A brochure itemizes construction at about 13 million dollars, including about 2 million for the tram. The history page says the project cost less than 15 million. Both support less than 15 million dollars, which is the figure used here. The little car in the drawing is that ride. Tickets are not a fact this essay freezes.' },
         { title: 'February 22, 2018', body: 'Public Law 115-128 redesignated the memorial. The FAQ says the bill was signed in February 2018. The purpose page says operations, boundaries, and mission stayed. The name changed. The steel did not.' },
       ],
     },
@@ -5378,7 +5378,7 @@ const PARK_PAGE_CONTENT = {
       notes: [
         'The Mississippi is the geologic fact visitors actually see. The levee and the staircase are how the park meets it.',
         'No bedrock name is added. The engineering numbers above are the ones on the pages.',
-        'Ninety-one acres, or 90.96 on the history page, is a small park. The curve has to do the work of a mountain.',
+        'About 91 acres is a small park. The curve has to do the work of a mountain.',
       ],
     },
     seasons: {

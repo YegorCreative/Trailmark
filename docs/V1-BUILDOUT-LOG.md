@@ -96,6 +96,24 @@ No park in this batch is marked needs-fact-review. The Denali mountain-name page
 
 Next unpublished parks are the other 24.
 
+## Conflicting NPS figures
+
+When two NPS pages give different numbers and the park has no statistics page, the essay uses a figure both support. Applied here:
+
+- Badlands acreage: nature page 244,000 and Geodiversity Atlas 242,756. Used more than 240,000 acres. No statistics page.
+- White Sands human presence: 2019 release more than 10,000 years, and the 2023 establishment page 21,000 to 23,000 years. Used more than 10,000 years.
+- Congaree human presence: history page at least 10,000 years, history index over 13,000. Used more than 10,000 years.
+- Congaree total acreage: wilderness page 26,692.6, foundation document 26,546, history page over 26,000. Used more than 26,000 acres. Designated wilderness stays 21,700, which those pages share.
+- Cuyahoga Valley acreage: press kit about 33,000 and about 32,950. Used about 33,000 acres.
+- Denali acreage: homepage and management page about 6 million, 2017 fact sheet 6,075,029. Used about 6 million acres. South-peak height 20,310 feet is the same on the fact sheet and the homepage.
+- Gates of the Arctic total: explainer 8,472,505 acres and the same page's round of 8.4 million. Used about 8.4 million acres.
+- Gates of the Arctic wilderness: 7,167,192 and about 7,154,000 on the explainer. Used about 7.2 million acres. The original ANILCA figure of about 7,052,000 is kept as the 1980 designation, not as the current size.
+- Gates of the Arctic human record: more than 13,000 years and a 12,000-year record. Used at least 12,000 years.
+- Gateway Arch acreage: history page 90.96 and nature page and brochure 91. Used about 91 acres.
+- Gateway Arch construction cost: brochure about 13 million and history page less than 15 million. Used less than 15 million dollars.
+
+Checked and not changed: American Samoa's more than 8,000 acres and nearly 4,000 ocean acres are different areas. Grand Teton's 96,000 acres in 1929 and about 310,000 in 1950 are different years.
+
 ## SEO metadata
 
 - `scripts/build-park-pages.js` writes each park title, description, canonical, Open Graph, Twitter card, and JSON-LD, and pre-renders the article into `#park-page`. `js/park-render.js` is shared with the browser. `js/park-page.js` only binds chapters, tilt, and reveals when the article is already in the page.
