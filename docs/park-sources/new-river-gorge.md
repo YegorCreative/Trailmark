@@ -1,0 +1,16 @@
+# New River Gorge sources
+
+Live pages used:
+
+- News release, "New River Gorge is Now a National Park and Preserve," dated January 20, 2021: https://www.nps.gov/neri/learn/news/new-river-gorge-is-now-a-national-park-and-preserve.htm
+  - Legislation spearheaded by Sen. Joe Manchin, Sen. Shelley Moore Capito, and Rep. Carol Miller, "included in the Consolidated Appropriations Act for Fiscal 2021, enacted in December" (2020; exact December day not stated on this page). National river designation dated November 10, 1978, "a unit of the National Park System" for over 40 years before redesignation. About 90% of the land is national preserve, which permits hunting; total more than 70,000 acres of land along the river. Notes a possible future purchase of 3,700 additional preserve acres.
+- New River Gorge Bridge: https://www.nps.gov/neri/planyourvisit/nrgbridge.htm
+  - Height 876 feet. Length 3,030 feet. Arch length 1,700 feet. Weight 88,000,000 pounds. Completed October 22, 1977, after three years of construction beginning June 1974. Longest steel span in the Western Hemisphere; third highest bridge in the US. Bridge Day held the third Saturday of October, called West Virginia's largest one-day festival and the largest extreme sports event in the world. Listed on the National Register of Historic Places in 2013; featured on West Virginia's 2006 state quarter.
+- Geologic Formations: https://www.nps.gov/neri/learn/nature/geologicformations.htm
+  - The New River "existed before the Appalachian Mountains" and is called "this very old river," which cut into the mountains as fast as they were uplifted. It was the main headwaters of the ancient Teays River, which flowed to an inland sea covering the central part of North America millions of years ago. The gorge exposes 3,200 feet of very old rocks; the V-shaped canyon formed through prolonged erosion.
+- Climbing at New River Gorge: https://www.nps.gov/neri/planyourvisit/climbing.htm
+  - Over 1,400 established rock climbs. Hard sandstone cliffs, 30 to 120 feet tall. Most routes 5.9 or harder; most sport routes 5.10-5.12. Best seasons late April-mid-June and mid-September-late October.
+- Hellbenders: https://www.nps.gov/neri/learn/nature/hellebenders.htm
+  - Eastern hellbender believed to occur within the park; species of special concern in West Virginia, cannot be collected. Grows to over two feet; fully aquatic, breathes through skin; needs cool, clear, rocky streams.
+
+Conflicting/unclear figures: a WebSearch summary stated the park was "established as a national park on December 27, 2020," but no nps.gov page opened for this essay confirms that specific December day; the news release itself only says "enacted in December" and is dated January 20, 2021. The essay states the act was "enacted in December 2020" without asserting a specific day, and separately notes the January 20, 2021 announcement date. A separate WebSearch also cited "over 1,600" established climbing routes from an unspecified "more recent" NPS source; the current /planyourvisit/climbing.htm page, fetched directly, says "over 1,400," which is used. A commonly repeated "320 million years old" figure for the New River is not stated on any nps.gov page opened for this essay and is not used.

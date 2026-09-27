@@ -154,6 +154,28 @@ A full rebuild after adding these six parks also updated the auto-generated "Con
 
 Next unpublished parks are the other 12: Mount Rainier, New River Gorge, North Cascades, Pinnacles, Redwood, Sequoia, Shenandoah, Theodore Roosevelt, Virgin Islands, Voyageurs, Wind Cave, Wrangell-St. Elias.
 
+### Batch 9 — Mount Rainier, New River Gorge, North Cascades, Pinnacles, Redwood, Sequoia
+
+Published. Sources are in `docs/park-sources/`.
+
+National-park years: Mount Rainier March 2, 1899; New River Gorge national river since November 10, 1978, redesignated national park and preserve in the Consolidated Appropriations Act enacted December 2020 (NPS announced the new status January 20, 2021 — no nps.gov page opened for this essay states the specific December day); North Cascades and Redwood both October 2, 1968, the same act of Congress; Pinnacles national monument January 16, 1908, national park January 10, 2013; Sequoia September 25, 1890, the second national park in the country after Yellowstone.
+
+Hero focus: Mount Rainier `50% 42%` (peak and alpine lake), New River Gorge `58% 42%` (bridge and river), North Cascades `62% 46%` (peaks and glacier), Pinnacles `54% 48%` (spires), Redwood `62% 55%` (grove interior), Sequoia `56% 60%` (trunk base).
+
+No park in this batch is marked needs-fact-review, with one caveat: North Cascades' own statistics page (`/noca/learn/management/statistics.htm`) returned only an "in-progress" placeholder at research time; acreage there is sourced instead from the park's Foundation Document via a search summary, not a live dedicated statistics page, and the source file for that park notes this explicitly.
+
+Conflicting figures in this batch:
+
+- Mount Rainier glacier coverage: the glaciers page gives about 30 square miles; the press kit (the more dedicated statistics source) gives 35 square miles. The press kit figure is used. Acreage similarly resolved to the press kit's 236,381 over an earlier 235,625 figure.
+- New River Gorge climbing routes: a WebSearch summary cited "over 1,600" routes from an unspecified newer NPS source; the current `/planyourvisit/climbing.htm` page, fetched directly, states "over 1,400." The directly fetched page's figure is used.
+- Redwood coastline length: basic information states 37 miles; a separate WebSearch summary of NPS material gives "nearly 56 km (35 mi)." The essay uses 35 miles, treating the metric-sourced figure as closer to a dedicated statistics conversion; this is a minor, unresolved discrepancy worth a future look rather than a hard case either way.
+
+Two commonly repeated figures were deliberately left out because no nps.gov page opened for either park states them directly: the New River's often-cited "320 million years" age, and Hyperion's (Redwood) current measured height.
+
+A rebuild after adding these six parks also updated the auto-generated neighbor grid on nine already-published pages whose alphabetical neighbors shifted: Carlsbad Caverns, Grand Teton, Great Basin, Mesa Verde, Olympic, Petrified Forest, Rocky Mountain, Saguaro, and White Sands. No hand-authored content on those pages changed.
+
+Next unpublished parks are the final 6: Shenandoah, Theodore Roosevelt, Virgin Islands, Voyageurs, Wind Cave, Wrangell-St. Elias.
+
 ## SEO metadata
 
 - `scripts/build-park-pages.js` writes each park title, description, canonical, Open Graph, Twitter card, and JSON-LD, and pre-renders the article into `#park-page`. `js/park-render.js` is shared with the browser. `js/park-page.js` only binds chapters, tilt, and reveals when the article is already in the page.
