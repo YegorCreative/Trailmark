@@ -1733,6 +1733,114 @@ body:has(#hero) #hero::after {
   }
 }
 
+/* Small phones: don't crop a 16:9 painting into a full-height portrait
+   frame via object-fit: cover. Show it close to its real proportions in a
+   bounded frame at the top, with the title and copy in normal flow below —
+   this must come after the unconditional #hero.hero--park rules above (and
+   after the 800px block) to win the cascade at this width. */
+@media (max-width: 600px) {
+  #hero.hero--park,
+  #hero.hero--yosemite {
+    min-height: 0;
+    display: block;
+    overflow: visible;
+  }
+
+  .hero--park .park-poster,
+  .hero--yosemite .yosemite-poster {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .hero--park .park-poster-art,
+  .hero--yosemite .yosemite-poster-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--hero-focus, center center);
+    transform-origin: center center;
+  }
+
+  /* The section-wide corner scrim (::before) is sized for a full-bleed
+     image; with the poster now a short 4:3 box, hide it there and give the
+     breadcrumb its own small dark pill instead so it reads over any part
+     of the painting, then let the text below sit in normal flow. */
+  .hero--park::before,
+  .hero--yosemite::before {
+    content: none;
+  }
+
+  #hero.hero--park .hero-crumb,
+  #hero.hero--yosemite .hero-crumb {
+    top: calc(4.6rem + 0.75rem);
+    left: 0.9rem;
+    right: 0.9rem;
+    background: rgba(12, 18, 14, 0.45);
+    border-radius: 999px;
+    padding: 0.4rem 0.8rem;
+    width: fit-content;
+  }
+
+  #hero.hero--park .hero-inner,
+  #hero.hero--yosemite .hero-inner {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 1.5rem 1.25rem 1.75rem;
+    background: var(--color-cream);
+    text-shadow: none;
+  }
+
+  #hero.hero--park .hero-kicker,
+  #hero.hero--yosemite .hero-kicker {
+    color: var(--color-text-muted);
+  }
+
+  #hero.hero--park .hero-eyebrow,
+  #hero.hero--yosemite .hero-eyebrow {
+    color: #b85a1a;
+  }
+
+  #hero.hero--park .hero-title,
+  #hero.hero--yosemite .hero-title {
+    color: var(--color-text);
+    text-shadow: none;
+  }
+
+  #hero.hero--park .hero-subtitle,
+  #hero.hero--yosemite .hero-subtitle {
+    color: var(--color-text);
+    opacity: 0.82;
+    max-width: none;
+    text-shadow: none;
+  }
+
+  #hero.hero--park .hero-ledger,
+  #hero.hero--yosemite .hero-ledger {
+    border-top-color: var(--color-border);
+  }
+
+  #hero.hero--park .hero-ledger p,
+  #hero.hero--yosemite .hero-ledger p {
+    color: var(--color-text);
+  }
+
+  #hero.hero--park .hero-ledger span,
+  #hero.hero--yosemite .hero-ledger span {
+    color: var(--color-text-muted);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .badge-tilt::after { display: none; }
   .highlight-card .highlight-desc { opacity: 1; transform: none; }

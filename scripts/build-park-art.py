@@ -7,10 +7,16 @@ assets/Parks. Safe to re-run: each run rewrites assets/park-art and the manifest
 Requires Pillow, which is already available in this environment. No packages
 are installed.
 
-Header copies stay at their native width up to 1672px and are saved as WebP
-quality 80. Badge and extra copies are center-cropped to a square, then fit
-into 600x600 without upscaling. A slot with zero files or more than one file
-is reported and skipped, so duplicates are never chosen automatically.
+Header copies use a "<name>-2x.png" file next to the original when one
+exists (see docs/hero-upscale-sources.md) and stay at their native width
+otherwise. header-640/1280.webp save at WebP quality 85; header-1920/2560.webp,
+only written when the source is wide enough to support them without
+upscaling, save at quality 88. All header WebP output uses method 6. Badge
+and extra copies are center-cropped to a square, then fit into 960x960
+without upscaling (safe under the smallest source of either kind across all
+63 parks); badge additionally writes 640/320/160px downscale tiers. A slot
+with zero files or more than one file is reported and skipped, so
+duplicates are never chosen automatically.
 """
 
 import json
@@ -26,8 +32,11 @@ SOURCE_ROOT = ROOT / "assets" / "Parks"
 OUTPUT_ROOT = ROOT / "assets" / "park-art"
 MANIFEST_PATH = OUTPUT_ROOT / "manifest.json"
 
-HEADER_MAX_WIDTH = 1672
-SQUARE_SIZE = 600
+HEADER_MAX_WIDTH = 3344  # native width of a -2x source; not upscaled past this
+HEADER_WIDTHS = (2560, 1920, 1280, 640)
+HEADER_QUALITY_LARGE = 88  # 1920w and 2560w
+HEADER_QUALITY_SMALL = 85  # 1280w and 640w and the base header.webp
+SQUARE_SIZE = 960  # safe under the smallest badge (1254px) and extra (1024px) source across all 63 parks
 WEBP_QUALITY = 80
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
 SLOT_DIRS = {
@@ -115,9 +124,19 @@ def prepare_image(src, slot):
     return image
 
 
-def write_webp(image, dest):
+def write_webp(image, dest, quality=WEBP_QUALITY, method=4):
     dest.parent.mkdir(parents=True, exist_ok=True)
-    image.save(dest, "WEBP", quality=WEBP_QUALITY, method=4)
+    image.save(dest, "WEBP", quality=quality, method=method)
+
+
+def select_header_source(found):
+    """Prefer a "<stem>-2x.png" (or "-4x.png") upscaled source over the
+    plain original when exactly one such file sits alongside it. See
+    docs/hero-upscale-sources.md. Falls through unchanged (including the
+    zero- or multiple-match cases, so existing duplicate/missing reporting
+    still applies) when there's no single upscaled candidate."""
+    upscaled = [path for path in found if re.search(r"-(2x|4x)\.png$", path.name, re.IGNORECASE)]
+    return upscaled if len(upscaled) == 1 else found
 
 
 def parse_focus(value):
@@ -297,7 +316,7 @@ def main():
         out_dir = OUTPUT_ROOT / park_id
         entry = {}
         for slot, filename in OUTPUT_NAMES.items():
-            found = slots[slot]
+            found = select_header_source(slots[slot]) if slot == "header" else slots[slot]
             if slot == "header" and park_id in HEADER_FILE_OVERRIDES and len(found) != 1:
                 wanted = HEADER_FILE_OVERRIDES[park_id]
                 chosen = [path for path in found if path.name == wanted]
@@ -323,18 +342,23 @@ def main():
                         "source": rel(found[0]),
                         "size": [image.width, image.height],
                     })
-                write_webp(image, dest)
                 if slot == "header":
-                    for width in (1280, 640):
+                    write_webp(image, dest, quality=HEADER_QUALITY_SMALL, method=6)
+                    for width in HEADER_WIDTHS:
+                        if width > image.width:
+                            continue  # never upscale a variant past its source
                         variant = image
                         if image.width > width:
                             height = max(1, round(image.height * width / image.width))
                             variant = image.resize((width, height), Image.Resampling.LANCZOS)
-                        write_webp(variant, out_dir / ("header-%d.webp" % width))
+                        quality = HEADER_QUALITY_LARGE if width >= 1920 else HEADER_QUALITY_SMALL
+                        write_webp(variant, out_dir / ("header-%d.webp" % width), quality=quality, method=6)
                     focus = focuses.get(park_id) or park.get("heroFocus") or "50% 58%"
                     write_og_jpg(image, out_dir / "og.jpg", focus)
+                else:
+                    write_webp(image, dest)
                 if slot == "badge":
-                    for width in (320, 160):
+                    for width in (640, 320, 160):
                         side = min(image.width, image.height, width)
                         variant = image.resize((side, side), Image.Resampling.LANCZOS) if image.width != side else image
                         write_webp(variant, out_dir / ("badge-%d.webp" % width))

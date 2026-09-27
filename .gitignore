@@ -5,3 +5,10 @@ photos/inbox/**
 !photos/inbox/.gitkeep
 * 2.*
 * 2
+
+# AI-upscaled source art (large, regenerable via scripts/batch-upscale — see
+# docs/hero-upscale-sources.md). Only the generated WebP/JPG outputs in
+# assets/park-art/ are committed.
+*-2x.png
+*-4x.png
+__pycache__/
