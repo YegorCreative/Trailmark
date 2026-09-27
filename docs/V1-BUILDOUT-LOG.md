@@ -114,6 +114,26 @@ When two NPS pages give different numbers and the park has no statistics page, t
 
 Checked and not changed: American Samoa's more than 8,000 acres and nearly 4,000 ocean acres are different areas. Grand Teton's 96,000 acres in 1929 and about 310,000 in 1950 are different years.
 
+### Batch 7 — Haleakalā, Hawaiʻi Volcanoes, Hot Springs, Indiana Dunes, Isle Royale, Katmai
+
+Published. Sources are in `docs/park-sources/`.
+
+National-park years: Haleakalā separate park July 1, 1961 (Hawaiʻi National Park August 1, 1916); Hawaiʻi Volcanoes August 1, 1916, present name September 22, 1961; Hot Springs reservation April 20, 1832, national park March 4, 1921; Indiana Dunes lakeshore November 5, 1966, national park February 15, 2019; Isle Royale authorized March 3, 1931, established April 3, 1940; Katmai monument September 24, 1918, park and preserve December 2, 1980.
+
+Hero focus: Haleakalā `68% 58%` (silversword), Hawaiʻi Volcanoes `62% 58%` (lava lake), Hot Springs `62% 52%` (bathhouse row), Indiana Dunes `38% 58%` (beach), Isle Royale `48% 52%` (islands), Katmai `52% 48%` (valley).
+
+Conflicting figures in this batch:
+
+- Haleakalā acreage: management page 30,183 and centennial page 33,265. No statistics page. Used more than 30,000 acres. Wilderness 24,719 and about 24,000. Used about 24,000 acres. Summit 10,023 feet is on both pages.
+- Hawaiʻi Volcanoes: 2021 World Heritage page 333,086 acres and 13,677 feet. The May 15, 2025 fact sheet is the statistics page: 354,461 acres and 13,681 feet. The fact sheet is used.
+- Indiana Dunes: statistics page, fiscal year 2025, 16,035 acres. Older pages said 15,349, about 15,000, or 16,000. The statistics page is used. Fifteen miles of shoreline is shared.
+- Isle Royale distances to Canada, Minnesota, and Michigan are different shores, not one disputed number. Acreage 571,790 is the foundation document.
+- Katmai size is the centennial page's 4 million acres. No statistics page was found. The 1918 "over one million" is the original monument.
+
+No park in this batch is marked needs-fact-review.
+
+Next unpublished parks are the other 18.
+
 ## SEO metadata
 
 - `scripts/build-park-pages.js` writes each park title, description, canonical, Open Graph, Twitter card, and JSON-LD, and pre-renders the article into `#park-page`. `js/park-render.js` is shared with the browser. `js/park-page.js` only binds chapters, tilt, and reveals when the article is already in the page.
