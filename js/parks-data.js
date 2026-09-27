@@ -86,6 +86,8 @@ function makePark(config) {
     name: config.name,
     state: config.state,
     region: config.region,
+    npsCode: config.npsCode,
+    timeZone: config.timeZone,
     shortDescription: config.shortDescription,
     landscape: config.landscape,
     badgeTheme: config.badgeTheme,
@@ -106,6 +108,8 @@ function makePark(config) {
 const PARK_DEFINITIONS = [
   {
     id: 'yosemite',
+    npsCode: 'yose',
+    timeZone: 'America/Los_Angeles',
     name: 'Yosemite',
     state: 'California',
     region: 'West',
@@ -119,6 +123,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'yellowstone',
+    npsCode: 'yell',
+    timeZone: 'America/Denver',
     name: 'Yellowstone',
     state: 'Wyoming, Montana, Idaho',
     region: 'Mountain West',
@@ -132,6 +138,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'acadia',
+    npsCode: 'acad',
+    timeZone: 'America/New_York',
     name: 'Acadia',
     state: 'Maine',
     region: 'Northeast',
@@ -146,6 +154,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'american-samoa',
+    npsCode: 'npsa',
+    timeZone: 'Pacific/Pago_Pago',
     name: 'American Samoa',
     state: 'American Samoa',
     region: 'South Pacific',
@@ -160,6 +170,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'arches',
+    npsCode: 'arch',
+    timeZone: 'America/Denver',
     name: 'Arches',
     state: 'Utah',
     region: 'Southwest',
@@ -174,6 +186,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'badlands',
+    npsCode: 'badl',
+    timeZone: 'America/Denver',
     name: 'Badlands',
     state: 'South Dakota',
     region: 'Great Plains',
@@ -188,6 +202,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'big-bend',
+    npsCode: 'bibe',
+    timeZone: 'America/Chicago',
     name: 'Big Bend',
     state: 'Texas',
     region: 'Southwest',
@@ -202,6 +218,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'biscayne',
+    npsCode: 'bisc',
+    timeZone: 'America/New_York',
     name: 'Biscayne',
     state: 'Florida',
     region: 'Southeast',
@@ -216,6 +234,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'black-canyon-of-the-gunnison',
+    npsCode: 'blca',
+    timeZone: 'America/Denver',
     name: 'Black Canyon of the Gunnison',
     state: 'Colorado',
     region: 'Mountain West',
@@ -230,6 +250,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'bryce-canyon',
+    npsCode: 'brca',
+    timeZone: 'America/Denver',
     name: 'Bryce Canyon',
     state: 'Utah',
     region: 'Southwest',
@@ -244,6 +266,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'canyonlands',
+    npsCode: 'cany',
+    timeZone: 'America/Denver',
     name: 'Canyonlands',
     state: 'Utah',
     region: 'Southwest',
@@ -258,6 +282,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'capitol-reef',
+    npsCode: 'care',
+    timeZone: 'America/Denver',
     name: 'Capitol Reef',
     state: 'Utah',
     region: 'Southwest',
@@ -272,6 +298,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'carlsbad-caverns',
+    npsCode: 'cave',
+    timeZone: 'America/Denver',
     name: 'Carlsbad Caverns',
     state: 'New Mexico',
     region: 'Southwest',
@@ -286,6 +314,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'channel-islands',
+    npsCode: 'chis',
+    timeZone: 'America/Los_Angeles',
     name: 'Channel Islands',
     state: 'California',
     region: 'Pacific Coast',
@@ -300,6 +330,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'congaree',
+    npsCode: 'cong',
+    timeZone: 'America/New_York',
     name: 'Congaree',
     state: 'South Carolina',
     region: 'Southeast',
@@ -314,6 +346,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'crater-lake',
+    npsCode: 'crla',
+    timeZone: 'America/Los_Angeles',
     name: 'Crater Lake',
     state: 'Oregon',
     region: 'Pacific Northwest',
@@ -328,6 +362,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'cuyahoga-valley',
+    npsCode: 'cuva',
+    timeZone: 'America/New_York',
     name: 'Cuyahoga Valley',
     state: 'Ohio',
     region: 'Midwest',
@@ -342,6 +378,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'death-valley',
+    npsCode: 'deva',
+    timeZone: 'America/Los_Angeles',
     name: 'Death Valley',
     state: 'California, Nevada',
     region: 'Southwest',
@@ -356,6 +394,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'denali',
+    npsCode: 'dena',
+    timeZone: 'America/Anchorage',
     name: 'Denali',
     state: 'Alaska',
     region: 'Alaska',
@@ -370,6 +410,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'dry-tortugas',
+    npsCode: 'drto',
+    timeZone: 'America/New_York',
     name: 'Dry Tortugas',
     state: 'Florida',
     region: 'Caribbean',
@@ -384,6 +426,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'everglades',
+    npsCode: 'ever',
+    timeZone: 'America/New_York',
     name: 'Everglades',
     state: 'Florida',
     region: 'Southeast',
@@ -397,6 +441,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'gates-of-the-arctic',
+    npsCode: 'gaar',
+    timeZone: 'America/Anchorage',
     name: 'Gates of the Arctic',
     state: 'Alaska',
     region: 'Alaska',
@@ -411,6 +457,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'gateway-arch',
+    npsCode: 'jeff',
+    timeZone: 'America/Chicago',
     name: 'Gateway Arch',
     state: 'Missouri',
     region: 'Midwest',
@@ -425,6 +473,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'glacier',
+    npsCode: 'glac',
+    timeZone: 'America/Denver',
     name: 'Glacier',
     state: 'Montana',
     region: 'Mountain West',
@@ -439,6 +489,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'glacier-bay',
+    npsCode: 'glba',
+    timeZone: 'America/Anchorage',
     name: 'Glacier Bay',
     state: 'Alaska',
     region: 'Alaska',
@@ -453,6 +505,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'grand-canyon',
+    npsCode: 'grca',
+    timeZone: 'America/Phoenix',
     name: 'Grand Canyon',
     state: 'Arizona',
     region: 'Southwest',
@@ -467,6 +521,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'grand-teton',
+    npsCode: 'grte',
+    timeZone: 'America/Denver',
     name: 'Grand Teton',
     state: 'Wyoming',
     region: 'Mountain West',
@@ -481,6 +537,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'great-basin',
+    npsCode: 'grba',
+    timeZone: 'America/Los_Angeles',
     name: 'Great Basin',
     state: 'Nevada',
     region: 'Great Basin',
@@ -495,6 +553,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'great-sand-dunes',
+    npsCode: 'grsa',
+    timeZone: 'America/Denver',
     name: 'Great Sand Dunes',
     state: 'Colorado',
     region: 'Mountain West',
@@ -509,6 +569,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'great-smoky-mountains',
+    npsCode: 'grsm',
+    timeZone: 'America/New_York',
     name: 'Great Smoky Mountains',
     state: 'Tennessee, North Carolina',
     region: 'Southeast',
@@ -523,6 +585,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'guadalupe-mountains',
+    npsCode: 'gumo',
+    timeZone: 'America/Denver',
     name: 'Guadalupe Mountains',
     state: 'Texas',
     region: 'Southwest',
@@ -537,6 +601,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'haleakala',
+    npsCode: 'hale',
+    timeZone: 'Pacific/Honolulu',
     name: 'Haleakala',
     state: 'Hawaii',
     region: 'Hawaii',
@@ -551,6 +617,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'hawaii-volcanoes',
+    npsCode: 'havo',
+    timeZone: 'Pacific/Honolulu',
     name: 'Hawaii Volcanoes',
     state: 'Hawaii',
     region: 'Hawaii',
@@ -565,6 +633,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'hot-springs',
+    npsCode: 'hosp',
+    timeZone: 'America/Chicago',
     name: 'Hot Springs',
     state: 'Arkansas',
     region: 'South',
@@ -579,6 +649,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'indiana-dunes',
+    npsCode: 'indu',
+    timeZone: 'America/Chicago',
     name: 'Indiana Dunes',
     state: 'Indiana',
     region: 'Midwest',
@@ -593,6 +665,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'isle-royale',
+    npsCode: 'isro',
+    timeZone: 'America/New_York',
     name: 'Isle Royale',
     state: 'Michigan',
     region: 'Great Lakes',
@@ -607,6 +681,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'joshua-tree',
+    npsCode: 'jotr',
+    timeZone: 'America/Los_Angeles',
     name: 'Joshua Tree',
     state: 'California',
     region: 'Southwest',
@@ -621,6 +697,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'katmai',
+    npsCode: 'katm',
+    timeZone: 'America/Anchorage',
     name: 'Katmai',
     state: 'Alaska',
     region: 'Alaska',
@@ -635,6 +713,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'kenai-fjords',
+    npsCode: 'kefj',
+    timeZone: 'America/Anchorage',
     name: 'Kenai Fjords',
     state: 'Alaska',
     region: 'Alaska',
@@ -649,6 +729,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'kings-canyon',
+    npsCode: 'seki',
+    timeZone: 'America/Los_Angeles',
     name: 'Kings Canyon',
     state: 'California',
     region: 'West',
@@ -663,6 +745,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'kobuk-valley',
+    npsCode: 'kova',
+    timeZone: 'America/Anchorage',
     name: 'Kobuk Valley',
     state: 'Alaska',
     region: 'Alaska',
@@ -677,6 +761,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'lake-clark',
+    npsCode: 'lacl',
+    timeZone: 'America/Anchorage',
     name: 'Lake Clark',
     state: 'Alaska',
     region: 'Alaska',
@@ -691,6 +777,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'lassen-volcanic',
+    npsCode: 'lavo',
+    timeZone: 'America/Los_Angeles',
     name: 'Lassen Volcanic',
     state: 'California',
     region: 'West',
@@ -705,6 +793,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'mammoth-cave',
+    npsCode: 'maca',
+    timeZone: 'America/Chicago',
     name: 'Mammoth Cave',
     state: 'Kentucky',
     region: 'Southeast',
@@ -719,6 +809,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'mesa-verde',
+    npsCode: 'meve',
+    timeZone: 'America/Denver',
     name: 'Mesa Verde',
     state: 'Colorado',
     region: 'Southwest',
@@ -733,6 +825,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'mount-rainier',
+    npsCode: 'mora',
+    timeZone: 'America/Los_Angeles',
     name: 'Mount Rainier',
     state: 'Washington',
     region: 'Pacific Northwest',
@@ -747,6 +841,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'new-river-gorge',
+    npsCode: 'neri',
+    timeZone: 'America/New_York',
     name: 'New River Gorge',
     state: 'West Virginia',
     region: 'Appalachia',
@@ -761,6 +857,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'north-cascades',
+    npsCode: 'noca',
+    timeZone: 'America/Los_Angeles',
     name: 'North Cascades',
     state: 'Washington',
     region: 'Pacific Northwest',
@@ -775,6 +873,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'olympic',
+    npsCode: 'olym',
+    timeZone: 'America/Los_Angeles',
     name: 'Olympic',
     state: 'Washington',
     region: 'Pacific Northwest',
@@ -789,6 +889,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'petrified-forest',
+    npsCode: 'pefo',
+    timeZone: 'America/Phoenix',
     name: 'Petrified Forest',
     state: 'Arizona',
     region: 'Southwest',
@@ -803,6 +905,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'pinnacles',
+    npsCode: 'pinn',
+    timeZone: 'America/Los_Angeles',
     name: 'Pinnacles',
     state: 'California',
     region: 'West',
@@ -817,6 +921,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'redwood',
+    npsCode: 'redw',
+    timeZone: 'America/Los_Angeles',
     name: 'Redwood',
     state: 'California',
     region: 'Pacific Coast',
@@ -831,6 +937,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'rocky-mountain',
+    npsCode: 'romo',
+    timeZone: 'America/Denver',
     name: 'Rocky Mountain',
     state: 'Colorado',
     region: 'Mountain West',
@@ -845,6 +953,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'saguaro',
+    npsCode: 'sagu',
+    timeZone: 'America/Phoenix',
     name: 'Saguaro',
     state: 'Arizona',
     region: 'Southwest',
@@ -859,6 +969,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'sequoia',
+    npsCode: 'seki',
+    timeZone: 'America/Los_Angeles',
     name: 'Sequoia',
     state: 'California',
     region: 'West',
@@ -873,6 +985,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'shenandoah',
+    npsCode: 'shen',
+    timeZone: 'America/New_York',
     name: 'Shenandoah',
     state: 'Virginia',
     region: 'Appalachia',
@@ -887,6 +1001,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'theodore-roosevelt',
+    npsCode: 'thro',
+    timeZone: 'America/Denver',
     name: 'Theodore Roosevelt',
     state: 'North Dakota',
     region: 'Great Plains',
@@ -901,6 +1017,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'virgin-islands',
+    npsCode: 'viis',
+    timeZone: 'America/St_Thomas',
     name: 'Virgin Islands',
     state: 'U.S. Virgin Islands',
     region: 'Caribbean',
@@ -915,6 +1033,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'voyageurs',
+    npsCode: 'voya',
+    timeZone: 'America/Chicago',
     name: 'Voyageurs',
     state: 'Minnesota',
     region: 'Great Lakes',
@@ -929,6 +1049,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'white-sands',
+    npsCode: 'whsa',
+    timeZone: 'America/Denver',
     name: 'White Sands',
     state: 'New Mexico',
     region: 'Southwest',
@@ -943,6 +1065,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'wind-cave',
+    npsCode: 'wica',
+    timeZone: 'America/Denver',
     name: 'Wind Cave',
     state: 'South Dakota',
     region: 'Great Plains',
@@ -957,6 +1081,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'wrangell-st-elias',
+    npsCode: 'wrst',
+    timeZone: 'America/Anchorage',
     name: 'Wrangell-St. Elias',
     state: 'Alaska',
     region: 'Alaska',
@@ -971,6 +1097,8 @@ const PARK_DEFINITIONS = [
   },
   {
     id: 'zion',
+    npsCode: 'zion',
+    timeZone: 'America/Denver',
     name: 'Zion',
     state: 'Utah',
     region: 'Southwest',

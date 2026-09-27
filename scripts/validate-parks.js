@@ -92,10 +92,17 @@ function main() {
     });
   });
 
+  const IANA_ZONE = /^[A-Za-z_]+\/[A-Za-z_]+$/;
   parks.forEach(function (park) {
     if (park.pageUrl && !content[park.id]) errors.push(park.id + ' has pageUrl but no essay');
     if (park.pageUrl && !fs.existsSync(path.join(root, park.pageUrl))) {
       errors.push(park.id + ' pageUrl file does not exist');
+    }
+    if (!park.npsCode || !/^[a-z]{4}$/.test(park.npsCode)) {
+      errors.push(park.id + ' missing or malformed npsCode');
+    }
+    if (!park.timeZone || !IANA_ZONE.test(park.timeZone)) {
+      errors.push(park.id + ' missing or malformed timeZone');
     }
   });
 
