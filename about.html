@@ -90,7 +90,7 @@
 
     <main id="main-content">
       <section id="hero" class="about-hero" aria-labelledby="about-title">
-        <img src="assets/park-art/grand-canyon/header-1280.webp" srcset="assets/park-art/grand-canyon/header-1280.webp 1280w, assets/park-art/grand-canyon/header.webp 1672w" sizes="(max-width: 900px) 100vw, 1200px" alt="" width="1280" height="720" fetchpriority="high" />
+        <img src="assets/park-art/grand-canyon/header-1280.webp" srcset="assets/park-art/grand-canyon/header-640.webp 640w, assets/park-art/grand-canyon/header-1280.webp 1280w, assets/park-art/grand-canyon/header-1920.webp 1920w, assets/park-art/grand-canyon/header-2560.webp 2560w" sizes="100vw" alt="" width="1280" height="720" fetchpriority="high" />
         <div class="about-hero-copy">
           <p class="hero-eyebrow">TrailMark</p>
           <h1 class="hero-title" id="about-title">Every park, drawn and written one at a time.</h1>
@@ -114,15 +114,15 @@
           <h2 id="anatomy-title">Zion, in three pieces</h2>
           <div class="about-pieces">
             <figure class="about-piece">
-              <img src="assets/park-art/zion/header-1280.webp" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+              <img src="assets/park-art/zion/header-1280.webp" srcset="assets/park-art/zion/header-640.webp 640w, assets/park-art/zion/header-1280.webp 1280w" sizes="(max-width: 640px) 90vw, (max-width: 900px) 45vw, 30vw" alt="" width="1280" height="720" loading="lazy" decoding="async" />
               <figcaption><strong>The painting</strong> The landscape the chapter opens on.</figcaption>
             </figure>
             <figure class="about-piece">
-              <img class="about-mark" src="assets/park-art/zion/badge-320.webp" alt="Zion National Park badge" width="320" height="320" loading="lazy" decoding="async" />
+              <img class="about-mark" src="assets/park-art/zion/badge-640.webp" alt="Zion National Park badge" width="640" height="640" loading="lazy" decoding="async" />
               <figcaption><strong>The mark</strong> One badge per park. It joins the collection when the chapter opens.</figcaption>
             </figure>
             <figure class="about-piece about-piece--detail">
-              <img src="assets/park-art/zion/extra.webp" alt="Desert bighorn" width="600" height="600" loading="lazy" decoding="async" />
+              <img src="assets/park-art/zion/extra.webp" alt="Desert bighorn" width="960" height="960" loading="lazy" decoding="async" />
               <figcaption><strong>The field detail</strong> A living detail: here, a desert bighorn.</figcaption>
             </figure>
           </div>
@@ -254,7 +254,10 @@
         var picks = pool.slice(0, 3);
         var art = document.querySelector('.next-band-art');
         if (art && picks[0]) {
-          art.setAttribute('data-src', 'assets/park-art/' + picks[0].id + '/header-1280.webp');
+          var bandDir = 'assets/park-art/' + picks[0].id + '/';
+          art.setAttribute('data-src', bandDir + 'header-1280.webp');
+          art.setAttribute('data-srcset', bandDir + 'header-640.webp 640w, ' + bandDir + 'header-1280.webp 1280w, ' + bandDir + 'header-1920.webp 1920w, ' + bandDir + 'header-2560.webp 2560w');
+          art.setAttribute('data-sizes', '100vw');
         }
         var host = document.querySelector('[data-next-picks]');
         if (!host) return;
@@ -262,8 +265,9 @@
           return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         }
         host.innerHTML = picks.map(function (park) {
+          var cardDir = 'assets/park-art/' + esc(park.id) + '/';
           return '<a class="atlas-card" href="parks/' + esc(park.id) + '.html">'
-            + '<img class="atlas-card-photo" data-src="assets/park-art/' + esc(park.id) + '/header-640.webp" alt="" width="640" height="360" loading="lazy" decoding="async" />'
+            + '<img class="atlas-card-photo" data-src="' + cardDir + 'header-640.webp" data-srcset="' + cardDir + 'header-640.webp 640w, ' + cardDir + 'header-1280.webp 1280w" data-sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" alt="" width="640" height="360" loading="lazy" decoding="async" />'
             + '<span class="atlas-card-shade" aria-hidden="true"></span>'
             + '<span class="atlas-card-copy"><span class="atlas-card-name">' + esc(park.name) + '</span>'
             + '<span class="atlas-card-meta">' + esc(park.state) + '</span></span></a>';

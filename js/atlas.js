@@ -52,20 +52,27 @@
     return String(park.state || '').split(',').map(function (part) { return part.trim(); }).filter(Boolean);
   }
 
+  function fillDeferred(img) {
+    var srcset = img.getAttribute('data-srcset');
+    var sizes = img.getAttribute('data-sizes');
+    if (sizes) img.sizes = sizes;
+    if (srcset) img.srcset = srcset;
+    img.src = img.getAttribute('data-src');
+  }
+
   function observeDeferred(root) {
     var images = (root || document).querySelectorAll('img[data-src]');
     if (!images.length) return;
     function start() {
       if (!('IntersectionObserver' in window)) {
-        images.forEach(function (img) { img.src = img.getAttribute('data-src'); });
+        images.forEach(fillDeferred);
         return;
       }
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          var img = entry.target;
-          img.src = img.getAttribute('data-src');
-          observer.unobserve(img);
+          fillDeferred(entry.target);
+          observer.unobserve(entry.target);
         });
       }, { rootMargin: '120px' });
       images.forEach(function (img) { observer.observe(img); });
@@ -79,14 +86,19 @@
     var name = esc(park.name);
     var meta = esc(park.state) + ' · ' + esc(park.region);
     var flag = open ? '' : '<span class="atlas-card-flag">Coming soon</span>';
+    var photoSrcset = esc(dir + 'header-640.webp') + ' 640w, ' + esc(dir + 'header-1280.webp') + ' 1280w';
+    var photoSizes = compact
+      ? '(max-width: 480px) 78vw, 22rem'
+      : '(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw';
     var photoAttr = defer
-      ? ' data-src="' + esc(dir + 'header-640.webp') + '"'
-      : ' src="' + esc(dir + 'header-640.webp') + '"';
+      ? ' data-src="' + esc(dir + 'header-640.webp') + '" data-srcset="' + photoSrcset + '" data-sizes="' + photoSizes + '"'
+      : ' src="' + esc(dir + 'header-640.webp') + '" srcset="' + photoSrcset + '" sizes="' + photoSizes + '"';
+    var badgeSrcset = esc(dir + 'badge-160.webp') + ' 160w, ' + esc(dir + 'badge-320.webp') + ' 320w';
     var badgeAttr = defer
-      ? ' data-src="' + esc(dir + 'badge-160.webp') + '"'
-      : ' src="' + esc(dir + 'badge-160.webp') + '" srcset="' + esc(dir + 'badge-160.webp') + ' 160w, ' + esc(dir + 'badge-320.webp') + ' 320w"';
+      ? ' data-src="' + esc(dir + 'badge-160.webp') + '" data-srcset="' + badgeSrcset + '" data-sizes="72px"'
+      : ' src="' + esc(dir + 'badge-160.webp') + '" srcset="' + badgeSrcset + '" sizes="72px"';
     var inner = '<img class="atlas-card-photo" ' + photoAttr + ' alt="" width="640" height="360" loading="lazy" decoding="async" />'
-      + '<img class="atlas-card-badge" ' + badgeAttr + ' sizes="72px" alt="' + name + ' National Park badge" width="160" height="160" loading="lazy" decoding="async" />'
+      + '<img class="atlas-card-badge" ' + badgeAttr + ' alt="' + name + ' National Park badge" width="160" height="160" loading="lazy" decoding="async" />'
       + '<span class="atlas-card-shade" aria-hidden="true"></span>'
       + '<span class="atlas-card-copy"><span class="atlas-card-name">' + name + '</span>'
       + '<span class="atlas-card-meta">' + meta + '</span>' + flag + '</span>';
@@ -281,8 +293,9 @@
       tiles.innerHTML = LANDSCAPES.map(function (pair) {
         var rep = PARKS.find(function (park) { return park.id === reps[pair[0]]; }) || PARKS[0];
         var openN = PARKS.filter(function (park) { return park.landscape === pair[0] && isOpen(park); }).length;
+        var tileDir = base() + 'assets/park-art/' + rep.id + '/';
         return '<a class="landscape-tile" href="' + esc(base() + 'parks.html?landscape=' + encodeURIComponent(pair[0])) + '">'
-          + '<img data-src="' + esc(base() + 'assets/park-art/' + rep.id + '/header-640.webp') + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
+          + '<img data-src="' + esc(tileDir + 'header-640.webp') + '" data-srcset="' + esc(tileDir + 'header-640.webp') + ' 640w, ' + esc(tileDir + 'header-1280.webp') + ' 1280w" data-sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" alt="" width="640" height="360" loading="lazy" decoding="async" />'
           + '<span><strong>' + esc(pair[1]) + '</strong><small>' + (openN ? openN + ' open' : 'Coming soon') + '</small></span></a>';
       }).join('');
     }
@@ -299,7 +312,10 @@
       }
       var picks = pool.slice(0, 3);
       if (bandArt && picks[0]) {
-        bandArt.setAttribute('data-src', base() + 'assets/park-art/' + picks[0].id + '/header-1280.webp');
+        var bandDir = base() + 'assets/park-art/' + picks[0].id + '/';
+        bandArt.setAttribute('data-src', bandDir + 'header-1280.webp');
+        bandArt.setAttribute('data-srcset', bandDir + 'header-640.webp 640w, ' + bandDir + 'header-1280.webp 1280w, ' + bandDir + 'header-1920.webp 1920w, ' + bandDir + 'header-2560.webp 2560w');
+        bandArt.setAttribute('data-sizes', '100vw');
         bandArt.setAttribute('loading', 'lazy');
         bandArt.setAttribute('decoding', 'async');
       }
@@ -536,7 +552,7 @@
       var href = open ? ' href="' + esc(pageHref(park)) + '"' : '';
       var badgeDir = base() + 'assets/park-art/' + park.id + '/';
       return '<' + tag + ' class="badge-wall-item' + (open ? '' : ' is-soon') + '"' + href + '>'
-        + '<img data-src="' + esc(badgeDir + 'badge-160.webp') + '" alt="' + esc(park.name) + ' National Park badge" width="160" height="160" loading="lazy" decoding="async" />'
+        + '<img data-src="' + esc(badgeDir + 'badge-160.webp') + '" data-srcset="' + esc(badgeDir + 'badge-160.webp') + ' 160w, ' + esc(badgeDir + 'badge-320.webp') + ' 320w" data-sizes="120px" alt="' + esc(park.name) + ' National Park badge" width="160" height="160" loading="lazy" decoding="async" />'
         + '<span class="badge-wall-name">' + esc(park.name) + '</span>'
         + '</' + tag + '>';
     }).join('');
