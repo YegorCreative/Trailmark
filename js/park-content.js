@@ -4926,7 +4926,7 @@ const PARK_PAGE_CONTENT = {
       title: 'The mountain is the picture. The sheep were the reason.',
       body: [
         'The header puts the white massif over a braided river, autumn tundra, a single road, and one dark animal. That road is 92 miles, the basic-information page says, dirt and gravel after the first 15 paved miles. Private cars stop at Savage River. The rest is a bus, in season.',
-        'The mountain-name page says the peak and the park were officially Mount McKinley after February 26, 1917, that ANILCA renamed the park in 1980, and that the mountain itself was restored to Denali in 2015. The Athabascan sense Sheldon used was the high one.',
+        'The mountain-name page, updated March 26, 2025, says the official name of the peak is again Mount McKinley. A 2025 executive order restored that name. The park remains Denali National Park and Preserve. The mountain is also widely known as Denali, from the Koyukon Athabascan deenaalee, a word for the tall one.',
       ],
     },
     landscapeHighlights: {
@@ -4934,16 +4934,16 @@ const PARK_PAGE_CONTENT = {
       title: 'Taiga, tundra, and a summit that may not be out',
       items: [
         { title: 'The one road', modifier: 'road', wash: 'linear-gradient(165deg, #e8d4b8 0%, #c46a3a 42%, #3a3028 100%)', body: 'The understanding page calls it the Denali Park Road, 92 miles, east to west, the only road and the only entrance. The header follows it toward the mountain. Buses and the paved limit are operating facts. Check them on NPS.' },
-        { title: 'The high one', modifier: 'peak', wash: 'linear-gradient(180deg, #f4f7fb 0%, #8aa4c0 36%, #1a3a5c 100%)', body: 'The fact sheet lists the south peak at 20,310 feet and the north peak at 19,470. The lowest point on that sheet is the Yentna River at the boundary, 223 feet. The relief is the park.' },
+        { title: 'Mount McKinley', modifier: 'peak', wash: 'linear-gradient(180deg, #f4f7fb 0%, #8aa4c0 36%, #1a3a5c 100%)', body: 'The fact sheet lists the south peak at 20,310 feet and the north peak at 19,470. The lowest point on that sheet is the Yentna River at the boundary, 223 feet. The official name is Mount McKinley. Denali is the Koyukon name still in wide use, and it is the name of the park.' },
         { title: 'Wonder Lake and the braids', modifier: 'braid', wash: 'linear-gradient(160deg, #d8e4ea 0%, #6a8aaa 46%, #2a3840 100%)', body: 'The same sheet places Wonder Lake Campground at 2,055 feet. The river in the painting is the braid you see before the peak. It is not a claim that every view includes the summit. Cloud is the usual editor.' },
       ],
     },
     hiddenDiscoveries: {
       kicker: 'Hidden Discoveries',
-      title: 'A first ascent before the park, and a name that took a century',
+      title: 'A first ascent before the park, and a peak with more than one name',
       items: [
         { title: 'June 7, 1913', body: 'The park history index points to the first ascent of the south summit: Hudson Stuck, Walter Harper, Harry Karstens, and Robert Tatum. Harper, a Native Alaskan, was first on top. The park came four years later. Karstens was hired as superintendent in 1921, after four years with no appropriation and with hunting still under way.' },
-        { title: 'The 2015 name', body: 'The mountain-name page says the State of Alaska asked in 1975 to restore Denali and was blocked for decades. On August 28, 2015, the name of the mountain was officially changed from Mount McKinley to Denali. The fact sheet records that date. A 2026 homepage caption still says Mount McKinley. This essay follows the name page and the fact sheet, and logs the caption.' },
+        { title: 'The names', body: 'The mountain-name page says at least nine Alaska Native groups have had their own names for the peak. Denali comes from Koyukon deenaalee. William Dickey\'s 1897 article popularized Mount McKinley. The 1917 park used that name. ANILCA in 1980 renamed the park and left the mountain as Mount McKinley. In 2015 the federal name of the mountain became Denali. In 2025 an executive order changed it back to Mount McKinley. That 2015 name is history, not the current official name. The park\'s name did not change.' },
         { title: 'Sled dogs', body: 'The history index says the park has had a team of canine rangers for nearly its entire history. The fact sheet says the kennels building went up in 1929 and demonstrations began in 1939. A dog count from 2016 is not repeated here.' },
       ],
     },
@@ -4984,11 +4984,11 @@ const PARK_PAGE_CONTENT = {
       tips: [
         { label: 'Cloud', body: 'Do not wait the whole trip for a clear peak and miss the sheep slopes. The 1917 park is still there when the summit is not.' },
         { label: 'The bus window', body: 'Past Savage River the view is often from a bus. The animal sets the stop, not the photographer.' },
-        { label: 'The name', body: 'Label the mountain Denali. The 2015 restoration is the name page\'s fact, even where an older caption lingers.' },
+        { label: 'The name', body: 'The official name is Mount McKinley. Denali is the Koyukon name the mountain-name page records, and it is still widely used. Either label should say which one it is.' },
       ],
     },
     fieldNotes: {
-      quote: 'They drew the boundary for the sheep. The mountain was already impossible to ignore, and it took until 2015 to give it back its name.',
+      quote: 'They drew the boundary for the sheep. The peak above the road is officially Mount McKinley, and people still call it Denali.',
       attribution: 'TrailMark Field Notes',
     },
     badgeStory: {

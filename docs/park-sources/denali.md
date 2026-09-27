@@ -4,8 +4,11 @@ Live pages used:
 
 - Enabling legislation: https://www.nps.gov/dena/learn/management/enabling-legislation.htm
   - 1917 act, originally Mount McKinley National Park, as a game refuge. ANILCA in 1980 tripled the size and renamed it Denali National Park and Preserve.
-- Mountain name: https://www.nps.gov/dena/learn/historyculture/mountain-name.htm
-  - Signed into law February 26, 1917. Park renamed in 1980. Mountain restored to Denali in 2015.
+- Mountain name origins, last updated March 26, 2025: https://www.nps.gov/dena/learn/historyculture/mountain-name.htm
+  - Opened for this correction. Denali stems from Koyukon deenaalee, used by groups north and west of the Alaska Range, translating to "the tall one."
+  - Mount McKinley National Park signed into law February 26, 1917. ANILCA in 1980 renamed the park Denali National Park and Preserve. The mountain stayed Mount McKinley until 2015, when it was renamed Denali.
+  - In 2025, President Donald Trump issued an executive order restoring the name Mount McKinley. The park name remains Denali National Park and Preserve.
+  - The page does not print the order number. Executive Order 14172 of January 20, 2025, "Restoring Names That Honor American Greatness," is the order: https://www.federalregister.gov/documents/2025/01/31/2025-02096/restoring-names-that-honor-american-greatness. It directs the Secretary of the Interior to reinstate "Mount McKinley" and says the park area shall retain the name Denali National Park and Preserve.
 - Understanding Denali: https://www.nps.gov/dena/meanings.htm
   - One road, 92 miles. Created in 1917 to protect Dall sheep. About 6 million acres. Sheldon and Karstens. Karstens hired in 1921.
 - Basic information: https://www.nps.gov/dena/planyourvisit/basicinfo.htm
@@ -17,6 +20,6 @@ Live pages used:
 - Original headquarters: https://www.nps.gov/dena/learn/photosmultimedia/station06.htm
   - Wilson signed February 26, 1917. Karstens arrived 1921. No funds for four years.
 - Homepage, last updated August 26, 2026: https://www.nps.gov/dena/
-  - Six million acres. One road. A caption still says 20,310-foot Mount McKinley. The essay follows the 2015 name restoration and logs the conflict.
+  - Six million acres. One road. The homepage calls the summit 20,310-foot Mount McKinley, which matches the 2025 official name.
 
 The sheep drawing is not a census. Road rules are left to NPS.

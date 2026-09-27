@@ -92,7 +92,7 @@ Hero focus: Cuyahoga Valley `62% 52%` (falls), Denali `62% 40%` (summit), Dry To
 
 Gates of the Arctic's full name does not leave room for a title hook. The hook "No Roads" is stored and the title is the name only. Gateway Arch uses "Steel Arch" because "Stainless Steel Arch" made the title 61 characters.
 
-No park in this batch is marked needs-fact-review. Doubts logged here: a 2026 Denali homepage caption still says Mount McKinley, while the mountain-name page and the 2017 fact sheet say the name Denali was restored in 2015; the essay follows the name page. Cuyahoga acreage is both about 33,000 and about 32,950. Gateway Arch acreage is 90.96 and 91. Gates of the Arctic history says more than 13,000 years and the basic-information page says a 12,000-year record. Three of the six wild rivers were not named because the source extract was cut off.
+No park in this batch is marked needs-fact-review. The Denali mountain-name page (updated March 26, 2025) says a 2025 executive order restored the official name Mount McKinley. Executive Order 14172 (January 20, 2025) is that order. The park name remains Denali National Park and Preserve. The 2015 renaming is history, not the current federal name. The mountain is also widely known by the Koyukon Athabascan name Denali. Cuyahoga acreage is both about 33,000 and about 32,950. Gateway Arch acreage is 90.96 and 91. Gates of the Arctic history says more than 13,000 years and the basic-information page says a 12,000-year record. Three of the six wild rivers were not named because the source extract was cut off.
 
 Next unpublished parks are the other 24.
 
