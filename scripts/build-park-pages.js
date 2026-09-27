@@ -204,6 +204,7 @@ function pageHtml(park, essay, articleHtml, modified) {
     + '    <link rel="stylesheet" href="../css/styles.css" />\n'
     + '    <link rel="stylesheet" href="../css/styles-responsive.css" />\n'
     + '    <link rel="stylesheet" href="../css/atlas.css" />\n'
+    + '    <link rel="stylesheet" href="../css/today.css" />\n'
     + '  </head>\n'
     + '  <body>\n'
     + '    <a class="skip-link" href="#park-page">Skip to ' + escapeHtml(park.name) + ' content</a>\n'
@@ -218,6 +219,7 @@ function pageHtml(park, essay, articleHtml, modified) {
     + '        <nav id="site-nav" aria-label="Site navigation">\n'
     + '          <ul class="nav-list">\n'
     + '            <li class="nav-item--parks"><a href="../parks.html" class="nav-link" data-nav="parks">Parks</a></li>\n'
+    + '            <li><a href="../today.html" class="nav-link" data-nav="today">Today</a></li>\n'
     + '            <li><a href="../about.html" class="nav-link" data-nav="about">About</a></li>\n'
     + '            <li><a href="../faq.html" class="nav-link" data-nav="faq">FAQ</a></li>\n'
     + '            <li><a href="../contact.html" class="nav-link" data-nav="contact">Contact</a></li>\n'
@@ -238,6 +240,7 @@ function pageHtml(park, essay, articleHtml, modified) {
     + '        </div>\n'
     + '        <nav class="site-footer-nav" aria-label="Footer">\n'
     + '          <a href="../parks.html">Parks</a>\n'
+    + '          <a href="../today.html">Today</a>\n'
     + '          <a href="../about.html">About</a>\n'
     + '          <a href="../photos.html">Photos</a>\n'
     + '          <a href="../faq.html">FAQ</a>\n'
@@ -256,6 +259,8 @@ function pageHtml(park, essay, articleHtml, modified) {
     + '    <script src="../js/park-content.js"></script>\n'
     + '    <script src="../js/park-render.js"></script>\n'
     + '    <script src="../js/park-page.js"></script>\n'
+    + '    <script src="../js/park-status-render.js"></script>\n'
+    + '    <script src="../js/park-today-box.js"></script>\n'
     + '    <script src="../js/atlas.js"></script>\n'
     + '    <script src="../js/script.js"></script>\n'
     + '    <script src="../js/photos.js"></script>\n'
@@ -386,6 +391,7 @@ function main() {
   const staticPages = [
     { loc: SITE + '/', file: 'index.html' },
     { loc: SITE + '/parks.html', file: 'parks.html' },
+    { loc: SITE + '/today.html', file: 'today.html' },
     { loc: SITE + '/about.html', file: 'about.html' },
     { loc: SITE + '/faq.html', file: 'faq.html' },
     { loc: SITE + '/contact.html', file: 'contact.html' },

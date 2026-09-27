@@ -448,6 +448,7 @@
 
     return [
       renderHero(),
+      '<div id="today-at-park" class="today-box" hidden></div>',
       renderChapters(),
       renderOverview(),
       renderEmotionalThesis(),

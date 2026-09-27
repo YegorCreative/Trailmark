@@ -1,0 +1,349 @@
+/*
+  today.css
+  Styles for today.html only. Reuses the shared color/font/spacing custom
+  properties defined in styles.css and atlas.css.
+*/
+
+.today-page {
+  padding: 6.5rem 0 5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.today-page-inner {
+  padding: 0 1.5rem;
+}
+
+.today-notice {
+  background: #FBEFD9;
+  border: 1px solid #E3C888;
+  color: #4A3A10;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 2rem;
+}
+
+.today-notice strong { font-weight: 600; }
+
+.today-hero { margin-bottom: 2rem; }
+
+.today-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 560;
+  line-height: 1.02;
+  margin: 0.3rem 0 0.6rem;
+  color: var(--color-text);
+}
+
+.today-date {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin: 0 0 0.25rem;
+}
+
+.today-generated {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.today-datebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.today-date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.today-date-field input[type="date"] {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-white);
+  color: var(--color-text);
+  min-height: 44px;
+}
+
+.today-future-note {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--color-text);
+  background: var(--color-cream-dark);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  margin: 0;
+  max-width: 32rem;
+}
+
+.today-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--color-cream-dark);
+  border-radius: var(--radius-card);
+}
+
+.today-filters .filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.today-filters .filter-field select,
+.today-filters .filter-field input[type="search"] {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-white);
+  min-height: 44px;
+  min-width: 9rem;
+}
+
+.filter-field--check {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-field--check input {
+  width: 20px;
+  height: 20px;
+}
+
+.filter-field--search { flex: 1 1 14rem; }
+.filter-field--search input { width: 100%; }
+
+.today-count {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0 0 1.25rem;
+}
+
+.today-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 1.5rem;
+}
+
+.today-card {
+  background: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.today-card-media { display: block; aspect-ratio: 16 / 9; overflow: hidden; }
+.today-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.today-card-body { padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: 0.5rem; }
+
+.today-card-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+
+.today-card-name { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 560; margin: 0; }
+.today-card-name a { color: var(--color-text); text-decoration: none; }
+.today-card-name a:hover, .today-card-name a:focus-visible { text-decoration: underline; }
+
+.today-card-state { font-family: var(--font-body); font-size: 0.82rem; color: var(--color-text-muted); margin: 0; }
+
+.today-card-status {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-green-dark);
+  margin: 0;
+}
+
+.today-card-closure-flag {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #8A2A12;
+  background: #FBE0D4;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin: 0;
+  width: fit-content;
+}
+
+.today-card-alerts { list-style: none; margin: 0.2rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+
+.today-alert-item { font-family: var(--font-body); font-size: 0.85rem; line-height: 1.4; }
+.today-alert-item a { color: var(--color-text); }
+
+.today-alert-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: var(--color-cream-dark);
+  color: var(--color-text);
+  margin-right: 0.35rem;
+}
+
+.today-card-vc,
+.today-card-fee,
+.today-card-season {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.today-card-season { font-style: italic; }
+
+.today-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.today-card-links a {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #A83A15;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.today-card-links a:hover,
+.today-card-links a:focus-visible { text-decoration: underline; }
+
+.today-empty {
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .today-grid { grid-template-columns: 1fr; }
+  .today-filters { flex-direction: column; align-items: stretch; }
+  .today-filters .filter-field select,
+  .today-filters .filter-field input { width: 100%; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .today-notice { background: #3A2F12; border-color: #6B5420; color: #F0DFA8; }
+}
+
+/* "Today at [Park]" box, directly below the hero on every park page */
+.today-box {
+  max-width: var(--max-width);
+  margin: 1.5rem auto;
+  padding: 1.1rem 1.4rem;
+  background: var(--color-cream-dark);
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.today-box-kicker {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-green-dark);
+  margin: 0;
+}
+
+.today-box-status {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 560;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.today-box-closure-flag {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #8A2A12;
+  background: #FBE0D4;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin: 0;
+  width: fit-content;
+}
+
+.today-box-alerts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+
+.today-box-alerts li { font-family: var(--font-body); font-size: 0.88rem; line-height: 1.4; }
+.today-box-alerts a { color: var(--color-text); }
+
+.today-box-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: var(--color-white);
+  color: var(--color-text);
+  margin-right: 0.35rem;
+}
+
+.today-box-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 0.2rem;
+}
+
+.today-box-links a {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #A83A15;
+  text-decoration: underline;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .today-box { margin: 1rem 1rem; padding: 1rem; }
+}

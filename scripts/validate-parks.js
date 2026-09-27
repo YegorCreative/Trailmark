@@ -132,7 +132,7 @@ function main() {
     });
   });
 
-  const pages = ['index.html', 'parks.html', 'about.html', 'faq.html', 'contact.html', 'photos.html', '404.html']
+  const pages = ['index.html', 'parks.html', 'today.html', 'about.html', 'faq.html', 'contact.html', 'photos.html', '404.html']
     .concat(parks.filter(function (park) { return park.pageUrl; }).map(function (park) { return park.pageUrl; }));
   const titles = new Map();
   const descriptions = new Map();
