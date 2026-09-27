@@ -84,6 +84,19 @@
     return { line: 'Hours today: ' + hours.text, kind: 'specific', exceptionName: hours.exceptionName };
   }
 
+  var FRESHNESS_WINDOW_MS = 48 * 60 * 60 * 1000;
+
+  // True only when generatedAt parses to a real date within the last 48
+  // hours. Null, missing, unparsable, or older all count as stale — the
+  // UI must not show any status/hours/fee/alert built from stale data.
+  function isDataFresh(generatedAt, now) {
+    if (!generatedAt) return false;
+    var generated = new Date(generatedAt);
+    if (isNaN(generated.getTime())) return false;
+    var reference = now instanceof Date ? now : new Date();
+    return reference.getTime() - generated.getTime() <= FRESHNESS_WINDOW_MS;
+  }
+
   function hasClosureAlert(entry) {
     return Boolean(entry && Array.isArray(entry.alerts)
       && entry.alerts.some(function (alert) { return alert.category === 'Park Closure'; }));
@@ -113,6 +126,8 @@
 
   root.trailmarkParkStatus = {
     WEEKDAYS: WEEKDAYS,
+    STALE_MESSAGE: "Live park conditions aren't available right now. Check the National Park Service before you go.",
+    isDataFresh: isDataFresh,
     localDateKey: localDateKey,
     todayKeyInZone: todayKeyInZone,
     weekdayOfDateKey: weekdayOfDateKey,

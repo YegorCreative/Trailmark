@@ -1,64 +1,13 @@
 {
   "generatedAt": null,
-  "note": "No NPS_API_KEY was available when this fallback snapshot was built (2026-09-27). Yosemite, Glacier, Everglades, Denali, and Hawaiʻi Volcanoes are seeded with real, current data read directly from nps.gov pages that day and cited in docs/park-status-fallback-sources.md. Every other park is an honest placeholder: hours, alerts, and fees are null/empty rather than guessed, and only the deterministic nps.gov park URL is filled in. The daily GitHub Action overwrites this file with real NPS API data for all 63 parks once NPS_API_KEY is set in repo secrets.",
+  "note": "No NPS_API_KEY was available when this fallback snapshot was built. This file is structure only — no alerts, hours, or fees are shown from it (see docs/park-status-fallback-sources.md for the record of what was tried earlier and why it was removed). The daily GitHub Action overwrites this file with real NPS API data for all 63 parks once NPS_API_KEY is set in repo secrets; until then, and whenever this file is more than 48 hours old, today.html and the park Today boxes show a stale-data notice instead of any status.",
   "parks": {
     "yosemite": {
-      "standardHours": {
-        "monday": "All Day",
-        "tuesday": "All Day",
-        "wednesday": "All Day",
-        "thursday": "All Day",
-        "friday": "All Day",
-        "saturday": "All Day",
-        "sunday": "All Day"
-      },
+      "standardHours": null,
       "exceptions": [],
-      "alerts": [
-        {
-          "title": "Glacier Point Road Closure",
-          "category": "Park Closure",
-          "description": "Temporarily closed due to smoky conditions and to allow firefighting operations.",
-          "url": "https://www.nps.gov/yose/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        },
-        {
-          "title": "Dome Fire",
-          "category": "Caution",
-          "description": "Active fire northeast of Wawona causing potential smoky conditions and unhealthy air quality at various times throughout the day.",
-          "url": "https://www.nps.gov/yose/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        },
-        {
-          "title": "Mist Trail Limited Hours",
-          "category": "Information",
-          "description": "Trail open Fridays-Sundays and holidays through October; weekday access 3:30 pm-7 am only due to repair work.",
-          "url": "https://www.nps.gov/yose/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        },
-        {
-          "title": "El Capitan Bridge Stabilization",
-          "category": "Information",
-          "description": "Expect 15-minute delays Monday-Friday, 7 am-7 pm through December 2026 during stabilization work.",
-          "url": "https://www.nps.gov/yose/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        },
-        {
-          "title": "Bear Activity",
-          "category": "Caution",
-          "description": "Bears remain active park-wide; maintain 50-yard distance and proper food storage practices.",
-          "url": "https://www.nps.gov/yose/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        },
-        {
-          "title": "Rabies Warning",
-          "category": "Danger",
-          "description": "A bat tested positive for rabies in May; avoid handling or feeding wildlife.",
-          "url": "https://www.nps.gov/yose/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        }
-      ],
+      "alerts": [],
       "visitorCenters": [],
-      "feeSummary": "$35.00 — Private Vehicle (7 consecutive days)",
+      "feeSummary": null,
       "parkUrl": "https://www.nps.gov/yose/"
     },
     "yellowstone": {
@@ -198,48 +147,11 @@
       "parkUrl": "https://www.nps.gov/deva/"
     },
     "denali": {
-      "standardHours": {
-        "monday": "All Day",
-        "tuesday": "All Day",
-        "wednesday": "All Day",
-        "thursday": "All Day",
-        "friday": "All Day",
-        "saturday": "All Day",
-        "sunday": "All Day"
-      },
+      "standardHours": null,
       "exceptions": [],
-      "alerts": [
-        {
-          "title": "Fall/Winter 2026 Road Conditions",
-          "category": "Information",
-          "description": "The park road is open to personal vehicles to Teklanika (mile 30), weather permitting, through October 15 or until snow/ice closes it at Park Headquarters.",
-          "url": "https://www.nps.gov/dena/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        },
-        {
-          "title": "Visitor Center Seasonal Changes",
-          "category": "Information",
-          "description": "The Denali Visitor Center has closed for the season. The Winter Visitor Center opens for the season on Thursday, September 24, 2026.",
-          "url": "https://www.nps.gov/dena/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        },
-        {
-          "title": "Road Work and Construction",
-          "category": "Caution",
-          "description": "Construction crews are actively working on road repairs and facility maintenance in the west district. Watch for traffic and heavy equipment.",
-          "url": "https://www.nps.gov/dena/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        },
-        {
-          "title": "Summer 2027 Bus Service Resumption",
-          "category": "Information",
-          "description": "Full bus service along the park road will resume in 2027 following completion of the Pretty Rocks bridge. Reservations open December 1, 2026.",
-          "url": "https://www.nps.gov/dena/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        }
-      ],
+      "alerts": [],
       "visitorCenters": [],
-      "feeSummary": "$15.00 — Per Person, age 16 and older (7 days)",
+      "feeSummary": null,
       "parkUrl": "https://www.nps.gov/dena/"
     },
     "dry-tortugas": {
@@ -251,67 +163,10 @@
       "parkUrl": "https://www.nps.gov/drto/"
     },
     "everglades": {
-      "standardHours": {
-        "monday": "All Day",
-        "tuesday": "All Day",
-        "wednesday": "All Day",
-        "thursday": "All Day",
-        "friday": "All Day",
-        "saturday": "All Day",
-        "sunday": "All Day"
-      },
+      "standardHours": null,
       "exceptions": [],
-      "alerts": [
-        {
-          "title": "East Everglades Day Use Area Closure",
-          "category": "Park Closure",
-          "description": "Closed to all public use to ensure public safety during construction operations at the northeastern boundary area.",
-          "url": "https://www.nps.gov/ever/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-09"
-        },
-        {
-          "title": "Hog Key Partial Closure",
-          "category": "Park Closure",
-          "description": "Camping remains open, but the middle section of Hog Key is closed to visitors.",
-          "url": "https://www.nps.gov/ever/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-09"
-        },
-        {
-          "title": "Pavilion Key Interior Closure",
-          "category": "Park Closure",
-          "description": "Interior closed for resource protection; the north campsite remains accessible with a wilderness permit.",
-          "url": "https://www.nps.gov/ever/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-09"
-        },
-        {
-          "title": "Wilderness Sites Maintenance Closure",
-          "category": "Park Closure",
-          "description": "Johnson Key Chickee, Shark Point Chickee, and Little Rabbit Key Ground Site are closed for maintenance.",
-          "url": "https://www.nps.gov/ever/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-09"
-        },
-        {
-          "title": "Halfway Creek Trail Impassability",
-          "category": "Caution",
-          "description": "Not completely passable at this time; alternate routing provided for paddlers attempting through-trips.",
-          "url": "https://www.nps.gov/ever/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-09"
-        }
-      ],
-      "visitorCenters": [
-        {
-          "name": "Shark Valley Visitor Center",
-          "hours": {
-            "monday": "8:30AM - 6:00PM",
-            "tuesday": "8:30AM - 6:00PM",
-            "wednesday": "8:30AM - 6:00PM",
-            "thursday": "8:30AM - 6:00PM",
-            "friday": "8:30AM - 6:00PM",
-            "saturday": "8:30AM - 6:00PM",
-            "sunday": "8:30AM - 6:00PM"
-          }
-        }
-      ],
+      "alerts": [],
+      "visitorCenters": [],
       "feeSummary": null,
       "parkUrl": "https://www.nps.gov/ever/"
     },
@@ -332,19 +187,11 @@
       "parkUrl": "https://www.nps.gov/jeff/"
     },
     "glacier": {
-      "standardHours": {
-        "monday": "All Day",
-        "tuesday": "All Day",
-        "wednesday": "All Day",
-        "thursday": "All Day",
-        "friday": "All Day",
-        "saturday": "All Day",
-        "sunday": "All Day"
-      },
+      "standardHours": null,
       "exceptions": [],
       "alerts": [],
       "visitorCenters": [],
-      "feeSummary": "$35.00 — Private Vehicle, 7 days (winter rate $25.00, Nov 1–Apr 30)",
+      "feeSummary": null,
       "parkUrl": "https://www.nps.gov/glac/"
     },
     "glacier-bay": {
@@ -412,27 +259,11 @@
       "parkUrl": "https://www.nps.gov/hale/"
     },
     "hawaii-volcanoes": {
-      "standardHours": {
-        "monday": "All Day",
-        "tuesday": "All Day",
-        "wednesday": "All Day",
-        "thursday": "All Day",
-        "friday": "All Day",
-        "saturday": "All Day",
-        "sunday": "All Day"
-      },
+      "standardHours": null,
       "exceptions": [],
-      "alerts": [
-        {
-          "title": "Construction Closure",
-          "category": "Park Closure",
-          "description": "Closures and delays due to a two-year construction project to repair or remove damaged buildings and infrastructure at the summit.",
-          "url": "https://www.nps.gov/havo/planyourvisit/conditions.htm",
-          "lastIndexedDate": "2026-09-27"
-        }
-      ],
+      "alerts": [],
       "visitorCenters": [],
-      "feeSummary": "$30.00 — Private Vehicle (7 days)",
+      "feeSummary": null,
       "parkUrl": "https://www.nps.gov/havo/"
     },
     "hot-springs": {

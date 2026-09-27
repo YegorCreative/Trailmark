@@ -92,9 +92,10 @@
     return center.name + ': ' + raw;
   }
 
-  function fillCard(node, park, entry, dateKey, showAlerts) {
+  function fillCard(node, park, entry, dateKey, showAlerts, dataFresh) {
     var chapterHref = park.pageUrl || ('parks/' + park.id + '.html');
     var npsHref = (entry && entry.parkUrl) || ('https://www.nps.gov/' + park.npsCode + '/');
+    var alertsHref = npsHref + 'planyourvisit/conditions.htm';
 
     node.querySelectorAll('[data-card-link]').forEach(function (a) {
       a.href = chapterHref;
@@ -107,39 +108,49 @@
     node.querySelector('[data-card-name]').href = chapterHref;
     node.querySelector('[data-card-state]').textContent = park.state || '';
 
-    var status = STATUS.statusLineFor(entry, dateKey);
     var statusEl = node.querySelector('[data-card-status]');
-    if (status.line) {
-      statusEl.textContent = status.line + (status.exceptionName ? ' (' + status.exceptionName + ')' : '');
-    } else {
-      statusEl.textContent = 'NPS hours not available yet — check NPS before you go.';
-    }
-
     var closureFlag = node.querySelector('[data-card-closure-flag]');
-    var isClosureActive = showAlerts && STATUS.hasClosureAlert(entry);
-    closureFlag.hidden = !isClosureActive;
-
     var alertsEl = node.querySelector('[data-card-alerts]');
-    alertsEl.innerHTML = '';
-    if (showAlerts && entry && entry.alerts && entry.alerts.length) {
-      entry.alerts.slice(0, 2).forEach(function (alert) {
-        var li = document.createElement('li');
-        li.className = 'today-alert-item';
-        li.innerHTML = '<span class="today-alert-chip">' + esc(alert.category || 'Alert') + '</span> '
-          + '<a href="' + esc(alert.url || npsHref) + '" target="_blank" rel="noopener">' + esc(alert.title) + '</a>';
-        alertsEl.appendChild(li);
-      });
-    }
-
     var vcEl = node.querySelector('[data-card-vc]');
-    var vcText = entry && entry.visitorCenters && entry.visitorCenters.length
-      ? visitorCenterHoursText(entry.visitorCenters[0], dateKey) : null;
-    vcEl.hidden = !vcText;
-    if (vcText) vcEl.textContent = vcText;
-
     var feeEl = node.querySelector('[data-card-fee]');
-    feeEl.hidden = !(entry && entry.feeSummary);
-    if (entry && entry.feeSummary) feeEl.textContent = 'Entrance fee: ' + entry.feeSummary;
+    var isClosureActive = false;
+
+    if (!dataFresh) {
+      statusEl.innerHTML = esc(STATUS.STALE_MESSAGE) + ' <a href="' + esc(alertsHref) + '" target="_blank" rel="noopener">Check NPS</a>';
+      closureFlag.hidden = true;
+      alertsEl.innerHTML = '';
+      vcEl.hidden = true;
+      feeEl.hidden = true;
+    } else {
+      var status = STATUS.statusLineFor(entry, dateKey);
+      if (status.line) {
+        statusEl.textContent = status.line + (status.exceptionName ? ' (' + status.exceptionName + ')' : '');
+      } else {
+        statusEl.textContent = 'NPS hours not available yet — check NPS before you go.';
+      }
+
+      isClosureActive = showAlerts && STATUS.hasClosureAlert(entry);
+      closureFlag.hidden = !isClosureActive;
+
+      alertsEl.innerHTML = '';
+      if (showAlerts && entry && entry.alerts && entry.alerts.length) {
+        entry.alerts.slice(0, 2).forEach(function (alert) {
+          var li = document.createElement('li');
+          li.className = 'today-alert-item';
+          li.innerHTML = '<span class="today-alert-chip">' + esc(alert.category || 'Alert') + '</span> '
+            + '<a href="' + esc(alert.url || npsHref) + '" target="_blank" rel="noopener">' + esc(alert.title) + '</a>';
+          alertsEl.appendChild(li);
+        });
+      }
+
+      var vcText = entry && entry.visitorCenters && entry.visitorCenters.length
+        ? visitorCenterHoursText(entry.visitorCenters[0], dateKey) : null;
+      vcEl.hidden = !vcText;
+      if (vcText) vcEl.textContent = vcText;
+
+      feeEl.hidden = !(entry && entry.feeSummary);
+      if (entry && entry.feeSummary) feeEl.textContent = 'Entrance fee: ' + entry.feeSummary;
+    }
 
     var seasonEl = node.querySelector('[data-card-season]');
     var essay = CONTENT[park.id];
@@ -159,6 +170,7 @@
   function renderGrid() {
     var dateKey = selectedDateKey() || null;
     var showAlerts = !pickerTouched;
+    var dataFresh = STATUS.isDataFresh(statusJson && statusJson.generatedAt);
     var sorted = PARKS.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
 
     els.grid.innerHTML = '';
@@ -167,7 +179,7 @@
       var parkDateKey = dateKey || STATUS.todayKeyInZone(park.timeZone);
       var node = els.template.content.firstElementChild.cloneNode(true);
       node.id = 'park-' + park.id;
-      fillCard(node, park, entry, parkDateKey, showAlerts);
+      fillCard(node, park, entry, parkDateKey, showAlerts, dataFresh);
       els.grid.appendChild(node);
     });
 
@@ -198,10 +210,12 @@
   function renderHeader() {
     var now = new Date();
     els.todayDate.textContent = now.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-    if (!statusJson || !statusJson.generatedAt) {
-      els.generatedAt.textContent = 'NPS data as of: not yet available for this deployment. Every link below still goes straight to NPS.';
+    var fresh = STATUS.isDataFresh(statusJson && statusJson.generatedAt, now);
+    if (!fresh) {
+      els.generatedAt.hidden = true;
       return;
     }
+    els.generatedAt.hidden = false;
     var generated = new Date(statusJson.generatedAt);
     els.generatedAt.textContent = 'NPS data as of ' + generated.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) + ' (your local time).';
   }

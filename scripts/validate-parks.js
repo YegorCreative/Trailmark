@@ -212,6 +212,22 @@ function main() {
     }
   });
 
+  const statusPath = path.join(root, 'data', 'park-status.json');
+  if (fs.existsSync(statusPath)) {
+    let status = null;
+    try { status = JSON.parse(fs.readFileSync(statusPath, 'utf8')); }
+    catch (error) { errors.push('data/park-status.json is not valid JSON: ' + error.message); }
+    if (status && !status.generatedAt) {
+      const withAlerts = Object.keys(status.parks || {}).filter(function (id) {
+        const entry = status.parks[id];
+        return entry && Array.isArray(entry.alerts) && entry.alerts.length > 0;
+      });
+      if (withAlerts.length) {
+        errors.push('data/park-status.json has generatedAt: null but carries alerts for: ' + withAlerts.join(', ') + ' — stale/placeholder data must never ship with alerts (today.js and park-today-box.js both assume alerts only exist when the data is real).');
+      }
+    }
+  }
+
   if (errors.length) {
     console.error(errors.join('\n'));
     process.exit(1);

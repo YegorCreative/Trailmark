@@ -2,7 +2,12 @@
   park-today-box.js
   Fills the "Today at [Park]" placeholder (id="today-at-park", rendered by
   park-render.js directly below the hero) with the same data today.html
-  uses, scoped to this one park. Hidden entirely if there is no data.
+  uses, scoped to this one park.
+
+  Stale-data guard: when data/park-status.json's generatedAt is null or
+  more than 48 hours old, no status/hours/fee/alert is shown for ANY park
+  — a single clear message replaces them instead. The box only stays
+  hidden if the data is fresh but this one park genuinely has no entry.
 */
 (function () {
   var box = document.getElementById('today-at-park');
@@ -32,12 +37,24 @@
     .catch(function () { return null; })
     .then(function (json) {
       var entry = json && json.parks && json.parks[parkId];
-      if (!hasAnyData(entry)) return; // stays hidden
+      var npsHref = (entry && entry.parkUrl) || ('https://www.nps.gov/' + park.npsCode + '/');
+      var dataFresh = STATUS.isDataFresh(json && json.generatedAt);
+
+      if (!dataFresh) {
+        var alertsHref = npsHref + 'planyourvisit/conditions.htm';
+        box.innerHTML = '<p class="today-box-kicker">Today at ' + esc(park.name) + '</p>'
+          + '<p class="today-box-status today-box-status--stale">' + esc(STATUS.STALE_MESSAGE)
+          + ' <a href="' + esc(alertsHref) + '" target="_blank" rel="noopener">Check NPS</a></p>'
+          + '<div class="today-box-links"><a href="../today.html#park-' + esc(parkId) + '">See all parks today</a></div>';
+        box.hidden = false;
+        return;
+      }
+
+      if (!hasAnyData(entry)) return; // fresh data, but nothing for this park — stays hidden
 
       var dateKey = STATUS.todayKeyInZone(park.timeZone);
       var status = STATUS.statusLineFor(entry, dateKey);
       var isClosureActive = STATUS.hasClosureAlert(entry);
-      var npsHref = entry.parkUrl || ('https://www.nps.gov/' + park.npsCode + '/');
 
       var parts = [];
       parts.push('<p class="today-box-kicker">Today at ' + esc(park.name) + '</p>');

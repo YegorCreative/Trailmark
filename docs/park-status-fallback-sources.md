@@ -1,10 +1,10 @@
-# park-status.json fallback sources
+# park-status.json fallback sources (historical record)
 
-`data/park-status.json` as committed is **not** output from `scripts/fetch-park-status.js` — no `NPS_API_KEY` was available in this environment to run it. It is a hand-built fallback with `generatedAt: null`, so `today.html` shows "NPS data not yet available" rather than any specific claim, for every park except the five below.
+**This data is no longer in `data/park-status.json` and nothing on the site reads from this file.** It is kept only as a record of what was tried and why, per the 2026-09-27 follow-up: hand-seeded data — even sourced from real, live NPS pages — looked indistinguishable on the page from a live API result, with no timestamp a visitor could use to tell the difference. `data/park-status.json` now ships as structure only (`generatedAt: null`, no alerts/hours/fees for any park), and today.html / the park "Today at" box both refuse to show any status, hours, fee, or alert when `generatedAt` is null or more than 48 hours old — see the stale-data guard in `js/park-status-render.js` and `js/today.js`.
 
-Those five were named in the task as the live-page validation spot-check. Their alerts, hours, and fees were read directly from nps.gov on 2026-09-27 and encoded by hand into the same schema `fetch-park-status.js` produces, so the UI has real content to render and the spot-check has something real to compare against. Every other park gets only its deterministic `https://www.nps.gov/<code>/` URL — no hours, fee, or alert is invented for them.
+The five parks below were named in the original task as the live-page validation spot-check. Their alerts, hours, and fees were read directly from nps.gov on 2026-09-27 and encoded by hand into the same schema `fetch-park-status.js` produces, so the spot-check had something real to compare against — this is preserved below for that record, not as current data.
 
-Once `NPS_API_KEY` is added to the repo's GitHub Secrets, the first scheduled (or manually dispatched) run of the `static.yml` workflow overwrites this entire file with real API data for all 63 parks, and this fallback stops mattering except as a safety net for a future fetch failure.
+Once `NPS_API_KEY` is added to the repo's GitHub Secrets, the first scheduled (or manually dispatched) run of the `static.yml` workflow writes real, timestamped API data for all 63 parks, and the site starts showing it automatically.
 
 ## Sources used
 

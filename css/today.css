@@ -183,6 +183,12 @@
   margin: 0;
 }
 
+.today-card-status a,
+.today-box-status a {
+  color: #A83A15;
+  font-weight: 600;
+}
+
 .today-card-closure-flag {
   font-family: var(--font-body);
   font-size: 0.82rem;
@@ -293,6 +299,13 @@
   font-weight: 560;
   color: var(--color-text);
   margin: 0;
+}
+
+.today-box-status--stale {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .today-box-closure-flag {
