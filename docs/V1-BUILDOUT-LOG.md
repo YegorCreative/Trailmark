@@ -134,6 +134,26 @@ No park in this batch is marked needs-fact-review.
 
 Next unpublished parks are the other 18.
 
+### Batch 8 — Kenai Fjords, Kings Canyon, Kobuk Valley, Lake Clark, Lassen Volcanic, Mammoth Cave
+
+Published. Sources are in `docs/park-sources/`.
+
+National-park years: Kenai Fjords monument December 1, 1978, national park December 2, 1980; Kings Canyon merged and renamed March 4, 1940 (General Grant NP established October 1, 1890, one week after Sequoia); Kobuk Valley monument December 1, 1978, national park December 2, 1980; Lake Clark monument December 1, 1978, national park and preserve December 2, 1980; Lassen Peak and Cinder Cone national monuments May 6, 1907, Lassen Volcanic National Park August 9, 1916; Mammoth Cave authorized May 25, 1926, established July 1, 1941.
+
+Hero focus: Kenai Fjords `58% 52%` (glacier face), Kings Canyon `46% 55%` (river and canyon wall), Kobuk Valley `66% 62%` (dunes), Lake Clark `64% 44%` (volcano over the lake), Lassen Volcanic `58% 46%` (peak and thermal basin), Mammoth Cave `56% 52%` (underground river and flowstone).
+
+No park in this batch is marked needs-fact-review.
+
+Conflicting figures in this batch:
+
+- Kenai Fjords Harding Icefield: a Geodiversity Atlas search snippet gave 800 square miles (2,072 km²); the 2025 fact sheet gives approximately 700 square miles. The fact sheet, the dedicated statistics page, is used. Total acreage 669,984 (Geodiversity Atlas) and 669,983 (fact sheet) is a one-acre rounding difference, not a real conflict; the fact sheet figure is used.
+- Kobuk Valley human presence at Onion Portage: about 9,000 years (overview page), "ten thousand years" (history and culture page), and "over 8,000 years" (same page). No statistics page. Used more than 8,000 years, the floor every figure supports.
+- Mammoth Cave acreage: the 1941 timeline gives 45,310 acres at founding; the current statistics page gives 52,830 acres today. These are different points in time, not a conflict, and both are kept with their dates (comparable to the Grand Teton 1929/1950 entry already in this log).
+
+A full rebuild after adding these six parks also updated the auto-generated "Continue through the archive" neighbor grid on nine already-published pages whose alphabetical neighbors shifted: Carlsbad Caverns, Gates of the Arctic, Guadalupe Mountains, Haleakalā, Hawaiʻi Volcanoes, Joshua Tree, Katmai, Mesa Verde, and Yellowstone. No hand-authored content on those pages changed, only the renderer's computed prev/next/related links.
+
+Next unpublished parks are the other 12: Mount Rainier, New River Gorge, North Cascades, Pinnacles, Redwood, Sequoia, Shenandoah, Theodore Roosevelt, Virgin Islands, Voyageurs, Wind Cave, Wrangell-St. Elias.
+
 ## SEO metadata
 
 - `scripts/build-park-pages.js` writes each park title, description, canonical, Open Graph, Twitter card, and JSON-LD, and pre-renders the article into `#park-page`. `js/park-render.js` is shared with the browser. `js/park-page.js` only binds chapters, tilt, and reveals when the article is already in the page.
