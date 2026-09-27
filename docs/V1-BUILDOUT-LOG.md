@@ -72,6 +72,18 @@ No park in this batch is marked needs-fact-review. The Big Bend year comes from 
 
 Next unpublished parks are the other 36.
 
+### Batch 5 — American Samoa, Badlands, Biscayne, Channel Islands, Congaree, Crater Lake
+
+Published. Sources are in `docs/park-sources/`. National-park years checked on NPS: American Samoa 1993 (no day on the history page); Badlands 1978 (monument 1939; no day on the Geodiversity Atlas); Biscayne statute date June 28, 1980 (monument signed October 18, 1968); Channel Islands March 5, 1980 (monument April 26, 1938); Congaree 2003 (monument 1976; the day is in the foundation PDF and was not copied); Crater Lake May 22, 1902.
+
+Hero focus from the header paintings for a short wide crop: American Samoa `42% 62%` (reef and beach), Badlands `62% 55%` (banded buttes), Biscayne `62% 52%` (lighthouse and waterline), Channel Islands `70% 55%` (arch), Congaree `58% 48%` (boardwalk and cypress), Crater Lake `50% 42%` (rim and Wizard Island).
+
+No park in this batch is marked needs-fact-review. The Badlands nature page says 244,000 acres and the atlas says 242,756; both are kept. The Congaree history page says at least 10,000 years and the history index says over 13,000; both are kept. Channel Islands species totals from a 2020 news release were not used. The Crater Lake page spells the surviving salmon Kokonee.
+
+Doubt: Biscayne's enabling page names June 28, 1980 inside the quoted statute. A separate sentence that Congress signed the park law that day lives in the foundation PDF and was not opened as HTML.
+
+Next unpublished parks are the other 30.
+
 ## SEO metadata
 
 - `scripts/build-park-pages.js` writes each park title, description, canonical, Open Graph, Twitter card, and JSON-LD, and pre-renders the article into `#park-page`. `js/park-render.js` is shared with the browser. `js/park-page.js` only binds chapters, tilt, and reveals when the article is already in the page.
