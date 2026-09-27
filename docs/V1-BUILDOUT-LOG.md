@@ -176,6 +176,27 @@ A rebuild after adding these six parks also updated the auto-generated neighbor 
 
 Next unpublished parks are the final 6: Shenandoah, Theodore Roosevelt, Virgin Islands, Voyageurs, Wind Cave, Wrangell-St. Elias.
 
+### Batch 10 — Shenandoah, Theodore Roosevelt, Virgin Islands, Voyageurs, Wind Cave, Wrangell-St. Elias
+
+Published. Sources are in `docs/park-sources/`. This is the final batch: all 63 parks are now open.
+
+National-park years: Shenandoah December 26, 1935; Theodore Roosevelt memorial park April 25, 1947, national park November 10, 1978; Virgin Islands authorized August 2, 1956 (Rockefeller donation 1952); Voyageurs 1975; Wind Cave January 9, 1903, the first cave anywhere designated a national park; Wrangell-St. Elias December 2, 1980 (ANILCA), the largest unit in the National Park System.
+
+Hero focus: Shenandoah `62% 48%` (Skyline Drive curve), Theodore Roosevelt `58% 52%` (butte and river), Virgin Islands `42% 55%` (reef bay), Voyageurs `68% 62%` (canoe and aurora), Wind Cave `50% 62%` (boxwork cross-section), Wrangell-St. Elias `72% 42%` (Kennecott mill).
+
+No park in this batch is marked needs-fact-review.
+
+Conflicting figures in this batch:
+
+- Wind Cave surveyed length: reported at different points as 114 miles (a January 2005 NPS press release, 5th-longest in the world at that time), and separately, via WebSearch summaries not confirmed by direct nps.gov fetch, as 119.6 miles (2006, 4th longest), 129.8 miles (Geologic Resources Inventory Report), and 168.02 miles (a 2025 summary, 6th longest). No dedicated current statistics page was found. The essay states the directly-sourced 2005/114-mile milestone with its date and notes the ranking keeps changing as exploration continues, rather than asserting one current length or rank.
+- Wrangell-St. Elias mountain-range count: the park's own homepage names two ranges, the Wrangell and St. Elias; a WebSearch summary of other NPS material describes four converging ranges (adding the Chugach Mountains and the eastern Alaska Range). The essay uses the four-range framing but attributes it to the broader regional description rather than to one directly quoted page.
+
+A metaDescription bug was found and fixed while validating this batch, not previously caught by `scripts/validate-parks.js`: the build script's meta-description sentence-splitter breaks on any ". " sequence, including inside abbreviations like "St. John" and "St. Elias," so a lead sentence naming Saint John or Wrangell-St. Elias early gets the whole lead clipped mid-sentence instead. Fixed by spelling "Saint John" and "Wrangell-Saint Elias" in the `overview.lead` field specifically for Virgin Islands and Wrangell-St. Elias (title and body text elsewhere keep the normal "St." abbreviation). The same bug independently produced mid-sentence-cut meta descriptions for Mammoth Cave, Mount Rainier, and Sequoia in batches 8 and 9 (long first sentences exceeding 160 characters, not a "St." issue); those leads were rewritten into two shorter sentences each and are already fixed in their respective batches above. The script itself (`scripts/build-park-pages.js`) was not modified.
+
+Flagged, not fixed (out of scope for this batch): the same style of mid-word or mid-number meta-description truncation was found by a full-site scan on 14 pages published in earlier batches (1-7), before this batch's work: American Samoa, Big Bend, Biscayne, Black Canyon of the Gunnison, Capitol Reef, Congaree, Death Valley, Everglades, Glacier, Grand Canyon, Isle Royale, Olympic, Yellowstone, and Yosemite. Their `overview.lead` fields have a first sentence outside the 70-160 character range that the build script's `clip()` fallback truncates mid-word or mid-number. Left unchanged here since editing already-published essay text from earlier batches is outside this "publish the remaining parks" task; noted for a future content pass.
+
+All 63 parks are published as of this batch. `node scripts/build-park-pages.js` writes 63 pages and a 69-URL sitemap; `node scripts/validate-parks.js` passes for all 63 essays.
+
 ## SEO metadata
 
 - `scripts/build-park-pages.js` writes each park title, description, canonical, Open Graph, Twitter card, and JSON-LD, and pre-renders the article into `#park-page`. `js/park-render.js` is shared with the browser. `js/park-page.js` only binds chapters, tilt, and reveals when the article is already in the page.

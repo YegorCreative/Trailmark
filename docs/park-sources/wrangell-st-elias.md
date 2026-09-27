@@ -1,0 +1,16 @@
+# Wrangell-St. Elias sources
+
+Live pages used:
+
+- WebSearch summary of NPS results: established 1980 (ANILCA, December 2, 1980, per standard ANILCA date used across other Alaska parks in this archive). 13.2 million acres (5,332,053 hectares / 13,175,791 acres per one figure), largest unit in the National Park System, "the same size as Yellowstone National Park, Yosemite National Park, and Switzerland combined." Greatest concentration of glaciers in North America: more than 3,000 glaciers covering over three million acres. Wilderness 9.6 million acres.
+- Park homepage: https://www.nps.gov/wrst/index.htm
+  - Wrangell and St. Elias Ranges named as converging here (a WebSearch summary separately adds the Chugach Mountains and eastern Alaska Range as a four-range description, not directly quoted from this page). Park terrain "rises from the ocean all the way up to 18,008 ft." Wrangell Mountains reach 16,390 feet. "Greatest concentration of glaciers in North America," more than 3,000 glaciers over three million acres.
+- Kennecott Mines National Historic Landmark: https://www.nps.gov/wrst/learn/historyculture/kennecott-mines-national-historic-landmark.htm
+  - Copper deposit discovered 1900 (Jack Smith and Clarence Warner, ore up to 85% copper vs. typical 10%). Processing operation 1911-1938, nearly $200 million worth of copper processed (~$100 million profit). Peak employment 500-600 (about 300 in mill town, 200-300 in mines). Listed on National Register of Historic Places 1978; National Historic Landmark 1986; NPS acquired buildings/land June 1998. Extraction efficiency about 98% of copper arriving at the mill.
+- WebSearch summary re: Kennecott discovery/output: Alaska Syndicate (Havemeyers, J.P. Morgan, Guggenheim family) built a railroad and developed the mines; Michael J. Heney hired fall 1907 to build the railroad. First trainload of ore shipped April 1911. Total output by 1938 closure: 591,535 short tons of copper from 4,525,909 tons of ore.
+- WebSearch summary re: Mount St. Elias: 18,008 feet, second-highest peak in both the United States and Canada.
+- First Ascent of Mount Saint Elias: https://www.nps.gov/wrst/planyourvisit/first-ascent-of-mount-saint-elias.htm
+  - Led by the Duke of Abruzzi (Luigi Amedeo di Savoia-Aosta); summit reached July 31, 1897, shortly after 11:00 a.m. Final push from Russell Col involved about 3,000 meters of elevation gain in one stretch. Full expedition spent 50 days on the mountain's glaciers.
+- WebSearch summary re: Malaspina/Sít' Tlein: Sít' Tlein is the Tlingit name for Malaspina Glacier, the largest glacier in Alaska, about 40 miles wide and 28 miles long, roughly 1,500 square miles, approximately the size of Rhode Island. Three of the world's ten largest glaciers (excluding Greenland/Antarctica ice sheets) are in the park: Malaspina, Bering, and Hubbard.
+
+The park's homepage explicitly names only the Wrangell and St. Elias ranges converging; the "four ranges" framing (adding Chugach and the eastern Alaska Range) comes from a separate WebSearch summary of NPS material, not a single directly quoted page, and is presented in the essay as the broader regional picture rather than attributed to one specific NPS statement.
