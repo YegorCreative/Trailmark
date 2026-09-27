@@ -9,6 +9,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Refreshes Today in the Parks data once a day, even with no code changes.
+  schedule:
+    - cron: "15 10 * * *"
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -33,6 +37,19 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Refresh Today in the Parks data
+        env:
+          NPS_API_KEY: ${{ secrets.NPS_API_KEY }}
+        run: node scripts/fetch-park-status.js
+        continue-on-error: true
+        # Never fails the deploy: on any error (including a missing
+        # NPS_API_KEY secret) the script leaves data/park-status.json
+        # untouched, so the site ships with the last committed snapshot
+        # and today.html falls back to its "as of" notice for that data.
       - name: Omit original park art
         run: rm -rf assets/Parks
       - name: Upload artifact

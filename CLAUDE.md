@@ -11,7 +11,11 @@ TrailMark is an illustrated archive of the 63 U.S. national parks, built by Yego
 - scripts/build-park-art.py: web images from assets/Parks/ originals into assets/park-art/<id>/
 - scripts/validate-parks.js: content + metadata + a11y checks; must pass before every commit
 - docs/V1-BUILDOUT-LOG.md: running log; docs/park-sources/<id>.md: NPS sources per park
+- scripts/fetch-park-status.js: pulls live hours/alerts/visitor-center data from the NPS API into data/park-status.json (today.html and each park page's "Today at" box read only this file, never the API directly)
 - No frameworks, no build tools beyond these scripts. Never hand-edit generated park HTML; change the data or script and rebuild.
+
+## Secrets
+- NPS_API_KEY lives only in GitHub Secrets; never in code, the repo, or the browser.
 
 ## Git workflow
 - Work on branch v1-buildout. Never commit to or push main unless Yegor explicitly says so.
