@@ -554,53 +554,11 @@
     });
   }
 
-  function initFooter() {
-    var footer = document.getElementById('site-footer');
-    if (!footer) return;
-    var root = base();
-    var open = PARKS.filter(isOpen);
-    var byRegion = {};
-    open.forEach(function (park) {
-      if (!byRegion[park.region]) byRegion[park.region] = [];
-      byRegion[park.region].push(park);
-    });
-    var cols = Object.keys(byRegion).sort().map(function (region) {
-      var links = byRegion[region].sort(function (a, b) { return a.name.localeCompare(b.name); }).map(function (park) {
-        return '<li><a href="' + esc(pageHref(park)) + '">' + esc(park.name) + '</a></li>';
-      }).join('');
-      return '<div><p class="atlas-footer-label"><a href="' + esc(root + 'parks.html?region=' + encodeURIComponent(region)) + '">' + esc(region) + '</a></p><ul>' + links + '</ul></div>';
-    }).join('');
-    var badges = open.slice().sort(function (a, b) {
-      return (b.archiveSeq || 0) - (a.archiveSeq || 0);
-    }).slice(0, 6).map(function (park) {
-      var bdir = base() + 'assets/park-art/' + park.id + '/';
-      return '<a href="' + esc(pageHref(park)) + '" title="' + esc(park.name) + '"><img src="' + esc(bdir + 'badge-160.webp') + '" alt="' + esc(park.name) + ' National Park badge" width="160" height="160" loading="lazy" decoding="async" /></a>';
-    }).join('');
-    var texture = base() + 'assets/park-art/yosemite/header-640.webp';
-    footer.className = 'atlas-footer';
-    footer.innerHTML = '<div class="atlas-footer-texture" style="background-image:url(' + esc(texture) + ')" aria-hidden="true"></div>'
-      + '<div class="atlas-footer-inner">'
-      + '<div class="atlas-footer-brand"><p class="atlas-footer-name">TrailMark</p>'
-      + '<p>An illustrated archive of the 63 U.S. national parks, built one park at a time.</p>'
-      + '<div class="atlas-footer-badges">' + badges + '</div></div>'
-      + '<div class="atlas-footer-regions">' + cols + '</div>'
-      + '<nav class="atlas-footer-pages" aria-label="Footer">'
-      + '<a href="' + esc(root + 'about.html') + '">About</a>'
-      + '<a href="' + esc(root + 'faq.html') + '">FAQ</a>'
-      + '<a href="' + esc(root + 'photos.html') + '">Photos</a>'
-      + '<a href="' + esc(root + 'contact.html') + '">Contact</a>'
-      + '<a href="' + esc(root + 'parks.html') + '">All parks</a>'
-      + '</nav>'
-      + '<p class="atlas-footer-copy">© 2026 TrailMark</p>'
-      + '</div>';
-  }
-
   initHeader();
   initNav();
   initStrip();
   initIndex();
   initBadgeWall();
-  initFooter();
   observeDeferred(document);
   if (location.hash && location.hash !== '#menu' && location.hash !== '#filters') {
     var hashed = document.querySelector(location.hash);
