@@ -166,12 +166,16 @@
   }
 
   function badgeInk(background) {
-    const dark = '#142016';
-    const light = '#f7f3ec';
-    const darkRatio = contrastRatio(dark, background);
-    const lightRatio = contrastRatio(light, background);
-    let ink = darkRatio >= lightRatio ? dark : light;
-    if (contrastRatio(ink, background) < 4.5) ink = darkRatio >= lightRatio ? '#000000' : '#ffffff';
+    const options = ['#142016', '#f7f3ec', '#000000', '#ffffff'];
+    let ink = options[0];
+    let best = 0;
+    options.forEach(function (candidate) {
+      const ratio = contrastRatio(candidate, background);
+      if (ratio > best) {
+        best = ratio;
+        ink = candidate;
+      }
+    });
     let muted = ink;
     for (let amount = 0.42; amount >= 0; amount -= 0.03) {
       const candidate = mixHex(ink, background, amount);

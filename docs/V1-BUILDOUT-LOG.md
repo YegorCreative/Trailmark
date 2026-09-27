@@ -60,6 +60,18 @@ No park in this batch is marked needs-fact-review. Numbers that were not on the 
 
 Next unpublished parks are the other 42. A sensible following batch is Big Bend, Mesa Verde, Black Canyon of the Gunnison, Rocky Mountain, Great Basin, and Grand Teton.
 
+### Batch 4 — Big Bend, Mesa Verde, Black Canyon of the Gunnison, Rocky Mountain, Great Basin, Grand Teton
+
+Published. Sources are in `docs/park-sources/`. National-park years checked on NPS: Big Bend established June 12, 1944 (authorized June 20, 1935); Mesa Verde June 29, 1906; Black Canyon of the Gunnison October 21, 1999 (monument 1933); Rocky Mountain legislation January 26, 1915, dedicated September 4, 1915; Great Basin October 27, 1986; Grand Teton original park February 26, 1929, present park September 14, 1950.
+
+Hero focus from the header paintings for a tall crop: Big Bend `50% 55%` (river between walls), Mesa Verde `70% 46%` (alcove on the right), Black Canyon `62% 48%` (striped wall), Rocky Mountain `56% 38%` (summit over the lake), Great Basin `74% 50%` (bristlecone), Grand Teton `50% 38%` (skyline).
+
+Black Canyon's full name does not leave room for a title hook inside 60 characters. The hook "Painted Walls" is stored and the title is the name only.
+
+No park in this batch is marked needs-fact-review. The Big Bend year comes from the NPS fossils history because the park history index did not load. Numbers that were not on the opened pages were left out, including a bighorn count at Rocky Mountain and a falcon count at Black Canyon.
+
+Next unpublished parks are the other 36.
+
 ## SEO metadata
 
 - `scripts/build-park-pages.js` writes each park title, description, canonical, Open Graph, Twitter card, and JSON-LD, and pre-renders the article into `#park-page`. `js/park-render.js` is shared with the browser. `js/park-page.js` only binds chapters, tilt, and reveals when the article is already in the page.
