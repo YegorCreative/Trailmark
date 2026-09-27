@@ -84,6 +84,18 @@ Doubt: Biscayne's enabling page names June 28, 1980 inside the quoted statute. A
 
 Next unpublished parks are the other 30.
 
+### Batch 6 — Cuyahoga Valley, Denali, Dry Tortugas, Gates of the Arctic, Gateway Arch, Glacier Bay
+
+Published. Sources are in `docs/park-sources/`. National-park years checked on NPS: Cuyahoga Valley authorized December 27, 1974, designated June 26, 1975, renamed October 11, 2000; Denali (as Mount McKinley National Park) February 26, 1917, present park December 2, 1980; Dry Tortugas October 26, 1992 (monument January 4, 1935); Gates of the Arctic December 2, 1980; Gateway Arch redesignated February 22, 2018 (memorial 1935); Glacier Bay monument February 26, 1925, park and preserve December 2, 1980.
+
+Hero focus: Cuyahoga Valley `62% 52%` (falls), Denali `62% 40%` (summit), Dry Tortugas `50% 48%` (fort and waterline), Gates of the Arctic `58% 42%` (peaks), Gateway Arch `52% 40%` (the crown), Glacier Bay `48% 55%` (ice face and whale).
+
+Gates of the Arctic's full name does not leave room for a title hook. The hook "No Roads" is stored and the title is the name only. Gateway Arch uses "Steel Arch" because "Stainless Steel Arch" made the title 61 characters.
+
+No park in this batch is marked needs-fact-review. Doubts logged here: a 2026 Denali homepage caption still says Mount McKinley, while the mountain-name page and the 2017 fact sheet say the name Denali was restored in 2015; the essay follows the name page. Cuyahoga acreage is both about 33,000 and about 32,950. Gateway Arch acreage is 90.96 and 91. Gates of the Arctic history says more than 13,000 years and the basic-information page says a 12,000-year record. Three of the six wild rivers were not named because the source extract was cut off.
+
+Next unpublished parks are the other 24.
+
 ## SEO metadata
 
 - `scripts/build-park-pages.js` writes each park title, description, canonical, Open Graph, Twitter card, and JSON-LD, and pre-renders the article into `#park-page`. `js/park-render.js` is shared with the browser. `js/park-page.js` only binds chapters, tilt, and reveals when the article is already in the page.
