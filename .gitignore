@@ -3,3 +3,5 @@ assets/Parks/**/sources 2.txt
 docs/qa-screenshots/
 photos/inbox/**
 !photos/inbox/.gitkeep
+* 2.*
+* 2
