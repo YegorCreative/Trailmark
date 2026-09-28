@@ -2002,10 +2002,10 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'The lowest ground in North America, under a wall of mountains',
-      lead: 'The National Park Service places Badwater Basin at 282 feet below sea level, the lowest point in North America. The Panamint Mountains rise more than 11,000 feet above it, and NPS calls the basin the hottest place in the world.',
+      lead: 'The National Park Service places Badwater Basin at 282 feet below sea level, the lowest point in North America. The Panamint Mountains rise more than 11,000 feet above it, and NPS calls Death Valley the hottest place on Earth, with the world\'s highest reliably recorded temperature measured at Furnace Creek.',
       body: [
         'The name is severe and the inventory is not: colorful badlands, snow-covered peaks, sand dunes, rugged canyons, and more than 1,000 described plant species, from ancient bristlecone pines to short-lived spring flowers.',
-        'The park spans California and Nevada. Devil\'s Hole, the Racetrack, and the dune fields are different chapters. None of them is the whole place. Check NPS before you travel. Distances inside the park are not what a small map suggests.',
+        'The park spans California and Nevada. Devils Hole, the Racetrack, and the dune fields are different chapters. None of them is the whole place. Check NPS before you travel. Distances inside the park are not what a small map suggests.',
       ],
       facts: [
         { label: 'Region', value: 'Mojave' },
@@ -2036,7 +2036,7 @@ const PARK_PAGE_CONTENT = {
       kicker: 'Hidden Discoveries',
       title: 'A pupfish, a sailing stone, and a mine-shaped past',
       items: [
-        { title: 'Devil\'s Hole', body: 'NPS lists Devil\'s Hole among the park\'s water features. It is a limestone cavern pool and the entire known wild home of the Devil\'s Hole pupfish. It is not a swimming hole and not a casual overlook you improve.' },
+        { title: 'Devils Hole', body: 'NPS lists Devils Hole among the park\'s water features. It is a limestone cavern pool and the entire known wild home of the Devils Hole pupfish. It is not a swimming hole and not a casual overlook you improve.' },
         { title: 'The Racetrack', body: 'A playa where rocks leave trails. NPS includes it among the natural features. The mechanism involves ice and wind, not mystery in the souvenir sense. The road there is rough. Ask before you go.' },
         { title: 'Mining and the name', body: 'The valley\'s grim name and its borax history sit on top of Timbisha Shoshone homeland. The park is a desert ecosystem and a cultural landscape at the same time.' },
       ],
@@ -2047,7 +2047,7 @@ const PARK_PAGE_CONTENT = {
       lead: 'NPS is clear that many animals live here. Most of them avoid the hour when visitors stand at Badwater.',
       notes: [
         'Desert bighorn use the mountain slopes. Seeing one across a canyon is the right distance.',
-        'Pupfish persist in isolated warm waters, including Devil\'s Hole. They are a conservation story measured in a single pool.',
+        'Pupfish persist in isolated warm waters, including Devils Hole. They are a conservation story measured in a single pool.',
         'Sidewinders, roadrunners, and ravens are the midday cast. The mammals are mostly a dawn and night animal. Do not leave water bowls. Wild animals do not need a tap.',
       ],
     },
@@ -2067,7 +2067,7 @@ const PARK_PAGE_CONTENT = {
       items: [
         { name: 'Winter', modifier: 'winter', wash: 'linear-gradient(180deg, rgba(220,214,206,0.94), rgba(244,240,232,0.96))', body: 'The humane season on the valley floor. Peaks may be snowy while Badwater is merely cool. This is when the park is a pleasure instead of a test.' },
         { name: 'Spring', modifier: 'spring', wash: 'linear-gradient(180deg, rgba(236,220,170,0.94), rgba(246,238,220,0.96))', body: 'If winter rain was generous, flowers appear and then leave. They are not guaranteed. The dunes and the basin do not need them.' },
-        { name: 'Summer', modifier: 'summer', wash: 'linear-gradient(180deg, rgba(240,196,150,0.94), rgba(248,228,206,0.96))', body: 'NPS calls this the hottest place in the world. The valley floor in summer is a danger, not a backdrop. If you go, treat midday outside a car as a mistake.' },
+        { name: 'Summer', modifier: 'summer', wash: 'linear-gradient(180deg, rgba(240,196,150,0.94), rgba(248,228,206,0.96))', body: 'NPS calls Death Valley the hottest place on Earth. The valley floor in summer is a danger, not a backdrop. If you go, treat midday outside a car as a mistake.' },
         { name: 'Autumn', modifier: 'autumn', wash: 'linear-gradient(180deg, rgba(230,190,150,0.94), rgba(244,230,210,0.96))', body: 'Heat loosens its grip later here than in the high plateaus. Check the forecast, not the calendar, before you walk the salt.' },
       ],
     },
@@ -2109,7 +2109,7 @@ const PARK_PAGE_CONTENT = {
         'In hot months, do not walk the basin or the dunes in the middle of the day. Stay with the car and the water.',
         'Carry more water than the walk seems to need, and tell someone your route when you leave pavement.',
         'Do not drive off road. Desert pavement and dune plants do not recover on a vacation schedule.',
-        'Devil\'s Hole and other sensitive waters are closed to play. The pupfish have nowhere else.',
+        'Devils Hole and other sensitive waters are closed to play. The pupfish have nowhere else.',
       ],
     },
     archive: {

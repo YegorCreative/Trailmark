@@ -2,7 +2,9 @@
   park-today-box.js
   Fills the "Today at [Park]" placeholder (id="today-at-park", rendered by
   park-render.js directly below the hero) with the same data today.html
-  uses, scoped to this one park.
+  uses, scoped to this one park. Reads the tiny window.PARK_META object
+  (id/name/npsCode/timeZone) inlined by build-park-pages.js instead of the
+  full parks-data.js — this page never needs any other park's data.
 
   Stale-data guard: when data/park-status.json's generatedAt is null or
   more than 48 hours old, this box shows nothing at all — the stale
@@ -11,12 +13,12 @@
 */
 (function () {
   var box = document.getElementById('today-at-park');
-  if (!box || typeof PARKS === 'undefined' || !window.trailmarkParkStatus) return;
+  if (!box || typeof PARK_META === 'undefined' || !window.trailmarkParkStatus) return;
   var STATUS = window.trailmarkParkStatus;
 
   var mount = document.getElementById('park-page');
   var parkId = mount && mount.dataset.parkId;
-  var park = parkId && PARKS.filter(function (p) { return p.id === parkId; })[0];
+  var park = parkId && parkId === PARK_META.id ? PARK_META : null;
   if (!park) return;
 
   function esc(value) {

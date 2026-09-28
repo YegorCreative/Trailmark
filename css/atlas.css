@@ -1814,10 +1814,32 @@ body:has(#hero) #hero::after {
   }
 
   /* The section-wide corner scrim (::before) is sized for a full-bleed
-     image; this layout gets its own gradient on .hero-inner instead. */
+     image; this layout gets its own gradient on the poster instead. */
   .hero--park::before,
   .hero--yosemite::before {
     content: none;
+  }
+
+  /* Smooth scrim across the whole painting: fully transparent through the
+     top ~45%, then deepens toward the bottom. The last 10rem (pinned to
+     the bottom edge via calc(), not a percentage) is guaranteed to reach
+     0.75+ opacity regardless of viewport height, since that's where the
+     title group (measured worst-case ~9.2rem tall across all 63 parks)
+     overlaps the image — a flat percentage-only fade can't promise that
+     on short viewports where the fade hasn't finished ramping by then. */
+  .hero--park .park-poster::after,
+  .hero--yosemite .yosemite-poster::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 45%,
+      rgba(10, 14, 12, 0.75) calc(100% - 10rem),
+      rgba(10, 14, 12, 0.8) 100%
+    );
   }
 
   /* Breadcrumb: a small single line under the fixed header, never a pill
@@ -1848,11 +1870,10 @@ body:has(#hero) #hero::after {
     white-space: nowrap;
   }
 
-  /* Title group overlaps the bottom of the painting on a dark gradient;
-     subtitle + meta sit below it on solid cream — one box, one background,
-     so the two zones never need separate DOM containers. The scrim starts
-     already-dark at the top edge (not a slow fade-in) so kicker/eyebrow/
-     title stay >=4.5:1 even over a worst-case light patch of painting. */
+  /* Title group overlaps the bottom of the painting — the darkening comes
+     from .park-poster::after above, so this box stays transparent while it
+     overlaps the image and only turns solid right at the image's bottom
+     edge, where it hands off to the cream area for subtitle + meta. */
   #hero.hero--park .hero-inner,
   #hero.hero--yosemite .hero-inner {
     position: relative;
@@ -1866,8 +1887,8 @@ body:has(#hero) #hero::after {
     padding: 1rem 1.25rem 1.75rem;
     background: linear-gradient(
       to bottom,
-      rgba(10, 14, 12, 0.72) 0,
-      rgba(10, 14, 12, 0.72) 9.5rem,
+      transparent 0,
+      transparent 9.5rem,
       var(--color-cream) 10rem
     );
     text-shadow: none;
@@ -1897,7 +1918,7 @@ body:has(#hero) #hero::after {
     opacity: 0.82;
     max-width: none;
     text-shadow: none;
-    margin-top: 2.5rem;
+    margin-top: 4.25rem;
   }
 
   #hero.hero--park .hero-ledger,
