@@ -117,12 +117,41 @@
     header.classList.toggle('is-solid', window.scrollY > 80);
   }
 
+  var NAV_LINKS = [
+    { key: 'parks', label: 'Parks', href: 'parks.html', desc: 'All 63 national parks' },
+    { key: 'today', label: 'Today', href: 'today.html', desc: "What's open right now" },
+    { key: 'photos', label: 'Photos', href: 'photos.html', desc: 'Visitor photos and stories' },
+    { key: 'about', label: 'About', href: 'about.html', desc: 'Why TrailMark exists' },
+    { key: 'faq', label: 'FAQ', href: 'faq.html', desc: 'Questions, answered' },
+    { key: 'contact', label: 'Contact', href: 'contact.html', desc: 'Corrections, photos, ideas' },
+  ];
+
+  function currentNavKey() {
+    var path = location.pathname;
+    if (/\/parks\/|parks\.html$/.test(path)) return 'parks';
+    if (/today\.html$/.test(path)) return 'today';
+    if (/photos\.html$/.test(path)) return 'photos';
+    if (/about\.html$/.test(path)) return 'about';
+    if (/faq\.html$/.test(path)) return 'faq';
+    if (/contact\.html$/.test(path)) return 'contact';
+    return '';
+  }
+
+  function dailyPark() {
+    var open = PARKS.filter(isOpen);
+    if (!open.length) return null;
+    var now = new Date();
+    var start = Date.UTC(now.getUTCFullYear(), 0, 0);
+    var dayOfYear = Math.floor((Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - start) / 86400000);
+    return open[dayOfYear % open.length];
+  }
+
   function initNav() {
     var header = document.getElementById('site-header');
     var nav = document.getElementById('site-nav');
     if (!header || !nav) return;
     var root = base();
-    var openCount = PARKS.filter(isOpen).length;
+    var key = currentNavKey();
 
     if (!header.querySelector('.nav-toggle')) {
       var toggle = document.createElement('button');
@@ -130,7 +159,8 @@
       toggle.type = 'button';
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-controls', 'nav-overlay');
-      toggle.innerHTML = '<span class="nav-toggle-bars" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span>';
+      toggle.setAttribute('aria-label', 'Open menu');
+      toggle.innerHTML = '<span class="nav-toggle-bars" aria-hidden="true"></span>';
       header.querySelector('.header-inner').appendChild(toggle);
     }
 
@@ -140,12 +170,6 @@
       parksLink.setAttribute('data-nav', 'parks');
     }
 
-    var path = location.pathname;
-    var key = '';
-    if (/\/parks\/|parks\.html$/.test(path)) key = 'parks';
-    else if (/about\.html$/.test(path)) key = 'about';
-    else if (/faq\.html$/.test(path)) key = 'faq';
-    else if (/contact\.html$/.test(path)) key = 'contact';
     nav.querySelectorAll('[data-nav]').forEach(function (link) {
       var on = link.getAttribute('data-nav') === key;
       link.classList.toggle('nav-link--active', on);
@@ -161,41 +185,93 @@
       overlay.hidden = true;
       header.insertAdjacentElement('afterend', overlay);
     }
+
+    var linksHtml = NAV_LINKS.map(function (link) {
+      var on = link.key === key;
+      return '<a class="nav-overlay-link' + (on ? ' is-current' : '') + '" href="' + esc(root + link.href) + '" data-nav="' + link.key + '"' + (on ? ' aria-current="page"' : '') + '>'
+        + '<span class="nav-overlay-link-label">' + esc(link.label) + '</span>'
+        + '<span class="nav-overlay-link-desc">' + esc(link.desc) + '</span>'
+        + '</a>';
+    }).join('');
+
     overlay.innerHTML = '<div class="nav-overlay-panel" role="dialog" aria-modal="true" aria-label="Menu">'
-      + '<div class="nav-overlay-bar"><a class="nav-overlay-brand" href="' + esc(root + 'index.html') + '">TrailMark</a>'
-      + '<button type="button" class="nav-overlay-close">Close</button></div>'
-      + '<nav class="nav-overlay-links" aria-label="Pages">'
-      + '<a href="' + esc(root + 'parks.html') + '">Parks</a>'
-      + '<a href="' + esc(root + 'about.html') + '">About</a>'
-      + '<a href="' + esc(root + 'faq.html') + '">FAQ</a>'
-      + '<a href="' + esc(root + 'contact.html') + '">Contact</a>'
-      + '</nav>'
+      + '<div class="nav-overlay-strip">'
+      + '<img class="nav-overlay-strip-art" alt="" aria-hidden="true" decoding="async" />'
+      + '<div class="nav-overlay-strip-top">'
+      + '<a class="nav-overlay-brand" href="' + esc(root + 'index.html') + '">TrailMark</a>'
+      + '<button type="button" class="nav-overlay-close" aria-label="Close menu">&times;</button>'
+      + '</div>'
+      + '</div>'
+      + '<div class="nav-overlay-body">'
+      + '<form class="nav-overlay-search" role="search" action="' + esc(root + 'parks.html') + '">'
+      + '<label class="visually-hidden" for="nav-overlay-search-input">Search parks</label>'
+      + '<input id="nav-overlay-search-input" name="q" type="search" placeholder="Search parks…" autocomplete="off" />'
+      + '</form>'
+      + '<nav class="nav-overlay-links" aria-label="Pages">' + linksHtml + '</nav>'
+      + '<div class="nav-overlay-foot">'
+      + '<a href="' + esc(root + 'photos.html#photo-share-title') + '">Share your photos →</a>'
+      + '<span>© TrailMark</span>'
+      + '</div>'
+      + '</div>'
       + '</div>';
 
     var toggleBtn = header.querySelector('.nav-toggle');
     var closeBtn = overlay.querySelector('.nav-overlay-close');
+    var searchInput = overlay.querySelector('#nav-overlay-search-input');
+    var stripArt = overlay.querySelector('.nav-overlay-strip-art');
     var lastFocus = null;
+    var stripLoaded = false;
+
+    overlay.querySelector('.nav-overlay-search').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var q = searchInput.value.trim();
+      location.href = root + 'parks.html' + (q ? '?q=' + encodeURIComponent(q) : '');
+    });
+
+    overlay.querySelectorAll('.nav-overlay-link').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    function loadStrip() {
+      if (stripLoaded) return;
+      stripLoaded = true;
+      var park = dailyPark();
+      if (!park || !park.art || !park.art.header) return;
+      var dir = base() + park.art.header.replace(/header\.webp$/, '');
+      stripArt.src = dir + 'header-640.webp';
+    }
 
     function focusables() {
-      return Array.prototype.slice.call(overlay.querySelectorAll('a, button')).filter(function (el) {
+      return Array.prototype.slice.call(overlay.querySelectorAll('a, button, input')).filter(function (el) {
         return !el.hasAttribute('disabled');
       });
     }
 
+    function reduceMotion() {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
     function closeMenu() {
       if (overlay.hidden) return;
-      overlay.hidden = true;
+      overlay.classList.remove('is-open');
       document.body.classList.remove('nav-lock');
       toggleBtn.setAttribute('aria-expanded', 'false');
       if (lastFocus) lastFocus.focus();
+      if (reduceMotion()) { overlay.hidden = true; return; }
+      window.setTimeout(function () { overlay.hidden = true; }, 220);
     }
 
     function openMenu() {
       lastFocus = document.activeElement;
+      loadStrip();
       overlay.hidden = false;
       document.body.classList.add('nav-lock');
       toggleBtn.setAttribute('aria-expanded', 'true');
       closeBtn.focus();
+      if (reduceMotion()) { overlay.classList.add('is-open'); return; }
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add('is-open'); });
+      });
     }
 
     toggleBtn.addEventListener('click', function () {
