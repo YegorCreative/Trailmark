@@ -5,7 +5,7 @@ module.exports.SITE_URL = 'https://trailmark-usa.com';
 
 // Favicon version — bump this (and only this) to cache-bust every icon
 // link across every page on the next rebuild.
-const FAVICON_VERSION = 2;
+const FAVICON_VERSION = 3;
 
 // Shared favicon <link> block, used by build-park-pages.js and
 // build-static-pages.js so every page links the same icon files the same
