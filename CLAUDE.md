@@ -22,6 +22,7 @@ TrailMark is an illustrated archive of the 63 U.S. national parks, built by Yego
 - One focused commit per task, with a clear message.
 - Only one agent works in this folder at a time.
 - Ignore macOS/iCloud duplicate files ("* 2.*"); never commit them.
+- When Yegor says "ship it": `git checkout main && git merge v1-buildout --no-edit && git push origin main && git checkout v1-buildout`, then report the pushed commit (hash + message). This is the only case where pushing main is pre-authorized; never push otherwise without Yegor explicitly saying so.
 
 ## Content rules
 - National Park Service is the authority. Open the NPS page(s) for every park and record them in docs/park-sources/<id>.md.
