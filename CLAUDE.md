@@ -1,7 +1,7 @@
 # TrailMark — project rules for Claude Code
 
 ## What this is
-TrailMark is an illustrated archive of the 63 U.S. national parks, built by Yegor Hambaryan. Static site on GitHub Pages: https://yegorcreative.github.io/Trailmark/. Yegor is the product owner; do what the prompt asks and nothing beyond it. If you see a worthwhile extra, list it under "Possible future improvement" in your report instead of doing it.
+TrailMark is an illustrated archive of the 63 U.S. national parks, built by Yegor Hambaryan. Static site on GitHub Pages, served at its custom domain: https://trailmark-usa.com. Yegor is the product owner; do what the prompt asks and nothing beyond it. If you see a worthwhile extra, list it under "Possible future improvement" in your report instead of doing it.
 
 ## Architecture (extend it, don't replace it)
 - js/parks-data.js: catalog of all 63 parks (ids, names, regions, art, status)

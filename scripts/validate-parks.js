@@ -156,7 +156,7 @@ function main() {
     }
   });
 
-  const SITE = 'https://yegorcreative.github.io/Trailmark/';
+  const SITE = require('./site-config').SITE_URL + '/';
   let photoList = [];
   try { photoList = load('js/photos-data.js', 'PHOTOS'); }
   catch (error) { errors.push('js/photos-data.js could not be loaded'); }

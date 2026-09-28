@@ -7,9 +7,10 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { SITE_URL } = require('./site-config');
 
 const root = path.resolve(__dirname, '..');
-const SITE = 'https://yegorcreative.github.io/Trailmark';
+const SITE = SITE_URL;
 
 const STATE_CODES = {
   Alabama: 'AL', Alaska: 'AK', Arizona: 'AZ', Arkansas: 'AR', California: 'CA',

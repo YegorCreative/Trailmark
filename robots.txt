@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yegorcreative.github.io/Trailmark/sitemap.xml
+Sitemap: https://trailmark-usa.com/sitemap.xml
