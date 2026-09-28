@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const { SITE_URL } = require('./site-config');
+const { SITE_URL, faviconLinksHtml } = require('./site-config');
 const { headerHtml, footerHtml } = require('./nav-template');
 
 const root = path.resolve(__dirname, '..');
@@ -178,10 +178,7 @@ function pageHtml(park, essay, articleHtml, modified) {
     + '    <title>' + escapeHtml(title) + '</title>\n'
     + '    <meta name="description" content="' + escapeHtml(desc) + '" />\n'
     + '    <link rel="canonical" href="' + url + '" />\n'
-    + '    <link rel="icon" href="../favicon.ico" sizes="any" />\n'
-    + '    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />\n'
-    + '    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />\n'
-    + '    <link rel="manifest" href="../site.webmanifest" />\n'
+    + '    ' + faviconLinksHtml('../') + '\n'
     + '    <meta property="og:type" content="article" />\n'
     + '    <meta property="og:site_name" content="TrailMark" />\n'
     + '    <meta property="og:title" content="' + escapeHtml(title) + '" />\n'
