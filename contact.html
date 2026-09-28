@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#142016" />
     <title>Contact TrailMark</title>
-    <meta name="description" content="Contact TrailMark to report an error, ask a question, or follow the illustrated archive of the 63 U.S. national parks on GitHub." />
+    <meta name="description" content="Send a correction, share photos or a story, report an accessibility issue, or just say hello. TrailMark reads every message." />
     <link rel="canonical" href="https://trailmark-usa.com/contact.html" />
-    <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" href="favicon.ico?v=2" sizes="any" />
+    <link rel="icon" href="favicon-32.png?v=2" type="image/png" sizes="32x32" />
+    <link rel="icon" href="favicon-16.png?v=2" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2" />
     <link rel="manifest" href="site.webmanifest" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="TrailMark" />
     <meta property="og:title" content="Contact TrailMark" />
-    <meta property="og:description" content="Contact TrailMark to report an error, ask a question, or follow the illustrated archive of the 63 U.S. national parks on GitHub." />
+    <meta property="og:description" content="Send a correction, share photos or a story, report an accessibility issue, or just say hello. TrailMark reads every message." />
     <meta property="og:url" content="https://trailmark-usa.com/contact.html" />
-    <meta property="og:image" content="https://trailmark-usa.com/assets/park-art/olympic/og.jpg" />
+    <meta property="og:image" content="https://trailmark-usa.com/assets/park-art/acadia/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Illustrated view of Olympic National Park" />
+    <meta property="og:image:alt" content="Illustrated view of Acadia National Park" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Contact TrailMark" />
-    <meta name="twitter:description" content="Contact TrailMark to report an error, ask a question, or follow the illustrated archive of the 63 U.S. national parks on GitHub." />
-    <meta name="twitter:image" content="https://trailmark-usa.com/assets/park-art/olympic/og.jpg" />
+    <meta name="twitter:description" content="Send a correction, share photos or a story, report an accessibility issue, or just say hello. TrailMark reads every message." />
+    <meta name="twitter:image" content="https://trailmark-usa.com/assets/park-art/acadia/og.jpg" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -76,31 +77,125 @@
     <main id="main-content">
 
       <!-- =====================
-           PAGE HERO
+           HERO
       ===================== -->
-      <section class="page-hero">
-        <div class="page-hero-inner">
+      <section id="hero" class="editorial-hero" aria-labelledby="contact-hero-title">
+        <img src="assets/park-art/acadia/header-1280.webp" srcset="assets/park-art/acadia/header-640.webp 640w, assets/park-art/acadia/header-1280.webp 1280w, assets/park-art/acadia/header-1920.webp 1920w, assets/park-art/acadia/header-2560.webp 2560w" sizes="100vw" alt="" width="1280" height="720" fetchpriority="high" />
+        <div class="editorial-hero-copy">
           <p class="hero-eyebrow">Get in Touch</p>
-          <h1 class="hero-title">Contact</h1>
-          <p class="hero-subtitle">
-            Reach out, contribute, or follow the project.
-          </p>
+          <h1 class="hero-title" id="contact-hero-title">Get in touch</h1>
+          <p class="hero-subtitle">Corrections, photos, ideas, or just a favorite park. I read every message.</p>
         </div>
       </section>
 
       <!-- =====================
-           PAGE CONTENT
+           CONTACT LAYOUT
       ===================== -->
       <section id="page-content">
-        <div class="section-inner page-body">
+        <div class="section-inner contact-layout">
 
-          <p>
-            TrailMark is an open project. The best way to reach us is through GitHub &mdash; you can open issues, suggest improvements, or contribute directly at <a href="https://github.com/YegorCreative/Trailmark" class="page-link">github.com/YegorCreative/Trailmark</a>.
-          </p>
+          <div class="contact-main">
 
-          <p>
-            A contact form is planned for a future update. Until then, GitHub is the right place for all feedback, corrections, and questions.
-          </p>
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST" novalidate>
+
+              <p id="contact-form-notice" class="contact-form-notice" hidden>
+                Contact form opening soon. Email: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a>
+              </p>
+
+              <fieldset class="contact-topics">
+                <legend>What&rsquo;s this about?</legend>
+                <div class="contact-topic-grid">
+                  <label class="contact-topic-card">
+                    <input type="radio" name="topic" value="Correction" data-helper="Tell me which park, what&rsquo;s wrong, and a source if you have one." />
+                    <span>Correction</span>
+                  </label>
+                  <label class="contact-topic-card">
+                    <input type="radio" name="topic" value="Share photos or a story" data-helper="Describe what you&rsquo;d like to share here, or use the form on the Photos page to upload directly." />
+                    <span>Share photos or a story</span>
+                  </label>
+                  <label class="contact-topic-card">
+                    <input type="radio" name="topic" value="Accessibility issue" data-helper="Tell me what you were trying to do, what happened, and your browser or device if you know it." />
+                    <span>Accessibility issue</span>
+                  </label>
+                  <label class="contact-topic-card">
+                    <input type="radio" name="topic" value="Collaboration or press" data-helper="Tell me who you are and what you have in mind." />
+                    <span>Collaboration or press</span>
+                  </label>
+                  <label class="contact-topic-card">
+                    <input type="radio" name="topic" value="Something else" data-helper="Go ahead — I read every message." />
+                    <span>Something else</span>
+                  </label>
+                </div>
+                <p id="contact-topic-helper" class="contact-topic-helper" aria-live="polite"></p>
+              </fieldset>
+
+              <div class="contact-field">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required />
+                <p class="contact-field-error" data-error-for="contact-name" hidden></p>
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required />
+                <p class="contact-field-error" data-error-for="contact-email" hidden></p>
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-park">Park <span class="contact-field-optional">(optional)</span></label>
+                <select id="contact-park" name="park">
+                  <option value="">— Not park-specific —</option>
+                </select>
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="6" required></textarea>
+                <p class="contact-field-error" data-error-for="contact-message" hidden></p>
+              </div>
+
+              <!-- Honeypot: real visitors never see or fill this in. -->
+              <div class="contact-field contact-field--honeypot" aria-hidden="true">
+                <label for="contact-company">Company</label>
+                <input id="contact-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <input type="hidden" name="topic" id="contact-topic-hidden" value="" />
+
+              <button type="submit" class="hero-btn hero-btn--primary contact-submit">Send message</button>
+
+              <p class="contact-form-status" role="status" aria-live="polite"></p>
+
+            </form>
+
+          </div>
+
+          <aside class="contact-side">
+
+            <div class="contact-side-card">
+              <h2>Not for park emergencies</h2>
+              <p>TrailMark isn&rsquo;t the National Park Service. For emergencies call 911; for permits, closures, and rangers, contact the park via <a href="https://www.nps.gov/">nps.gov</a>. See current conditions on the <a href="today.html">Today page</a>.</p>
+            </div>
+
+            <div class="contact-side-card">
+              <h2>Share your photos</h2>
+              <p>Been to one of these parks? Send your photos on the <a href="photos.html">Photos page</a> — every one is reviewed, and the ones that fit are added with your name.</p>
+            </div>
+
+            <div class="contact-side-card">
+              <h2>Found a mistake?</h2>
+              <p>Every chapter is sourced from NPS pages. Choose &ldquo;Correction&rdquo; above, include the park and what&rsquo;s wrong, and it&rsquo;s updated once confirmed.</p>
+            </div>
+
+            <div class="contact-side-card contact-side-maker">
+              <img src="assets/img/yegor-hambaryan-480.webp" srcset="assets/img/yegor-hambaryan-480.webp 480w, assets/img/yegor-hambaryan.webp 1200w" sizes="80px" alt="Portrait of Yegor Hambaryan" width="480" height="720" loading="lazy" decoding="async" />
+              <div>
+                <h2>Made by Yegor Hambaryan</h2>
+                <p><a href="https://yegorcreative.com">yegorcreative.com</a> · <a href="https://github.com/YegorCreative">GitHub</a></p>
+              </div>
+            </div>
+
+          </aside>
 
         </div>
       </section>
@@ -132,7 +227,8 @@
       </div>
     </footer>
 
-      <script src="js/parks-data.js"></script>
+    <script src="js/parks-data.js"></script>
     <script src="js/atlas.js"></script>
+    <script src="js/contact-page.js"></script>
   </body>
 </html>
