@@ -271,7 +271,7 @@
   .today-notice { background: #3A2F12; border-color: #6B5420; color: #F0DFA8; }
 }
 
-/* "Today at [Park]" box, directly below the hero on every park page */
+/* "Today at [Park]" box, after the overview section on every park page */
 .today-box {
   max-width: var(--max-width);
   margin: 1.5rem auto;
@@ -281,6 +281,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.today-box[hidden] {
+  display: none;
 }
 
 .today-box-kicker {

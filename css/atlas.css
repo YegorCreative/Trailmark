@@ -1206,10 +1206,19 @@ body:has(#hero) #hero::after {
 
 .highlight-card > * { position: relative; z-index: 1; }
 
-.highlight-card .highlight-title,
-.highlight-card .highlight-desc,
-.highlight-card .highlight-index {
+.highlight-card:not(.highlight-card--solid) .highlight-title,
+.highlight-card:not(.highlight-card--solid) .highlight-desc,
+.highlight-card:not(.highlight-card--solid) .highlight-index {
   color: #f7f3ec;
+}
+
+.highlight-card--solid .highlight-title,
+.highlight-card--solid .highlight-index {
+  color: inherit;
+}
+
+.highlight-card--solid .highlight-desc {
+  color: var(--highlight-muted, inherit);
 }
 
 .highlight-card {
@@ -1421,6 +1430,18 @@ body:has(#hero) #hero::after {
   line-height: 1.7;
 }
 
+@media (max-width: 600px) {
+  .park-section--thesis .section-title {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    line-height: 1.2;
+  }
+
+  .valley-copy .valley-lead {
+    font-size: clamp(1.15rem, 5vw, 1.35rem);
+    line-height: 1.4;
+  }
+}
+
 .badge-panel { color: var(--badge-ink, #142016); }
 .badge-panel .section-kicker,
 .badge-panel h2,
@@ -1476,6 +1497,32 @@ body:has(#hero) #hero::after {
   .season-cols { grid-template-columns: 1fr 1fr; }
   .badge-panel-inner { grid-template-columns: 1fr; }
   .editorial-item { grid-template-columns: 3rem minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .season-cols { grid-template-columns: 1fr; }
+
+  /* Numbered lists: "01" becomes a small label above the item instead of
+     a wide left column, so item text uses the full available width. */
+  .editorial-item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .editorial-num {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .steward-rows li {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .steward-rows span {
+    font-size: 0.85rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1751,8 +1798,8 @@ body:has(#hero) #hero::after {
     position: relative;
     inset: auto;
     width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
+    height: 62vh;
+    aspect-ratio: auto;
     min-height: 0;
     max-height: none;
   }
@@ -1767,25 +1814,45 @@ body:has(#hero) #hero::after {
   }
 
   /* The section-wide corner scrim (::before) is sized for a full-bleed
-     image; with the poster now a short 4:3 box, hide it there and give the
-     breadcrumb its own small dark pill instead so it reads over any part
-     of the painting, then let the text below sit in normal flow. */
+     image; this layout gets its own gradient on .hero-inner instead. */
   .hero--park::before,
   .hero--yosemite::before {
     content: none;
   }
 
+  /* Breadcrumb: a small single line under the fixed header, never a pill
+     over the painting. */
   #hero.hero--park .hero-crumb,
   #hero.hero--yosemite .hero-crumb {
-    top: calc(4.6rem + 0.75rem);
-    left: 0.9rem;
-    right: 0.9rem;
-    background: rgba(12, 18, 14, 0.45);
-    border-radius: 999px;
-    padding: 0.4rem 0.8rem;
-    width: fit-content;
+    position: static;
+    display: block;
+    top: auto;
+    left: auto;
+    right: auto;
+    padding: calc(4.6rem + 0.55rem) 1.25rem 0.5rem;
+    background: var(--color-cream);
   }
 
+  #hero.hero--park .hero-crumb ol,
+  #hero.hero--yosemite .hero-crumb ol {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  #hero.hero--park .hero-crumb a,
+  #hero.hero--park .hero-crumb li,
+  #hero.hero--yosemite .hero-crumb a,
+  #hero.hero--yosemite .hero-crumb li {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* Title group overlaps the bottom of the painting on a dark gradient;
+     subtitle + meta sit below it on solid cream — one box, one background,
+     so the two zones never need separate DOM containers. The scrim starts
+     already-dark at the top edge (not a slow fade-in) so kicker/eyebrow/
+     title stay >=4.5:1 even over a worst-case light patch of painting. */
   #hero.hero--park .hero-inner,
   #hero.hero--yosemite .hero-inner {
     position: relative;
@@ -1795,25 +1862,32 @@ body:has(#hero) #hero::after {
     bottom: auto;
     width: auto;
     max-width: none;
-    margin: 0;
-    padding: 1.5rem 1.25rem 1.75rem;
-    background: var(--color-cream);
+    margin: -10rem 0 0;
+    padding: 1rem 1.25rem 1.75rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 14, 12, 0.72) 0,
+      rgba(10, 14, 12, 0.72) 9.5rem,
+      var(--color-cream) 10rem
+    );
     text-shadow: none;
   }
 
   #hero.hero--park .hero-kicker,
   #hero.hero--yosemite .hero-kicker {
-    color: var(--color-text-muted);
+    color: #f7f3ec;
   }
 
   #hero.hero--park .hero-eyebrow,
   #hero.hero--yosemite .hero-eyebrow {
-    color: #b85a1a;
+    color: #f1d7a7;
   }
 
   #hero.hero--park .hero-title,
   #hero.hero--yosemite .hero-title {
-    color: var(--color-text);
+    font-size: clamp(2.1rem, 9vw, 2.75rem);
+    line-height: 0.98;
+    color: #f7f3ec;
     text-shadow: none;
   }
 
@@ -1823,6 +1897,7 @@ body:has(#hero) #hero::after {
     opacity: 0.82;
     max-width: none;
     text-shadow: none;
+    margin-top: 2.5rem;
   }
 
   #hero.hero--park .hero-ledger,

@@ -25,6 +25,32 @@ function load(file, returned) {
   return new Function(source + '\nreturn ' + returned + ';')();
 }
 
+function channelLinear(value) {
+  const c = value / 255;
+  return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+}
+
+function hexChannels(hex) {
+  const raw = String(hex || '').replace('#', '');
+  const full = raw.length === 3 ? raw.replace(/./g, function (ch) { return ch + ch; }) : raw;
+  return [
+    parseInt(full.slice(0, 2), 16),
+    parseInt(full.slice(2, 4), 16),
+    parseInt(full.slice(4, 6), 16),
+  ];
+}
+
+function relativeLuminance(hex) {
+  const rgb = hexChannels(hex);
+  return 0.2126 * channelLinear(rgb[0]) + 0.7152 * channelLinear(rgb[1]) + 0.0722 * channelLinear(rgb[2]);
+}
+
+function contrastRatio(foreground, background) {
+  const lighter = Math.max(relativeLuminance(foreground), relativeLuminance(background));
+  const darker = Math.min(relativeLuminance(foreground), relativeLuminance(background));
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
 function walkStrings(value, visit) {
   if (typeof value === 'string') visit(value);
   else if (Array.isArray(value)) value.forEach(function (item) { walkStrings(item, visit); });
@@ -89,6 +115,23 @@ function main() {
       if (normalized.length < 80 || SHARED_OK.has(normalized)) return;
       if (!seen.has(normalized)) seen.set(normalized, []);
       seen.get(normalized).push(id);
+    });
+  });
+
+  const DEFAULT_PALETTE = ['#243224', '#6a3418', '#1d3d4a', '#8a5a32', '#3a3028'];
+  const INK_CANDIDATES = ['#142016', '#f7f3ec', '#000000', '#ffffff'];
+  Object.keys(content).forEach(function (id) {
+    const essay = content[id];
+    if (!essay.landscapeHighlights || !essay.landscapeHighlights.items) return;
+    const colors = (essay.palette && essay.palette.hero) || DEFAULT_PALETTE;
+    essay.landscapeHighlights.items.forEach(function (item, index) {
+      const bg = colors[index % colors.length];
+      const best = INK_CANDIDATES.reduce(function (max, candidate) {
+        return Math.max(max, contrastRatio(candidate, bg));
+      }, 0);
+      if (best < 4.5) {
+        errors.push(id + ' landscapeHighlights panel ' + (index + 1) + ' (' + bg + ') cannot reach 4.5:1 contrast with any ink candidate (best ' + best.toFixed(2) + ')');
+      }
     });
   });
 

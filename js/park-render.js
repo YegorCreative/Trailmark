@@ -105,7 +105,8 @@
 
   function renderOverview() {
     const facts = park.overview.facts.map(function (fact) {
-      return '<p><span>' + escapeHtml(fact.label) + '</span>' + escapeHtml(fact.value) + '</p>';
+      const value = fact.value.replace(/^\s*(national\s+park\s+since|since)\s+/i, '');
+      return '<p><span>' + escapeHtml(fact.label) + '</span>' + escapeHtml(value) + '</p>';
     }).join('');
 
     return '<section id="park-overview" class="park-section park-section--overview" aria-labelledby="park-overview-title">'
@@ -200,7 +201,9 @@
   function renderHighlights() {
     const cards = park.landscapeHighlights.items.map(function (item, index) {
       const number = String(index + 1).padStart(2, '0');
-      return '<article class="highlight-card highlight-card--solid" style="background:' + paletteColor(index) + '">'
+      const bg = paletteColor(index);
+      const ink = badgeInk(bg);
+      return '<article class="highlight-card highlight-card--solid" style="background:' + bg + ';color:' + ink.ink + ';--highlight-muted:' + ink.muted + '">'
         + '<p class="highlight-index">' + number + '</p>'
         + '<h3 class="highlight-title">' + escapeHtml(item.title) + '</h3>'
         + '<p class="highlight-desc">' + escapeHtml(item.body) + '</p>'
@@ -459,9 +462,9 @@
 
     return [
       renderHero(),
-      '<div id="today-at-park" class="today-box" hidden></div>',
       renderChapters(),
       renderOverview(),
+      '<div id="today-at-park" class="today-box" hidden></div>',
       renderEmotionalThesis(),
       imageBreak('82% 18%'),
       renderHighlights(),

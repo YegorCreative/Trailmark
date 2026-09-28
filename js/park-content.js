@@ -893,7 +893,7 @@ const PARK_PAGE_CONTENT = {
       items: [
         { title: 'Zion Canyon', modifier: 'canyon', wash: 'linear-gradient(165deg, #e07848 0%, #9a4030 50%, #2a2018 100%)', body: 'Cottonwoods, the river, and cliffs of Navajo sandstone. The canyon scenic drive is often a shuttle, not a private-car road. Check NPS before you arrive.' },
         { title: 'The Narrows', modifier: 'narrows', wash: 'linear-gradient(180deg, #d8c4a0 0%, #6a7a78 55%, #1c2424 100%)', body: 'Upstream the canyon pinches until the river is the trail. Water depth, flash-flood risk, and closures change daily. The decision belongs to the current NPS report, not to a photograph.' },
-        { title: 'Kolob Canyons', modifier: 'kolob', wash: 'linear-gradient(160deg, #c45838 0%, #6a3030 60%, #241818 100%)', body: 'A separate entrance in the park northwest corner. Finger canyons of red rock, fewer people, and the same sandstone story told at a different volume.' },
+        { title: 'Kolob Canyons', modifier: 'kolob', wash: 'linear-gradient(160deg, #c45838 0%, #6a3030 60%, #241818 100%)', body: 'A separate entrance in the park\'s northwest corner. Finger canyons of red rock, fewer people, and the same sandstone story told at a different volume.' },
       ],
     },
     hiddenDiscoveries: {

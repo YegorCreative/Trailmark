@@ -5,9 +5,9 @@
   uses, scoped to this one park.
 
   Stale-data guard: when data/park-status.json's generatedAt is null or
-  more than 48 hours old, no status/hours/fee/alert is shown for ANY park
-  — a single clear message replaces them instead. The box only stays
-  hidden if the data is fresh but this one park genuinely has no entry.
+  more than 48 hours old, this box shows nothing at all — the stale
+  message only appears on today.html. The box also stays hidden if the
+  data is fresh but this one park genuinely has no entry.
 */
 (function () {
   var box = document.getElementById('today-at-park');
@@ -40,15 +40,7 @@
       var npsHref = (entry && entry.parkUrl) || ('https://www.nps.gov/' + park.npsCode + '/');
       var dataFresh = STATUS.isDataFresh(json && json.generatedAt);
 
-      if (!dataFresh) {
-        var alertsHref = npsHref + 'planyourvisit/conditions.htm';
-        box.innerHTML = '<p class="today-box-kicker">Today at ' + esc(park.name) + '</p>'
-          + '<p class="today-box-status today-box-status--stale">' + esc(STATUS.STALE_MESSAGE)
-          + ' <a href="' + esc(alertsHref) + '" target="_blank" rel="noopener">Check NPS</a></p>'
-          + '<div class="today-box-links"><a href="../today.html#park-' + esc(parkId) + '">See all parks today</a></div>';
-        box.hidden = false;
-        return;
-      }
+      if (!dataFresh) return; // stale/missing data — show nothing on park pages
 
       if (!hasAnyData(entry)) return; // fresh data, but nothing for this park — stays hidden
 
