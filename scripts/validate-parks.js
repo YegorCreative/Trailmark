@@ -25,6 +25,32 @@ function load(file, returned) {
   return new Function(source + '\nreturn ' + returned + ';')();
 }
 
+function channelLinear(value) {
+  const c = value / 255;
+  return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+}
+
+function hexChannels(hex) {
+  const raw = String(hex || '').replace('#', '');
+  const full = raw.length === 3 ? raw.replace(/./g, function (ch) { return ch + ch; }) : raw;
+  return [
+    parseInt(full.slice(0, 2), 16),
+    parseInt(full.slice(2, 4), 16),
+    parseInt(full.slice(4, 6), 16),
+  ];
+}
+
+function relativeLuminance(hex) {
+  const rgb = hexChannels(hex);
+  return 0.2126 * channelLinear(rgb[0]) + 0.7152 * channelLinear(rgb[1]) + 0.0722 * channelLinear(rgb[2]);
+}
+
+function contrastRatio(foreground, background) {
+  const lighter = Math.max(relativeLuminance(foreground), relativeLuminance(background));
+  const darker = Math.min(relativeLuminance(foreground), relativeLuminance(background));
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
 function walkStrings(value, visit) {
   if (typeof value === 'string') visit(value);
   else if (Array.isArray(value)) value.forEach(function (item) { walkStrings(item, visit); });
@@ -92,10 +118,34 @@ function main() {
     });
   });
 
+  const DEFAULT_PALETTE = ['#243224', '#6a3418', '#1d3d4a', '#8a5a32', '#3a3028'];
+  const INK_CANDIDATES = ['#142016', '#f7f3ec', '#000000', '#ffffff'];
+  Object.keys(content).forEach(function (id) {
+    const essay = content[id];
+    if (!essay.landscapeHighlights || !essay.landscapeHighlights.items) return;
+    const colors = (essay.palette && essay.palette.hero) || DEFAULT_PALETTE;
+    essay.landscapeHighlights.items.forEach(function (item, index) {
+      const bg = colors[index % colors.length];
+      const best = INK_CANDIDATES.reduce(function (max, candidate) {
+        return Math.max(max, contrastRatio(candidate, bg));
+      }, 0);
+      if (best < 4.5) {
+        errors.push(id + ' landscapeHighlights panel ' + (index + 1) + ' (' + bg + ') cannot reach 4.5:1 contrast with any ink candidate (best ' + best.toFixed(2) + ')');
+      }
+    });
+  });
+
+  const IANA_ZONE = /^[A-Za-z_]+\/[A-Za-z_]+$/;
   parks.forEach(function (park) {
     if (park.pageUrl && !content[park.id]) errors.push(park.id + ' has pageUrl but no essay');
     if (park.pageUrl && !fs.existsSync(path.join(root, park.pageUrl))) {
       errors.push(park.id + ' pageUrl file does not exist');
+    }
+    if (!park.npsCode || !/^[a-z]{4}$/.test(park.npsCode)) {
+      errors.push(park.id + ' missing or malformed npsCode');
+    }
+    if (!park.timeZone || !IANA_ZONE.test(park.timeZone)) {
+      errors.push(park.id + ' missing or malformed timeZone');
     }
   });
 
@@ -106,7 +156,7 @@ function main() {
     }
   });
 
-  const SITE = 'https://yegorcreative.github.io/Trailmark/';
+  const SITE = require('./site-config').SITE_URL + '/';
   let photoList = [];
   try { photoList = load('js/photos-data.js', 'PHOTOS'); }
   catch (error) { errors.push('js/photos-data.js could not be loaded'); }
@@ -125,7 +175,7 @@ function main() {
     });
   });
 
-  const pages = ['index.html', 'parks.html', 'about.html', 'faq.html', 'contact.html', 'photos.html', '404.html']
+  const pages = ['index.html', 'parks.html', 'today.html', 'about.html', 'faq.html', 'contact.html', 'photos.html', '404.html']
     .concat(parks.filter(function (park) { return park.pageUrl; }).map(function (park) { return park.pageUrl; }));
   const titles = new Map();
   const descriptions = new Map();
@@ -204,6 +254,22 @@ function main() {
       if (sitemap.indexOf('<loc>' + loc + '</loc>') === -1) errors.push(rel + ' missing from sitemap.xml');
     }
   });
+
+  const statusPath = path.join(root, 'data', 'park-status.json');
+  if (fs.existsSync(statusPath)) {
+    let status = null;
+    try { status = JSON.parse(fs.readFileSync(statusPath, 'utf8')); }
+    catch (error) { errors.push('data/park-status.json is not valid JSON: ' + error.message); }
+    if (status && !status.generatedAt) {
+      const withAlerts = Object.keys(status.parks || {}).filter(function (id) {
+        const entry = status.parks[id];
+        return entry && Array.isArray(entry.alerts) && entry.alerts.length > 0;
+      });
+      if (withAlerts.length) {
+        errors.push('data/park-status.json has generatedAt: null but carries alerts for: ' + withAlerts.join(', ') + ' — stale/placeholder data must never ship with alerts (today.js and park-today-box.js both assume alerts only exist when the data is real).');
+      }
+    }
+  }
 
   if (errors.length) {
     console.error(errors.join('\n'));

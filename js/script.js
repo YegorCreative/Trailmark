@@ -188,8 +188,11 @@
 
   function renderCardHero(park) {
     if (!park.art || !park.art.header) return '';
+    const full = assetUrl(park.art.header);
+    const small = full.replace(/header\.webp$/, 'header-640.webp');
+    const mid = full.replace(/header\.webp$/, 'header-1280.webp');
     return '<div class="card-hero-frame" aria-hidden="true">'
-      + '<img class="card-hero-img" src="' + assetUrl(park.art.header).replace(/header\\.webp$/, 'header-640.webp') + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
+      + '<img class="card-hero-img" src="' + small + '" srcset="' + small + ' 640w, ' + mid + ' 1280w" sizes="(max-width: 640px) 90vw, (max-width: 900px) 35vw, 23rem" alt="" width="640" height="360" loading="lazy" decoding="async" />'
       + '</div>';
   }
 
@@ -386,6 +389,11 @@
     return park.art.header.replace(/header\.webp$/, 'header-1280.webp');
   }
 
+  function slideSrcset(park) {
+    const dir = park.art.header.replace(/header\.webp$/, '');
+    return dir + 'header-640.webp 640w, ' + dir + 'header-1280.webp 1280w, ' + dir + 'header-1920.webp 1920w, ' + dir + 'header-2560.webp 2560w';
+  }
+
   function addSlide(park) {
     const image = document.createElement('img');
     image.className = 'hero-scene-art hero-scene-art--base';
@@ -393,6 +401,7 @@
     image.width = 1672;
     image.height = 941;
     image.decoding = 'async';
+    image.sizes = '100vw';
     scene.appendChild(image);
     return image;
   }
@@ -416,8 +425,10 @@
       image.setAttribute('data-ready', '1');
       done();
     }, { once: true });
-    if (!image.getAttribute('src')) image.src = slideSrc(park);
-    else if (image.complete) {
+    if (!image.getAttribute('src')) {
+      image.srcset = slideSrcset(park);
+      image.src = slideSrc(park);
+    } else if (image.complete) {
       image.setAttribute('data-ready', '1');
       done();
     }

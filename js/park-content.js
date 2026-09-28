@@ -36,7 +36,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A high Sierra sanctuary shaped by granite, water, and time',
-      lead: 'Yosemite gathers some of the American West\'s most recognizable forms into one valley: sheer granite, spring waterfalls, meadow light, black oak, pine shadow, and the slow presence of stone.',
+      lead: 'Yosemite gathers some of the American West\'s most recognizable forms into one valley. Sheer granite, spring waterfalls, meadow light, black oak, and pine shadow all meet in the same frame.',
       body: [
         'The park reaches far beyond Yosemite Valley, but the valley remains its emotional center. It is where scale becomes immediate, where cliffs rise like architecture, and where water turns distance into sound.',
         'TrailMark treats Yosemite as the first archive chapter because it contains the core language every future park page should carry: wonder first, meaningful context second, and a preserved sense of place throughout.',
@@ -213,7 +213,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A volcanic plateau where water, heat, and wild movement shape the story',
-      lead: 'Yellowstone is the first national park in the United States and still feels elemental: geysers breathe through the ground, hot springs hold impossible color, and open valleys gather bison, elk, wolves, bears, and weather.',
+      lead: 'Yellowstone is the first national park in the United States, established in 1872. Geysers breathe through the ground, hot springs hold impossible color, and open valleys gather bison, elk, wolves, and bears.',
       body: [
         'The park is not one landscape but a connected field of forces. Thermal basins, lodgepole forests, high lakes, canyon walls, rivers, grasslands, and snowbound passes all belong to the same restless volcanic system.',
         'TrailMark treats Yellowstone as the second archive chapter because it proves the template can hold a different kind of wonder: less granite monument, more living geology, motion, steam, and scale.',
@@ -390,7 +390,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A slow river of grass, mangrove, heat, birds, and brackish light',
-      lead: 'Everglades is not a swamp in the ordinary sense. It is a broad, shallow, moving wetland where freshwater, saltwater, limestone, plants, animals, and seasonal rainfall form a living system.',
+      lead: 'Everglades is not a swamp in the ordinary sense; it is a broad, shallow wetland where freshwater and saltwater meet across limestone. Plants, animals, and seasonal rainfall shape it into one moving system.',
       body: [
         'The park protects the southern reach of a much larger watershed. Its story begins far north of the boundary, where water once flowed slowly from Lake Okeechobee through sawgrass plains toward Florida Bay.',
         'TrailMark treats Everglades as the third proof park because it asks the template to honor subtlety: flat horizons, hidden movement, heat, insects, ecological dependence, and conservation rather than only dramatic vertical scenery.',
@@ -564,7 +564,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A river-cut archive of stone, held open to the sky',
-      lead: 'Congress designated Grand Canyon National Park on February 26, 1919. The National Park Service records the park at 1,218,375 acres, with about 278 miles of the Colorado River inside it.',
+      lead: 'Congress designated Grand Canyon National Park on February 26, 1919, and the Colorado River still runs about 278 miles through it. The National Park Service records the park at 1,218,375 acres.',
       body: [
         'The South Rim sits near 7,000 feet and the North Rim near 8,000. Between them the canyon averages about a mile deep and, rim to rim, about 10 miles across, widening to 18 miles at its broadest.',
         'Eleven federally recognized tribes hold relationships with this canyon that long predate the park. The essay here is a field introduction, not a substitute for those nations own histories or for current NPS conditions.',
@@ -893,7 +893,7 @@ const PARK_PAGE_CONTENT = {
       items: [
         { title: 'Zion Canyon', modifier: 'canyon', wash: 'linear-gradient(165deg, #e07848 0%, #9a4030 50%, #2a2018 100%)', body: 'Cottonwoods, the river, and cliffs of Navajo sandstone. The canyon scenic drive is often a shuttle, not a private-car road. Check NPS before you arrive.' },
         { title: 'The Narrows', modifier: 'narrows', wash: 'linear-gradient(180deg, #d8c4a0 0%, #6a7a78 55%, #1c2424 100%)', body: 'Upstream the canyon pinches until the river is the trail. Water depth, flash-flood risk, and closures change daily. The decision belongs to the current NPS report, not to a photograph.' },
-        { title: 'Kolob Canyons', modifier: 'kolob', wash: 'linear-gradient(160deg, #c45838 0%, #6a3030 60%, #241818 100%)', body: 'A separate entrance in the park northwest corner. Finger canyons of red rock, fewer people, and the same sandstone story told at a different volume.' },
+        { title: 'Kolob Canyons', modifier: 'kolob', wash: 'linear-gradient(160deg, #c45838 0%, #6a3030 60%, #241818 100%)', body: 'A separate entrance in the park\'s northwest corner. Finger canyons of red rock, fewer people, and the same sandstone story told at a different volume.' },
       ],
     },
     hiddenDiscoveries: {
@@ -1013,7 +1013,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'Three parks that refuse to be separated',
-      lead: 'Olympic National Park, established in 1938 on Washington Olympic Peninsula, holds glacier-capped mountains, temperate rainforest, and a roadless Pacific coastline in one boundary.',
+      lead: 'Olympic National Park was established in 1938 on Washington\'s Olympic Peninsula. It holds glacier-capped mountains, temperate rainforest, and a roadless Pacific coastline in one boundary.',
       body: [
         'The mountains wring moisture from Pacific storms, so the west-side valleys grow Sitka spruce, western hemlock, and bigleaf maple hung with moss, while the northeast rain shadow is noticeably drier.',
         'The park is also a refuge for Roosevelt elk, the animal the original monument was argued for. The coast, the forest, and the peaks are one watershed story.',
@@ -1160,7 +1160,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A divide you can stand on, and ice that is leaving',
-      lead: 'Glacier National Park was established in 1910 in northern Montana, where the Rocky Mountains break into horns, arêtes, and lakes the color of melted glacial flour.',
+      lead: 'Glacier National Park was established in 1910 in northern Montana, high in the Rocky Mountains. Here peaks break into horns, arêtes, and lakes the color of melted glacial flour.',
       body: [
         'The park shares the Waterton-Glacier International Peace Park with Waterton Lakes in Alberta, a 1932 designation that treats the ecosystem as larger than the border.',
         'Going-to-the-Sun Road is the famous crossing. It is also a seasonal road. Snow, not the brochure, decides when the pass is a pass. Check NPS before you build a day around it.',
@@ -1863,7 +1863,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A hundred-mile wrinkle, visited at one gap',
-      lead: 'Capitol Reef National Park follows the Waterpocket Fold, a monocline that lifts and tilts the Colorado Plateau\'s rock layers into a long barrier of cliffs and domes in south-central Utah.',
+      lead: 'Capitol Reef National Park follows the Waterpocket Fold, a monocline in south-central Utah\'s Colorado Plateau. The fold lifts and tilts rock layers into a long barrier of cliffs and domes.',
       body: [
         'Most visitors meet it at Fruita, where the Fremont River cuts through the reef and Mormon settlers planted orchards against the cliffs. The fruit trees are part of the park, not a town that wandered in.',
         'The name mixes two images: white domes that reminded people of the Capitol, and cliffs that blocked travel the way a reef blocks a ship. Both are still visible from the scenic drive.',
@@ -2002,10 +2002,10 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'The lowest ground in North America, under a wall of mountains',
-      lead: 'The National Park Service describes Badwater Basin at 282 feet below sea level, the lowest point in North America, with the Panamint Mountains rising more than 11,000 feet above it. The park also calls this basin the hottest place in the world.',
+      lead: 'The National Park Service places Badwater Basin at 282 feet below sea level, the lowest point in North America. The Panamint Mountains rise more than 11,000 feet above it, and NPS calls Death Valley the hottest place on Earth, with the world\'s highest reliably recorded temperature measured at Furnace Creek.',
       body: [
         'The name is severe and the inventory is not: colorful badlands, snow-covered peaks, sand dunes, rugged canyons, and more than 1,000 described plant species, from ancient bristlecone pines to short-lived spring flowers.',
-        'The park spans California and Nevada. Devil\'s Hole, the Racetrack, and the dune fields are different chapters. None of them is the whole place. Check NPS before you travel. Distances inside the park are not what a small map suggests.',
+        'The park spans California and Nevada. Devils Hole, the Racetrack, and the dune fields are different chapters. None of them is the whole place. Check NPS before you travel. Distances inside the park are not what a small map suggests.',
       ],
       facts: [
         { label: 'Region', value: 'Mojave' },
@@ -2036,7 +2036,7 @@ const PARK_PAGE_CONTENT = {
       kicker: 'Hidden Discoveries',
       title: 'A pupfish, a sailing stone, and a mine-shaped past',
       items: [
-        { title: 'Devil\'s Hole', body: 'NPS lists Devil\'s Hole among the park\'s water features. It is a limestone cavern pool and the entire known wild home of the Devil\'s Hole pupfish. It is not a swimming hole and not a casual overlook you improve.' },
+        { title: 'Devils Hole', body: 'NPS lists Devils Hole among the park\'s water features. It is a limestone cavern pool and the entire known wild home of the Devils Hole pupfish. It is not a swimming hole and not a casual overlook you improve.' },
         { title: 'The Racetrack', body: 'A playa where rocks leave trails. NPS includes it among the natural features. The mechanism involves ice and wind, not mystery in the souvenir sense. The road there is rough. Ask before you go.' },
         { title: 'Mining and the name', body: 'The valley\'s grim name and its borax history sit on top of Timbisha Shoshone homeland. The park is a desert ecosystem and a cultural landscape at the same time.' },
       ],
@@ -2047,7 +2047,7 @@ const PARK_PAGE_CONTENT = {
       lead: 'NPS is clear that many animals live here. Most of them avoid the hour when visitors stand at Badwater.',
       notes: [
         'Desert bighorn use the mountain slopes. Seeing one across a canyon is the right distance.',
-        'Pupfish persist in isolated warm waters, including Devil\'s Hole. They are a conservation story measured in a single pool.',
+        'Pupfish persist in isolated warm waters, including Devils Hole. They are a conservation story measured in a single pool.',
         'Sidewinders, roadrunners, and ravens are the midday cast. The mammals are mostly a dawn and night animal. Do not leave water bowls. Wild animals do not need a tap.',
       ],
     },
@@ -2067,7 +2067,7 @@ const PARK_PAGE_CONTENT = {
       items: [
         { name: 'Winter', modifier: 'winter', wash: 'linear-gradient(180deg, rgba(220,214,206,0.94), rgba(244,240,232,0.96))', body: 'The humane season on the valley floor. Peaks may be snowy while Badwater is merely cool. This is when the park is a pleasure instead of a test.' },
         { name: 'Spring', modifier: 'spring', wash: 'linear-gradient(180deg, rgba(236,220,170,0.94), rgba(246,238,220,0.96))', body: 'If winter rain was generous, flowers appear and then leave. They are not guaranteed. The dunes and the basin do not need them.' },
-        { name: 'Summer', modifier: 'summer', wash: 'linear-gradient(180deg, rgba(240,196,150,0.94), rgba(248,228,206,0.96))', body: 'NPS calls this the hottest place in the world. The valley floor in summer is a danger, not a backdrop. If you go, treat midday outside a car as a mistake.' },
+        { name: 'Summer', modifier: 'summer', wash: 'linear-gradient(180deg, rgba(240,196,150,0.94), rgba(248,228,206,0.96))', body: 'NPS calls Death Valley the hottest place on Earth. The valley floor in summer is a danger, not a backdrop. If you go, treat midday outside a car as a mistake.' },
         { name: 'Autumn', modifier: 'autumn', wash: 'linear-gradient(180deg, rgba(230,190,150,0.94), rgba(244,230,210,0.96))', body: 'Heat loosens its grip later here than in the high plateaus. Check the forecast, not the calendar, before you walk the salt.' },
       ],
     },
@@ -2109,7 +2109,7 @@ const PARK_PAGE_CONTENT = {
         'In hot months, do not walk the basin or the dunes in the middle of the day. Stay with the car and the water.',
         'Carry more water than the walk seems to need, and tell someone your route when you leave pavement.',
         'Do not drive off road. Desert pavement and dune plants do not recover on a vacation schedule.',
-        'Devil\'s Hole and other sensitive waters are closed to play. The pupfish have nowhere else.',
+        'Devils Hole and other sensitive waters are closed to play. The pupfish have nowhere else.',
       ],
     },
     archive: {
@@ -3114,7 +3114,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'Authorized in 1935, established when the land was conveyed',
-      lead: 'Congress authorized Big Bend National Park on June 20, 1935. A deed of conveyance was completed in 1944, and the park was officially established on June 12, 1944.',
+      lead: 'Congress authorized Big Bend National Park on June 20, 1935, and the park was officially established on June 12, 1944. A deed of conveyance completed that same year handed the land over.',
       body: [
         'An NPS history of fossils in the parks records that nine-year gap. Ross Maxwell was the first superintendent and served from 1944 to 1952. The same account notes a 1934 visit by Roger Toll to what was then a Texas state park, and fossil quarries worked in the late 1930s before the national park existed.',
         'The natural history page, updated in 2023, is the reason the park is not only a canyon photograph. It holds more than 1,200 plant species, including some 60 cacti, plus 11 amphibians, 56 reptiles, 40 fish, 75 mammals, over 400 birds, and about 3,600 insects.',
@@ -3390,7 +3390,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A 1933 monument that became a park on October 21, 1999',
-      lead: 'On October 21, 1999, President Bill Clinton signed the act that enlarged Black Canyon National Monument and established Black Canyon of the Gunnison National Park.',
+      lead: 'On October 21, 1999, President Bill Clinton signed the act that established Black Canyon of the Gunnison National Park. It also enlarged the earlier Black Canyon National Monument.',
       body: [
         'The park\'s own 20th-anniversary release says the monument dates from 1933, and that communities on Colorado\'s Western Slope had argued for a park across several decades before Senator Ben Nighthorse Campbell and Congressman Scott McGinnis carried the bill. In 2017, 2,494 acres of private land inside the boundary were added with Land and Water Conservation Fund money.',
         'The name is already long. The title of this page stays the full name, without a hook, because a hook would push it past 60 characters. The canyon itself is the hook: deep, steep, and narrow at once.',
@@ -3942,7 +3942,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A park leased from the villages, not bought from them',
-      lead: 'The National Park of American Samoa was established in 1993. It spreads across Tutuila, Ofu, and Ta‘ū and covers more than 8,000 acres of rainforest, mountains, and coral reef.',
+      lead: 'The National Park of American Samoa was established in 1993, spread across Tutuila, Ofu, and Ta‘ū to cover more than 8,000 acres of rainforest and coral reef. Steep, forested mountains and reef-lined coast fill the rest of its boundary.',
       body: [
         'The history page is plain about the tenure. Unlike most national parks, the land is leased from local villages. It is owned and managed communally under village chiefs, the matai. The park works with those communities so that preservation sits beside fishing, gathering, and farming.',
         'Two ecosystems on that same page are unique inside the U.S. national park system: the only paleotropical rainforest, with species whose lineage is Southeast Asian, and the only Indo-Pacific coral reef. The nature page adds that the park protects nearly 4,000 acres of ocean around the three islands.',
@@ -4218,7 +4218,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'The monument was 1968. The park statute names 1980.',
-      lead: 'President Lyndon B. Johnson signed Biscayne National Monument into law on October 18, 1968, to protect a rare combination of terrestrial, marine, and amphibious life.',
+      lead: 'President Lyndon Johnson signed Biscayne National Monument into law on October 18, 1968, to protect a rare mix of terrestrial, marine, and amphibious life.',
       body: [
         'The birth page says the park later went through enlargements and a name change, and it does not give the day of that change. The enabling-legislation page, quoting the U.S. Code, establishes Biscayne National Park, abolishes the monument and folds it into the park, and requires a detailed boundary description not more than one year after June 28, 1980. That date is the one this archive uses for the park.',
         'The nature page describes four ecosystems that melt into one another as ecotones. They support manatees, sea turtles, hundreds of species of birds and fish, and plants and insects found nowhere else in the United States. The page also says the park sits next to one of the nation\'s largest urban areas and is always adapting to storms, currents, and people.',
@@ -4494,7 +4494,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'A monument in 1976. A national park in 2003.',
-      lead: 'Congaree Swamp National Monument was established in 1976. The park history page says it was redesignated a national park in 2003 and now covers over 26,000 acres.',
+      lead: 'Congaree Swamp National Monument was established in 1976 and redesignated a national park in 2003, now covering over 26,000 acres.',
       body: [
         'That history page calls it the nation\'s largest remaining tract of southern old-growth bottomland forest, in the Midlands of South Carolina. The management page says Congress authorized the park in 1976 to preserve the largest intact tract of that forest in the Southeast, and points to the foundation document for the establishment story. This essay uses the years on the history page and does not add the day from a PDF.',
         'The nature page says the landscape is defined by flood and fire: bottomland hardwoods, including champion trees, and an upland pine forest on the northern bluffs. The FAQ says the average canopy is over 100 feet and that the tallest tree, a national champion loblolly pine, was last measured at 170 feet, with a circumference over 15 feet.',
@@ -6150,7 +6150,7 @@ const PARK_PAGE_CONTENT = {
     overview: {
       kicker: 'Park Overview',
       title: 'Authorized in 1931, established on April 3, 1940',
-      lead: 'President Herbert Hoover approved Isle Royale on March 3, 1931. President Franklin D. Roosevelt established the park on April 3, 1940, after enough private land had been acquired.',
+      lead: 'President Herbert Hoover approved Isle Royale on March 3, 1931; President Franklin D. Roosevelt established the park on April 3, 1940. Enough private land had been acquired by then to proceed.',
       body: [
         'The foundation document says the park is 571,790 acres in northwestern Lake Superior, 14 miles from the Canadian shore, and that 75 percent of those acres are submerged. The main island and more than 400 smaller islands make the archipelago. There are no roads.',
         'On October 20, 1976, 132,018 acres, 99 percent of the 133,788 land acres, were designated wilderness or potential wilderness. A cultural history says the dedication, delayed by the war, was August 27, 1946. The Grand Portage Band calls the island Minong, the good place. The homepage says it is ancestral Anishinaabe land.',

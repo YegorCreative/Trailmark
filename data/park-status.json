@@ -1,0 +1,510 @@
+{
+  "generatedAt": null,
+  "note": "No NPS_API_KEY was available when this fallback snapshot was built. This file is structure only — no alerts, hours, or fees are shown from it (see docs/park-status-fallback-sources.md for the record of what was tried earlier and why it was removed). The daily GitHub Action overwrites this file with real NPS API data for all 63 parks once NPS_API_KEY is set in repo secrets; until then, and whenever this file is more than 48 hours old, today.html and the park Today boxes show a stale-data notice instead of any status.",
+  "parks": {
+    "yosemite": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/yose/"
+    },
+    "yellowstone": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/yell/"
+    },
+    "acadia": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/acad/"
+    },
+    "american-samoa": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/npsa/"
+    },
+    "arches": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/arch/"
+    },
+    "badlands": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/badl/"
+    },
+    "big-bend": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/bibe/"
+    },
+    "biscayne": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/bisc/"
+    },
+    "black-canyon-of-the-gunnison": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/blca/"
+    },
+    "bryce-canyon": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/brca/"
+    },
+    "canyonlands": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/cany/"
+    },
+    "capitol-reef": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/care/"
+    },
+    "carlsbad-caverns": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/cave/"
+    },
+    "channel-islands": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/chis/"
+    },
+    "congaree": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/cong/"
+    },
+    "crater-lake": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/crla/"
+    },
+    "cuyahoga-valley": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/cuva/"
+    },
+    "death-valley": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/deva/"
+    },
+    "denali": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/dena/"
+    },
+    "dry-tortugas": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/drto/"
+    },
+    "everglades": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/ever/"
+    },
+    "gates-of-the-arctic": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/gaar/"
+    },
+    "gateway-arch": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/jeff/"
+    },
+    "glacier": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/glac/"
+    },
+    "glacier-bay": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/glba/"
+    },
+    "grand-canyon": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/grca/"
+    },
+    "grand-teton": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/grte/"
+    },
+    "great-basin": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/grba/"
+    },
+    "great-sand-dunes": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/grsa/"
+    },
+    "great-smoky-mountains": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/grsm/"
+    },
+    "guadalupe-mountains": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/gumo/"
+    },
+    "haleakala": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/hale/"
+    },
+    "hawaii-volcanoes": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/havo/"
+    },
+    "hot-springs": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/hosp/"
+    },
+    "indiana-dunes": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/indu/"
+    },
+    "isle-royale": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/isro/"
+    },
+    "joshua-tree": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/jotr/"
+    },
+    "katmai": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/katm/"
+    },
+    "kenai-fjords": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/kefj/"
+    },
+    "kings-canyon": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/seki/"
+    },
+    "kobuk-valley": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/kova/"
+    },
+    "lake-clark": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/lacl/"
+    },
+    "lassen-volcanic": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/lavo/"
+    },
+    "mammoth-cave": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/maca/"
+    },
+    "mesa-verde": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/meve/"
+    },
+    "mount-rainier": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/mora/"
+    },
+    "new-river-gorge": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/neri/"
+    },
+    "north-cascades": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/noca/"
+    },
+    "olympic": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/olym/"
+    },
+    "petrified-forest": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/pefo/"
+    },
+    "pinnacles": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/pinn/"
+    },
+    "redwood": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/redw/"
+    },
+    "rocky-mountain": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/romo/"
+    },
+    "saguaro": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/sagu/"
+    },
+    "sequoia": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/seki/"
+    },
+    "shenandoah": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/shen/"
+    },
+    "theodore-roosevelt": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/thro/"
+    },
+    "virgin-islands": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/viis/"
+    },
+    "voyageurs": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/voya/"
+    },
+    "white-sands": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/whsa/"
+    },
+    "wind-cave": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/wica/"
+    },
+    "wrangell-st-elias": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/wrst/"
+    },
+    "zion": {
+      "standardHours": null,
+      "exceptions": [],
+      "alerts": [],
+      "visitorCenters": [],
+      "feeSummary": null,
+      "parkUrl": "https://www.nps.gov/zion/"
+    }
+  }
+}

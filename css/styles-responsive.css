@@ -322,11 +322,8 @@
   .park-section--overview,
   .park-section--thesis,
   .park-section--highlights,
-  .park-section--seasons,
-  .park-section--discovery,
-  .park-section--knowledge,
-  .park-section--photography,
-  .park-section--stewardship {
+  .park-section--editorial,
+  .park-neighbors {
     padding: 3rem 1.25rem;
   }
 

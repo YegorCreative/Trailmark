@@ -1,35 +1,37 @@
 /*
   park-page.js
-  Binds behavior on a park article. The markup comes from park-render.js,
-  either pre-rendered into #park-page or filled here when it is missing.
+  Binds behavior on a park article. Every published park page ships with
+  the markup already pre-rendered into #park-page by build-park-pages.js
+  (via park-render.js, at build time only — that renderer and its
+  ~660KB content data aren't loaded in the browser). The fallback below
+  only matters for a page that was never built, e.g. local dev before
+  running the build script; it degrades gracefully (and skips the
+  render) when those dev-only globals aren't present.
 */
 
 (function renderParkPage() {
   const mount = document.getElementById('park-page');
-  if (!mount || typeof PARK_PAGE_CONTENT === 'undefined' || typeof trailmarkRenderPark !== 'function') return;
-
-  const parkId = mount.dataset.parkId || 'yosemite';
-  const park = PARK_PAGE_CONTENT[parkId];
-  const parkCard = typeof PARKS !== 'undefined'
-    ? PARKS.find(function (entry) { return entry.id === parkId; })
-    : null;
-
-  if (!park) {
-    if (!mount.querySelector('#hero')) {
-      mount.innerHTML = '<section class="park-section"><div class="section-inner"><p class="search-empty">Park content is not available yet.</p></div></section>';
-    }
-    return;
-  }
-
-  const staleCrumb = document.querySelector('.park-back');
-  if (staleCrumb) staleCrumb.remove();
+  if (!mount) return;
 
   if (!mount.querySelector('#hero')) {
+    if (typeof PARK_PAGE_CONTENT === 'undefined' || typeof trailmarkRenderPark !== 'function') return;
+    const parkId = mount.dataset.parkId || 'yosemite';
+    const park = PARK_PAGE_CONTENT[parkId];
+    if (!park) {
+      mount.innerHTML = '<section class="park-section"><div class="section-inner"><p class="search-empty">Park content is not available yet.</p></div></section>';
+      return;
+    }
+    const parkCard = typeof PARKS !== 'undefined'
+      ? PARKS.find(function (entry) { return entry.id === parkId; })
+      : null;
     const photos = typeof PHOTOS !== 'undefined'
       ? PHOTOS.filter(function (photo) { return photo.parkId === parkId; })
       : [];
     mount.innerHTML = trailmarkRenderPark(park, parkCard, { parks: typeof PARKS !== 'undefined' ? PARKS : [], photos: photos });
   }
+
+  const staleCrumb = document.querySelector('.park-back');
+  if (staleCrumb) staleCrumb.remove();
 
   function initChapters() {
     const nav = document.querySelector('.chapter-nav');

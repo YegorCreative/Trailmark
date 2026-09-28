@@ -325,240 +325,186 @@
       "assets/Parks/61-Yellowstone National Park/sources.txt"
     ],
     "acadia": [
-      "assets/Parks/01-Acadia National Park/sources 2.txt",
       "assets/Parks/01-Acadia National Park/sources.txt"
     ],
     "american-samoa": [
-      "assets/Parks/02-National Park of American Samoa/sources 2.txt",
       "assets/Parks/02-National Park of American Samoa/sources.txt"
     ],
     "arches": [
-      "assets/Parks/03-Arches National Park/sources 2.txt",
       "assets/Parks/03-Arches National Park/sources.txt"
     ],
     "badlands": [
-      "assets/Parks/04-Badlands National Park/sources 2.txt",
       "assets/Parks/04-Badlands National Park/sources.txt"
     ],
     "big-bend": [
-      "assets/Parks/05-Big Bend National Park/sources 2.txt",
       "assets/Parks/05-Big Bend National Park/sources.txt"
     ],
     "biscayne": [
-      "assets/Parks/06-Biscayne National Park/sources 2.txt",
       "assets/Parks/06-Biscayne National Park/sources.txt"
     ],
     "black-canyon-of-the-gunnison": [
-      "assets/Parks/07-Black Canyon of the Gunnison National Park/sources 2.txt",
       "assets/Parks/07-Black Canyon of the Gunnison National Park/sources.txt"
     ],
     "bryce-canyon": [
-      "assets/Parks/08-Bryce Canyon National Park/sources 2.txt",
       "assets/Parks/08-Bryce Canyon National Park/sources.txt"
     ],
     "canyonlands": [
-      "assets/Parks/09-Canyonlands National Park/sources 2.txt",
       "assets/Parks/09-Canyonlands National Park/sources.txt"
     ],
     "capitol-reef": [
       "assets/Parks/10-Capitol Reef National Park/sources.txt"
     ],
     "carlsbad-caverns": [
-      "assets/Parks/11-Carlsbad Caverns National Park/sources 2.txt",
       "assets/Parks/11-Carlsbad Caverns National Park/sources.txt"
     ],
     "channel-islands": [
       "assets/Parks/12-Channel Islands National Park/sources.txt"
     ],
     "congaree": [
-      "assets/Parks/13-Congaree National Park/sources 2.txt",
       "assets/Parks/13-Congaree National Park/sources.txt"
     ],
     "crater-lake": [
-      "assets/Parks/14-Crater Lake National Park/sources 2.txt",
       "assets/Parks/14-Crater Lake National Park/sources.txt"
     ],
     "cuyahoga-valley": [
-      "assets/Parks/15-Cuyahoga Valley National Park/sources 2.txt",
       "assets/Parks/15-Cuyahoga Valley National Park/sources.txt"
     ],
     "death-valley": [
       "assets/Parks/16-Death Valley National Park/sources.txt"
     ],
     "denali": [
-      "assets/Parks/17-Denali National Park/sources 2.txt",
       "assets/Parks/17-Denali National Park/sources.txt"
     ],
     "dry-tortugas": [
-      "assets/Parks/18-Dry Tortugas National Park/sources 2.txt",
       "assets/Parks/18-Dry Tortugas National Park/sources.txt"
     ],
     "everglades": [
-      "assets/Parks/19-Everglades National Park/sources 2.txt",
       "assets/Parks/19-Everglades National Park/sources.txt"
     ],
     "gates-of-the-arctic": [
       "assets/Parks/20-Gates of the Arctic National Park/sources.txt"
     ],
     "gateway-arch": [
-      "assets/Parks/21-Gateway Arch National Park/sources 2.txt",
       "assets/Parks/21-Gateway Arch National Park/sources.txt"
     ],
     "glacier": [
-      "assets/Parks/22-Glacier National Park/sources 2.txt",
       "assets/Parks/22-Glacier National Park/sources.txt"
     ],
     "glacier-bay": [
-      "assets/Parks/23-Glacier Bay National Park/sources 2.txt",
       "assets/Parks/23-Glacier Bay National Park/sources.txt"
     ],
     "grand-canyon": [
-      "assets/Parks/24-Grand Canyon National Park/sources 2.txt",
       "assets/Parks/24-Grand Canyon National Park/sources.txt"
     ],
     "grand-teton": [
-      "assets/Parks/25-Grand Teton National Park/sources 2.txt",
       "assets/Parks/25-Grand Teton National Park/sources.txt"
     ],
     "great-basin": [
-      "assets/Parks/26-Great Basin National Park/sources 2.txt",
       "assets/Parks/26-Great Basin National Park/sources.txt"
     ],
     "great-sand-dunes": [
-      "assets/Parks/27-Great Sand Dunes National Park/sources 2.txt",
       "assets/Parks/27-Great Sand Dunes National Park/sources.txt"
     ],
     "great-smoky-mountains": [
-      "assets/Parks/28-Great Smoky Mountains National Park/sources 2.txt",
       "assets/Parks/28-Great Smoky Mountains National Park/sources.txt"
     ],
     "guadalupe-mountains": [
-      "assets/Parks/29-Guadalupe Mountains National Park/sources 2.txt",
       "assets/Parks/29-Guadalupe Mountains National Park/sources.txt"
     ],
     "haleakala": [
-      "assets/Parks/30-Haleakala National Park/sources 2.txt",
       "assets/Parks/30-Haleakala National Park/sources.txt"
     ],
     "hawaii-volcanoes": [
-      "assets/Parks/31-Hawaii Volcanoes National Park/sources 2.txt",
       "assets/Parks/31-Hawaii Volcanoes National Park/sources.txt"
     ],
     "hot-springs": [
-      "assets/Parks/32-Hot Springs National Park/sources 2.txt",
       "assets/Parks/32-Hot Springs National Park/sources.txt"
     ],
     "indiana-dunes": [
-      "assets/Parks/33-Indiana Dunes National Park/sources 2.txt",
       "assets/Parks/33-Indiana Dunes National Park/sources.txt"
     ],
     "isle-royale": [
-      "assets/Parks/34-Isle Royale National Park/sources 2.txt",
       "assets/Parks/34-Isle Royale National Park/sources.txt"
     ],
     "joshua-tree": [
-      "assets/Parks/35-Joshua Tree National Park/sources 2.txt",
       "assets/Parks/35-Joshua Tree National Park/sources.txt"
     ],
     "katmai": [
-      "assets/Parks/36-Katmai National Park/sources 2.txt",
       "assets/Parks/36-Katmai National Park/sources.txt"
     ],
     "kenai-fjords": [
-      "assets/Parks/37-Kenai Fjords National Park/sources 2.txt",
       "assets/Parks/37-Kenai Fjords National Park/sources.txt"
     ],
     "kings-canyon": [
-      "assets/Parks/38-Kings Canyon National Park/sources 2.txt",
       "assets/Parks/38-Kings Canyon National Park/sources.txt"
     ],
     "kobuk-valley": [
       "assets/Parks/39-Kobuk Valley National Park/sources.txt"
     ],
     "lake-clark": [
-      "assets/Parks/40-Lake Clark National Park/sources 2.txt",
       "assets/Parks/40-Lake Clark National Park/sources.txt"
     ],
     "lassen-volcanic": [
-      "assets/Parks/41-Lassen Volcanic National Park/sources 2.txt",
       "assets/Parks/41-Lassen Volcanic National Park/sources.txt"
     ],
     "mammoth-cave": [
-      "assets/Parks/42-Mammoth Cave National Park/sources 2.txt",
       "assets/Parks/42-Mammoth Cave National Park/sources.txt"
     ],
     "mesa-verde": [
-      "assets/Parks/43-Mesa Verde National Park/sources 2.txt",
       "assets/Parks/43-Mesa Verde National Park/sources.txt"
     ],
     "mount-rainier": [
-      "assets/Parks/44-Mount Rainier National Park/sources 2.txt",
       "assets/Parks/44-Mount Rainier National Park/sources.txt"
     ],
     "new-river-gorge": [
-      "assets/Parks/45-New River Gorge National Park and Preserve/sources 2.txt",
       "assets/Parks/45-New River Gorge National Park and Preserve/sources.txt"
     ],
     "north-cascades": [
-      "assets/Parks/46-North Cascades National Park/sources 2.txt",
       "assets/Parks/46-North Cascades National Park/sources.txt"
     ],
     "olympic": [
-      "assets/Parks/47-Olympic National Park/sources 2.txt",
       "assets/Parks/47-Olympic National Park/sources.txt"
     ],
     "petrified-forest": [
-      "assets/Parks/48-Petrified Forest National Park/sources 2.txt",
       "assets/Parks/48-Petrified Forest National Park/sources.txt"
     ],
     "pinnacles": [
-      "assets/Parks/49-Pinnacles National Park/sources 2.txt",
       "assets/Parks/49-Pinnacles National Park/sources.txt"
     ],
     "redwood": [
-      "assets/Parks/50-Redwood National and State Parks/sources 2.txt",
       "assets/Parks/50-Redwood National and State Parks/sources.txt"
     ],
     "rocky-mountain": [
-      "assets/Parks/51-Rocky Mountain National Park/sources 2.txt",
       "assets/Parks/51-Rocky Mountain National Park/sources.txt"
     ],
     "saguaro": [
-      "assets/Parks/52-Saguaro National Park/sources 2.txt",
       "assets/Parks/52-Saguaro National Park/sources.txt"
     ],
     "sequoia": [
-      "assets/Parks/53-Sequoia National Park/sources 2.txt",
       "assets/Parks/53-Sequoia National Park/sources.txt"
     ],
     "shenandoah": [
-      "assets/Parks/54-Shenandoah National Park/sources 2.txt",
       "assets/Parks/54-Shenandoah National Park/sources.txt"
     ],
     "theodore-roosevelt": [
       "assets/Parks/55-Theodore Roosevelt National Park/sources.txt"
     ],
     "virgin-islands": [
-      "assets/Parks/56-Virgin Islands National Park/sources 2.txt",
       "assets/Parks/56-Virgin Islands National Park/sources.txt"
     ],
     "voyageurs": [
-      "assets/Parks/57-Voyageurs National Park/sources 2.txt",
       "assets/Parks/57-Voyageurs National Park/sources.txt"
     ],
     "white-sands": [
-      "assets/Parks/58-White Sands National Park/sources 2.txt",
       "assets/Parks/58-White Sands National Park/sources.txt"
     ],
     "wind-cave": [
-      "assets/Parks/59-Wind Cave National Park/sources 2.txt",
       "assets/Parks/59-Wind Cave National Park/sources.txt"
     ],
     "wrangell-st-elias": [
       "assets/Parks/60-Wrangell-St. Elias National Park and Preserve/sources.txt"
     ],
     "zion": [
-      "assets/Parks/63-Zion National Park/sources 2.txt",
       "assets/Parks/63-Zion National Park/sources.txt"
     ]
   }

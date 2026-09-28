@@ -33,7 +33,8 @@
     if (art) {
       var small = assetUrl(art).replace(/badge\.webp$/, 'badge-160.webp');
       var mid = assetUrl(art).replace(/badge\.webp$/, 'badge-320.webp');
-      return '<img class="' + className + '" src="' + escapeHtml(mid) + '" srcset="' + escapeHtml(small) + ' 160w, ' + escapeHtml(mid) + ' 320w" sizes="(max-width: 700px) 160px, 256px" alt="' + escapeHtml(label) + '" width="320" height="320" loading="lazy" decoding="async" />';
+      var large = assetUrl(art).replace(/badge\.webp$/, 'badge-640.webp');
+      return '<img class="' + className + '" src="' + escapeHtml(mid) + '" srcset="' + escapeHtml(small) + ' 160w, ' + escapeHtml(mid) + ' 320w, ' + escapeHtml(large) + ' 640w" sizes="(max-width: 700px) 160px, 256px" alt="' + escapeHtml(label) + '" width="320" height="320" loading="lazy" decoding="async" />';
     }
     if (!parkCard) return '';
     return '<svg class="park-badge' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + escapeHtml(label) + '">'
@@ -82,7 +83,11 @@
     return '<section id="hero" class="hero--park' + themeClass + '" style="' + heroVars() + '" aria-labelledby="park-hero-title">'
       + crumb
       + '<div class="park-poster" data-hero-parallax' + posterHidden + '>'
-      + '<img src="' + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + '" srcset="' + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + ' 1280w, ' + escapeHtml(assetUrl(poster)) + ' 1672w" sizes="(max-width: 900px) 100vw, 1200px" alt="' + escapeHtml(park.hero.posterAlt || '') + '" class="park-poster-art" width="1672" height="941" fetchpriority="high" style="view-transition-name: park-' + escapeHtml(parkId) + '" />'
+      + '<img src="' + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + '" srcset="'
+      + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-640.webp')) + ' 640w, '
+      + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1280.webp')) + ' 1280w, '
+      + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-1920.webp')) + ' 1920w, '
+      + escapeHtml(assetUrl(poster).replace(/header\.webp$/, 'header-2560.webp')) + ' 2560w" sizes="100vw" alt="' + escapeHtml(park.hero.posterAlt || '') + '" class="park-poster-art" width="1672" height="941" fetchpriority="high" style="view-transition-name: park-' + escapeHtml(parkId) + '" />'
       + '</div>'
       + '<div class="hero-inner" data-parallax="fade">'
       + '<p class="hero-kicker">' + escapeHtml(park.hero.kicker) + '</p>'
@@ -100,7 +105,8 @@
 
   function renderOverview() {
     const facts = park.overview.facts.map(function (fact) {
-      return '<p><span>' + escapeHtml(fact.label) + '</span>' + escapeHtml(fact.value) + '</p>';
+      const value = fact.value.replace(/^\s*(national\s+park\s+since|since)\s+/i, '');
+      return '<p><span>' + escapeHtml(fact.label) + '</span>' + escapeHtml(value) + '</p>';
     }).join('');
 
     return '<section id="park-overview" class="park-section park-section--overview" aria-labelledby="park-overview-title">'
@@ -195,7 +201,9 @@
   function renderHighlights() {
     const cards = park.landscapeHighlights.items.map(function (item, index) {
       const number = String(index + 1).padStart(2, '0');
-      return '<article class="highlight-card highlight-card--solid" style="background:' + paletteColor(index) + '">'
+      const bg = paletteColor(index);
+      const ink = badgeInk(bg);
+      return '<article class="highlight-card highlight-card--solid" style="background:' + bg + ';color:' + ink.ink + ';--highlight-muted:' + ink.muted + '">'
         + '<p class="highlight-index">' + number + '</p>'
         + '<h3 class="highlight-title">' + escapeHtml(item.title) + '</h3>'
         + '<p class="highlight-desc">' + escapeHtml(item.body) + '</p>'
@@ -236,7 +244,7 @@
     return '<figure class="park-extra">'
       + '<img src="' + escapeHtml(assetUrl(src)) + '" alt="' + escapeHtml(alt) + '"'
       + (alt ? '' : ' aria-hidden="true"')
-      + ' width="600" height="600" loading="lazy" decoding="async" />'
+      + ' width="960" height="960" loading="lazy" decoding="async" />'
       + (extra.caption ? '<figcaption>' + escapeHtml(extra.caption) + '</figcaption>' : '')
       + '</figure>';
   }
@@ -378,7 +386,11 @@
     const poster = (parkCard && parkCard.art && parkCard.art.header) || park.hero.posterSrc;
     var full = assetUrl(poster);
     var mid = full.replace(/header\.webp$/, 'header-1280.webp');
-    return '<div class="park-break" aria-hidden="true"><img src="' + escapeHtml(mid) + '" alt="" width="1280" height="720" style="object-position:' + position + '" loading="lazy" decoding="async" /></div>';
+    var srcset = full.replace(/header\.webp$/, 'header-640.webp') + ' 640w, '
+      + mid + ' 1280w, '
+      + full.replace(/header\.webp$/, 'header-1920.webp') + ' 1920w, '
+      + full.replace(/header\.webp$/, 'header-2560.webp') + ' 2560w';
+    return '<div class="park-break" aria-hidden="true"><img src="' + escapeHtml(mid) + '" srcset="' + escapeHtml(srcset) + '" sizes="100vw" alt="" width="1280" height="720" style="object-position:' + position + '" loading="lazy" decoding="async" /></div>';
   }
 
   function renderChapters() {
@@ -425,7 +437,9 @@
     }
     function neighborCard(entry, label) {
       return '<a class="neighbor-card" href="' + escapeHtml(entry.id) + '.html" style="view-transition-name: park-' + escapeHtml(entry.id) + '">'
-        + '<img src="' + escapeHtml(assetUrl(entry.art.header).replace(/header\.webp$/, 'header-640.webp')) + '" alt="" width="640" height="360" loading="lazy" decoding="async" />'
+        + '<img src="' + escapeHtml(assetUrl(entry.art.header).replace(/header\.webp$/, 'header-640.webp')) + '" srcset="'
+        + escapeHtml(assetUrl(entry.art.header).replace(/header\.webp$/, 'header-640.webp')) + ' 640w, '
+        + escapeHtml(assetUrl(entry.art.header).replace(/header\.webp$/, 'header-1280.webp')) + ' 1280w" sizes="(max-width: 640px) 92vw, (max-width: 900px) 46vw, 31vw" alt="" width="640" height="360" loading="lazy" decoding="async" />'
         + '<span><small>' + escapeHtml(label) + '</small>' + escapeHtml(entry.name) + '</span></a>';
     }
     const kind = parkCard.landscape ? parkCard.landscape.replace('coast/island', 'coast and island') : 'open';
@@ -450,6 +464,7 @@
       renderHero(),
       renderChapters(),
       renderOverview(),
+      '<div id="today-at-park" class="today-box" hidden></div>',
       renderEmotionalThesis(),
       imageBreak('82% 18%'),
       renderHighlights(),

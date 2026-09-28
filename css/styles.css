@@ -1720,6 +1720,11 @@ a.logo-text {
   padding: var(--space-xl) 2rem;
 }
 
+.park-section--editorial,
+.park-neighbors {
+  padding: 0 1.25rem;
+}
+
 .park-section {
   position: relative;
 }

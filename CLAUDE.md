@@ -1,7 +1,7 @@
 # TrailMark — project rules for Claude Code
 
 ## What this is
-TrailMark is an illustrated archive of the 63 U.S. national parks, built by Yegor Hambaryan. Static site on GitHub Pages: https://yegorcreative.github.io/Trailmark/. Yegor is the product owner; do what the prompt asks and nothing beyond it. If you see a worthwhile extra, list it under "Possible future improvement" in your report instead of doing it.
+TrailMark is an illustrated archive of the 63 U.S. national parks, built by Yegor Hambaryan. Static site on GitHub Pages, served at its custom domain: https://trailmark-usa.com. Yegor is the product owner; do what the prompt asks and nothing beyond it. If you see a worthwhile extra, list it under "Possible future improvement" in your report instead of doing it.
 
 ## Architecture (extend it, don't replace it)
 - js/parks-data.js: catalog of all 63 parks (ids, names, regions, art, status)
@@ -11,13 +11,18 @@ TrailMark is an illustrated archive of the 63 U.S. national parks, built by Yego
 - scripts/build-park-art.py: web images from assets/Parks/ originals into assets/park-art/<id>/
 - scripts/validate-parks.js: content + metadata + a11y checks; must pass before every commit
 - docs/V1-BUILDOUT-LOG.md: running log; docs/park-sources/<id>.md: NPS sources per park
+- scripts/fetch-park-status.js: pulls live hours/alerts/visitor-center data from the NPS API into data/park-status.json (today.html and each park page's "Today at" box read only this file, never the API directly)
 - No frameworks, no build tools beyond these scripts. Never hand-edit generated park HTML; change the data or script and rebuild.
+
+## Secrets
+- NPS_API_KEY lives only in GitHub Secrets; never in code, the repo, or the browser.
 
 ## Git workflow
 - Work on branch v1-buildout. Never commit to or push main unless Yegor explicitly says so.
 - One focused commit per task, with a clear message.
 - Only one agent works in this folder at a time.
 - Ignore macOS/iCloud duplicate files ("* 2.*"); never commit them.
+- When Yegor says "ship it": `git checkout main && git merge v1-buildout --no-edit && git push origin main && git checkout v1-buildout`, then report the pushed commit (hash + message). This is the only case where pushing main is pre-authorized; never push otherwise without Yegor explicitly saying so.
 
 ## Content rules
 - National Park Service is the authority. Open the NPS page(s) for every park and record them in docs/park-sources/<id>.md.

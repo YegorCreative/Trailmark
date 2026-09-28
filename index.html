@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#142016" />
     <title>TrailMark — Illustrated U.S. National Parks</title>
     <meta name="description" content="TrailMark is an illustrated archive of the 63 U.S. national parks, built one park at a time with paintings, badges, and field notes." />
-    <link rel="canonical" href="https://yegorcreative.github.io/Trailmark/" />
+    <link rel="canonical" href="https://trailmark-usa.com/" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -15,8 +15,8 @@
     <meta property="og:site_name" content="TrailMark" />
     <meta property="og:title" content="TrailMark — Illustrated U.S. National Parks" />
     <meta property="og:description" content="TrailMark is an illustrated archive of the 63 U.S. national parks, built one park at a time with paintings, badges, and field notes." />
-    <meta property="og:url" content="https://yegorcreative.github.io/Trailmark/" />
-    <meta property="og:image" content="https://yegorcreative.github.io/Trailmark/assets/park-art/yosemite/og.jpg" />
+    <meta property="og:url" content="https://trailmark-usa.com/" />
+    <meta property="og:image" content="https://trailmark-usa.com/assets/park-art/yosemite/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="TrailMark — Illustrated U.S. National Parks" />
     <meta name="twitter:description" content="TrailMark is an illustrated archive of the 63 U.S. national parks, built one park at a time with paintings, badges, and field notes." />
-    <meta name="twitter:image" content="https://yegorcreative.github.io/Trailmark/assets/park-art/yosemite/og.jpg" />
+    <meta name="twitter:image" content="https://trailmark-usa.com/assets/park-art/yosemite/og.jpg" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -32,17 +32,17 @@
         {
           "@type": "WebSite",
           "name": "TrailMark",
-          "url": "https://yegorcreative.github.io/Trailmark/",
+          "url": "https://trailmark-usa.com/",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://yegorcreative.github.io/Trailmark/parks.html?q={search_term_string}",
+            "target": "https://trailmark-usa.com/parks.html?q={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         },
         {
           "@type": "Organization",
           "name": "TrailMark",
-          "url": "https://yegorcreative.github.io/Trailmark/",
+          "url": "https://trailmark-usa.com/",
           "founder": { "@type": "Person", "name": "Yegor Hambaryan" }
         }
       ]
@@ -77,6 +77,7 @@
         <nav id="site-nav" aria-label="Site navigation">
           <ul class="nav-list">
             <li class="nav-item--parks"><a href="parks.html" class="nav-link" data-nav="parks">Parks</a></li>
+            <li><a href="today.html" class="nav-link" data-nav="today">Today</a></li>
             <li><a href="about.html" class="nav-link" data-nav="about">About</a></li>
             <li><a href="faq.html" class="nav-link" data-nav="faq">FAQ</a></li>
             <li><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
@@ -93,7 +94,7 @@
       <section id="hero" class="hero--homepage">
 
         <div class="hero-scene hero-scene--base" data-hero-crossfade data-pin-bottom data-speed="0.28" data-scale="1.08" aria-hidden="true">
-          <img src="assets/park-art/yosemite/header-1280.webp" srcset="assets/park-art/yosemite/header-1280.webp 1280w, assets/park-art/yosemite/header.webp 1672w" sizes="(max-width: 900px) 100vw, 1200px" alt="" class="hero-scene-art hero-scene-art--base is-active" width="1672" height="941" fetchpriority="high" />
+          <img src="assets/park-art/yosemite/header-1280.webp" srcset="assets/park-art/yosemite/header-640.webp 640w, assets/park-art/yosemite/header-1280.webp 1280w, assets/park-art/yosemite/header-1920.webp 1920w, assets/park-art/yosemite/header-2560.webp 2560w" sizes="100vw" alt="" class="hero-scene-art hero-scene-art--base is-active" width="1672" height="941" fetchpriority="high" />
         </div>
 
         <div class="hero-atmosphere" aria-hidden="true"></div>
@@ -153,7 +154,7 @@
            BADGE SYSTEM
       ===================== -->
       <section class="bleed-band" aria-hidden="true">
-        <img data-src="assets/park-art/zion/header-640.webp" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+        <img data-src="assets/park-art/zion/header-1280.webp" data-srcset="assets/park-art/zion/header-640.webp 640w, assets/park-art/zion/header-1280.webp 1280w, assets/park-art/zion/header-1920.webp 1920w, assets/park-art/zion/header-2560.webp 2560w" data-sizes="100vw" alt="" width="1280" height="720" loading="lazy" decoding="async" />
       </section>
 
       <section id="badge-wall" aria-labelledby="badge-wall-title">
@@ -177,7 +178,7 @@
               <span class="stat-label">Parks<br />Across the U.S.</span>
             </li>
             <li class="stat-item">
-              <span class="stat-number" data-published-count>3</span>
+              <span class="stat-number" data-published-count>63</span>
               <span class="stat-label">Growing Archive<br />Built park by park</span>
             </li>
             <li class="stat-item">
@@ -238,6 +239,7 @@
         </div>
         <nav class="site-footer-nav" aria-label="Footer">
           <a href="parks.html">Parks</a>
+          <a href="today.html">Today</a>
           <a href="about.html">About</a>
           <a href="photos.html">Photos</a>
           <a href="faq.html">FAQ</a>
